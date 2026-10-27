@@ -1,0 +1,2342 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Buttonizer\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/buttonizer-"
+"multifunctional-button\n"
+"POT-Creation-Date: 2022-02-01T14:04:08+00:00\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. Plugin Name of the plugin
+msgid "Buttonizer - Smart Floating Action Button"
+msgstr "Buttonizer - buton inteligent de acțiune flotant"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://buttonizer.pro"
+msgstr "https://buttonizer.pro"
+
+#. Description of the plugin
+msgid ""
+"The Buttonizer is a new way to give a boost to your number of interactions, "
+"actions and conversions from your website visitor by adding one or multiple "
+"Customizable Smart Floating Button in the corner of your website."
+msgstr ""
+"Buttonizer este o nouă modalitate de a stimula interacțiunile, acțiunile și "
+"conversiile pe site-ul dvs. web prin adăugarea unuia sau a mai multor "
+"butoane inteligente în colțurile site-ului."
+
+#. Author of the plugin
+msgid "Buttonizer"
+msgstr "Buttonizer"
+
+#: app/Admin/Admin.php:46
+msgid "A custom permalink structure is required for Buttonizer to work."
+msgstr ""
+"O structură personalizată de legătură permanentă este necesară pentru "
+"funcționarea Buttonizer."
+
+#: app/Admin/Admin.php:46
+msgid "Go to permalink structure settings."
+msgstr "Accesați setările structurii de legături permanente."
+
+#: app/Admin/Admin.php:62 app/Admin/Admin.php:79 app/Utils/Maintain.php:154
+msgid "Settings"
+msgstr "Setari"
+
+#: app/Admin/Admin.php:65
+msgid "Community"
+msgstr "Comunitate"
+
+#: app/Admin/Admin.php:68 app/Admin/Admin.php:77 app/Utils/Maintain.php:163
+msgid "Knowledge base"
+msgstr "Bază de cunoștințe"
+
+#: app/Admin/Admin.php:71
+msgid "I need support"
+msgstr "Am nevoie de ajutor"
+
+#: app/Admin/Admin.php:76
+msgid "Community forums"
+msgstr "Forumuri comunitare"
+
+#: app/Admin/Admin.php:78 app/Utils/Maintain.php:145
+msgid "Manage buttons"
+msgstr "Gestionați butoanele"
+
+#: app/Admin/template.php:56
+msgid "Buttonizer is loading..."
+msgstr "Buttonizer se incarca..."
+
+#. Translators: First link goes to our knowledge base, the second link goes to the admin panel.
+#: app/Admin/template.php:62
+msgid ""
+"When Buttonizer does not start, <a %1$s>click here</a> to find out what is "
+"going wrong or <a %2$s>click here</a> to return to the WordPress admin "
+"dashboard."
+msgstr ""
+"Dacă Buttonizer nu începe, <a %1$s> faceți clic aici </a> pentru a vedea ce "
+"nu este în regulă sau <a %2$s> faceți clic aici </a> pentru a vă întoarce la "
+"tabloul de bord admin."
+
+#: app/Admin/template.php:71
+msgid ""
+"When you have a slow internet connection or slow webserver, give it a "
+"moment..."
+msgstr ""
+"Dacă aveți o conexiune lentă la internet sau un server web, vă rugăm să "
+"așteptați un moment ..."
+
+#: app/Admin/template.php:80
+msgid ""
+"Buttonizer dashboard does not work on IE11! Please use any other browsers to "
+"customize your buttons. :)"
+msgstr ""
+"Tabloul de bord Buttonizer nu funcționează pe IE11! Vă rugăm să folosiți "
+"orice alt browser pentru a vă personaliza butoanele. :)"
+
+#: app/Admin/template.php:88
+msgid ""
+"Hi there! JavaScript is disabled in your browser. Please consider to enable "
+"JavaScript in your browser to use Buttonizer."
+msgstr ""
+"Bună! Javascript este dezactivat în browserul dvs. Luați în considerare "
+"activarea javascriptului pentru a utiliza Buttonizer."
+
+#: app/Api/Dashboard/ApiDashboard.php:209 app/Api/Utils/ApiReset.php:57
+#: app/Utils/Update.php:545
+msgid "New group"
+msgstr "Grup nou"
+
+#: app/Api/Dashboard/ApiDashboard.php:216 app/Api/Utils/ApiReset.php:64
+#: app/Utils/Update.php:552
+msgid "New button"
+msgstr "Buton nou"
+
+#: app/Frontend/Group/Button/Button.php:86
+msgid "The button is hidden on all devices"
+msgstr "Butonul este ascuns pe toate dispozitivele"
+
+#: app/Frontend/Group/Button/Button.php:111
+msgid ""
+"The button is hidden because the attached time schedule is <b>triggered</b>."
+msgstr "Butonul este ascuns deoarece programul legat este <b> activat </b>."
+
+#: app/Frontend/Group/Button/Button.php:112
+msgid ""
+"The button is hidden because the attached time schedule is <b>not triggered</"
+"b> ."
+msgstr ""
+"Butonul este ascuns, deoarece programul conectat <b> nu este activat </b>."
+
+#: app/Frontend/Group/Button/Button.php:136
+msgid ""
+"The button is hidden because the attached page rule is <b>triggered</b>."
+msgstr ""
+"Butonul este ascuns deoarece linia de pagină legată este <b> activată </b>."
+
+#: app/Frontend/Group/Button/Button.php:137
+msgid ""
+"The button is hidden because the attached page rule is <b>not triggered</b> ."
+msgstr ""
+"Butonul este ascuns deoarece linia de pagină legată <b> nu este activată </"
+"b>."
+
+#: app/Frontend/Group/Group.php:126
+msgid "The group is hidden on all devices"
+msgstr "Grupul este ascuns pe toate dispozitivele"
+
+#: app/Frontend/Group/Group.php:149
+msgid ""
+"The group is hidden because the attached time schedule is <b>not triggered</"
+"b>."
+msgstr "Grupul este ascuns deoarece programul legat <b> nu este activat </b>."
+
+#: app/Frontend/Group/Group.php:150
+msgid ""
+"The group is hidden because the attached time schedule is <b>triggered</b> ."
+msgstr "Grupul este ascuns deoarece programul legat este <b> activat </b>."
+
+#: app/Frontend/Group/Group.php:173
+msgid ""
+"The group is hidden because the attached page rule is <b>not triggered</b>."
+msgstr ""
+"Grupul este ascuns deoarece linia de pagină legată <b> nu este activată </b>."
+
+#: app/Frontend/Group/Group.php:174
+msgid ""
+"The group is hidden because the attached page rule is <b>triggered</b> ."
+msgstr ""
+"Grupul este ascuns deoarece linia de pagină legată este <b> activată </b>."
+
+#: app/Utils/Maintain.php:167
+msgid "Find out everything you need to know about Buttonizer"
+msgstr "Află tot ce trebuie să știi despre Buttonizer"
+
+#~ msgid "Oh, that was not what we were expecting! Something went wrong."
+#~ msgstr "Nu asta mă așteptam! Ceva n-a mers bine."
+
+#~ msgid "Custom javascript error"
+#~ msgstr "Mesaj de eroare personalizat Javascript"
+
+#~ msgid "Your custom javascript ran into an error. Read the error below:"
+#~ msgstr ""
+#~ "Javascriptul dvs. personalizat a provocat o eroare. Citiți mesajul de "
+#~ "eroare de mai jos:"
+
+#~ msgid "Could not save settings"
+#~ msgstr "Imposibil de salvat setările"
+
+#~ msgid "Something went wrong while saving your settings:"
+#~ msgstr "Ceva nu a mers în timp ce salvați setările:"
+
+#~ msgid "Only numbers allowed."
+#~ msgstr "Numai numere permise."
+
+#~ msgid "For this input, only positive numbers are allowed."
+#~ msgstr "Pentru această setare sunt permise doar numere pozitive."
+
+#~ msgid "Invalid email address."
+#~ msgstr "Adresa de email invalida"
+
+#~ msgid ""
+#~ "Invalid phone number. Please only use number for your phone number. Omit "
+#~ "any zeros, brackets or dashes when adding the phone number in "
+#~ "international format."
+#~ msgstr ""
+#~ "Numar de telefon invalid. Folosiți numai formatul de număr. Eliminați "
+#~ "zerouri, paranteze sau liniuțe atunci când utilizați formatul "
+#~ "internațional."
+
+#~ msgid "This field only allows numbers."
+#~ msgstr "Acest camp permite doar numere."
+
+#~ msgid "Button"
+#~ msgstr "Buton"
+
+#~ msgid "Group"
+#~ msgstr "Grup"
+
+#~ msgid "Confirm"
+#~ msgstr "Confirma"
+
+#~ msgid "Search"
+#~ msgstr "Cauta"
+
+#~ msgid "Skip"
+#~ msgstr "A sări"
+
+#~ msgid "Disable"
+#~ msgstr "Dezactivați"
+
+#~ msgid "Disabled"
+#~ msgstr "dezactivata"
+
+#~ msgid "Save"
+#~ msgstr "Salveaza"
+
+#~ msgid "Saving"
+#~ msgstr "Salvați"
+
+#~ msgid "Saving settings"
+#~ msgstr "Economisire"
+
+#~ msgid "Publish"
+#~ msgstr "Publica"
+
+#~ msgid "Published"
+#~ msgstr "Publicat"
+
+#~ msgid "Publishing..."
+#~ msgstr "A publica..."
+
+#~ msgid "Warning"
+#~ msgstr "Avertizare"
+
+#~ msgid "Next"
+#~ msgstr "Urmatorul"
+
+#~ msgid "Previous"
+#~ msgstr "Precedentul"
+
+#~ msgid "Save & publish"
+#~ msgstr "Salveaza & publica"
+
+#~ msgid "Loading..."
+#~ msgstr "Se incarca..."
+
+#~ msgid "Loading settings..."
+#~ msgstr "Se incarca setarile..."
+
+#~ msgid "Building bar..."
+#~ msgstr "Bara de încărcare ..."
+
+#~ msgid "Waiting for your website..."
+#~ msgstr "Asteptam site-ul tau ..."
+
+#~ msgid "It's taking longer than usual, slow website?"
+#~ msgstr "Durează mai mult decât de obicei, site-ul lent?"
+
+#~ msgid "Skip this step"
+#~ msgstr "Sari peste acest pas"
+
+#~ msgid "Initializing..."
+#~ msgstr "Inițializează ..."
+
+#~ msgid "Resetting..."
+#~ msgstr "Resetează ..."
+
+#~ msgid "Running migration..."
+#~ msgstr "Efectuarea migrației ..."
+
+#~ msgid "Finishing..."
+#~ msgstr "Complet..."
+
+#~ msgid "Add button"
+#~ msgstr "Adauga buton"
+
+#~ msgid "Add group"
+#~ msgstr "Adauga grup"
+
+#~ msgid "Text"
+#~ msgstr "Text"
+
+#~ msgid "Base"
+#~ msgstr "Baza"
+
+#~ msgid "Icon"
+#~ msgstr "icoană"
+
+#~ msgid "Search icon"
+#~ msgstr "Pictograma de căutare"
+
+#~ msgid "Image"
+#~ msgstr "Imagine"
+
+#~ msgid "Select image"
+#~ msgstr "Selecteaza imagine"
+
+#~ msgid "Change image"
+#~ msgstr "Schimba imagine"
+
+#~ msgid "Click to remove this image"
+#~ msgstr "Click pentru a elimina aceasta imagine"
+
+#~ msgid "First button"
+#~ msgstr "Primul buton"
+
+#~ msgid "Second button"
+#~ msgstr "Al doilea buton"
+
+#~ msgid "Rename"
+#~ msgstr "Redenumeste"
+
+#~ msgid "Delete"
+#~ msgstr "Sterge"
+
+#~ msgid "Duplicate"
+#~ msgstr "Duplica"
+
+#~ msgid "page rule"
+#~ msgstr "linie de pagină"
+
+#~ msgid "time schedule"
+#~ msgstr "orar"
+
+#~ msgid "Interaction"
+#~ msgstr "Interacţiune"
+
+#~ msgid "Background"
+#~ msgstr "Fundal"
+
+#~ msgid "Need help? Quick-start, tips & tricks"
+#~ msgstr "Nevoie de ajutor? Pornire rapidă, sfaturi și trucuri"
+
+#~ msgid "Need help? Visit our knowledge base!"
+#~ msgstr "Nevoie de ajutor? Accesați banca noastră de cunoștințe!"
+
+#~ msgid "Nothing found for:"
+#~ msgstr "Nimic găsit pentru:"
+
+#~ msgid "Search icons"
+#~ msgstr "Pictograme de căutare"
+
+#~ msgid "Need help? Learn how to use <b>%1$s</b>."
+#~ msgstr "Ai nevoie de ajutor? Afla cum sa folosesti <b>%1$s</b>."
+
+#~ msgid "OK"
+#~ msgstr "s-a făcut"
+
+#~ msgid "OK, I'll fix this"
+#~ msgstr "Bine, voi rezolva asta"
+
+#~ msgid "Close"
+#~ msgstr "Inchide"
+
+#~ msgid "Cancel"
+#~ msgstr "Anuleaza"
+
+#~ msgid "Yes please"
+#~ msgstr "Da, te rog"
+
+#~ msgid "No thank you"
+#~ msgstr "Nu, multumesc"
+
+#~ msgid "Dismiss"
+#~ msgstr "Ignora"
+
+#~ msgid "I've changed my mind"
+#~ msgstr "m-am razgandit"
+
+#~ msgid "Event tracker"
+#~ msgstr "Urmăritor de evenimente"
+
+#~ msgid "Revert changes"
+#~ msgstr "Renuntati la modificarile efectuate"
+
+#~ msgid "Reverting..."
+#~ msgstr "Anula..."
+
+#~ msgid "Are you sure you want to revert your changes?"
+#~ msgstr "Sunteti sigur ca doriti sa renuntati la modificari?"
+
+#~ msgid ""
+#~ "The current changes will be overwritten by the current published buttons "
+#~ "and settings."
+#~ msgstr ""
+#~ "Modificările dvs. vor fi suprascrise de butoanele și setările publicate "
+#~ "în prezent."
+
+#~ msgid "Could not revert settings"
+#~ msgstr "Nu s-a putut anula setările"
+
+#~ msgid "Something went wrong while reverting your settings."
+#~ msgstr "Ceva nu a mers în timp ce le-am anulat setările."
+
+#~ msgid "Menu style"
+#~ msgstr "Stil de meniu"
+
+#~ msgid "Group style"
+#~ msgstr "Stil de grup"
+
+#~ msgid "Group icon"
+#~ msgstr "Pictograma grupului"
+
+#~ msgid "Button style"
+#~ msgstr "Stil buton"
+
+#~ msgid "Button icon"
+#~ msgstr "Pictograma butonului"
+
+#~ msgid "Label"
+#~ msgstr "Eticheta"
+
+#~ msgid "Button name"
+#~ msgstr "Nume buton"
+
+#~ msgid "This is the button name."
+#~ msgstr "Acesta este numele butonului"
+
+#~ msgid "Button color"
+#~ msgstr "Culoare buton"
+
+#~ msgid ""
+#~ "This is the color of your button group and also the default color for "
+#~ "your buttons within this group."
+#~ msgstr ""
+#~ "Aceasta este culoarea grupului de butoane și, de asemenea, culoarea "
+#~ "implicită a butoanelor din grup."
+
+#~ msgid "Background image"
+#~ msgstr "Imagine de fundal"
+
+#~ msgid ""
+#~ "Upload an image if you want an image as a background instead of a color. "
+#~ "Recommended aspect ratio: square (1:1)."
+#~ msgstr ""
+#~ "Încărcați o imagine dacă doriți o fotografie ca fundal în loc de culoare. "
+#~ "Formatul recomandat este: pătrat (1: 1)."
+
+#~ msgid "Border radius"
+#~ msgstr "Raza de frontieră"
+
+#~ msgid "Change the roundness of this button group."
+#~ msgstr "Schimbați runda acestui buton."
+
+#~ msgid "Choose an icon from the icon library."
+#~ msgstr "Alegeți o pictogramă din biblioteca pictogramelor."
+
+#~ msgid "Icon color"
+#~ msgstr "Culoarea icoanei"
+
+#~ msgid "Change the icon color of this button."
+#~ msgstr "Schimbați culoarea pictogramei acestui buton."
+
+#~ msgid "Change the border radius of the image."
+#~ msgstr "Schimbați colțul imaginii."
+
+#~ msgid ""
+#~ "Choose an image to use as this button or group icon. Recommended aspect "
+#~ "ratio: square (1:1)"
+#~ msgstr ""
+#~ "Alegeți o imagine pe care să o utilizați ca buton sau pictogramă de grup. "
+#~ "Formatul recomandat este: pătrat (1: 1)"
+
+#~ msgid "Image size"
+#~ msgstr "Dimensiune imagine"
+
+#~ msgid "Change the size of the image."
+#~ msgstr "Schimba dimensiunea imaginii"
+
+#~ msgid "Graphic"
+#~ msgstr "Grafic"
+
+#~ msgid "Choose whether to use an icon or image as the button icon."
+#~ msgstr ""
+#~ "Alegeți dacă doriți să utilizați o pictogramă sau o imagine ca pictogramă "
+#~ "cu buton."
+
+#~ msgid "Icon size"
+#~ msgstr "Dimensiunea pictogramei"
+
+#~ msgid "Change the icon size of this button."
+#~ msgstr "Modificați dimensiunea pictogramei acestui buton."
+
+#~ msgid "Change the label of this button."
+#~ msgstr "Schimbați eticheta acestui buton."
+
+#~ msgid "Label text"
+#~ msgstr "Etichetă text"
+
+#~ msgid "Label color"
+#~ msgstr "Culoarea etichetei"
+
+#~ msgid ""
+#~ "Change the text and background color of the label for this button or "
+#~ "group."
+#~ msgstr ""
+#~ "Modificați textul și culoarea de fundal a etichetei acestui buton sau "
+#~ "grup de butoane."
+
+#~ msgid "Font size & border radius"
+#~ msgstr "Dimensiunea fontului și raza bordurii"
+
+#~ msgid ""
+#~ "Change the font size and border radius of the label for this button group."
+#~ msgstr ""
+#~ "Modificați dimensiunea fontului și unghiul de margine al etichetei pentru "
+#~ "acest buton sau grup de butoane."
+
+#~ msgid "Animation"
+#~ msgstr "Animatie"
+
+#~ msgid ""
+#~ "This will animate this button group to get the attention of the visitor. "
+#~ "The animation repeats itself every 10 seconds."
+#~ msgstr ""
+#~ "Această opțiune va anima grupul de butoane pentru a atrage atenția "
+#~ "vizitatorului. Animația se repetă la fiecare 10 secunde."
+
+#~ msgid "No animation"
+#~ msgstr "Fără animație"
+
+#~ msgid "Buttonizer Hello"
+#~ msgstr "Buttonizer Bună ziua"
+
+#~ msgid "Bounce"
+#~ msgstr "A sari"
+
+#~ msgid "Jelly"
+#~ msgstr "Budincă"
+
+#~ msgid "Pulse"
+#~ msgstr "Puls"
+
+#~ msgid "Position"
+#~ msgstr "Pozitie"
+
+#~ msgid "Change the position of this button group."
+#~ msgstr "Schimbați poziția grupului de butoane."
+
+#~ msgid "Custom"
+#~ msgstr "Ajustat"
+
+#~ msgid "Menu Style"
+#~ msgstr "Stil de meniu"
+
+#~ msgid "Change the menu style of this button group."
+#~ msgstr "Modificați stilul de meniu al acestui grup de butoane."
+
+#~ msgid "Default"
+#~ msgstr "Standard"
+
+#~ msgid "Faded"
+#~ msgstr "decolorat"
+
+#~ msgid "Corner circle"
+#~ msgstr "Cercul de colț"
+
+#~ msgid "Build Up"
+#~ msgstr "Construieste"
+
+#~ msgid "Pop"
+#~ msgstr "Pop"
+
+#~ msgid "Square"
+#~ msgstr "Pătrat"
+
+#~ msgid "Rectangle"
+#~ msgstr "Dreptunghi"
+
+#~ msgid "Visibility"
+#~ msgstr "Vizibilitate"
+
+#~ msgid ""
+#~ "Always show the label, show the label on hover or hide the label on "
+#~ "<u>desktop devices</u>."
+#~ msgstr ""
+#~ "Afișați întotdeauna eticheta, afișați numai atunci când treceți peste ea "
+#~ "sau ascundeți eticheta pe <u> desktop </u>"
+
+#~ msgid "Always show or hide the label on <u>mobile devices</u>."
+#~ msgstr ""
+#~ "Afișați întotdeauna eticheta sau ascundeți eticheta pe <u> dispozitive "
+#~ "mobile </u>."
+
+#~ msgid "Always show label"
+#~ msgstr "Afișați întotdeauna eticheta"
+
+#~ msgid "Show label on hover"
+#~ msgstr "Afișați eticheta doar cu mouse-ul"
+
+#~ msgid "Hide label"
+#~ msgstr "Ascundeți eticheta"
+
+#~ msgid "Show on"
+#~ msgstr "Vedere"
+
+#~ msgid "Device visibility"
+#~ msgstr "Vizibilitatea dispozitivului"
+
+#~ msgid ""
+#~ "Choose if you want to make this button group visible on desktop and "
+#~ "mobile devices."
+#~ msgstr ""
+#~ "Alegeți dacă doriți să faceți acest grup de butoane vizibil pe desktopuri "
+#~ "și dispozitive mobile."
+
+#~ msgid "Mobile"
+#~ msgstr "Mobil"
+
+#~ msgid "Desktop"
+#~ msgstr "Desktop"
+
+#~ msgid "Start opened"
+#~ msgstr "Începeți să deschideți"
+
+#~ msgid "This button group starts opened when this setting is enabled."
+#~ msgstr ""
+#~ "Grupul de butoane începe să fie deschis atunci când această setare este "
+#~ "activată."
+
+#~ msgid ""
+#~ "When enabled, this button will use the same style as the button group."
+#~ msgstr "Când este activat, acesta va utiliza stilul grupului."
+
+#~ msgid "Custom ID"
+#~ msgstr "ID personalizat"
+
+#~ msgid "Adds a custom 'id' HTML attribute to the button."
+#~ msgstr "Adaugă un atribut HTML „id” personalizat la buton."
+
+#~ msgid "You can add a custom ID to each button for styling purposes."
+#~ msgstr ""
+#~ "Puteți adăuga un ID personalizat fiecărui buton pentru un stil "
+#~ "suplimentar."
+
+#~ msgid "ID name"
+#~ msgstr "Numele de identificare"
+
+#~ msgid "Custom class"
+#~ msgstr "Clasa personalizata"
+
+#~ msgid "Adds a custom 'class' HTML attribute to the button."
+#~ msgstr "Adăugați un buton HTML personalizat de clasă la buton."
+
+#~ msgid "You can add a custom class to each button for styling purposes."
+#~ msgstr ""
+#~ "Puteți adăuga o clasă personalizată la fiecare buton pentru un stil "
+#~ "suplimentar."
+
+#~ msgid "Class name"
+#~ msgstr "Numele clasei"
+
+#~ msgid "Page rule"
+#~ msgstr "Regula paginii"
+
+#~ msgid "Manage page rules"
+#~ msgstr "Gestionați regulile paginii"
+
+#~ msgid "You cannot select the same page rule as it's group!"
+#~ msgstr "Nu puteți alege aceeași linie de pagină ca și grupul!"
+
+#~ msgid "Show button when rule is triggered"
+#~ msgstr "Afișați butonul atunci când linia este declanșată"
+
+#~ msgid "Hide button when rule is triggered"
+#~ msgstr "Butonul Ascunde când este declanșată regula"
+
+#~ msgid "Exit intent"
+#~ msgstr "Intenție de ieșire"
+
+#~ msgid "Enable exit intent"
+#~ msgstr "Activați intenția de ieșire"
+
+#~ msgid ""
+#~ "With this setting, you can trigger Buttonizer to animate before your "
+#~ "guest exits your website."
+#~ msgstr ""
+#~ "Cu această setare, puteți avea Buttonizer animat atunci când invitatul "
+#~ "dorește să părăsească site-ul."
+
+#~ msgid ""
+#~ "Please note: Exit intent will <b>not trigger</b> in preview mode, only in "
+#~ "your LIVE website."
+#~ msgstr ""
+#~ "Notă: Intenția de ieșire nu va fi <b> activată </b> în modul de "
+#~ "previzualizare, va fi văzută doar pe site-ul dvs. LIVE."
+
+#~ msgid "When to trigger?"
+#~ msgstr "Când să activăm?"
+
+#~ msgid "Trigger when leaving browser window"
+#~ msgstr "Declanșează la ieșirea browserului"
+
+#~ msgid "Trigger on inactivity (2 minutes)"
+#~ msgstr "Declanșator de inactivitate (2 minute)"
+
+#~ msgid "How often should it be triggered?"
+#~ msgstr "Cât de des trebuie activat?"
+
+#~ msgid "Only trigger once per page"
+#~ msgstr "O dată pe pagină"
+
+#~ msgid "Only trigger once per session"
+#~ msgstr "O dată pe sesiune de vizită"
+
+#~ msgid "Trigger every time"
+#~ msgstr "Întotdeauna se declanșează"
+
+#~ msgid "Animation on intent"
+#~ msgstr "Animație prin intenție"
+
+#~ msgid "Focused"
+#~ msgstr "axat"
+
+#~ msgid "Open menu"
+#~ msgstr "Deschide meniu"
+
+#~ msgid "Jump once and open"
+#~ msgstr "Sari și deschide"
+
+#~ msgid "Flip and open"
+#~ msgstr "Rotiți și deschideți"
+
+#~ msgid "Button action"
+#~ msgstr "Actiunea butonului"
+
+#~ msgid "Choose a click action for this button."
+#~ msgstr "Alegeți o acțiune de clic pentru acest buton."
+
+#~ msgid "Select button action"
+#~ msgstr "Selecteaza actiunea butonului"
+
+#~ msgid "No button action found for:"
+#~ msgstr "Nu a fost găsită nicio acțiune cu butonul pentru:"
+
+#~ msgid "Popular actions"
+#~ msgstr "Promoții populare"
+
+#~ msgid "Click to chat"
+#~ msgstr "Faceți clic pentru a discuta"
+
+#~ msgid "Social Media"
+#~ msgstr "Social Media"
+
+#~ msgid "Popup"
+#~ msgstr "Pop-up"
+
+#~ msgid "Call action (phone number)"
+#~ msgstr "Acțiune apel (număr de telefon)"
+
+#~ msgid "Mail action (email address)"
+#~ msgstr "Promovare prin e-mail (adresa de e-mail)"
+
+#~ msgid "Back to top"
+#~ msgstr "Înapoi la etaj"
+
+#~ msgid "Go back one page"
+#~ msgstr "Pagina anterioară"
+
+#~ msgid "Share page"
+#~ msgstr "Partajați pagina"
+
+#~ msgid ""
+#~ "Some sms apps does not support a body tag. When this happens, it will "
+#~ "simply open the sms app with the phone number already filled in."
+#~ msgstr ""
+#~ "Unele aplicații SMS nu oferă opțiunea de a trimite un mesaj. Când se "
+#~ "întâmplă acest lucru, aplicația va folosi doar numărul de telefon."
+
+#~ msgid ""
+#~ "Viber does not support a \"chat with phone number \" link. When a user "
+#~ "clicks on this button it will open their \"add contact\" with the number "
+#~ "filled in."
+#~ msgstr ""
+#~ "Viber nu acceptă linkul pentru chat. Când un utilizator apasă acest "
+#~ "buton, „adăugarea contactului” lor va fi deschisă cu acest număr de "
+#~ "telefon presetat."
+
+#~ msgid ""
+#~ "New, Facebook Messenger Chat Widget! First, you'll need to <a "
+#~ "%1$s>whitelist</a> your site on Facebook. Then add your <a %2$s>Page ID</"
+#~ "a> into the input above."
+#~ msgstr ""
+#~ "Nou, Facebook Messenger Chat Widget! În primul rând, trebuie să vă "
+#~ "permiteți site-ul dvs. <a %1$s> </a> prin Facebook. După aceea, trebuie "
+#~ "să completați <a %2$s> Pagina ID </a> de mai sus."
+
+#~ msgid ""
+#~ "You need to install Poptin's WordPress plugin. You can find it <a "
+#~ "%1$s>here</a>. Once you've made a Poptin paste the <a %2$s>direct link</"
+#~ "a> into the input."
+#~ msgstr ""
+#~ "Dacă doriți să utilizați acest lucru, trebuie să instalați pluginul "
+#~ "Poptin WordPress. Puteți găsi acest <a %1$s> aici </a>. Apoi introduceți "
+#~ "<a %2$s> linkul direct </a> de mai sus."
+
+#~ msgid "Share on %s"
+#~ msgstr "Distribuie pe% s"
+
+#~ msgid "Share via %s"
+#~ msgstr "Distribuie prin% s"
+
+#~ msgid "This URL appears to be invalid. The button may not work as expected."
+#~ msgstr ""
+#~ "Acesta arată ca un link nevalid. Este posibil ca butonul să nu "
+#~ "funcționeze așa cum era de așteptat."
+
+#~ msgid ""
+#~ "Do you miss <b>http://</b> or <b>https://</b>? Perhaps an unnecessary "
+#~ "space is added somewhere."
+#~ msgstr ""
+#~ "Îți lipsește <b> http: // </b> sau <b> https: // </b>? Este posibil să fi "
+#~ "adăugat undeva un spațiu inutil."
+
+#~ msgid ""
+#~ "<b>Insecure URL:</b> Sorry to interrupt, but we advice you to use HTTPS "
+#~ "for your URLS. This is a safer way to transport data."
+#~ msgstr ""
+#~ "<b> Link nesigur: </b> Ne pare rău pentru întrerupere, dar vă recomandăm "
+#~ "să utilizați HTTPS pentru linkurile dvs., ori de câte ori este posibil. "
+#~ "Acesta este un mod mai sigur de transport a datelor."
+
+#~ msgid "Javascript function"
+#~ msgstr "Funcția Javascript"
+
+#~ msgid "Warning! Before you continue..."
+#~ msgstr "Avertizare! Înainte de a continua ..."
+
+#~ msgid ""
+#~ "You are changing this button action from custom javascript to a different "
+#~ "action. Your javascript changes will be lost."
+#~ msgstr ""
+#~ "Modificați acțiunea butonului de la javascript personalizat la o altă "
+#~ "acțiune. Modificările dvs. javascript vor fi pierdute."
+
+#~ msgid "Are you sure you want to proceed?"
+#~ msgstr "Esti sigur ca vrei sa continui?"
+
+#~ msgid ""
+#~ "Fill in your phone number without any spaces and symbols. Read WhatsApps "
+#~ "recommendations by <a %s>clicking here.</a>"
+#~ msgstr ""
+#~ "Introduceți numărul de telefon fără spații și simboluri. Citiți "
+#~ "recomandările WhatsApp făcând clic pe <a %s> aici. </a>"
+
+#~ msgid ""
+#~ "When you want to use Twitter DM you will need to find your Twitter User "
+#~ "ID and allow direct messages from anyone. To find your account ID <a "
+#~ "%1$s>click here</a>. And to read more about how to allow direct messages "
+#~ "from anyone, <a %2$s>click here</a>."
+#~ msgstr ""
+#~ "Pentru a utiliza Twitter DM trebuie mai întâi să găsiți ID-ul dvs. de "
+#~ "utilizator Twitter și să permiteți mesaje directe de la oricine. Pentru a "
+#~ "găsi codul contului <a %1$s> faceți clic aici </a>. Pentru a găsi mai "
+#~ "multe informații despre cum să permiteți mesaje directe de la oricine, <a "
+#~ "%2$s> faceți clic aici </a>."
+
+#~ msgid "Message"
+#~ msgstr "Mesaj"
+
+#~ msgid "Username"
+#~ msgstr "Nume de utilizator"
+
+#~ msgid "Recipient"
+#~ msgstr "Receptor"
+
+#~ msgid "Subject"
+#~ msgstr "Subiect"
+
+#~ msgid "Body"
+#~ msgstr "Conţinut"
+
+#~ msgid "Open new tab"
+#~ msgstr "Deschideți-vă într-o nouă filă"
+
+#~ msgid "When the button is clicked, open in new tab."
+#~ msgstr "Când faceți clic pe buton, deschideți o nouă filă."
+
+#~ msgid "Filters"
+#~ msgstr "Filtre"
+
+#~ msgid "Styling"
+#~ msgstr "Stil"
+
+#~ msgid "Timeout & Scroll"
+#~ msgstr "Timeout & defilare"
+
+#~ msgid "Buttonizer settings"
+#~ msgstr "Setări butoniere"
+
+#~ msgid "Icon library"
+#~ msgstr "Set de pictograme"
+
+#~ msgid "free"
+#~ msgstr "liber"
+
+#~ msgid "Latest (automatic)"
+#~ msgstr "Ultima (automată)"
+
+#~ msgid ""
+#~ "If your theme automatically loads in a library, just select the correct "
+#~ "icon library instead."
+#~ msgstr ""
+#~ "Când tema dvs. încarcă automat icoane, trebuie să alegeți biblioteca de "
+#~ "pictograme potrivită."
+
+#~ msgid "Select version"
+#~ msgstr "Selectați versiunea"
+
+#~ msgid ""
+#~ "Select the correct version of the library in order to use the icons in "
+#~ "Buttonizer."
+#~ msgstr ""
+#~ "Selectați versiunea corectă a pictogramelor pe care le utilizați pe site-"
+#~ "ul dvs. web, astfel încât să le puteți selecta în Buttonizer."
+
+#~ msgid ""
+#~ "You have selected an icon library that has premium icons. Enter the "
+#~ "library license code to view and use these."
+#~ msgstr ""
+#~ "Ați ales o bibliotecă cu pictograme care conține pictograme premium. "
+#~ "Introduceți licența pictogramă pentru a o vizualiza."
+
+#~ msgid "How does this work?"
+#~ msgstr "Cum funcționează asta?"
+
+#~ msgid "Enter %s code"
+#~ msgstr "Introduceți codul% s"
+
+#~ msgid "Import icon library"
+#~ msgstr "Icoane de încărcare"
+
+#~ msgid ""
+#~ "Should Buttonizer import the icon library into your theme? If your theme "
+#~ "already imports the library you can disable this."
+#~ msgstr ""
+#~ "Buttonizer ar trebui să importe pictogramele în tema dvs.? Dacă tema dvs. "
+#~ "încarcă deja pictograme, puteți dezactiva această opțiune."
+
+#~ msgid "Where can I see my click data of my buttons in Google Analytics?"
+#~ msgstr ""
+#~ "Unde pot găsi datele mele de clic din butoanele mele din Google Analytics?"
+
+#~ msgid "Other settings"
+#~ msgstr "Alte setari"
+
+#~ msgid "Show admin top bar"
+#~ msgstr "Afișare în bara de sus a administratorului"
+
+#~ msgid "Hide Buttonizer in the admin top bar by disabling this setting."
+#~ msgstr ""
+#~ "Ascundeți butonul în bara de sus a administratorului dezactivând această "
+#~ "setare."
+
+#~ msgid "Show tooltips"
+#~ msgstr "Afișați sfaturile instrumentelor"
+
+#~ msgid "Hide the tooltips by disabling this setting."
+#~ msgstr ""
+#~ "Ascundeți sfaturile instrumentelor prin dezactivarea acestei setări."
+
+#~ msgid "Subdomain support"
+#~ msgstr "Suport pentru subdomenii"
+
+#~ msgid ""
+#~ "Some WordPress websites use subdomains for content purposes. Enable this "
+#~ "setting to allow Buttonizer to load on your subdomains. Only enable this "
+#~ "when you need it."
+#~ msgstr ""
+#~ "Unele site-uri WordPress folosesc subdomenii pentru a afișa conținut. "
+#~ "Puteți acorda permisiunea Buttonizer să se încarce și pe aceste "
+#~ "subdomenii. Activează această caracteristică numai atunci când ai nevoie."
+
+#~ msgid "Reset"
+#~ msgstr "Resetați"
+
+#~ msgid "This is a way to reset Buttonizer to the default settings."
+#~ msgstr "Acesta este un mod de a readuce Buttonizer la setările inițiale."
+
+#~ msgid "What will happen when I click the red button below?"
+#~ msgstr "Ce se întâmplă dacă apăs butonul roșu de mai jos?"
+
+#~ msgid ""
+#~ "The plugin will get a 'factory reset'. All settings of Buttonizer will "
+#~ "get deleted, reverting back to when you first installed and activated "
+#~ "Buttonizer."
+#~ msgstr ""
+#~ "Pluginul va reveni la „setările din fabrică”. Toate setările Buttonizer "
+#~ "vor fi eliminate, la începutul când tocmai ați instalat Buttonizer."
+
+#~ msgid "Why would I do that?"
+#~ msgstr "De ce aș face asta?"
+
+#~ msgid ""
+#~ "Perhaps you ruined your buttons, categories or settings and would like to "
+#~ "start from scratch. Or maybe you just feel trying the reset button..."
+#~ msgstr ""
+#~ "Este posibil să vă distrugeți butoanele, categoriile sau setările și "
+#~ "sunteți gata pentru un nou început. Sau poate doriți doar să încercați "
+#~ "butonul de resetare ..."
+
+#~ msgid "I have a license, what about that?"
+#~ msgstr "Am o licență, ce se întâmplă cu asta?"
+
+#~ msgid ""
+#~ "No worries! Nothing will happen with your license! It only resets the "
+#~ "following:"
+#~ msgstr ""
+#~ "Nu iti face griji! Nu se întâmplă nimic cu licența ta! Va reseta doar "
+#~ "următoarele setări:"
+
+#~ msgid "Your buttons"
+#~ msgstr "Butoanele tale"
+
+#~ msgid "Your button groups"
+#~ msgstr "Butonul dvs. se grupează"
+
+#~ msgid "All time schedules"
+#~ msgstr "Toate orarele"
+
+#~ msgid "All page rules"
+#~ msgstr "Toate liniile de pagină"
+
+#~ msgid "All other settings of Buttonizer"
+#~ msgstr "Toate celelalte setări Buttonizer"
+
+#~ msgid "All published settings"
+#~ msgstr "Toate instituțiile publicate"
+
+#~ msgid "Okay, sounds good. What then?"
+#~ msgstr "Okey, sună bine. Și apoi?"
+
+#~ msgid ""
+#~ "Buttonizer will revert back to the default settings and feel like a fresh "
+#~ "installation. That's all."
+#~ msgstr ""
+#~ "Buttonizer va merge la setările implicite și se va comporta ca o nouă "
+#~ "instalare. Acesta este singurul lucru."
+
+#~ msgid "Okay, I'm ready!"
+#~ msgstr "Okey, sunt gata!"
+
+#~ msgid ""
+#~ "Press the red button below to reset Buttonizer. There will be no more "
+#~ "warnings."
+#~ msgstr ""
+#~ "Apăsați butonul roșu de mai jos pentru a reseta Buttonizer. Nu vor mai "
+#~ "urma avertismente."
+
+#~ msgid "Reset Buttonizer!"
+#~ msgstr "Resetare butonier!"
+
+#~ msgid "Loaded changes from previous session"
+#~ msgstr "Ajustări încărcate din sesiunea precedentă"
+
+#~ msgid "Return to preview"
+#~ msgstr "Reveniți la exemplu"
+
+#~ msgid "Desktop preview"
+#~ msgstr "Exemplu desktop"
+
+#~ msgid "Tablet preview"
+#~ msgstr "Exemplu de tableta"
+
+#~ msgid "Mobile preview"
+#~ msgstr "Exemplu mobil"
+
+#~ msgid "Version %s"
+#~ msgstr "Versiunea% s"
+
+#~ msgid "Support"
+#~ msgstr "A sustine"
+
+#~ msgid "Direct support with the Buttonizer developers"
+#~ msgstr "Suport direct din partea dezvoltatorilor Buttonizer"
+
+#~ msgid "Interact with other Buttonizers"
+#~ msgstr "Comunicați cu alți butoniști"
+
+#~ msgid "Buttonizer tour (recommended!)"
+#~ msgstr "Tur de butoniere (recomandat!)"
+
+#~ msgid "Start the 2 minute tour"
+#~ msgstr "Începeți turul de 2 minute"
+
+#~ msgid "Buttonizer account"
+#~ msgstr "Cont Buttonizer"
+
+#~ msgid "My Account"
+#~ msgstr "Contul meu"
+
+#~ msgid "Upgrade or pricing"
+#~ msgstr "Upgrade și prețuri"
+
+#~ msgid "Affiliation"
+#~ msgstr "Deveni un partener"
+
+#~ msgid "Earn $ by promoting Buttonizer"
+#~ msgstr "Câștigă $ pentru promovarea Buttonizer"
+
+#~ msgid "Options"
+#~ msgstr "Opțiuni"
+
+#~ msgid "Now editing:"
+#~ msgstr "Editează acum:"
+
+#~ msgid "This creates a new group with 2 buttons inside."
+#~ msgstr "Se creează un grup nou cu 2 butoane."
+
+#~ msgid "This creates a new button, outside other groups."
+#~ msgstr "Se creează un buton, în afara celorlalte grupuri."
+
+#~ msgid "Learn more about groups and buttons"
+#~ msgstr "Citiți mai multe despre grupuri și butoane"
+
+#~ msgid "You can't drag the only button left in a group!"
+#~ msgstr "Nu puteți trage acest buton, deoarece este singurul buton rămas!"
+
+#~ msgid "Convert to group"
+#~ msgstr "Convertiți în grup"
+
+#~ msgid "Delete button"
+#~ msgstr "Butonul Ștergere"
+
+#~ msgid "Delete group"
+#~ msgstr "Ștergeți grupul"
+
+#~ msgid "Are you sure you want to remove this button?"
+#~ msgstr "Sigur doriți să ștergeți acest buton?"
+
+#~ msgid "Are you sure you want to remove this group?"
+#~ msgstr "Sigur doriți să ștergeți acest grup?"
+
+#~ msgid ""
+#~ "Are you sure you want to remove this full group? It contains %s buttons."
+#~ msgstr "Sigur doriți să ștergeți întregul grup? Grupul conține butoane% s."
+
+#~ msgid "Are you sure you want to remove the button called '%s'?"
+#~ msgstr "Sigur doriți să eliminați butonul '% s'?"
+
+#~ msgid "You cannot delete this button because this the only button left."
+#~ msgstr "Nu puteți elimina acest buton, deoarece este singurul buton."
+
+#~ msgid "You cannot delete this group because this the only group left."
+#~ msgstr "Nu puteți șterge acest grup, deoarece este singurul grup."
+
+#~ msgid "Page rules"
+#~ msgstr "Regulile paginii"
+
+#~ msgid "Page Rule Manager"
+#~ msgstr "Gestionarea regulilor de pagini"
+
+#~ msgid ""
+#~ "You can setup page rules via this window. When you add pages or "
+#~ "definitions to this page rule, the buttons attached to this page rule "
+#~ "will be shown or hidden depending on their settings as soon this rule is "
+#~ "triggered."
+#~ msgstr ""
+#~ "Puteți seta regulile paginii prin această fereastră. Când adăugați pagini "
+#~ "sau definiții la această linie de pagină, butoanele asociate acesteia vor "
+#~ "fi afișate sau ascunse în funcție de setările dvs. odată ce linia este "
+#~ "declanșată."
+
+#~ msgid ""
+#~ "You can setup page rules that will get triggered on specific pages or "
+#~ "user roles. You can create unlimited page rules with multiple rules to "
+#~ "trigger."
+#~ msgstr ""
+#~ "Puteți seta setări de pagină care vor fi declanșate pe anumite pagini sau "
+#~ "roluri de utilizator. Puteți adăuga un număr nelimitat de linii de "
+#~ "pagină, cu condiții diferite."
+
+#~ msgid "Add page rule"
+#~ msgstr "Adaugă linie de pagină"
+
+#~ msgid "Name your page rule:"
+#~ msgstr "Denumiți linia paginii:"
+
+#~ msgid "Show the button on any page"
+#~ msgstr "Afișați butonul de pe fiecare pagină"
+
+#~ msgid "Remove page rule"
+#~ msgstr "Ștergeți linia de pagină"
+
+#~ msgid "All conditions must meet (AND)"
+#~ msgstr "Trebuie să îndeplinească toate condițiile"
+
+#~ msgid "At least one condition must meet (OR)"
+#~ msgstr "Trebuie să îndeplinească cel puțin 1 condiție (OF)"
+
+#~ msgid "and"
+#~ msgstr "și"
+
+#~ msgid "or"
+#~ msgstr "sau"
+
+#~ msgid "Page"
+#~ msgstr "Pagină"
+
+#~ msgid "Page title contains"
+#~ msgstr "Titlul paginii conține"
+
+#~ msgid "Blog"
+#~ msgstr "Blog"
+
+#~ msgid "Blog title contains"
+#~ msgstr "Titlul blogului conține"
+
+#~ msgid "Category"
+#~ msgstr "Categorie"
+
+#~ msgid "URL contains"
+#~ msgstr "URL conține"
+
+#~ msgid "URL begins with"
+#~ msgstr "URL începe cu"
+
+#~ msgid "URL ends with"
+#~ msgstr "URL se termină cu"
+
+#~ msgid "User has role"
+#~ msgstr "Utilizatorul are un rol specific"
+
+#~ msgid "Select one or more items."
+#~ msgstr "Selectați unul sau mai multe articole."
+
+#~ msgid "Are you sure you want to remove this rule?"
+#~ msgstr "Sigur doriți să ștergeți această linie?"
+
+#~ msgid "Aborted. Each page rule must keep at least one rule."
+#~ msgstr ""
+#~ "Daramaturi. Fiecare linie de pagină trebuie să păstreze cel puțin o linie."
+
+#~ msgid ""
+#~ "You still have selected values, are you sure you want to remove this?"
+#~ msgstr ""
+#~ "Încă aveți valori selectate, sunteți sigur că doriți să le ștergeți?"
+
+#~ msgid "Rule value"
+#~ msgstr "Ajustați valoarea"
+
+#~ msgid "Time schedules"
+#~ msgstr "orare"
+
+#~ msgid "Time schedule"
+#~ msgstr "orar"
+
+#~ msgid "Time schedule manager"
+#~ msgstr "Managementul orarului"
+
+#~ msgid ""
+#~ "You can setup time schedules that will get triggered during specific "
+#~ "times of a day. It is even possible to change the schedule actions for "
+#~ "specific days. You can create an unlimited amount of schedules."
+#~ msgstr ""
+#~ "Puteți seta programe care vor fi declanșate la anumite ore ale zilei. "
+#~ "Este chiar posibil să ajustați programele pentru anumite zile. Puteți "
+#~ "crea un număr nelimitat de programe de timp."
+
+#~ msgid "Add date"
+#~ msgstr "Adăugați data"
+
+#~ msgid "New schedule"
+#~ msgstr "Orar nou"
+
+#~ msgid "Name the new time schedule:"
+#~ msgstr "Numește programul nou:"
+
+#~ msgid "Rename schedule to:"
+#~ msgstr "Redenumirea orarului în:"
+
+#~ msgid "Show the button at any time"
+#~ msgstr "Afișați întotdeauna butonul"
+
+#~ msgid "till"
+#~ msgstr "pana cand"
+
+#~ msgid "Remove schedule"
+#~ msgstr "Ștergeți orarul"
+
+#~ msgid "You must keep at least one schedule"
+#~ msgstr "Trebuie să păstrați cel puțin un orar"
+
+#~ msgid "Current timezone:"
+#~ msgstr "Fusul orar curent:"
+
+#~ msgid "Remove date"
+#~ msgstr "Ștergeți data"
+
+#~ msgid "Are you sure you want to remove this date?"
+#~ msgstr "Sigur doriți să ștergeți această dată?"
+
+#~ msgid "Sorry, the time '%1$s' was invalid. Reverting back to '%2$s'."
+#~ msgstr ""
+#~ "Ne pare rău, ora selectată „% 1 $ s” nu este validă. Ora este resetată la "
+#~ "„% 2 $ s”."
+
+#~ msgid ""
+#~ "The start time '%1$s' conflicts with the end time '%2$s'. Time has been "
+#~ "reverted to '%3$s'. Make sure you have at least 5 minutes overlap."
+#~ msgstr ""
+#~ "Ora de început „% 1 $ s” intră în conflict cu ora finală '% 2 $ s. Timpul "
+#~ "a fost resetat la „% 3 $ s”. Asigurați-vă că aveți cel puțin 5 minute de "
+#~ "slăbire."
+
+#~ msgid ""
+#~ "The end time '%1$s' conflicts with the start time '%2$s'. Time has been "
+#~ "reverted to '%3$s'. Make sure you have at least 5 minutes overlap."
+#~ msgstr ""
+#~ "Ora finală „% 1 $ s” intră în conflict cu ora de început „% 2 $ s”. "
+#~ "Timpul a fost resetat la „% 3 $ s”. Asigurați-vă că aveți cel puțin 5 "
+#~ "minute de slăbire."
+
+#~ msgid "Weekdays"
+#~ msgstr "Zilele saptamanii"
+
+#~ msgid "Monday"
+#~ msgstr "luni"
+
+#~ msgid "Tuesday"
+#~ msgstr "marţi"
+
+#~ msgid "Wednesday"
+#~ msgstr "miercuri"
+
+#~ msgid "Thursday"
+#~ msgstr "joi"
+
+#~ msgid "Friday"
+#~ msgstr "vineri"
+
+#~ msgid "Saturday"
+#~ msgstr "sâmbătă"
+
+#~ msgid "Sunday"
+#~ msgstr "duminică"
+
+#~ msgid "Start triggering buttons from"
+#~ msgstr "Începeți declanșarea butoanelor din"
+
+#~ msgid ""
+#~ "Warning! Your start date '%s' hast past the end date of this schedule. If "
+#~ "you do not change this date the schedule will not work."
+#~ msgstr ""
+#~ "Avertizare! Data de început „% s” este mai târziu decât data de încheiere "
+#~ "a acestui calendar. Dacă nu schimbați acest lucru, orarul nu va funcționa."
+
+#~ msgid "Stop triggering buttons after (optional)"
+#~ msgstr "Opriți butoanele de declanșare după (opțional)"
+
+#~ msgid "Click to add ending date"
+#~ msgstr "Faceți clic pentru a selecta o dată de încheiere"
+
+#~ msgid "Select a date in the datepicker below"
+#~ msgstr "Selectați o dată din selecția datei de mai jos"
+
+#~ msgid ""
+#~ "Warning! Your end date '%s' has past the start date of this schedule. If "
+#~ "you do not change this date the schedule will not work."
+#~ msgstr ""
+#~ "Avertizare! Data ta de încheiere '% s' este anterioară datei de început a "
+#~ "acestui program. Dacă nu schimbați acest lucru, orarul nu va funcționa."
+
+#~ msgid "Hi Buttonizer!"
+#~ msgstr "Bună Buttonizer!"
+
+#~ msgid ""
+#~ "It appears you've installed Buttonizer 2.0 before. But, you installed "
+#~ "version 1.5 again later on and updated back to 2.0!"
+#~ msgstr ""
+#~ "Se pare că ați instalat deja Buttonizer 2.0 și apoi ați revenit la "
+#~ "versiunea 1.5. Acum v-ați actualizat la versiunea 2.0!"
+
+#~ msgid ""
+#~ "The migration progress did not run as it did back then. In order to "
+#~ "convert your buttons, press the button below!"
+#~ msgstr ""
+#~ "Migrarea automată nu a fost efectuată acum, deoarece a fost făcută "
+#~ "înainte. Pentru a migra din nou butoanele la cea mai recentă versiune, "
+#~ "apăsați butonul de mai jos!"
+
+#~ msgid ""
+#~ "If this window keeps popping up, even when you've tried to convert the "
+#~ "buttons, try to reset Buttonizer. Go to the 'cog' icon (%1$s) on the top "
+#~ "bar, select 'Options %2$s' and the tab 'Reset' and follow the "
+#~ "instructions."
+#~ msgstr ""
+#~ "Dacă acest ecran continuă să apară chiar și atunci când ați încercat să "
+#~ "migrați butoanele, încercați să resetați Buttonizer. Accesați pictograma "
+#~ "„angrenaj” (% 1 $ s) din bara de sus. Apoi accesați „Opțiuni% 2 $ s” și "
+#~ "deschideți fila „Resetare” și urmați instrucțiunile."
+
+#~ msgid "Convert my buttons!"
+#~ msgstr "Migrează-mi butoanele!"
+
+#~ msgid "Premium feature"
+#~ msgstr "Funcție premium"
+
+#~ msgid ""
+#~ "Hi there, this function is a premium feature. We will describe what this "
+#~ "feature will do:"
+#~ msgstr ""
+#~ "Bună acolo, această caracteristică este destinată utilizatorilor noștri "
+#~ "premium. Vom descrie ce va face această funcție:"
+
+#~ msgid "What you get as a premium user:"
+#~ msgstr "Ce primiți ca utilizator premium:"
+
+#~ msgid "Go pro"
+#~ msgstr "Deveniți un utilizator premium"
+
+#~ msgid "Show button(groups) using the advanced time schedules"
+#~ msgstr "Afișați butoanele bazate pe programe avansate"
+
+#~ msgid "Show button(groups) on specific pages using advanced page rules"
+#~ msgstr ""
+#~ "Afișați butoanele de pe anumite pagini cu reguli avansate ale paginii"
+
+#~ msgid "Create multiple button groups"
+#~ msgstr "Posibilitatea de a crea mai multe grupuri de butoane"
+
+#~ msgid "Custom button background &amp; icon image"
+#~ msgstr "Fundal personalizat pentru buton și imagine pentru pictograme"
+
+#~ msgid "Show or hide on scroll"
+#~ msgstr "Afișați sau ascundeți în timp ce defilați"
+
+#~ msgid "Show on timeout"
+#~ msgstr "Afișează după un anumit timp"
+
+#~ msgid "Be able to set CSS class names and button IDs"
+#~ msgstr "Utilizarea numelor și ID-urilor clasei CSS"
+
+#~ msgid "Execute javascript on button clicks"
+#~ msgstr "Rulați JavaScript cu un clic"
+
+#~ msgid "My first time schedule"
+#~ msgstr "Primul meu orar"
+
+#~ msgid "My first page rule"
+#~ msgstr "Prima mea linie de pagini"
+
+#~ msgid "You are able to add multiple groups on different positions"
+#~ msgstr "Aveți opțiunea de a crea mai multe grupuri în diferite poziții"
+
+#~ msgid "Welcome to Buttonizer"
+#~ msgstr "Bine ați venit la Buttonizer"
+
+#~ msgid "We are pleased to welcome you to <b>%s</b>!"
+#~ msgstr "Vă așteptăm cu nerăbdare să <b>% s </b>!"
+
+#~ msgid ""
+#~ "We've created a tour for our new users. Would you like to take the tour?"
+#~ msgstr ""
+#~ "Am făcut un tur pentru noii noștri utilizatori. Vrei să urmezi acest tur?"
+
+#~ msgid "No thanks, I know how it works"
+#~ msgstr "Nu, mulțumesc, știu cum funcționează"
+
+#~ msgid "Welcome to the Buttonizer tour!"
+#~ msgstr "Bine ați venit la turneul Buttonizer!"
+
+#~ msgid ""
+#~ "Start the tour and save time. Master the Buttonizer skills in only two "
+#~ "minutes."
+#~ msgstr ""
+#~ "Începeți turul și economisiți timp. Stăpânește abilitățile Buttonizer în "
+#~ "doar două minute."
+
+#~ msgid "You can use the %1$s and %2$s keys on your %3$s to navigate."
+#~ msgstr ""
+#~ "Puteți utiliza butoanele% 1 $ s și% 2 $ s de pe% 3 $ s pentru a naviga."
+
+#~ msgid "Preview"
+#~ msgstr "Exemplu"
+
+#~ msgid "Menu"
+#~ msgstr "Meniul"
+
+#~ msgid "Button group"
+#~ msgstr "Buton grup"
+
+#~ msgid ""
+#~ "The buttons in a button group are dedicated to one position. Add multiple "
+#~ "button groups if you want to create more floating action buttons "
+#~ "dedicated to different positions."
+#~ msgstr ""
+#~ "Butoanele dintr-un grup de butoane sunt dedicate unei singure poziții. "
+#~ "Creați mai multe grupuri de butoane pentru a avea butoane în diferite "
+#~ "poziții."
+
+#~ msgid "Group settings"
+#~ msgstr "Grup de instituții"
+
+#~ msgid ""
+#~ "Buttonizer will animate every 10 seconds in order to capture the "
+#~ "visitor's attention."
+#~ msgstr ""
+#~ "Buttonizer va fi animat la fiecare 10 secunde pentru a atrage atenția "
+#~ "vizitatorului."
+
+#~ msgid "Click here to add a new button."
+#~ msgstr "Faceți clic aici pentru a adăuga un nou buton."
+
+#~ msgid ""
+#~ "When enabled, the button will copy the button and label style of the "
+#~ "group."
+#~ msgstr "Când această opțiune este activată, va folosi stilul grupului."
+
+#~ msgid ""
+#~ "Thank you for taking the tour, that's all folks! We hope you're ready to "
+#~ "start implementing Buttonizer to meet your goals! If you have any "
+#~ "questions, ask them on the %s forums!"
+#~ msgstr ""
+#~ "Vă mulțumesc că ați făcut acest turneu, asta a fost totul! Sperăm că "
+#~ "sunteți gata să începeți să utilizați Buttonizer pentru a vă atinge "
+#~ "obiectivele! Dacă aveți întrebări în acest sens, vizitați% s noștri!"
+
+#~ msgid ""
+#~ "If you have any feedback regarding the Buttonizer Tour, we'd love to hear "
+#~ "it!"
+#~ msgstr ""
+#~ "Spuneți-ne dacă aveți feedback despre Buttonizer Tour, ne-ar plăcea să îl "
+#~ "auzim!"
+
+#~ msgid "Permalink Error"
+#~ msgstr "Eroare permanentă"
+
+#~ msgid ""
+#~ "Buttonizer's requests will not work when using plain permalink. To use "
+#~ "Buttonizer, use a custom permalink"
+#~ msgstr ""
+#~ "Cererile de butoniere nu funcționează atunci când utilizați structura "
+#~ "regulată de permalink. Utilizați un link permanent personalizat pentru a "
+#~ "utiliza Buttonizer"
+
+#~ msgid "License activated"
+#~ msgstr "Licența activată"
+
+#~ msgid ""
+#~ "Please download and upload the premium version found in the email we have "
+#~ "sent you to use all premium functions."
+#~ msgstr ""
+#~ "Descărcați și încărcați versiunea premium în e-mailul pe care v-am trimis-"
+#~ "o pentru a utiliza funcțiile premium."
+
+#~ msgid "Edit"
+#~ msgstr "Editați | ×"
+
+#~ msgid "Type"
+#~ msgstr "Tip"
+
+#~ msgid "Select"
+#~ msgstr "Te rog selecteaza"
+
+#~ msgid "Learn more"
+#~ msgstr "Mai multe informatii"
+
+#~ msgid "Create new group"
+#~ msgstr "Creați un grup nou"
+
+#~ msgid "Choose a name for the button."
+#~ msgstr "Alegeți un nume pentru buton."
+
+#~ msgid "Choose a name for the group."
+#~ msgstr "Alegeți un nume pentru grup."
+
+#~ msgid "Style"
+#~ msgstr "Stil"
+
+#~ msgid "Advanced"
+#~ msgstr "Avansat"
+
+#~ msgid "Color"
+#~ msgstr "Culoare"
+
+#~ msgid "Select file"
+#~ msgstr "Selectați fișierul"
+
+#~ msgid "Change file"
+#~ msgstr "Schimbă fișierul"
+
+#~ msgid "Rename to:"
+#~ msgstr "Redenumiți la:"
+
+#~ msgid "Icon selector"
+#~ msgstr "Selectarea pictogramelor"
+
+#~ msgid "Loading icons, please wait..."
+#~ msgstr "Se încarcă pictogramele, vă rugăm să așteptați ..."
+
+#~ msgid "Searching for: %1$s, found %2$s results."
+#~ msgstr "Căutare:% 1 $ s,% 2 $ s rezultate găsite."
+
+#~ msgid "Remove filter"
+#~ msgstr "Scoateți filtrul"
+
+#~ msgid "Buttonizer has crashed!"
+#~ msgstr "Buttonizer s-a prăbușit!"
+
+#~ msgid "Our development team has been notified."
+#~ msgstr "Echipa noastră de dezvoltare a fost informată."
+
+#~ msgid "If you'd like to help, tell us what happened below."
+#~ msgstr "Dacă doriți să vă ajutați, spuneți-ne ce s-a întâmplat mai jos."
+
+#~ msgid ""
+#~ "Buttonizer has crashed, but you have not enabled automatic error "
+#~ "reporting! Would you like to become a SUPER contributor and automatically "
+#~ "log errors, including this one?"
+#~ msgstr ""
+#~ "Buttonizer s-a prăbușit, dar, din păcate, aveți automat înregistrarea "
+#~ "erorilor dezactivate! Doriți să deveniți un contribuabil SUPER și să ne "
+#~ "trimiteți automat mesaje de eroare, inclusiv acesta?"
+
+#~ msgid "Show button at all times"
+#~ msgstr "Afișați întotdeauna butonul"
+
+#~ msgid "Show group at all times"
+#~ msgstr "Afișați întotdeauna grupul"
+
+#~ msgid "Show button on all pages"
+#~ msgstr "Afișați butonul de pe fiecare pagină"
+
+#~ msgid "Show group on all pages"
+#~ msgstr "Afișați grupul pe fiecare pagină"
+
+#~ msgid "I'm sure"
+#~ msgstr "sunt sigur"
+
+#~ msgid "Incorrect entry."
+#~ msgstr "Intrare incorectă."
+
+#~ msgid "Remove time schedule?"
+#~ msgstr "Ștergeți orarul?"
+
+#~ msgid ""
+#~ "Are you very sure you want to remove this time schedule? Buttons that are "
+#~ "still attached to this time schedule will become visible unless you "
+#~ "attach them to another time schedule or hide them."
+#~ msgstr ""
+#~ "Sigur doriți să ștergeți acest orar? Butoanele legate de acest orar vor "
+#~ "deveni vizibile dacă nu le conectezi la un alt orar."
+
+#~ msgid ""
+#~ "There are no buttons attached to this time schedule. You can remove this "
+#~ "safely."
+#~ msgstr ""
+#~ "Nu există butoane asociate cu acest orar. Îl puteți elimina în siguranță."
+
+#~ msgid "There are <b>%1$s</b> buttons attached to this time schedule!"
+#~ msgstr "Există butoanele <b>% 1 $ s </b> asociate cu acest orar!"
+
+#~ msgid "There is <b>1</b> button attached to this time schedule"
+#~ msgstr "Există butonul <b> 1 </b> asociat cu acest orar"
+
+#~ msgid "Do you want to remove this time schedule?"
+#~ msgstr "Sigur doriți să ștergeți acest orar?"
+
+#~ msgid "Cannot delete button"
+#~ msgstr "Nu puteți elimina acest buton"
+
+#~ msgid "Cannot delete group"
+#~ msgstr "Nu se poate șterge acest grup"
+
+#~ msgid "Remove page rule?"
+#~ msgstr "Ștergeți linia de pagină?"
+
+#~ msgid ""
+#~ "Are you very sure you want to remove this page rule? Buttons that are "
+#~ "still attached to this page rule will become visible unless you attach "
+#~ "them to another page rule or hide them."
+#~ msgstr ""
+#~ "Sigur doriți să ștergeți această linie de pagină? Butoanele legate de "
+#~ "această linie de pagină vor deveni vizibile dacă nu le conectezi la o "
+#~ "altă linie de pagină."
+
+#~ msgid ""
+#~ "There are no buttons attached to this page rule. You can remove this "
+#~ "safely."
+#~ msgstr ""
+#~ "Nu există butoane asociate cu această linie de pagină. Îl puteți elimina "
+#~ "în siguranță."
+
+#~ msgid "There are <b>%1$s</b> buttons attached to this page rule!"
+#~ msgstr "Există butoane <b>% 1 $ s </b> asociate acestei linii de pagini!"
+
+#~ msgid "There is <b>1</b> button attached to this page rule"
+#~ msgstr "Există butonul <b> 1 </b> asociat cu această linie de pagină"
+
+#~ msgid "Do you want to remove this page rule?"
+#~ msgstr "Doriți să ștergeți această linie de pagină?"
+
+#~ msgid "This action is permanent and cannot be undone."
+#~ msgstr "Această acțiune este permanentă și nu poate fi anulată."
+
+#~ msgid "Add button to enable group settings"
+#~ msgstr "Adăugați un buton pentru a activa setările grupului"
+
+#~ msgid "General"
+#~ msgstr "General"
+
+#~ msgid "Label style"
+#~ msgstr "Stilul etichetei"
+
+#~ msgid "background"
+#~ msgstr "fundal"
+
+#~ msgid "Icon Style"
+#~ msgstr "Stilul icoanei"
+
+#~ msgid "Image style"
+#~ msgstr "Stilul imaginii"
+
+#~ msgid "Show or hide"
+#~ msgstr "Arată sau ascunde"
+
+#~ msgid "Select icon"
+#~ msgstr "Selectează pictograma"
+
+#~ msgid "Text color"
+#~ msgstr "Culoarea textului"
+
+#~ msgid "Font size"
+#~ msgstr "Marimea fontului"
+
+#~ msgid "Horizontal"
+#~ msgstr "Orizontală"
+
+#~ msgid "Vertical"
+#~ msgstr "Vertical"
+
+#~ msgid "This setting is not used when using the %s menu style..."
+#~ msgstr "Această setare nu este folosită pentru stilul meniului% s ..."
+
+#~ msgid "Toggle show on desktop"
+#~ msgstr "Activați / dezactivați afișarea pe desktop"
+
+#~ msgid "Toggle show on mobile"
+#~ msgstr "Activați / dezactivați pe ecranul mobil"
+
+#~ msgid "Use group style"
+#~ msgstr "Folosiți stilul de grup"
+
+#~ msgid "Disable USE GROUP STYLE to access these settings"
+#~ msgstr "Dezactivează USE GROUP STYLE pentru a gestiona această setare"
+
+#~ msgid "Timeout"
+#~ msgstr "Pauză"
+
+#~ msgid "Milliseconds"
+#~ msgstr "milisecunde"
+
+#~ msgid "Show Buttonizer after %s seconds"
+#~ msgstr "Afișați butonul după% s secunde"
+
+#~ msgid "Scroll"
+#~ msgstr "defilare"
+
+#~ msgid "From top"
+#~ msgstr "De sus"
+
+#~ msgid "Show Buttonizer after 0 seconds"
+#~ msgstr "Afișați Buttonizer după 0 secunde"
+
+#~ msgid "Starting visibility"
+#~ msgstr "Începeți vizibilitatea"
+
+#~ msgid "Hide"
+#~ msgstr "Ascunde"
+
+#~ msgid "Show"
+#~ msgstr "Vedere"
+
+#~ msgid "Scroll <b>0%</b> from top of page to <b>SHOW</b> group"
+#~ msgstr ""
+#~ "Parcurgeți <b> 0% </b> din partea de sus a paginii pentru a afișa <b> "
+#~ "grupul </b>"
+
+#~ msgid "Scroll <b>%1$s%2$s</b> from top of page to <b>%3$s</b> group"
+#~ msgstr ""
+#~ "Parcurgeți <b>% 1 $ s% 2 $ s </b> din partea de sus a paginii către "
+#~ "grupul <b>% 3 $ s </b>"
+
+#~ msgid ""
+#~ "Exit intent can be used to trigger an animation around Buttonizer when a "
+#~ "visitor is leaving your website."
+#~ msgstr ""
+#~ "Intenția de ieșire poate fi utilizată pentru a activa o animație în jurul "
+#~ "Buttonizer înainte ca vizitatorii să părăsească site-ul dvs. web."
+
+#~ msgid "Actions"
+#~ msgstr "acţiuni"
+
+#~ msgid "Invalid phone number"
+#~ msgstr "Numărul de telefon este nevalid"
+
+#~ msgid "Phone number"
+#~ msgstr "numar de telefon"
+
+#~ msgid "SMS"
+#~ msgstr "MESAJ TEXT"
+
+#~ msgid "Invalid Page ID."
+#~ msgstr "ID-ul paginii este nevalid."
+
+#~ msgid "Facebook Page ID"
+#~ msgstr "ID-ul paginii Facebook"
+
+#~ msgid "WhatsApp Chat"
+#~ msgstr "Chat WhatsApp"
+
+#~ msgid "Social Sharing"
+#~ msgstr "Distribuie pe rețelele de socializare"
+
+#~ msgid "Copy URL to clipboard"
+#~ msgstr "Copiați adresa URL în clipboard"
+
+#~ msgid "Print page"
+#~ msgstr "Imprima pagina"
+
+#~ msgid "Website URL"
+#~ msgstr "Website URL"
+
+#~ msgid "Open JavaScript code editor"
+#~ msgstr "Deschideți editorul de cod JavaScript"
+
+#~ msgid "Manage the settings of Buttonizer"
+#~ msgstr "Gestionați setările Buttonizer"
+
+#~ msgid "Choose your iconset"
+#~ msgstr "Alegeți setul de pictograme"
+
+#~ msgid "Google Analytics"
+#~ msgstr "Google Analytics"
+
+#~ msgid "Enable Google Analytics"
+#~ msgstr "Activați Google Analytics"
+
+#~ msgid "Measure your conversions"
+#~ msgstr "Măsurați-vă conversiile"
+
+#~ msgid ""
+#~ "When enabled, Buttonizer will automatically log clicks to your Google "
+#~ "Analytics account. You can force Buttonizer not to use the Google "
+#~ "Analytics by disabling this switch."
+#~ msgstr ""
+#~ "Când această opțiune este activată, Buttonizer va înregistra automat "
+#~ "clicurile butonului în contul Google Analytics. Puteți obliga Buttonizer "
+#~ "să nu utilizeze Google Analytics oprind glisorul de mai sus."
+
+#~ msgid ""
+#~ "Google Analytics is automatically detected if you have added it to your "
+#~ "webpage. But, if you don't make use of Google Analytics yet and  this is "
+#~ "your first time, Buttonizer can add it for you."
+#~ msgstr ""
+#~ "Google Analytics este detectat automat dacă l-ai adăugat deja pe pagina "
+#~ "ta web. Cu toate acestea, dacă nu utilizați deja Google Analytics și este "
+#~ "prima dată, Buttonizer îl poate adăuga pentru dvs."
+
+#~ msgid ""
+#~ "If you have added Google Analytics to your webpage before and Buttonizer "
+#~ "also adds the same Analytics code, it will mess with your analytics data!"
+#~ msgstr ""
+#~ "Dacă ați adăugat deja Google Analytics pe pagina dvs. web și lăsați "
+#~ "butonierului să adauge același cod Analytics, acest lucru va pune "
+#~ "problema cu datele analitice!"
+
+#~ msgid "UA Code"
+#~ msgstr "Codul UA"
+
+#~ msgid "Preferences"
+#~ msgstr "Preferințe"
+
+#~ msgid "Manage your preferences"
+#~ msgstr "Gestionați preferințele"
+
+#~ msgid "Show Buttonizer tips"
+#~ msgstr "Afișați sfaturile Buttonizer"
+
+#~ msgid "Hide the Buttonizer tips in the dashboard by disabling this setting"
+#~ msgstr ""
+#~ "Ascundeți sfaturile din partea de sus a tabloului de bord Buttonizer "
+#~ "dezactivând această setare"
+
+#~ msgid "Use ajax on to load the buttons"
+#~ msgstr "Utilizați ajax pentru a încărca butoanele"
+
+#~ msgid ""
+#~ "This feature has been created to make sure Buttonizer doesn't slow down "
+#~ "your website. If you'd like to show the buttons immediately without "
+#~ "loadtime, disable this setting. The load impect will depend on the amount "
+#~ "of buttons and groups you currently have."
+#~ msgstr ""
+#~ "Această caracteristică este făcută pentru a vă asigura că Buttonizer nu "
+#~ "încetinește site-ul. Dacă doriți ca butoanele să fie vizibile imediat, "
+#~ "fără timp de încărcare, puteți dezactiva această opțiune. Impactul asupra "
+#~ "timpului de încărcare depinde de numărul de butoane și grupuri pe care le "
+#~ "aveți."
+
+#~ msgid "Automatic error logging and crash reporting"
+#~ msgstr "Raportează automat jurnalele de eroare și se prăbușesc"
+
+#~ msgid ""
+#~ "Enable automatic error logging and crash reporting in order to help us "
+#~ "solve issues within Buttonizer! All data is anonymized automatically."
+#~ msgstr ""
+#~ "Activați înregistrarea automată a erorilor și raportarea accidentelor "
+#~ "pentru a ne ajuta să depanăm Buttonizer! Toate datele sunt anonimizate "
+#~ "automat."
+
+#~ msgid "Reset Buttonizer"
+#~ msgstr "Resetare butonier"
+
+#~ msgid "If you need a clean install"
+#~ msgstr "Când aveți nevoie de o instalație nouă"
+
+#~ msgid "Edit group settings"
+#~ msgstr "Editați setările grupului"
+
+#~ msgid ""
+#~ "You probably have clicked a link, this made you leave the preview window "
+#~ "of Buttonizer. You cannot see your changes here."
+#~ msgstr ""
+#~ "Este posibil să fi dat clic pe un link. Acesta a afișat ecranul de "
+#~ "previzualizare al Buttonizer. Nu puteți vedea nicio modificare pe care o "
+#~ "faceți aici."
+
+#~ msgid "Home"
+#~ msgstr "Prezentare generală"
+
+#~ msgid "Back to overview"
+#~ msgstr "înapoi la imagine de ansamblu"
+
+#~ msgid "Back to group"
+#~ msgstr "Înapoi la grup"
+
+#~ msgid "Back to the WordPress dashboard"
+#~ msgstr "Înapoi la tabloul de bord WordPress"
+
+#~ msgid "Follow us for useful tips & tricks!"
+#~ msgstr "Urmați-ne pentru sfaturi și trucuri utile!"
+
+#~ msgid "View your license and account details"
+#~ msgstr "Vizualizați informațiile și licența contului"
+
+#~ msgid "A deep dive in all the possibilities"
+#~ msgstr "O scufundare profundă în toate posibilitățile"
+
+#~ msgid "Choose on which page you want to show a button (group)"
+#~ msgstr "Alegeți pe ce pagină doriți să afișați un buton (grup)."
+
+#~ msgid "Open Page Rules settings"
+#~ msgstr "Deschideți setările pentru linia de pagină"
+
+#~ msgid "Current page rule"
+#~ msgstr "Linia de pagină curentă"
+
+#~ msgid "Page rule conditions behaviour"
+#~ msgstr "Conducerea regulii paginii"
+
+#~ msgid "Triggers when ONE of the selected values is true"
+#~ msgstr "Se activează când una dintre valorile selectate este adevărată"
+
+#~ msgid "Conditions"
+#~ msgstr "Condiții"
+
+#~ msgid "Show group when this page rule is activated"
+#~ msgstr "Afișați grupul atunci când regula este activată"
+
+#~ msgid "Hide group when this page rule is activated"
+#~ msgstr "Ascundeți grupul atunci când regula este activată"
+
+#~ msgid "Show button when this page rule is activated"
+#~ msgstr "Afișați butonul când regula este activată"
+
+#~ msgid "Hide button when this page rule is activated"
+#~ msgstr "Ascunde butonul atunci când regula este activată"
+
+#~ msgid "Add condition"
+#~ msgstr "Adaugă condiție"
+
+#~ msgid "No page rules"
+#~ msgstr "Fără reguli de pagină"
+
+#~ msgid "No page rule selected"
+#~ msgstr "Nicio linie de pagină selectată"
+
+#~ msgid ""
+#~ "There are no rules for this page rule. All buttons attached to this page "
+#~ "rule will be visible. Press 'Add condition' to add one!"
+#~ msgstr ""
+#~ "Nu au fost stabilite încă reguli pentru această regulă a paginii. Toate "
+#~ "butoanele legate de această linie de pagină vor fi vizibile. Faceți clic "
+#~ "pe „Adaugă condiție” pentru a adăuga una!"
+
+#~ msgid "User is signed in"
+#~ msgstr "Utilizatorul este conectat"
+
+#~ msgid "User is signed out"
+#~ msgstr "Utilizatorul este deconectat"
+
+#~ msgid "Content based"
+#~ msgstr "Pe bază de conținut"
+
+#~ msgid "Url"
+#~ msgstr "URL-"
+
+#~ msgid "Users"
+#~ msgstr "Utilizatori"
+
+#~ msgid "For example: Show a call me now button only on opening times"
+#~ msgstr ""
+#~ "Exemplu: Afișați butonul de apelare-mi acum doar în timpul programului de "
+#~ "deschidere"
+
+#~ msgid "Open time schedule settings"
+#~ msgstr "Deschideți setările de orar"
+
+#~ msgid "Current time schedules:"
+#~ msgstr "Orarele actuale:"
+
+#~ msgid "You have no time schedules"
+#~ msgstr "Nu aveți orare"
+
+#~ msgid "No time schedule selected"
+#~ msgstr "Nu a fost selectat orar"
+
+#~ msgid "Dates"
+#~ msgstr "Datele"
+
+#~ msgid "Add time schedule"
+#~ msgstr "Adăugați orar"
+
+#~ msgid "Show group when this time schedule is activated"
+#~ msgstr "Afișați grupul atunci când este activat programul"
+
+#~ msgid "Hide group when this time schedule is activated"
+#~ msgstr "Ascundeți grupul atunci când este activat programul"
+
+#~ msgid "Show button when this time schedule is activated"
+#~ msgstr "Buton Afișare când este activat programul"
+
+#~ msgid "Hide button when this time schedule is activated"
+#~ msgstr "Butonul Ascunde când este activat programul"
+
+#~ msgid "Trigger on"
+#~ msgstr "Activați pornirea"
+
+#~ msgid "Don't trigger on"
+#~ msgstr "Nu activați pornirea"
+
+#~ msgid "Excluded Dates"
+#~ msgstr "Zile exceptate"
+
+#~ msgid "Add Excluded Date"
+#~ msgstr "Adăugați ziua cu excepția"
+
+#~ msgid ""
+#~ "Add specific dates to show or hide the buttons attached to this time "
+#~ "scheme. For example: \"My store is open on January 22th until 22:00 (10 "
+#~ "PM) because of some special evening we organize.\" The rule will "
+#~ "overwrite the default settings for that day."
+#~ msgstr ""
+#~ "Aveți opțiunea de a selecta anumite date pentru a ascunde sau afișa "
+#~ "butoanele asociate cu acest orar. De exemplu, puteți folosi acest lucru "
+#~ "în următoarea situație: „Voi fi deschis până la 22:00 pe 22 ianuarie "
+#~ "datorită unui eveniment special pe care îl organizăm”. Această dată va "
+#~ "înlocui setările normale pentru această zi."
+
+#~ msgid "Start Date"
+#~ msgstr "Data de început"
+
+#~ msgid "Did you know that Buttonizer has different group-styles you can use?"
+#~ msgstr ""
+#~ "Știați că Buttonizer are mai multe stiluri de grup pe care le puteți "
+#~ "utiliza?"
+
+#~ msgid "Click on the buttons to manage their settings"
+#~ msgstr "Faceți clic aici pentru a accesa setările butonului"
+
+#~ msgid "Give your buttons a color"
+#~ msgstr "Dați butoanelor o culoare"
+
+#~ msgid ""
+#~ "A button can only have one action, but you can choose out more than 25 "
+#~ "actions!"
+#~ msgstr ""
+#~ "Un buton are o singură acțiune, dar puteți alege dintre mai mult de 25 de "
+#~ "acțiuni!"
+
+#~ msgid "Turn off these tips in settings"
+#~ msgstr "Puteți dezactiva aceste sfaturi în setări"
+
+#~ msgid ""
+#~ "Buttonizer will only show 7 buttons per page as that's the limit of "
+#~ "Material Design"
+#~ msgstr ""
+#~ "Buttonizer va afișa până la 7 butoane pe pagină, deoarece aceasta este "
+#~ "limita de proiectare a materialelor"
+
+#~ msgid ""
+#~ "Paste the HEX-code in the colorpicker if you want to use a specific color"
+#~ msgstr ""
+#~ "Lipiți un cod HEX în selectorul de culori dacă doriți să utilizați o "
+#~ "culoare specifică"
+
+#~ msgid ""
+#~ "Playing smart with 'Show on desktop' and 'Show on mobile' will give you "
+#~ "up to 14 buttons per page!"
+#~ msgstr ""
+#~ "Folosind în mod inteligent „Afișaj pe desktop” și „Afișare pe mobil”, vă "
+#~ "puteți oferi 14 butoane pe pagină!"
+
+#~ msgid "You can use page rules to show or hide buttons on certain pages"
+#~ msgstr ""
+#~ "Puteți utiliza regulile paginii pentru a afișa sau ascunde butoanele din "
+#~ "anumite pagini"
+
+#~ msgid ""
+#~ "You can use the social share button action to let a visitor share your "
+#~ "webpage"
+#~ msgstr ""
+#~ "Puteți utiliza acțiunea butonului „Partajare pe rețelele de socializare” "
+#~ "pentru a permite vizitatorilor să partajeze pagina dvs. web"
+
+#~ msgid "Do you need a tool-tip? ;)"
+#~ msgstr "Aveți nevoie de un sfat pentru instrument? ;)"
+
+#~ msgid "You can style the main big button by editting the group"
+#~ msgstr "Puteți modifica stilul butonului principal prin editarea grupului"
+
+#~ msgid "You can add a class or id HTML-attribute to a group and a button"
+#~ msgstr "Puteți adăuga un atribut HTML de clasă sau id la un grup sau buton"
+
+#~ msgid "Want to make a new similar button? Duplicate your button!"
+#~ msgstr "Vrei un buton similar? Duplică-l!"
+
+#~ msgid "If you have a great tip, let us know! We'll add it :)"
+#~ msgstr "Spune-ne dacă ai un sfat bun! Apoi îl adăugăm :)"
+
+#~ msgid "Pssst, click on the group/button name on top"
+#~ msgstr "Pssst, faceți clic pe numele grupului / butonului din partea de sus"
+
+#~ msgid "Exit Intent... This is where the fun begins!"
+#~ msgstr "Intenție de ieșire ... De aici începe să se distreze cu adevărat!"
+
+#~ msgid "Double click on Buzzer! for a suprise ;)"
+#~ msgstr "Faceți dublu clic pe Buzzer! pentru o surpriză;)"
+
+#~ msgid "Click on me for more tips!"
+#~ msgstr "Faceți clic pentru mai multe sfaturi!"
+
+#~ msgid "Duplicating buttons is disabled for free version"
+#~ msgstr "Butoanele duplicate sunt dezactivate pentru versiunea gratuită"
+
+#~ msgid ""
+#~ "You can select images and set them as icon or as button background image."
+#~ msgstr ""
+#~ "Puteți selecta imagini pe care să le utilizați ca pictogramă de buton și "
+#~ "fundal de buton."
+
+#~ msgid ""
+#~ "With this setting, you can make your button appear/hide after certain "
+#~ "amount of time."
+#~ msgstr ""
+#~ "Cu această setare, puteți afișa sau ascunde Buttonizer după un anumit "
+#~ "timp."
+
+#~ msgid ""
+#~ "With this setting, you can make your button appear/hide after scrolling "
+#~ "for a certain amount."
+#~ msgstr ""
+#~ "Această setare vă permite să afișați sau să ascundeți Buttonizer după o "
+#~ "anumită cantitate de defilare."
+
+#~ msgid "Thanks for using Buttonizer!"
+#~ msgstr "Vă mulțumim pentru utilizarea Buttonizer!"
+
+#~ msgid ""
+#~ "Become a SUPER contributor by automatically sending us crash reports and "
+#~ "error logs. This way we can bugfix your bugs with the speed of light. "
+#~ "Don't worry, all data is anonymized."
+#~ msgstr ""
+#~ "Deveniți contribuitor SUPER trimițându-ne automat rapoarte de avarie și "
+#~ "jurnalele de erori. În acest fel vă putem rezolva erorile cu viteza "
+#~ "luminii! Fără griji, toate datele sunt făcute anonime."
+
+#~ msgid "No thanks"
+#~ msgstr "nu multumesc"
+
+#~ msgid "Yes please!"
+#~ msgstr "Da, te rog!"
+
+#~ msgid "Back to Overview"
+#~ msgstr "înapoi la imagine de ansamblu"
+
+#~ msgid "Are you sure you want to exit? Your changes have not been saved."
+#~ msgstr "Sigur vrei să ieși? Modificările dvs. nu au fost salvate."
+
+#~ msgid "Save and close"
+#~ msgstr "Salveaza si inchide"
+
+#~ msgid "Clear"
+#~ msgstr "clar"
+
+#~ msgid "Font family"
+#~ msgstr "Familie de fonturi"
+
+#~ msgid "Type a custom font"
+#~ msgstr "Tastați un font personalizat"
+
+#~ msgid "Type \",\" to add %1$s"
+#~ msgstr "Tastați \",\" pentru a adăuga% 1 $ s"
+
+#~ msgid "Margin"
+#~ msgstr "margine"
+
+#~ msgid "Change the position of the label."
+#~ msgstr "Schimbați poziția etichetei."
+
+#~ msgid "Padding"
+#~ msgstr "umplutură"
+
+#~ msgid "Change the background size of the label."
+#~ msgstr "Modificați dimensiunea fundalului etichetei."
+
+#~ msgid "Delay"
+#~ msgstr "Întârziere"
+
+#~ msgid "Repeat Count"
+#~ msgstr "Repetați numărul"
+
+#~ msgid "Enter '0' for unlimited"
+#~ msgstr "Introduceți „0” pentru nelimitat"
+
+#~ msgid "from"
+#~ msgstr "din"
+
+#~ msgid "Scaled"
+#~ msgstr "scalate"
+
+#~ msgid "Absolute"
+#~ msgstr "Absolut"
+
+#~ msgid "Left"
+#~ msgstr "Stânga"
+
+#~ msgid "Right"
+#~ msgstr "Dreapta"
+
+#~ msgid "Bottom"
+#~ msgstr "Fund"
+
+#~ msgid "Top"
+#~ msgstr "Top"
+
+#~ msgid "Text only"
+#~ msgstr "Doar text"
+
+#~ msgid "Text w/ icon"
+#~ msgstr "Text w / pictogramă"
+
+#~ msgid "Open Custom Styling Editor"
+#~ msgstr "Deschideți editorul personalizat de styling"
+
+#~ msgid "Custom Styling Editor"
+#~ msgstr "Editor personalizat de styling"
+
+#~ msgid "Jump once"
+#~ msgstr "Sari o dată"
+
+#~ msgid "Flip"
+#~ msgstr "Flip"
+
+#~ msgid "Go to bottom"
+#~ msgstr "Mergeți în jos"
+
+#~ msgid ""
+#~ "This menu style will remove the icon and add the label into the button, "
+#~ "making it one long button."
+#~ msgstr ""
+#~ "Acest stil de meniu va elimina pictograma și va adăuga eticheta în buton, "
+#~ "făcând-o un singur buton lung."
+
+#~ msgid ""
+#~ "This menu style will add the label into the button with an icon, making "
+#~ "it one long button."
+#~ msgstr ""
+#~ "Acest stil de meniu va adăuga eticheta în buton cu o pictogramă, ceea ce "
+#~ "va face un singur buton lung."
+
+#~ msgid ""
+#~ "With this setting, you can change your animation settings like delay and "
+#~ "repeat count."
+#~ msgstr ""
+#~ "Cu această setare, puteți modifica setările de animație ca întârziere și "
+#~ "repetare număr."
+
+#~ msgid ""
+#~ "With this setting, you can change the font family of the label. You "
+#~ "choose a font add your custom font."
+#~ msgstr ""
+#~ "Cu această setare, puteți modifica familia de fonturi a etichetei. "
+#~ "Alegeți un font pentru a adăuga fontul personalizat."
+
+#~ msgid ""
+#~ "With this setting, you can change the margin of the label. Change the "
+#~ "position of the label relative to it's button"
+#~ msgstr ""
+#~ "Cu această setare, puteți modifica marja etichetei. Modificați poziția "
+#~ "etichetei față de butonul acesteia"
+
+#~ msgid "With this setting, you can change the size of the label."
+#~ msgstr "Cu această setare, puteți modifica dimensiunea etichetei."

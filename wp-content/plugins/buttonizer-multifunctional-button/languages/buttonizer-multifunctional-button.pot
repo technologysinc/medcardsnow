@@ -1,0 +1,146 @@
+# Copyright (C) 2022 Buttonizer
+# This file is distributed under the GPLv3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Buttonizer - Smart Floating Action Button 0.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/buttonizer-multifunctional-button\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-02-01T14:04:08+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.6.0\n"
+"X-Domain: buttonizer-multifunctional-button\n"
+
+#. Plugin Name of the plugin
+msgid "Buttonizer - Smart Floating Action Button"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://buttonizer.pro"
+msgstr ""
+
+#. Description of the plugin
+msgid "The Buttonizer is a new way to give a boost to your number of interactions, actions and conversions from your website visitor by adding one or multiple Customizable Smart Floating Button in the corner of your website."
+msgstr ""
+
+#. Author of the plugin
+msgid "Buttonizer"
+msgstr ""
+
+#: app/Admin/Admin.php:46
+msgid "A custom permalink structure is required for Buttonizer to work."
+msgstr ""
+
+#: app/Admin/Admin.php:46
+msgid "Go to permalink structure settings."
+msgstr ""
+
+#: app/Admin/Admin.php:62
+#: app/Admin/Admin.php:79
+#: app/Utils/Maintain.php:154
+msgid "Settings"
+msgstr ""
+
+#: app/Admin/Admin.php:65
+msgid "Community"
+msgstr ""
+
+#: app/Admin/Admin.php:68
+#: app/Admin/Admin.php:77
+#: app/Utils/Maintain.php:163
+msgid "Knowledge base"
+msgstr ""
+
+#: app/Admin/Admin.php:71
+msgid "I need support"
+msgstr ""
+
+#: app/Admin/Admin.php:76
+msgid "Community forums"
+msgstr ""
+
+#: app/Admin/Admin.php:78
+#: app/Utils/Maintain.php:145
+msgid "Manage buttons"
+msgstr ""
+
+#: app/Admin/template.php:56
+msgid "Buttonizer is loading..."
+msgstr ""
+
+#. Translators: First link goes to our knowledge base, the second link goes to the admin panel.
+#: app/Admin/template.php:62
+msgid "When Buttonizer does not start, <a %1$s>click here</a> to find out what is going wrong or <a %2$s>click here</a> to return to the WordPress admin dashboard."
+msgstr ""
+
+#: app/Admin/template.php:71
+msgid "When you have a slow internet connection or slow webserver, give it a moment..."
+msgstr ""
+
+#: app/Admin/template.php:80
+msgid "Buttonizer dashboard does not work on IE11! Please use any other browsers to customize your buttons. :)"
+msgstr ""
+
+#: app/Admin/template.php:88
+msgid "Hi there! JavaScript is disabled in your browser. Please consider to enable JavaScript in your browser to use Buttonizer."
+msgstr ""
+
+#: app/Api/Dashboard/ApiDashboard.php:209
+#: app/Api/Utils/ApiReset.php:57
+#: app/Utils/Update.php:545
+msgid "New group"
+msgstr ""
+
+#: app/Api/Dashboard/ApiDashboard.php:216
+#: app/Api/Utils/ApiReset.php:64
+#: app/Utils/Update.php:552
+msgid "New button"
+msgstr ""
+
+#: app/Frontend/Group/Button/Button.php:86
+msgid "The button is hidden on all devices"
+msgstr ""
+
+#: app/Frontend/Group/Button/Button.php:111
+msgid "The button is hidden because the attached time schedule is <b>triggered</b>."
+msgstr ""
+
+#: app/Frontend/Group/Button/Button.php:112
+msgid "The button is hidden because the attached time schedule is <b>not triggered</b> ."
+msgstr ""
+
+#: app/Frontend/Group/Button/Button.php:136
+msgid "The button is hidden because the attached page rule is <b>triggered</b>."
+msgstr ""
+
+#: app/Frontend/Group/Button/Button.php:137
+msgid "The button is hidden because the attached page rule is <b>not triggered</b> ."
+msgstr ""
+
+#: app/Frontend/Group/Group.php:126
+msgid "The group is hidden on all devices"
+msgstr ""
+
+#: app/Frontend/Group/Group.php:149
+msgid "The group is hidden because the attached time schedule is <b>not triggered</b>."
+msgstr ""
+
+#: app/Frontend/Group/Group.php:150
+msgid "The group is hidden because the attached time schedule is <b>triggered</b> ."
+msgstr ""
+
+#: app/Frontend/Group/Group.php:173
+msgid "The group is hidden because the attached page rule is <b>not triggered</b>."
+msgstr ""
+
+#: app/Frontend/Group/Group.php:174
+msgid "The group is hidden because the attached page rule is <b>triggered</b> ."
+msgstr ""
+
+#: app/Utils/Maintain.php:167
+msgid "Find out everything you need to know about Buttonizer"
+msgstr ""

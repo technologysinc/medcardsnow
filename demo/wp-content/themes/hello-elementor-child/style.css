@@ -1,0 +1,260 @@
+/*
+Theme Name: Hello Elementor Child
+Theme URI: https://elementor.com/hello-theme/?utm_source=wp-themes&utm_campaign=theme-uri&utm_medium=wp-dash
+Template: hello-elementor
+Author: Elementor Team
+Author URI: https://elementor.com/?utm_source=wp-themes&utm_campaign=author-uri&utm_medium=wp-dash
+Description: Hello Elementor is a lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor site builder plugin. The theme is free, open-source, and designed for users who want a flexible, easy-to-use, and customizable website. The theme, which is optimized for performance, provides a solid foundation for users to build their own unique designs using the Elementor drag-and-drop site builder. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.
+Tags: accessibility-ready,flexible-header,custom-colors,custom-menu,custom-logo,featured-images,rtl-language-support,threaded-comments,translation-ready
+Version: 3.5.1.1789571680
+Updated: 2026-09-16 15:14:40
+
+*/
+
+body{
+    background: #fff !important;
+}
+
+
+/**/
+
+
+
+/* ==========================================
+   PHONE BUTTON
+   ========================================== */
+
+.phnumber {
+	position: fixed;
+	top: 155px;
+	right: -32px;
+	z-index: 9999;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 9px 22px 9px 18px;
+	margin-right: 2rem;
+
+	background: #f16470;
+	color: #fff !important;
+
+	border-radius: 50px 0 0 50px;
+
+	box-shadow:
+		0 4px 14px rgba(0, 0, 0, 0.18);
+
+	/* Required for ripple */
+	overflow: visible;
+
+	transition:
+		top 0.35s ease,
+		right 0.35s ease,
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+}
+
+
+/* ==========================================
+   PHONE LINK
+   ========================================== */
+
+.phnumber a {
+	position: relative;
+	z-index: 5;
+
+	display: block;
+
+	color: #fff !important;
+	text-decoration: none !important;
+
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.4;
+
+	white-space: nowrap;
+}
+
+
+/* ==========================================
+   RIPPLE 1
+   ========================================== */
+
+.phnumber::before {
+	content: "";
+
+	position: absolute;
+
+	top: 50%;
+	left: 50%;
+
+	width: 100%;
+	height: 100%;
+
+	border: 2px solid rgba(241, 100, 112, 0.55);
+	border-radius: 50px;
+
+	transform: translate(-50%, -50%) scale(1);
+
+	opacity: 0;
+
+	pointer-events: none;
+
+	z-index: -1;
+
+	animation: phoneRipple 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+
+/* ==========================================
+   RIPPLE 2
+   ========================================== */
+
+.phnumber::after {
+	content: "";
+
+	position: absolute;
+
+	top: 50%;
+	left: 50%;
+
+	width: 100%;
+	height: 100%;
+
+	border: 2px solid rgba(241, 100, 112, 0.4);
+	border-radius: 50px;
+
+	transform: translate(-50%, -50%) scale(1);
+
+	opacity: 0;
+
+	pointer-events: none;
+
+	z-index: -1;
+
+	animation: phoneRipple 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+
+	animation-delay: 1.2s;
+}
+
+
+/* ==========================================
+   RIPPLE ANIMATION
+   ========================================== */
+
+@keyframes phoneRipple {
+
+	0% {
+		transform: translate(-50%, -50%) scale(1);
+		opacity: 0.65;
+	}
+
+	70% {
+		opacity: 0.18;
+	}
+
+	100% {
+		transform: translate(-50%, -50%) scale(1.65);
+		opacity: 0;
+	}
+}
+
+
+/* ==========================================
+   SUBTLE BUTTON PULSE
+   ========================================== */
+
+@keyframes phoneButtonPulse {
+
+	0%,
+	100% {
+		transform: translateY(0) scale(1);
+	}
+
+	50% {
+		transform: translateY(-1px) scale(1.025);
+	}
+}
+
+
+/* ==========================================
+   CONTINUOUS ATTENTION EFFECT
+   ========================================== */
+
+.phnumber {
+	animation: phoneButtonPulse 2.4s ease-in-out infinite;
+}
+
+
+/* ==========================================
+   HOVER
+   ========================================== */
+
+.phnumber:hover {
+/* 	transform: translateY(-2px) scale(1.03);
+
+	box-shadow:
+		0 8px 22px rgba(0, 0, 0, 0.25),
+		0 0 0 4px rgba(241, 100, 112, 0.15);
+
+	animation-play-state: paused; */
+}
+
+
+/* ==========================================
+   STICKY AFTER SCROLL
+   ========================================== */
+
+.phnumber.sticky-phone {
+	/* top: 95px; */
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 767px) {
+
+	.phnumber {
+		top: 120px;
+		right: -25px;
+		margin-right: 1rem;
+
+		padding: 8px 18px 8px 15px;
+	}
+
+	.phnumber a {
+		font-size: 14px;
+	}
+
+	.phnumber.sticky-phone {
+		top: 75px;
+	}
+}
+
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+	.phnumber,
+	.phnumber::before,
+	.phnumber::after {
+		animation: none !important;
+	}
+}
+
+
+
+
+
+/*  */
+
+
+
+
+

@@ -1,0 +1,129 @@
+@use 'theme';
+
+.snippet-execution-button,
+.snippet-activation-switch,
+input[type='checkbox'].switch {
+	display: block;
+	position: relative;
+}
+
+// Activation switch: an accent-coloured 36x19 pill shared by the list-table
+// activate column, snippet cards and settings toggles.
+.snippet-activation-switch,
+input[type='checkbox'].switch {
+	appearance: none;
+	outline: 0;
+	cursor: pointer;
+	margin: 0;
+	inline-size: 36px;
+	block-size: 19px;
+	border-radius: 999px;
+	text-align: start;
+	border: 1px solid var(--cs-color-accent);
+	box-sizing: border-box;
+
+	&::before {
+		transition: all .1s;
+		content: '';
+		block-size: 13px;
+		inline-size: 13px;
+		display: inline-block;
+		background-color: var(--cs-color-accent);
+		border-radius: 50%;
+		margin: 2px;
+
+		@media (prefers-reduced-motion: reduce) {
+			transition-duration: 0.01s;
+		}
+	}
+
+	&:focus {
+		box-shadow: none;
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--cs-color-accent);
+	}
+}
+
+.active-snippet .snippet-activation-switch,
+input[type='checkbox'].switch:checked {
+	background-color: var(--cs-color-accent);
+
+	// Travel distance: pill width minus the knob, its margins and the borders.
+	&::before {
+		background-color: #fff;
+		transform: translateX(calc((100% + 4px) * var(--cs-direction-multiplier)));
+	}
+}
+
+.erroneous-snippet .snippet-activation-switch::before {
+	content: '!';
+	transform: translateX(calc(50% * var(--cs-direction-multiplier)));
+	text-align: center;
+	font-weight: bold;
+	line-height: 1;
+	color: var(--cs-color-text);
+}
+
+a.snippet-condition-count {
+	border-radius: 50%;
+	border: 1.8px solid currentcolor;
+	block-size: 29px;
+	inline-size: 29px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+
+	.inactive-snippet & {
+		color: var(--cs-color-border);
+	}
+
+	.active-snippet & {
+		font-weight: bold;
+		color: var(--cs-color-accent);
+	}
+}
+
+.snippet-execution-button {
+	margin-inline-start: 11px;
+	margin-block-start: 9px;
+	inline-size: 0;
+	block-size: 0;
+	border-block: 9px solid transparent;
+	border-inline-start: 10px solid var(--cs-color-border);
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset-block: -14px;
+		inset-inline: -21px -8px;
+		border-radius: 50%;
+		border: 1.8px solid var(--cs-color-border);
+		z-index: 2;
+	}
+
+	&:hover {
+		border-inline-start-color: var(--cs-color-accent);
+		transition: border-inline-start-color 0.6s;
+
+		&::before {
+			border-color: var(--cs-color-accent);
+			transition: border-color 0.6s;
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			transition-duration: 0.01s;
+
+			&::before {
+				transition-duration: 0.01s;
+			}
+		}
+	}
+}
+
+.code-snippets-card .snippet-execution-button {
+	margin-block-start: 0;
+	margin-inline-end: 9px;
+}

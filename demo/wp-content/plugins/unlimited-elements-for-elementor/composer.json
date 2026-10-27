@@ -1,0 +1,12 @@
+{
+    "name": "unlimited-elements/unlimited-elements-for-elementor",
+    "description": "Unlimited Elements for Elementor",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": ">=7.4",
+        "twig/twig": "3.11.3",
+        "symfony/deprecation-contracts": "^2.5",
+        "tedivm/jshrink": "^1.8"
+    }
+}

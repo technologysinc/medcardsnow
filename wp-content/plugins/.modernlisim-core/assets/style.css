@@ -1,0 +1,394 @@
+body{
+    max-width: 100%;
+}
+
+
+
+.main-page-container{
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+}
+
+.modernlisim-core-header {
+    width: 95.5%;
+    height: 80px;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribute content between the left and right */
+    margin: 0 !important;
+    position: relative;
+    z-index: 10;
+    padding: 0rem 2rem;
+}
+
+.icon {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+
+.left-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.right-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.welcome-container {
+    display: flex;
+    /* flex-direction: column; */
+    text-align: left;
+    align-items: center;
+    gap: 5px;
+}
+
+.modernlisim-welcome {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1d2327;
+}
+
+.user-role {
+    font-size: 12px;
+    color: #727586;
+    font-weight: 400;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+.preview-button {
+    color: #1d2327;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    text-decoration: none;
+    transition: .3s;
+    background: none;
+}
+
+.preview-button:hover {
+    color: #1d2327;
+
+}
+
+
+.visit-button {
+    color: #1d2327;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    text-decoration: none;
+    transition: .3s;
+    background: none;
+    border: 1px solid rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+}
+
+.visit-button:hover {
+    color: #1d2327;
+    border: 1px solid #1d2327;
+}
+
+/* Change the SVG color on hover */
+.visit-button:hover svg path {
+    fill: #1d2327;
+}
+
+
+
+.modernlisim-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-title {
+    padding: 0rem 2rem;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #dad9da;
+    border-radius: 16px;
+    padding: 24px;
+    width: 100%;
+    max-width: 520px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-title img.icon {
+    width: 24px;
+    height: 24px;
+}
+
+.card-label {
+    background-color: var(--primary-light);
+    padding: 4px 8px;
+    border-radius: 12px;
+    color: var(--primary);
+}
+
+.card-body p {
+    margin-top: 20px;
+    color: #727586;
+}
+
+
+.page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333; /* Customize the color as needed */
+}
+
+
+/* Style for the toggle button */
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide the default checkbox */
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.toggle span {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+/* The circle inside the slider */
+.toggle span:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+/* When checked (active state) */
+.toggle input:checked + span {
+    background-color: #4CAF50; /* Green when active */
+}
+
+/* When checked, move the circle */
+.toggle input:checked + span:before {
+    transform: translateX(26px);
+}
+
+/* When the toggle is disabled (inactive) */
+.toggle input:disabled + span {
+    background-color: #ddd; /* Grey when inactive */
+}
+
+.toggle input:disabled + span:before {
+    background-color: #bbb; /* Grey circle */
+}
+
+
+.d-flex.align-items-center.justify-content-between.w-100 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.card-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Table border style */
+/* Apply custom styling for Modernlisim plugin table */
+.modernlisim-plugin-table.wp-list-table {
+    border: 1px solid rgba(100, 100, 100, 0.1); /* Very faded border */
+    border-collapse: collapse;
+}
+
+.modernlisim-plugin-table.wp-list-table th, .modernlisim-plugin-table.wp-list-table td {
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Faded border for cells */
+    padding: 8px;
+    text-align: left;
+}
+
+.modernlisim-plugin-table.wp-list-table th {
+    background-color: #fff;
+}
+
+/* Adjust the width of the columns */
+.modernlisim-plugin-table.wp-list-table th:first-child,
+.modernlisim-plugin-table.wp-list-table td:first-child {
+    width: 85%; /* Plugin column gets 85% width */
+}
+
+.modernlisim-plugin-table.wp-list-table th:last-child,
+.modernlisim-plugin-table.wp-list-table td:last-child {
+    width: 15%; /* Action column gets 15% width */
+}
+
+/* Optional: Adjust button styling */
+.modernlisim-plugin-table.wp-list-table .button {
+    text-align: center;
+}
+
+/* Version colors */
+.current-version {
+    color: rgb(255, 54, 54); /* Current version in red */
+}
+
+.new-version {
+    color: rgb(0, 163, 0); /* New version in green */
+}
+
+
+/* Spinner Styles */
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #0073aa;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    vertical-align: middle;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Badge Styles */
+.badge {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: 0.75em;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 0.25rem;
+}
+.badge-success {
+    background-color: #28a745;
+    color: #fff;
+}
+.badge-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+
+

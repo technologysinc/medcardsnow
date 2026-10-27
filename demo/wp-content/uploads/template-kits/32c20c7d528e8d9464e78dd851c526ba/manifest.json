@@ -1,0 +1,973 @@
+{
+    "manifest_version": "1.0.23",
+    "title": "MediRox - Health & Medical Elementor Template Kit",
+    "page_builder": "elementor",
+    "kit_version": "1.0.0",
+    "templates": [
+        {
+            "name": "Global Kit Styles",
+            "screenshot": "screenshots\/global-kit-styles.jpg",
+            "source": "templates\/global.json",
+            "preview_url": "https:\/\/kits.roxthemes.com\/medirox",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "global-styles",
+                "include_in_zip": "1",
+                "elementor_pro_required": null,
+                "additional_template_information": [
+                    "These are the global theme styles configured through the Elementor Theme Styles area."
+                ]
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "About us",
+            "screenshot": "screenshots\/about-us.jpg",
+            "source": "templates\/about-us.json",
+            "preview_url": "https:\/\/kits.roxthemes.com\/medirox\/template-kit\/about-us\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Home",
+            "screenshot": "screenshots\/home.jpg",
+            "source": "templates\/home.json",
+            "preview_url": "https:\/\/kits.roxthemes.com\/medirox\/template-kit\/home\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Doctors",
+            "screenshot": "screenshots\/doctors.jpg",
+            "source": "templates\/doctors.json",
+            "preview_url": "https:\/\/kits.roxthemes.com\/medirox\/template-kit\/doctors\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Doctor details",
+            "screenshot": "screenshots\/doctor-details.jpg",
+            "source": "templates\/doctor-details.json",
+            "preview_url": "https:\/\/kits.roxthemes.com\/medirox\/template-kit\/doctor-details\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Services",
+            "screenshot": "screenshots\/services.jpg",
+            "source": "templates\/services.json",
+            "preview_url": "https:\/\/kits.roxthemes.com\/medirox\/template-kit\/services\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Service details",
+            "screenshot": "screenshots\/service-details.jpg",
+            "source": "templates\/service-details.json",
+            "preview_url": "https:\/\/kits.roxthemes.com\/medirox\/template-kit\/service-details\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Contact us",
+            "screenshot": "screenshots\/contact-us.jpg",
+            "source": "templates\/contact-us.json",
+            "preview_url": "https:\/\/kits.roxthemes.com\/medirox\/template-kit\/contact-us\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Blog",
+            "screenshot": "screenshots\/blog.jpg",
+            "source": "templates\/blog.json",
+            "preview_url": "https:\/\/kits.roxthemes.com\/medirox\/template-kit\/blog\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "archive-blog",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Single Post",
+            "screenshot": "screenshots\/single-post.jpg",
+            "source": "templates\/single-post.json",
+            "preview_url": "https:\/\/kits.roxthemes.com\/medirox\/template-kit\/single-post\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-post",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Faq",
+            "screenshot": "screenshots\/faq.jpg",
+            "source": "templates\/faq.json",
+            "preview_url": "https:\/\/kits.roxthemes.com\/medirox\/template-kit\/faq\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "404 Error",
+            "screenshot": "screenshots\/404-error.jpg",
+            "source": "templates\/404-error.json",
+            "preview_url": "https:\/\/kits.roxthemes.com\/medirox\/template-kit\/404-error\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-404",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Header",
+            "screenshot": "screenshots\/header.jpg",
+            "source": "templates\/header.json",
+            "preview_url": "https:\/\/kits.roxthemes.com\/medirox\/template-kit\/header\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Footer",
+            "screenshot": "screenshots\/footer.jpg",
+            "source": "templates\/footer.json",
+            "preview_url": "https:\/\/kits.roxthemes.com\/medirox\/template-kit\/footer\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Metform - Contact",
+            "screenshot": "screenshots\/metform-contact.jpg",
+            "source": "templates\/metform-contact.json",
+            "preview_url": "https:\/\/kits.roxthemes.com\/medirox\/template-kit\/metform-contact\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-contact",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Metform - Appointment",
+            "screenshot": "screenshots\/metform-appointment.jpg",
+            "source": "templates\/metform-appointment.json",
+            "preview_url": "https:\/\/kits.roxthemes.com\/medirox\/template-kit\/metform-appointment\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-other",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Metform - Newsletter",
+            "screenshot": "screenshots\/metform-newsletter.jpg",
+            "source": "templates\/metform-newsletter.json",
+            "preview_url": "https:\/\/kits.roxthemes.com\/medirox\/template-kit\/metform-newsletter\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-other",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        }
+    ],
+    "required_plugins": [
+        {
+            "name": "Elementor",
+            "version": "3.25.10",
+            "file": "elementor\/elementor.php",
+            "author": "Elementor.com"
+        },
+        {
+            "name": "ElementsKit Lite",
+            "version": "3.3.2",
+            "file": "elementskit-lite\/elementskit-lite.php",
+            "author": "Wpmet"
+        },
+        {
+            "name": "MetForm",
+            "version": "3.9.1",
+            "file": "metform\/metform.php",
+            "author": "Wpmet"
+        },
+        {
+            "name": "Skyboot Custom Icons for Elementor - Elementor Icons library",
+            "version": "1.0.8",
+            "file": "skyboot-custom-icons-for-elementor\/skyboot-custom-icons-for-elementor.php",
+            "author": "Skybootstrap"
+        }
+    ],
+    "images": [
+        {
+            "filename": "medical.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/medical.webp",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/doctors.json",
+                    "name": "Doctors"
+                },
+                {
+                    "source": "templates\/doctor-details.json",
+                    "name": "Doctor details"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/service-details.json",
+                    "name": "Service details"
+                },
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact us"
+                },
+                {
+                    "source": "templates\/blog.json",
+                    "name": "Blog"
+                },
+                {
+                    "source": "templates\/single-post.json",
+                    "name": "Single Post"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "Faq"
+                },
+                {
+                    "source": "templates\/404-error.json",
+                    "name": "404 Error"
+                },
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                }
+            ],
+            "filesize": 51952,
+            "dimensions": [
+                1200,
+                676
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/beuatiful-african-woman-cutting-bandage-for-patien-GYL96AC"
+        },
+        {
+            "filename": "20150125_6030-min.png",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/20150125_6030-min.png",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/doctors.json",
+                    "name": "Doctors"
+                },
+                {
+                    "source": "templates\/doctor-details.json",
+                    "name": "Doctor details"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/service-details.json",
+                    "name": "Service details"
+                },
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact us"
+                },
+                {
+                    "source": "templates\/blog.json",
+                    "name": "Blog"
+                },
+                {
+                    "source": "templates\/single-post.json",
+                    "name": "Single Post"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "Faq"
+                }
+            ],
+            "filesize": 74564,
+            "dimensions": [
+                400,
+                525
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/female-doctor-ZA5L53V"
+        },
+        {
+            "filename": "icon.png",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/icon.png",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/doctors.json",
+                    "name": "Doctors"
+                },
+                {
+                    "source": "templates\/doctor-details.json",
+                    "name": "Doctor details"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/service-details.json",
+                    "name": "Service details"
+                },
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact us"
+                },
+                {
+                    "source": "templates\/blog.json",
+                    "name": "Blog"
+                },
+                {
+                    "source": "templates\/single-post.json",
+                    "name": "Single Post"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "Faq"
+                }
+            ],
+            "filesize": 603,
+            "dimensions": [
+                32,
+                33
+            ],
+            "image_source": "self_created",
+            "image_urls": "#"
+        },
+        {
+            "filename": "mammography-test-hospital-medical-equipment_189498-2760-transformed-1185x800-1.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/mammography-test-hospital-medical-equipment_189498-2760-transformed-1185x800-1.webp",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 29558,
+            "dimensions": [
+                1185,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/medicine-and-health-care-BB28FRW"
+        },
+        {
+            "filename": "Staff-2.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/Staff-2.webp",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 106832,
+            "dimensions": [
+                2000,
+                1234
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/doctors-nurses-and-team-portrait-in-hospital-clini-MEUPM42"
+        },
+        {
+            "filename": "Doctors-4.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/Doctors-4.webp",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/doctors.json",
+                    "name": "Doctors"
+                },
+                {
+                    "source": "templates\/doctor-details.json",
+                    "name": "Doctor details"
+                },
+                {
+                    "source": "templates\/service-details.json",
+                    "name": "Service details"
+                }
+            ],
+            "filesize": 14684,
+            "dimensions": [
+                400,
+                500
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/afro-american-female-doctor-in-uniform-posing-indo-WKF6LRP"
+        },
+        {
+            "filename": "Doctors-3.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/Doctors-3.webp",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/doctors.json",
+                    "name": "Doctors"
+                }
+            ],
+            "filesize": 11360,
+            "dimensions": [
+                400,
+                500
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/confident-old-medical-professional-doctor-standing-PAQVPFS"
+        },
+        {
+            "filename": "Doctors-1.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/Doctors-1.webp",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/doctors.json",
+                    "name": "Doctors"
+                }
+            ],
+            "filesize": 11186,
+            "dimensions": [
+                400,
+                500
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/smiling-beautiful-doctor-at-hospital-standing-UJ4RNCB"
+        },
+        {
+            "filename": "blog-3.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/blog-3.webp",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 21022,
+            "dimensions": [
+                900,
+                550
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/male-doctor-using-tablet-computer-and-talking-with-GC56PRD"
+        },
+        {
+            "filename": "doctor-patent.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/doctor-patent.webp",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/service-details.json",
+                    "name": "Service details"
+                }
+            ],
+            "filesize": 48080,
+            "dimensions": [
+                1085,
+                775
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/doctor-and-patient-smiling-and-hugging-showing-thu-JRABKB9"
+        },
+        {
+            "filename": "avatar-3.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/avatar-3.webp",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/service-details.json",
+                    "name": "Service details"
+                }
+            ],
+            "filesize": 10808,
+            "dimensions": [
+                291,
+                266
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/her-smile-is-knocking-down-DJEFF8P"
+        },
+        {
+            "filename": "avatar-2.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/avatar-2.webp",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/service-details.json",
+                    "name": "Service details"
+                }
+            ],
+            "filesize": 5648,
+            "dimensions": [
+                270,
+                269
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/people-lifestyle-happiness-and-positive-human-expr-C6FDPAQ"
+        },
+        {
+            "filename": "20150129_8620-min.png",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/20150129_8620-min.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 78016,
+            "dimensions": [
+                400,
+                630
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/young-doctor-6R84MEL"
+        },
+        {
+            "filename": "avatar-1.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/avatar-1.webp",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 7980,
+            "dimensions": [
+                235,
+                229
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/a-middle-aged-man-in-a-park-YZAQZ3V"
+        },
+        {
+            "filename": "Testimonials-3.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/Testimonials-3.webp",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 1402,
+            "dimensions": [
+                100,
+                100
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collaged-shot-of-a-diverse-group-of-people-standin-VE6CFUU"
+        },
+        {
+            "filename": "Testimonials-1.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/Testimonials-1.webp",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 956,
+            "dimensions": [
+                100,
+                100
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collaged-shot-of-a-diverse-group-of-people-standin-VE6CFUU"
+        },
+        {
+            "filename": "20150131_0639-Photoroom-min.png",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/20150131_0639-Photoroom-min.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                }
+            ],
+            "filesize": 214134,
+            "dimensions": [
+                600,
+                995
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/doctor-woman-SYLJGNR"
+        },
+        {
+            "filename": "appointment-2.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/appointment-2.webp",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 54102,
+            "dimensions": [
+                1170,
+                500
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/mature-doctor-and-his-young-colleague-talking-with-D3BNJVB"
+        },
+        {
+            "filename": "doctor-min.png",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/doctor-min.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 79888,
+            "dimensions": [
+                400,
+                630
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/doctor-66MRTKW"
+        },
+        {
+            "filename": "doctor-appointment.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/doctor-appointment.webp",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 18634,
+            "dimensions": [
+                900,
+                601
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/portrait-of-senior-doctor-in-white-coat-at-workpla-YJTSKZD"
+        },
+        {
+            "filename": "appointment-1.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/appointment-1.webp",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 82928,
+            "dimensions": [
+                2560,
+                1707
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/portrait-of-young-woman-doctor-at-hospital-corrido-7EFJTUC"
+        },
+        {
+            "filename": "Doctors-6.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/Doctors-6.webp",
+            "templates": [
+                {
+                    "source": "templates\/doctors.json",
+                    "name": "Doctors"
+                }
+            ],
+            "filesize": 15708,
+            "dimensions": [
+                400,
+                500
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/young-doctor-6R84MEL"
+        },
+        {
+            "filename": "Doctors-2.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/Doctors-2.webp",
+            "templates": [
+                {
+                    "source": "templates\/doctors.json",
+                    "name": "Doctors"
+                }
+            ],
+            "filesize": 10516,
+            "dimensions": [
+                400,
+                500
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/doctor-F5UZ3FL"
+        },
+        {
+            "filename": "Doctors-5.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/Doctors-5.webp",
+            "templates": [
+                {
+                    "source": "templates\/doctors.json",
+                    "name": "Doctors"
+                }
+            ],
+            "filesize": 10620,
+            "dimensions": [
+                400,
+                500
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/i-trying-be-the-best-doctor-UNHK2BD"
+        },
+        {
+            "filename": "blog-2.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/blog-2.webp",
+            "templates": [
+                {
+                    "source": "templates\/single-post.json",
+                    "name": "Single Post"
+                }
+            ],
+            "filesize": 45132,
+            "dimensions": [
+                900,
+                550
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/medical-group-of-doctors-biochemists-having-online-DRCBJ2D"
+        },
+        {
+            "filename": "blog-1.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/blog-1.webp",
+            "templates": [
+                {
+                    "source": "templates\/single-post.json",
+                    "name": "Single Post"
+                }
+            ],
+            "filesize": 43578,
+            "dimensions": [
+                900,
+                550
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/physician-discussing-feet-x-ray-with-patient-RD7ZKQS"
+        },
+        {
+            "filename": "blog-5.webp",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/blog-5.webp",
+            "templates": [
+                {
+                    "source": "templates\/single-post.json",
+                    "name": "Single Post"
+                }
+            ],
+            "filesize": 27700,
+            "dimensions": [
+                900,
+                550
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/doctor-smiling-to-the-camera-L82MM5H"
+        },
+        {
+            "filename": "Logo-min.png",
+            "thumbnail_url": "https:\/\/kits.roxthemes.com\/medirox\/wp-content\/uploads\/2024\/11\/Logo-min.png",
+            "templates": [
+                {
+                    "source": "templates\/header.json",
+                    "name": "Header"
+                },
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                }
+            ],
+            "filesize": 7374,
+            "dimensions": [
+                750,
+                133
+            ],
+            "image_source": "self_created",
+            "image_urls": "#"
+        }
+    ]
+}

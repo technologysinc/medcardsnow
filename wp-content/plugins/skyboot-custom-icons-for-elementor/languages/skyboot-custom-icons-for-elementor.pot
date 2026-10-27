@@ -1,0 +1,733 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Skyboot - Custom Icons for Elementor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-10 15:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.4.0; wp-5.4.2"
+
+#. 1: Software name, 2: Version number
+#: includes/class-base.php:112 includes/class-base.php:167
+#, php-format
+msgid "\"%1$s\" requires version %2$s or greater."
+msgstr ""
+
+#: settings-api/settings-fields.php:778
+msgid "5-star review"
+msgstr ""
+
+#. 1: icon count, 2: pack count
+#: settings-api/settings-fields.php:205
+#, php-format
+msgid ""
+"A library of <strong>%1$s icons</strong> from %2$s packs, ready to drop into "
+"Elementor. Enable a set in <strong>Manage Icons</strong> to get started."
+msgstr ""
+
+#: includes/class-base.php:140
+msgid "Activate Elementor Now"
+msgstr ""
+
+#: settings-api/settings-fields.php:240
+msgid "Active installs"
+msgstr ""
+
+#: settings-api/settings-fields.php:235
+msgid "Active sets"
+msgstr ""
+
+#: settings-api/settings-fields.php:610
+msgid "Administrators only"
+msgstr ""
+
+#: includes/class-pro.php:65
+msgid "Advanced gradient styling and dynamic-tag support inside Elementor."
+msgstr ""
+
+#: settings-api/settings-fields.php:454
+msgid "All sets"
+msgstr ""
+
+#: includes/class-admin.php:459
+msgid "Already Rated!"
+msgstr ""
+
+#: settings-api/settings-fields.php:745
+msgid "Auto-update"
+msgstr ""
+
+#: includes/class-admin.php:647 includes/class-admin.php:814
+#: settings-api/settings-fields.php:339
+msgid ""
+"Be the first to know when Skyboot Icon Pro launches. Get practical WordPress "
+"tips, exclusive launch discounts, and updates delivered straight to your "
+"inbox."
+msgstr ""
+
+#: settings-api/settings-fields.php:372
+msgid "Browse all"
+msgstr ""
+
+#: settings-api/settings-fields.php:561
+msgid "browse files"
+msgstr ""
+
+#: settings-api/settings-fields.php:763
+msgid "CHANGELOG"
+msgstr ""
+
+#: settings-api/settings-fields.php:757
+msgid "Check again"
+msgstr ""
+
+#: settings-api/class.settings-api.php:388
+msgid "Choose File"
+msgstr ""
+
+#: includes/class-admin.php:623
+msgid "Choose your icon sets"
+msgstr ""
+
+#: settings-api/settings-fields.php:394
+msgid ""
+"Create stunning, filterable Elementor galleries in seconds. Install now to "
+"showcase your work!"
+msgstr ""
+
+#: includes/class-admin.php:613
+msgid "Custom Icons"
+msgstr ""
+
+#: settings-api/settings-fields.php:129
+msgid "Custom Icons for Elementor"
+msgstr ""
+
+#: includes/class-pro.php:64
+msgid "Custom SVG Icon Packs"
+msgstr ""
+
+#: includes/class-admin.php:557
+msgid "Custom SVG upload, performance & animations."
+msgstr ""
+
+#: settings-api/settings-fields.php:447
+msgid "Disable All"
+msgstr ""
+
+#: settings-api/settings-fields.php:458
+msgid "Disabled"
+msgstr ""
+
+#: includes/class-admin.php:287
+msgid "Dismiss this notice."
+msgstr ""
+
+#: includes/class-admin.php:584
+msgid "Docs"
+msgstr ""
+
+#: settings-api/settings-fields.php:286
+msgid "Documentation"
+msgstr ""
+
+#: settings-api/settings-fields.php:559
+msgid "Drag & drop your SVG files here"
+msgstr ""
+
+#: settings-api/settings-fields.php:264
+msgid "Edit any page and select an icon control."
+msgstr ""
+
+#: includes/class-base.php:168
+msgid "Elementor"
+msgstr ""
+
+#: settings-api/settings-fields.php:443
+msgid "Enable All"
+msgstr ""
+
+#: settings-api/settings-fields.php:252
+msgid "Enable icon sets"
+msgstr ""
+
+#: settings-api/settings-fields.php:580
+msgid "Enable in Elementor"
+msgstr ""
+
+#. 1: active count, 2: total count
+#: settings-api/settings-fields.php:427
+#, php-format
+msgid ""
+"Enable or disable icon sets to use in Elementor. <strong>%1$s</strong> of "
+"<strong>%2$s</strong> active."
+msgstr ""
+
+#. %s: active count
+#: settings-api/settings-fields.php:643
+#, php-format
+msgid ""
+"Enable the Elementor features you need and configure each one. <strong>"
+"%s</strong> of 6 active."
+msgstr ""
+
+#: settings-api/settings-fields.php:456
+msgid "Enabled"
+msgstr ""
+
+#: includes/class-admin.php:444
+msgid "Enjoying Skyboot Custom Icons?"
+msgstr ""
+
+#: settings-api/settings-fields.php:776
+msgid "Enjoying Skyboot Custom Icons? 🙏 Please consider leaving us a"
+msgstr ""
+
+#: includes/class-admin.php:139
+msgid ""
+"Everything in Free, plus Custom SVG Icon Packs (.zip upload), advanced "
+"gradients, and dynamic tags for Elementor."
+msgstr ""
+
+#: includes/class-pro.php:66
+msgid "Fast, dedicated help from the Skybootstrap team."
+msgstr ""
+
+#: settings-api/settings-fields.php:452
+msgid "Filter icon sets"
+msgstr ""
+
+#: includes/class-admin.php:515
+msgid "Fixed IcoFont Duotone CSS rendering conflicts"
+msgstr ""
+
+#: settings-api/settings-fields.php:379 settings-api/settings-fields.php:391
+msgid "FREE"
+msgstr ""
+
+#: settings-api/settings-fields.php:74 settings-api/settings-fields.php:141
+msgid "General"
+msgstr ""
+
+#: includes/class-pro.php:63
+msgid "Get additional icon libraries beyond the Free version."
+msgstr ""
+
+#: includes/class-admin.php:300
+msgid ""
+"Get ready for more icon packs, unlimited SVG upload, Gradient, duotone & "
+"dynamic icons. Join the waitlist now!"
+msgstr ""
+
+#: includes/class-pro.php:65
+msgid "Gradient & dynamic tags"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://skybootstrap.com"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://skybootstrap.com/custom-icons-for-elementor"
+msgstr ""
+
+#: includes/class-admin.php:660 includes/class-admin.php:827
+#: settings-api/settings-fields.php:350
+msgid "I agree to receive emails."
+msgstr ""
+
+#: settings-api/settings-fields.php:223
+msgid "Icon packs"
+msgstr ""
+
+#: settings-api/settings-fields.php:569
+msgid "Icon set name"
+msgstr ""
+
+#: includes/class-admin.php:529
+msgid "Icon sets enabled"
+msgstr ""
+
+#: settings-api/settings-fields.php:486
+msgid "icons"
+msgstr ""
+
+#: includes/class-admin.php:534
+msgid "Icons available"
+msgstr ""
+
+#: includes/class-admin.php:774
+msgid "Icons Pro"
+msgstr ""
+
+#: settings-api/settings-fields.php:579
+msgid "Inherit color"
+msgstr ""
+
+#: settings-api/settings-fields.php:271
+msgid "Insert your icon"
+msgstr ""
+
+#: includes/class-base.php:149
+msgid "Install Elementor Now"
+msgstr ""
+
+#: settings-api/settings-fields.php:396
+msgid "Install Now"
+msgstr ""
+
+#: includes/class-admin.php:628 includes/class-admin.php:795
+#: settings-api/settings-fields.php:319
+msgid "Join the Waitlist"
+msgstr ""
+
+#: includes/class-admin.php:140 includes/class-admin.php:200
+#: includes/class-admin.php:201 includes/class-admin.php:306
+#: includes/class-admin.php:574 includes/class-admin.php:830
+#: settings-api/settings-fields.php:314 settings-api/settings-fields.php:353
+#: settings-api/settings-fields.php:406
+msgid "Join Waitlist"
+msgstr ""
+
+#: includes/class-admin.php:559
+msgid "Join Waitlist →"
+msgstr ""
+
+#: settings-api/settings-fields.php:385
+msgid "Learn more"
+msgstr ""
+
+#: settings-api/settings-fields.php:300
+msgid "Leave a review"
+msgstr ""
+
+#: settings-api/settings-fields.php:579
+msgid "Let Elementor control the icon color."
+msgstr ""
+
+#: settings-api/settings-fields.php:422
+msgid "Manage Icon Sets"
+msgstr ""
+
+#: includes/class-admin.php:539
+msgid "Manage icon sets"
+msgstr ""
+
+#: settings-api/settings-fields.php:75 settings-api/settings-fields.php:146
+#: settings-api/settings-fields.php:214
+msgid "Manage Icons"
+msgstr ""
+
+#: settings-api/settings-fields.php:599
+msgid "Maximum file size"
+msgstr ""
+
+#: includes/class-admin.php:141
+msgid "Maybe later"
+msgstr ""
+
+#: settings-api/settings-fields.php:578
+msgid "Minify and clean markup automatically."
+msgstr ""
+
+#: settings-api/settings-fields.php:157 settings-api/settings-fields.php:633
+msgid "Modules"
+msgstr ""
+
+#: settings-api/settings-fields.php:367
+msgid "More from Skybootstrap"
+msgstr ""
+
+#: includes/class-pro.php:63
+msgid "More icon packs"
+msgstr ""
+
+#: settings-api/settings-fields.php:132
+msgid "Need Help?"
+msgstr ""
+
+#: includes/class-admin.php:542
+msgid "News & Updates"
+msgstr ""
+
+#: settings-api/settings-fields.php:514
+msgid "No icon sets match your search."
+msgstr ""
+
+#: includes/class-admin.php:467
+msgid "No Thanks"
+msgstr ""
+
+#: settings-api/settings-fields.php:780
+msgid "on WordPress.org to help us grow!"
+msgstr ""
+
+#: settings-api/settings-fields.php:262
+msgid "Open Elementor"
+msgstr ""
+
+#: settings-api/settings-fields.php:578
+msgid "Optimize SVG"
+msgstr ""
+
+#: settings-api/settings-fields.php:560
+msgid "or"
+msgstr ""
+
+#: includes/class-admin.php:684
+msgid "Permission denied."
+msgstr ""
+
+#: includes/class-base.php:113
+msgid "PHP"
+msgstr ""
+
+#: settings-api/settings-fields.php:274
+msgid "Pick any Skyboot icon — color & size are fully editable."
+msgstr ""
+
+#: settings-api/settings-fields.php:137
+msgid "Plugin settings tabs"
+msgstr ""
+
+#: settings-api/settings-fields.php:368
+msgid "Plugins & tools we build to power your website & business growth."
+msgstr ""
+
+#: settings-api/settings-fields.php:393
+msgid "Portfolio Gallery"
+msgstr ""
+
+#: includes/class-admin.php:519
+msgid "Prevented CSS double-loading for variations"
+msgstr ""
+
+#: settings-api/settings-fields.php:490
+msgid "Preview"
+msgstr ""
+
+#: includes/class-pro.php:66
+msgid "Priority support"
+msgstr ""
+
+#: settings-api/settings-fields.php:551 settings-api/settings-fields.php:655
+msgid "PRO feature — Coming Soon"
+msgstr ""
+
+#: settings-api/settings-fields.php:246
+msgid "Quick start"
+msgstr ""
+
+#: includes/class-admin.php:586
+msgid "Rate 5 Stars"
+msgstr ""
+
+#: settings-api/settings-fields.php:687
+msgid "Recommended"
+msgstr ""
+
+#: includes/class-admin.php:463
+msgid "Remind Me Later"
+msgstr ""
+
+#: settings-api/settings-fields.php:281
+msgid "Resources"
+msgstr ""
+
+#. %s: version number
+#: settings-api/settings-fields.php:736
+#, php-format
+msgid "Running <strong>v%s</strong> — the latest version."
+msgstr ""
+
+#: settings-api/settings-fields.php:577
+msgid "Sanitize on upload"
+msgstr ""
+
+#: settings-api/settings-fields.php:519 settings-api/settings-fields.php:619
+msgid "Save Changes"
+msgstr ""
+
+#: settings-api/settings-fields.php:439
+msgid "Search icon sets"
+msgstr ""
+
+#: settings-api/settings-fields.php:438
+msgid "Search icon sets…"
+msgstr ""
+
+#: includes/class-admin.php:687
+msgid "Security check failed."
+msgstr ""
+
+#: includes/class-admin.php:571 settings-api/settings-fields.php:63
+#: settings-api/settings-fields.php:64 settings-api/settings-fields.php:703
+msgid "Settings"
+msgstr ""
+
+#: settings-api/settings-fields.php:188
+msgid "Settings saved successfully."
+msgstr ""
+
+#: settings-api/settings-fields.php:580
+msgid "Show this set in the icon picker."
+msgstr ""
+
+#: settings-api/settings-fields.php:573
+msgid "Shown in the Elementor icon picker."
+msgstr ""
+
+#: includes/class-admin.php:665
+msgid "Skip"
+msgstr ""
+
+#: includes/class-base.php:139
+msgid ""
+"Skyboot - Custom Icons for Elementor is not working because you need to "
+"activate the Elementor plugin."
+msgstr ""
+
+#: includes/class-base.php:148
+msgid ""
+"Skyboot - Custom Icons for Elementor is not working because you need to "
+"install the Elementor plugin."
+msgstr ""
+
+#: includes/class-admin.php:499
+msgid "Skyboot Custom Icons"
+msgstr ""
+
+#: settings-api/settings-fields.php:121
+msgid "Skyboot Custom Icons for Elementor"
+msgstr ""
+
+#. Name of the plugin
+msgid "Skyboot Custom Icons for Elementor - Elementor Icons library"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Skyboot custom icons for Elementor is a fantastic custom Elementor icons "
+"plugin for the Elementor page builder. Increase Elementor icons library "
+"using the plugin. it's a perfect Elementor custom icons plugin for website "
+"owners."
+msgstr ""
+
+#: settings-api/settings-fields.php:54 settings-api/settings-fields.php:55
+msgid "Skyboot Icons"
+msgstr ""
+
+#: settings-api/settings-fields.php:404
+msgid "Skyboot Icons Pro"
+msgstr ""
+
+#: includes/class-admin.php:138 includes/class-admin.php:556
+#: settings-api/settings-fields.php:311
+msgid "Skyboot Pro Coming Soon"
+msgstr ""
+
+#: includes/class-admin.php:298
+msgid "Skyboot Pro is Coming Soon!"
+msgstr ""
+
+#: classes/icons/class-brands-icon.php:975
+msgid "Skyboot:: Brands Icons"
+msgstr ""
+
+#: classes/icons/class-devicons-icon.php:231
+msgid "Skyboot:: Devicons Icons"
+msgstr ""
+
+#: classes/icons/class-elegant-icon.php:401
+msgid "Skyboot:: Elegant Icon"
+msgstr ""
+
+#: classes/icons/class-elusive-icon.php:343
+msgid "Skyboot:: Elusive Icons"
+msgstr ""
+
+#: classes/icons/class-icofont-icon.php:2468
+msgid "Skyboot:: Icofont"
+msgstr ""
+
+#: classes/icons/class-icofont-icon.php:2481
+msgid "Skyboot:: Icofont - Duotone"
+msgstr ""
+
+#: classes/icons/class-icomoon-icon.php:531
+msgid "Skyboot:: Icomoon Icons"
+msgstr ""
+
+#: classes/icons/class-iconic-icon.php:212
+msgid "Skyboot:: Iconic Icons"
+msgstr ""
+
+#: classes/icons/class-ion-icon.php:737
+msgid "Skyboot:: Ionicons"
+msgstr ""
+
+#: classes/icons/class-lineawesome-icon.php:2046
+msgid "Skyboot:: Line Awesome"
+msgstr ""
+
+#: classes/icons/class-line-icon.php:552
+msgid "Skyboot:: Line Icon"
+msgstr ""
+
+#: classes/icons/class-linearicons-icon.php:210
+msgid "Skyboot:: Linearicons Icon"
+msgstr ""
+
+#: classes/icons/class-open-iconic-icon.php:265
+msgid "Skyboot:: Open Iconic Icon"
+msgstr ""
+
+#: classes/icons/class-simpleline-icon.php:230
+msgid "Skyboot:: Simple Line Icon"
+msgstr ""
+
+#: classes/icons/class-themify-icon.php:391
+msgid "Skyboot:: Themify Icon"
+msgstr ""
+
+#. Author of the plugin
+msgid "Skybootstrap"
+msgstr ""
+
+#: settings-api/settings-fields.php:577
+msgid "Strip scripts & unsafe tags for security."
+msgstr ""
+
+#: includes/class-admin.php:663
+msgid "Subscribe"
+msgstr ""
+
+#: includes/class-admin.php:585
+msgid "Support"
+msgstr ""
+
+#: settings-api/settings-fields.php:295
+msgid "Support forum"
+msgstr ""
+
+#: settings-api/settings-fields.php:562
+msgid "SVG up to 1 MB each"
+msgstr ""
+
+#: settings-api/settings-fields.php:151 settings-api/settings-fields.php:536
+msgid "SVG Upload"
+msgstr ""
+
+#: settings-api/settings-fields.php:312
+msgid "SVG upload, 1,000+ premium icons & priority support."
+msgstr ""
+
+#: settings-api/settings-fields.php:405
+msgid "SVG upload, performance & premium icon packs."
+msgstr ""
+
+#: includes/class-admin.php:447
+msgid ""
+"Thank you for choosing Skyboot Custom Icons for Elementor! If our plugin has "
+"been useful and made you smile, please consider giving us a 5-star rating on "
+"WordPress.org. It would mean a lot to us."
+msgstr ""
+
+#: includes/class-admin.php:632 includes/class-admin.php:799
+#: settings-api/settings-fields.php:323
+msgid "Thanks — you're on the list!"
+msgstr ""
+
+#: settings-api/settings-fields.php:247
+msgid "Three steps to using Skyboot icons in Elementor."
+msgstr ""
+
+#: settings-api/settings-fields.php:381
+msgid "TLinky"
+msgstr ""
+
+#: settings-api/settings-fields.php:255
+msgid "Toggle the packs you want in the Manage Icons tab."
+msgstr ""
+
+#: settings-api/settings-fields.php:229
+msgid "Total icons"
+msgstr ""
+
+#: settings-api/settings-fields.php:76 settings-api/settings-fields.php:163
+msgid "Update Info"
+msgstr ""
+
+#: includes/class-pro.php:64
+msgid "Upload .zip packs securely without cluttering your Media Library."
+msgstr ""
+
+#: settings-api/settings-fields.php:566
+msgid "Upload settings"
+msgstr ""
+
+#: settings-api/settings-fields.php:542
+msgid "Upload SVG icons and use them in Elementor like any other set."
+msgstr ""
+
+#: settings-api/settings-fields.php:382
+msgid "URL shortener, QR codes & link-in-bio builder."
+msgstr ""
+
+#: includes/class-admin.php:511
+msgid "v1.2.0 released — Redesigned plugin settings UI"
+msgstr ""
+
+#: settings-api/settings-fields.php:290
+msgid "Video tutorials"
+msgstr ""
+
+#: settings-api/settings-fields.php:765
+msgid "View all changes"
+msgstr ""
+
+#: includes/class-admin.php:191
+msgid "Welcome"
+msgstr ""
+
+#: includes/class-admin.php:618
+msgid "Welcome aboard!"
+msgstr ""
+
+#: settings-api/settings-fields.php:200
+msgid "Welcome to Skyboot"
+msgstr ""
+
+#: includes/class-admin.php:190 includes/class-admin.php:602
+msgid "Welcome to Skyboot Icons"
+msgstr ""
+
+#: settings-api/settings-fields.php:607
+msgid "Who can upload"
+msgstr ""
+
+#: includes/class-admin.php:455
+msgid "Yes, You Deserve It!"
+msgstr ""
+
+#: includes/class-admin.php:619
+msgid ""
+"You now have 14,300+ icons ready for Elementor. Let's get you set up in two "
+"quick steps."
+msgstr ""
+
+#: settings-api/settings-fields.php:731
+msgid "You're up to date"
+msgstr ""
+
+#: settings-api/settings-fields.php:523
+msgid "Your changes have been saved."
+msgstr ""

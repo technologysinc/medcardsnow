@@ -1,0 +1,19 @@
+{
+    "name": "wordpress/plugin",
+    "description": "A comprehensive WordPress plugin that enhances your website functionality with advanced features and tools.",
+    "type": "project",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "WordPress Plugin Team",
+            "email": "plugins@wordpress.org"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload":{
+        "psr-4":{
+            "PLUGIN\\": "app"
+        }
+    }
+}

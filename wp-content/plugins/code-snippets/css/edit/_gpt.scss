@@ -1,0 +1,90 @@
+.cloud-create-modal {
+	.components-modal__content {
+		min-inline-size: 550px;
+	}
+
+	.banner {
+		margin-inline: 0;
+	}
+}
+
+.generate-button {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+
+	.dashicons-warning {
+		color: var(--cs-color-error);
+	}
+
+	.snippet-tags-container &,
+	.snippet-description-container & {
+		float: inline-end;
+	}
+}
+
+.snippet-tags-container {
+	label {
+		font-size: 1.16em;
+		font-weight: 600;
+		text-transform: unset;
+	}
+}
+
+.code-line-explanation {
+	display: flex;
+	cursor: default;
+	font-size: inherit;
+	margin: 0;
+	padding-inline: 6px;
+	border-inline-start: none;
+	border-inline-end: none;
+	border-block-start: 1px solid rgb(0 0 0 / 15%);
+	border-block-end: 1px solid rgb(0 0 0 / 15%);
+	border-image-slice: 1;
+	border-image-width: 1;
+	border-image-repeat: stretch;
+	color: #666;
+	font-style: italic;
+	font-family: monospace;
+	gap: 5px;
+	align-items: center;
+
+	img {
+		block-size: 1rem;
+		opacity: 0.7;
+	}
+
+	.code-line-actions {
+		cursor: default;
+		gap: 7px;
+		display: inline-flex;
+		margin-inline-start: 5px;
+		font-family: system-ui;
+		font-style: normal;
+
+		.commit {
+			color: #3d9970;
+		}
+
+		.remove {
+			color: var(--cs-color-error);
+		}
+
+		.action {
+			cursor: pointer;
+			opacity: 0.6;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+// The tags field sits in the lower form area, not the sidebar. Its help text
+// takes the component's own grey, 4.05:1 on this surface, from an injected
+// single-class rule; two classes outrank it and the muted token clears 4.5:1.
+.snippet-tags-container .components-form-token-field__help {
+	color: var(--cs-color-text-muted);
+}

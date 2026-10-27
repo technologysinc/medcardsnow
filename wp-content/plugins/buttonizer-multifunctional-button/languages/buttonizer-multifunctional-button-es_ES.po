@@ -1,0 +1,2353 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Buttonizer\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/buttonizer-"
+"multifunctional-button\n"
+"POT-Creation-Date: 2022-02-01T14:04:08+00:00\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. Plugin Name of the plugin
+msgid "Buttonizer - Smart Floating Action Button"
+msgstr "Buttonizer: botón de acción flotante inteligente"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://buttonizer.pro"
+msgstr "https://buttonizer.pro"
+
+#. Description of the plugin
+msgid ""
+"The Buttonizer is a new way to give a boost to your number of interactions, "
+"actions and conversions from your website visitor by adding one or multiple "
+"Customizable Smart Floating Button in the corner of your website."
+msgstr ""
+"Buttonizer es una nueva forma de aumentar sus interacciones, acciones y "
+"conversiones en su sitio web al agregar uno o más botones inteligentes en "
+"las esquinas de su sitio web."
+
+#. Author of the plugin
+msgid "Buttonizer"
+msgstr "Buttonizer"
+
+#: app/Admin/Admin.php:46
+msgid "A custom permalink structure is required for Buttonizer to work."
+msgstr ""
+"Se requiere una estructura de enlace permanente personalizada para que "
+"Buttonizer funcione."
+
+#: app/Admin/Admin.php:46
+msgid "Go to permalink structure settings."
+msgstr "Vaya a la configuración de la estructura de enlaces permanentes."
+
+#: app/Admin/Admin.php:62 app/Admin/Admin.php:79 app/Utils/Maintain.php:154
+msgid "Settings"
+msgstr "Configuraciones"
+
+#: app/Admin/Admin.php:65
+msgid "Community"
+msgstr "Comunidad"
+
+#: app/Admin/Admin.php:68 app/Admin/Admin.php:77 app/Utils/Maintain.php:163
+msgid "Knowledge base"
+msgstr "Base de conocimientos"
+
+#: app/Admin/Admin.php:71
+msgid "I need support"
+msgstr "Necesito ayuda"
+
+#: app/Admin/Admin.php:76
+msgid "Community forums"
+msgstr "Foros de la comunidad"
+
+#: app/Admin/Admin.php:78 app/Utils/Maintain.php:145
+msgid "Manage buttons"
+msgstr "Administrar botones"
+
+#: app/Admin/template.php:56
+msgid "Buttonizer is loading..."
+msgstr "Buttonizer se está cargando ..."
+
+#. Translators: First link goes to our knowledge base, the second link goes to the admin panel.
+#: app/Admin/template.php:62
+msgid ""
+"When Buttonizer does not start, <a %1$s>click here</a> to find out what is "
+"going wrong or <a %2$s>click here</a> to return to the WordPress admin "
+"dashboard."
+msgstr ""
+"Si Buttonizer no se inicia, <a %1$s> haga clic aquí </a> para ver qué sale "
+"mal o <a %2$s> haga clic aquí </a> para volver al panel de administración."
+
+#: app/Admin/template.php:71
+msgid ""
+"When you have a slow internet connection or slow webserver, give it a "
+"moment..."
+msgstr ""
+"Si tiene una conexión a Internet o un servidor web lentos, espere un "
+"momento ..."
+
+#: app/Admin/template.php:80
+msgid ""
+"Buttonizer dashboard does not work on IE11! Please use any other browsers to "
+"customize your buttons. :)"
+msgstr ""
+"¡El panel del botoner no funciona en IE11! Utilice cualquier otro navegador "
+"para personalizar sus botones. :)"
+
+#: app/Admin/template.php:88
+msgid ""
+"Hi there! JavaScript is disabled in your browser. Please consider to enable "
+"JavaScript in your browser to use Buttonizer."
+msgstr ""
+"¡Hola! Javascript está deshabilitado en su navegador. Considere habilitar "
+"javascript para usar Buttonizer."
+
+#: app/Api/Dashboard/ApiDashboard.php:209 app/Api/Utils/ApiReset.php:57
+#: app/Utils/Update.php:545
+msgid "New group"
+msgstr "Nuevo grupo"
+
+#: app/Api/Dashboard/ApiDashboard.php:216 app/Api/Utils/ApiReset.php:64
+#: app/Utils/Update.php:552
+msgid "New button"
+msgstr "Nuevo botón"
+
+#: app/Frontend/Group/Button/Button.php:86
+msgid "The button is hidden on all devices"
+msgstr "El botón está oculto en todos los dispositivos"
+
+#: app/Frontend/Group/Button/Button.php:111
+msgid ""
+"The button is hidden because the attached time schedule is <b>triggered</b>."
+msgstr ""
+"El botón está oculto porque el horario vinculado está <b> activado </b>."
+
+#: app/Frontend/Group/Button/Button.php:112
+msgid ""
+"The button is hidden because the attached time schedule is <b>not triggered</"
+"b> ."
+msgstr ""
+"El botón está oculto porque la programación vinculada <b> no está activada </"
+"b>."
+
+#: app/Frontend/Group/Button/Button.php:136
+msgid ""
+"The button is hidden because the attached page rule is <b>triggered</b>."
+msgstr ""
+"El botón está oculto porque la línea de la página vinculada está <b> "
+"activada </b>."
+
+#: app/Frontend/Group/Button/Button.php:137
+msgid ""
+"The button is hidden because the attached page rule is <b>not triggered</b> ."
+msgstr ""
+"El botón está oculto porque la línea de página vinculada <b> no está "
+"activada </b>."
+
+#: app/Frontend/Group/Group.php:126
+msgid "The group is hidden on all devices"
+msgstr "El grupo está oculto en todos los dispositivos"
+
+#: app/Frontend/Group/Group.php:149
+msgid ""
+"The group is hidden because the attached time schedule is <b>not triggered</"
+"b>."
+msgstr ""
+"El grupo está oculto porque la programación vinculada <b> no está activada </"
+"b>."
+
+#: app/Frontend/Group/Group.php:150
+msgid ""
+"The group is hidden because the attached time schedule is <b>triggered</b> ."
+msgstr ""
+"El grupo está oculto porque el horario vinculado está <b> activado </b>."
+
+#: app/Frontend/Group/Group.php:173
+msgid ""
+"The group is hidden because the attached page rule is <b>not triggered</b>."
+msgstr ""
+"El grupo está oculto porque la línea de página vinculada <b> no está "
+"activada </b>."
+
+#: app/Frontend/Group/Group.php:174
+msgid ""
+"The group is hidden because the attached page rule is <b>triggered</b> ."
+msgstr ""
+"El grupo está oculto porque la línea de la página vinculada está <b> "
+"activada </b>."
+
+#: app/Utils/Maintain.php:167
+msgid "Find out everything you need to know about Buttonizer"
+msgstr "Descubra todo lo que necesita saber sobre Buttonizer"
+
+#~ msgid "Oh, that was not what we were expecting! Something went wrong."
+#~ msgstr "¡Oh, eso no era lo que esperaba! Algo salió mal."
+
+#~ msgid "Custom javascript error"
+#~ msgstr "Mensaje de error de Javascript personalizado"
+
+#~ msgid "Your custom javascript ran into an error. Read the error below:"
+#~ msgstr ""
+#~ "Su javascript personalizado causó un error. Lea el mensaje de error a "
+#~ "continuación:"
+
+#~ msgid "Could not save settings"
+#~ msgstr "No se pudo guardar la configuración"
+
+#~ msgid "Something went wrong while saving your settings:"
+#~ msgstr "Se produjo un error al guardar la configuración:"
+
+#~ msgid "Only numbers allowed."
+#~ msgstr "Solo números permitidos."
+
+#~ msgid "For this input, only positive numbers are allowed."
+#~ msgstr "Solo se permiten números positivos para esta configuración."
+
+#~ msgid "Invalid email address."
+#~ msgstr "Dirección de correo electrónico no válida"
+
+#~ msgid ""
+#~ "Invalid phone number. Please only use number for your phone number. Omit "
+#~ "any zeros, brackets or dashes when adding the phone number in "
+#~ "international format."
+#~ msgstr ""
+#~ "Numero de telefono invalido. Use solo el formato de número. Omita ceros, "
+#~ "corchetes o guiones cuando utilice el formato internacional."
+
+#~ msgid "This field only allows numbers."
+#~ msgstr "Este campo solo permite números."
+
+#~ msgid "Button"
+#~ msgstr "Botón"
+
+#~ msgid "Group"
+#~ msgstr "Grupo"
+
+#~ msgid "Confirm"
+#~ msgstr "Confirmar"
+
+#~ msgid "Search"
+#~ msgstr "Buscar"
+
+#~ msgid "Skip"
+#~ msgstr "Saltear"
+
+#~ msgid "Disable"
+#~ msgstr "Desactivar"
+
+#~ msgid "Disabled"
+#~ msgstr "Desactivado"
+
+#~ msgid "Save"
+#~ msgstr "Salvar"
+
+#~ msgid "Saving"
+#~ msgstr "Salvar"
+
+#~ msgid "Saving settings"
+#~ msgstr "Ahorro"
+
+#~ msgid "Publish"
+#~ msgstr "Publicar"
+
+#~ msgid "Published"
+#~ msgstr "Publicado"
+
+#~ msgid "Publishing..."
+#~ msgstr "A publicar..."
+
+#~ msgid "Warning"
+#~ msgstr "Advertencia"
+
+#~ msgid "Next"
+#~ msgstr "El proximo"
+
+#~ msgid "Previous"
+#~ msgstr "Anterior"
+
+#~ msgid "Save & publish"
+#~ msgstr "Guardar y publicar"
+
+#~ msgid "Loading..."
+#~ msgstr "Carga..."
+
+#~ msgid "Loading settings..."
+#~ msgstr "Cargar configuración ..."
+
+#~ msgid "Building bar..."
+#~ msgstr "Barra de carga ..."
+
+#~ msgid "Waiting for your website..."
+#~ msgstr "Estamos esperando tu sitio web ..."
+
+#~ msgid "It's taking longer than usual, slow website?"
+#~ msgstr "¿Tarda más de lo habitual, sitio web lento?"
+
+#~ msgid "Skip this step"
+#~ msgstr "Salta este paso"
+
+#~ msgid "Initializing..."
+#~ msgstr "Inicializar ..."
+
+#~ msgid "Resetting..."
+#~ msgstr "Reiniciar ..."
+
+#~ msgid "Running migration..."
+#~ msgstr "Realización de la migración ..."
+
+#~ msgid "Finishing..."
+#~ msgstr "Completar..."
+
+#~ msgid "Add button"
+#~ msgstr "Botón Agregar"
+
+#~ msgid "Add group"
+#~ msgstr "Añadir grupo"
+
+#~ msgid "Text"
+#~ msgstr "Texto"
+
+#~ msgid "Base"
+#~ msgstr "Base"
+
+#~ msgid "Icon"
+#~ msgstr "Icono"
+
+#~ msgid "Search icon"
+#~ msgstr "Icono de búsqueda"
+
+#~ msgid "Image"
+#~ msgstr "Imagen"
+
+#~ msgid "Select image"
+#~ msgstr "Seleccionar imagen"
+
+#~ msgid "Change image"
+#~ msgstr "Cambiar imagen"
+
+#~ msgid "Click to remove this image"
+#~ msgstr "Haga clic para eliminar la imagen."
+
+#~ msgid "First button"
+#~ msgstr "Primer botón"
+
+#~ msgid "Second button"
+#~ msgstr "Segundo botón"
+
+#~ msgid "Rename"
+#~ msgstr "Rebautizar"
+
+#~ msgid "Delete"
+#~ msgstr "Eliminar"
+
+#~ msgid "Duplicate"
+#~ msgstr "Duplicar"
+
+#~ msgid "page rule"
+#~ msgstr "línea de página"
+
+#~ msgid "time schedule"
+#~ msgstr "calendario"
+
+#~ msgid "Interaction"
+#~ msgstr "Interacción"
+
+#~ msgid "Background"
+#~ msgstr "Antecedentes"
+
+#~ msgid "Need help? Quick-start, tips & tricks"
+#~ msgstr "¿Necesitas ayuda? Inicio rápido, consejos y trucos"
+
+#~ msgid "Need help? Visit our knowledge base!"
+#~ msgstr "¿Necesitas ayuda? ¡Visite nuestro banco de conocimiento!"
+
+#~ msgid "Nothing found for:"
+#~ msgstr "No se ha encontrado nada para:"
+
+#~ msgid "Search icons"
+#~ msgstr "Buscar íconos"
+
+#~ msgid "Need help? Learn how to use <b>%1$s</b>."
+#~ msgstr ""
+#~ "¿Necesitas ayuda? Obtenga más información sobre cómo usar la acción del "
+#~ "botón <b>% 1 $ s </b>."
+
+#~ msgid "OK"
+#~ msgstr "Bueno"
+
+#~ msgid "OK, I'll fix this"
+#~ msgstr "Ok, arreglaré esto"
+
+#~ msgid "Close"
+#~ msgstr "Cerca"
+
+#~ msgid "Cancel"
+#~ msgstr "Cancelar"
+
+#~ msgid "Yes please"
+#~ msgstr "sí por favor"
+
+#~ msgid "No thank you"
+#~ msgstr "no, gracias"
+
+#~ msgid "Dismiss"
+#~ msgstr "Ignorar"
+
+#~ msgid "I've changed my mind"
+#~ msgstr "he cambiado de opinion"
+
+#~ msgid "Event tracker"
+#~ msgstr "Rastreador de eventos"
+
+#~ msgid "Revert changes"
+#~ msgstr "Deshacer cambios"
+
+#~ msgid "Reverting..."
+#~ msgstr "Deshacer..."
+
+#~ msgid "Are you sure you want to revert your changes?"
+#~ msgstr "¿Estás seguro de que deseas deshacer tus cambios?"
+
+#~ msgid ""
+#~ "The current changes will be overwritten by the current published buttons "
+#~ "and settings."
+#~ msgstr ""
+#~ "Sus cambios serán sobrescritos por los botones y configuraciones "
+#~ "publicados actualmente."
+
+#~ msgid "Could not revert settings"
+#~ msgstr "No se pudo deshacer la configuración"
+
+#~ msgid "Something went wrong while reverting your settings."
+#~ msgstr "Se produjo un error al deshacer la configuración."
+
+#~ msgid "Menu style"
+#~ msgstr "Estilo de menú"
+
+#~ msgid "Group style"
+#~ msgstr "Estilo de grupo"
+
+#~ msgid "Group icon"
+#~ msgstr "Icono de grupo"
+
+#~ msgid "Button style"
+#~ msgstr "Estilo de botón"
+
+#~ msgid "Button icon"
+#~ msgstr "Icono de botón"
+
+#~ msgid "Label"
+#~ msgstr "Etiqueta"
+
+#~ msgid "Button name"
+#~ msgstr "Nombre del botón"
+
+#~ msgid "This is the button name."
+#~ msgstr "Este es el nombre del botón."
+
+#~ msgid "Button color"
+#~ msgstr "Color del boton"
+
+#~ msgid ""
+#~ "This is the color of your button group and also the default color for "
+#~ "your buttons within this group."
+#~ msgstr ""
+#~ "Este es el color del grupo de botones y también el color predeterminado "
+#~ "de los botones del grupo."
+
+#~ msgid "Background image"
+#~ msgstr "Imagen de fondo"
+
+#~ msgid ""
+#~ "Upload an image if you want an image as a background instead of a color. "
+#~ "Recommended aspect ratio: square (1:1)."
+#~ msgstr ""
+#~ "Cargue una imagen si desea una foto como fondo en lugar de un color. El "
+#~ "formato recomendado es: cuadrado (1: 1)."
+
+#~ msgid "Border radius"
+#~ msgstr "Radio de borde"
+
+#~ msgid "Change the roundness of this button group."
+#~ msgstr "Cambia la ronda de este botón."
+
+#~ msgid "Choose an icon from the icon library."
+#~ msgstr "Elija un icono de la biblioteca de iconos."
+
+#~ msgid "Icon color"
+#~ msgstr "Color del icono"
+
+#~ msgid "Change the icon color of this button."
+#~ msgstr "Cambia el color del icono de este botón."
+
+#~ msgid "Change the border radius of the image."
+#~ msgstr "Cambia la esquina de la imagen."
+
+#~ msgid ""
+#~ "Choose an image to use as this button or group icon. Recommended aspect "
+#~ "ratio: square (1:1)"
+#~ msgstr ""
+#~ "Elija una imagen para usar como botón o icono de grupo. El formato "
+#~ "recomendado es: cuadrado (1: 1)"
+
+#~ msgid "Image size"
+#~ msgstr "Tamaño de la imagen"
+
+#~ msgid "Change the size of the image."
+#~ msgstr "Cambiar el tamaño de la imagen."
+
+#~ msgid "Graphic"
+#~ msgstr "Gráfico"
+
+#~ msgid "Choose whether to use an icon or image as the button icon."
+#~ msgstr "Elija si desea usar un ícono o una imagen como ícono de botón."
+
+#~ msgid "Icon size"
+#~ msgstr "Tamaño de ícono"
+
+#~ msgid "Change the icon size of this button."
+#~ msgstr "Cambia el tamaño del icono de este botón."
+
+#~ msgid "Change the label of this button."
+#~ msgstr "Cambia la etiqueta de este botón."
+
+#~ msgid "Label text"
+#~ msgstr "Texto de la etiqueta"
+
+#~ msgid "Label color"
+#~ msgstr "Color de la etiqueta"
+
+#~ msgid ""
+#~ "Change the text and background color of the label for this button or "
+#~ "group."
+#~ msgstr ""
+#~ "Cambie el texto y el color de fondo de la etiqueta de este botón o grupo "
+#~ "de botones."
+
+#~ msgid "Font size & border radius"
+#~ msgstr "Tamaño de fuente y radio del borde"
+
+#~ msgid ""
+#~ "Change the font size and border radius of the label for this button group."
+#~ msgstr ""
+#~ "Cambie el tamaño de fuente y el ángulo de borde de la etiqueta para este "
+#~ "botón o grupo de botones."
+
+#~ msgid "Animation"
+#~ msgstr "Animación"
+
+#~ msgid ""
+#~ "This will animate this button group to get the attention of the visitor. "
+#~ "The animation repeats itself every 10 seconds."
+#~ msgstr ""
+#~ "Esta opción animará el grupo de botones para captar la atención del "
+#~ "visitante. La animación se repite cada 10 segundos."
+
+#~ msgid "No animation"
+#~ msgstr "Sin animación"
+
+#~ msgid "Buttonizer Hello"
+#~ msgstr "Buttonizer Hola"
+
+#~ msgid "Bounce"
+#~ msgstr "Saltar"
+
+#~ msgid "Jelly"
+#~ msgstr "Pudín"
+
+#~ msgid "Pulse"
+#~ msgstr "Legumbres"
+
+#~ msgid "Position"
+#~ msgstr "Posición"
+
+#~ msgid "Change the position of this button group."
+#~ msgstr "Cambiar la posición del grupo de botones."
+
+#~ msgid "Custom"
+#~ msgstr "Equilibrado"
+
+#~ msgid "Menu Style"
+#~ msgstr "Estilo de menú"
+
+#~ msgid "Change the menu style of this button group."
+#~ msgstr "Cambie el estilo del menú de este grupo de botones."
+
+#~ msgid "Default"
+#~ msgstr "Estándar"
+
+#~ msgid "Faded"
+#~ msgstr "Descolorido"
+
+#~ msgid "Corner circle"
+#~ msgstr "Círculo de la esquina"
+
+#~ msgid "Build Up"
+#~ msgstr "Construir"
+
+#~ msgid "Pop"
+#~ msgstr "Popular"
+
+#~ msgid "Square"
+#~ msgstr "Cuadrado"
+
+#~ msgid "Rectangle"
+#~ msgstr "Rectángulo"
+
+#~ msgid "Visibility"
+#~ msgstr "Visibilidad"
+
+#~ msgid ""
+#~ "Always show the label, show the label on hover or hide the label on "
+#~ "<u>desktop devices</u>."
+#~ msgstr ""
+#~ "Muestre siempre la etiqueta, solo se muestre cuando pase el mouse sobre "
+#~ "ella u oculte la etiqueta en el <u> escritorio </u>."
+
+#~ msgid "Always show or hide the label on <u>mobile devices</u>."
+#~ msgstr ""
+#~ "Muestre siempre la etiqueta u oculte la etiqueta en <u> dispositivos "
+#~ "móviles </u>."
+
+#~ msgid "Always show label"
+#~ msgstr "Mostrar siempre la etiqueta"
+
+#~ msgid "Show label on hover"
+#~ msgstr "Mostrar etiqueta solo con el mouse"
+
+#~ msgid "Hide label"
+#~ msgstr "Ocultar etiqueta"
+
+#~ msgid "Show on"
+#~ msgstr "Ver en"
+
+#~ msgid "Device visibility"
+#~ msgstr "Visibilidad del dispositivo"
+
+#~ msgid ""
+#~ "Choose if you want to make this button group visible on desktop and "
+#~ "mobile devices."
+#~ msgstr ""
+#~ "Elija si desea que este grupo de botones sea visible en equipos de "
+#~ "escritorio y dispositivos móviles."
+
+#~ msgid "Mobile"
+#~ msgstr "Móvil"
+
+#~ msgid "Desktop"
+#~ msgstr "Escritorio"
+
+#~ msgid "Start opened"
+#~ msgstr "Comienza abierto"
+
+#~ msgid "This button group starts opened when this setting is enabled."
+#~ msgstr ""
+#~ "El grupo de botones comienza a abrirse cuando se activa esta "
+#~ "configuración."
+
+#~ msgid ""
+#~ "When enabled, this button will use the same style as the button group."
+#~ msgstr "Cuando esté habilitado, usará el estilo del grupo."
+
+#~ msgid "Custom ID"
+#~ msgstr "ID personalizada"
+
+#~ msgid "Adds a custom 'id' HTML attribute to the button."
+#~ msgstr "Agrega un atributo HTML 'id' personalizado al botón."
+
+#~ msgid "You can add a custom ID to each button for styling purposes."
+#~ msgstr ""
+#~ "Puede agregar una identificación personalizada a cada botón para un "
+#~ "estilo adicional."
+
+#~ msgid "ID name"
+#~ msgstr "Nombre de identificación"
+
+#~ msgid "Custom class"
+#~ msgstr "Clase personalizada"
+
+#~ msgid "Adds a custom 'class' HTML attribute to the button."
+#~ msgstr "Agrega un atributo HTML personalizado de 'clase' al botón."
+
+#~ msgid "You can add a custom class to each button for styling purposes."
+#~ msgstr ""
+#~ "Puede agregar una clase personalizada a cada botón para obtener un estilo "
+#~ "adicional."
+
+#~ msgid "Class name"
+#~ msgstr "Nombre de la clase"
+
+#~ msgid "Page rule"
+#~ msgstr "Regla de la página"
+
+#~ msgid "Manage page rules"
+#~ msgstr "Administrar reglas de página"
+
+#~ msgid "You cannot select the same page rule as it's group!"
+#~ msgstr "¡No puede elegir la misma línea de página que el grupo!"
+
+#~ msgid "Show button when rule is triggered"
+#~ msgstr "Mostrar botón cuando se activa la línea"
+
+#~ msgid "Hide button when rule is triggered"
+#~ msgstr "Ocultar botón cuando se activa la regla"
+
+#~ msgid "Exit intent"
+#~ msgstr "Intento de salida"
+
+#~ msgid "Enable exit intent"
+#~ msgstr "Habilitar intento de salida"
+
+#~ msgid ""
+#~ "With this setting, you can trigger Buttonizer to animate before your "
+#~ "guest exits your website."
+#~ msgstr ""
+#~ "Con esta configuración, puede hacer que Buttonizer se anime cuando el "
+#~ "invitado quiera abandonar su sitio web."
+
+#~ msgid ""
+#~ "Please note: Exit intent will <b>not trigger</b> in preview mode, only in "
+#~ "your LIVE website."
+#~ msgstr ""
+#~ "Nota: La intención de salida no se <b> activará </b> en el modo de vista "
+#~ "previa, solo se verá en su sitio web EN VIVO."
+
+#~ msgid "When to trigger?"
+#~ msgstr "¿Cuándo activar?"
+
+#~ msgid "Trigger when leaving browser window"
+#~ msgstr "Se dispara cuando se sale del navegador"
+
+#~ msgid "Trigger on inactivity (2 minutes)"
+#~ msgstr "Disparador de inactividad (2 minutos)"
+
+#~ msgid "How often should it be triggered?"
+#~ msgstr "¿Con qué frecuencia se debe activar?"
+
+#~ msgid "Only trigger once per page"
+#~ msgstr "Una vez por página"
+
+#~ msgid "Only trigger once per session"
+#~ msgstr "Una vez por visita"
+
+#~ msgid "Trigger every time"
+#~ msgstr "Desencadenar siempre"
+
+#~ msgid "Animation on intent"
+#~ msgstr "Animación por intención."
+
+#~ msgid "Focused"
+#~ msgstr "Enfocado"
+
+#~ msgid "Open menu"
+#~ msgstr "Menú abierto"
+
+#~ msgid "Jump once and open"
+#~ msgstr "Saltar y abrir"
+
+#~ msgid "Flip and open"
+#~ msgstr "Voltear y abrir"
+
+#~ msgid "Button action"
+#~ msgstr "Acción del botón"
+
+#~ msgid "Choose a click action for this button."
+#~ msgstr "Elija una acción de clic para este botón."
+
+#~ msgid "Select button action"
+#~ msgstr "Seleccionar acción del botón"
+
+#~ msgid "No button action found for:"
+#~ msgstr "No se ha encontrado ninguna acción de botón para:"
+
+#~ msgid "Popular actions"
+#~ msgstr "Promociones populares"
+
+#~ msgid "Click to chat"
+#~ msgstr "Haz clic para chatear"
+
+#~ msgid "Social Media"
+#~ msgstr "Redes sociales"
+
+#~ msgid "Popup"
+#~ msgstr "Surgir"
+
+#~ msgid "Call action (phone number)"
+#~ msgstr "Acción de llamada (número de teléfono)"
+
+#~ msgid "Mail action (email address)"
+#~ msgstr "Promoción por correo electrónico (dirección de correo electrónico)"
+
+#~ msgid "Back to top"
+#~ msgstr "De vuelta arriba"
+
+#~ msgid "Go back one page"
+#~ msgstr "Pagina anterior"
+
+#~ msgid "Share page"
+#~ msgstr "Compartir pagina"
+
+#~ msgid ""
+#~ "Some sms apps does not support a body tag. When this happens, it will "
+#~ "simply open the sms app with the phone number already filled in."
+#~ msgstr ""
+#~ "Algunas aplicaciones de SMS no ofrecen la opción de enviar un mensaje. "
+#~ "Cuando esto sucede, la aplicación solo usará el número de teléfono."
+
+#~ msgid ""
+#~ "Viber does not support a \"chat with phone number \" link. When a user "
+#~ "clicks on this button it will open their \"add contact\" with the number "
+#~ "filled in."
+#~ msgstr ""
+#~ "Viber no admite enlaces para chatear. Cuando un usuario presiona este "
+#~ "botón, su \"agregar contacto\" se abrirá con este número de teléfono "
+#~ "preestablecido."
+
+#~ msgid ""
+#~ "New, Facebook Messenger Chat Widget! First, you'll need to <a "
+#~ "%1$s>whitelist</a> your site on Facebook. Then add your <a %2$s>Page ID</"
+#~ "a> into the input above."
+#~ msgstr ""
+#~ "Nuevo, Facebook Messenger Chat Widget! Primero, debe permitir su sitio "
+#~ "web <a %1$s> </a> a través de Facebook. Después de eso, debe completar el "
+#~ "<a %2$s> ID de página </a> anterior."
+
+#~ msgid ""
+#~ "You need to install Poptin's WordPress plugin. You can find it <a "
+#~ "%1$s>here</a>. Once you've made a Poptin paste the <a %2$s>direct link</"
+#~ "a> into the input."
+#~ msgstr ""
+#~ "Si desea utilizar esto, debe instalar el complemento WordPress de Poptin. "
+#~ "Puede encontrar esto <a %1$s> aquí </a>. Luego ingrese el <a %2$s> enlace "
+#~ "directo </a> arriba."
+
+#~ msgid "Share on %s"
+#~ msgstr "Compartir en% s"
+
+#~ msgid "Share via %s"
+#~ msgstr "Compartir a través de% s"
+
+#~ msgid "This URL appears to be invalid. The button may not work as expected."
+#~ msgstr ""
+#~ "Esto parece un enlace no válido. El botón puede no funcionar como se "
+#~ "esperaba."
+
+#~ msgid ""
+#~ "Do you miss <b>http://</b> or <b>https://</b>? Perhaps an unnecessary "
+#~ "space is added somewhere."
+#~ msgstr ""
+#~ "¿Echas de menos <b> http: // </b> o <b> https: // </b>? Es posible que "
+#~ "haya agregado un espacio innecesario en alguna parte."
+
+#~ msgid ""
+#~ "<b>Insecure URL:</b> Sorry to interrupt, but we advice you to use HTTPS "
+#~ "for your URLS. This is a safer way to transport data."
+#~ msgstr ""
+#~ "<b> Enlace inseguro: </b> Disculpe la interrupción, pero le recomendamos "
+#~ "que use HTTPS para sus enlaces siempre que sea posible. Esta es una forma "
+#~ "más segura de transportar datos."
+
+#~ msgid "Javascript function"
+#~ msgstr "Función Javascript"
+
+#~ msgid "Warning! Before you continue..."
+#~ msgstr "¡Advertencia! Antes de continuar ..."
+
+#~ msgid ""
+#~ "You are changing this button action from custom javascript to a different "
+#~ "action. Your javascript changes will be lost."
+#~ msgstr ""
+#~ "Cambia la acción del botón de JavaScript personalizado a otra acción. Sus "
+#~ "cambios de javascript se perderán."
+
+#~ msgid "Are you sure you want to proceed?"
+#~ msgstr "Estás seguro de que quieres continuar?"
+
+#~ msgid ""
+#~ "Fill in your phone number without any spaces and symbols. Read WhatsApps "
+#~ "recommendations by <a %s>clicking here.</a>"
+#~ msgstr ""
+#~ "Ingrese su número de teléfono sin espacios ni símbolos. Lea las "
+#~ "recomendaciones de WhatsApp haciendo clic <a %s> aquí. </a>"
+
+#~ msgid ""
+#~ "When you want to use Twitter DM you will need to find your Twitter User "
+#~ "ID and allow direct messages from anyone. To find your account ID <a "
+#~ "%1$s>click here</a>. And to read more about how to allow direct messages "
+#~ "from anyone, <a %2$s>click here</a>."
+#~ msgstr ""
+#~ "Para usar Twitter DM, primero debe encontrar su ID de usuario de Twitter "
+#~ "y permitir mensajes directos de cualquier persona. Para encontrar su ID "
+#~ "de cuenta <a %1$s> haga clic aquí </a>. Para encontrar más información "
+#~ "sobre cómo permitir mensajes directos de cualquier persona, <a %2$s> haga "
+#~ "clic aquí </a>."
+
+#~ msgid "Message"
+#~ msgstr "Mensaje"
+
+#~ msgid "Username"
+#~ msgstr "Nombre de usuario"
+
+#~ msgid "Recipient"
+#~ msgstr "Receptor"
+
+#~ msgid "Subject"
+#~ msgstr "Tema"
+
+#~ msgid "Body"
+#~ msgstr "Contenido"
+
+#~ msgid "Open new tab"
+#~ msgstr "Abrir en una pestaña nueva"
+
+#~ msgid "When the button is clicked, open in new tab."
+#~ msgstr "Cuando se hace clic en el botón, ábralo en una pestaña nueva."
+
+#~ msgid "Filters"
+#~ msgstr "Filtros"
+
+#~ msgid "Styling"
+#~ msgstr "Estilo"
+
+#~ msgid "Timeout & Scroll"
+#~ msgstr "Tiempo de espera y desplazamiento"
+
+#~ msgid "Buttonizer settings"
+#~ msgstr "Configuraciones de botones"
+
+#~ msgid "Icon library"
+#~ msgstr "Conjunto de iconos"
+
+#~ msgid "free"
+#~ msgstr "gratis"
+
+#~ msgid "Latest (automatic)"
+#~ msgstr "Último (automático)"
+
+#~ msgid ""
+#~ "If your theme automatically loads in a library, just select the correct "
+#~ "icon library instead."
+#~ msgstr ""
+#~ "Cuando su tema carga íconos automáticamente, debe elegir la biblioteca de "
+#~ "íconos correcta."
+
+#~ msgid "Select version"
+#~ msgstr "Seleccionar versión"
+
+#~ msgid ""
+#~ "Select the correct version of the library in order to use the icons in "
+#~ "Buttonizer."
+#~ msgstr ""
+#~ "Seleccione la versión correcta de los iconos que usa en su sitio web para "
+#~ "que pueda seleccionarlos en Buttonizer."
+
+#~ msgid ""
+#~ "You have selected an icon library that has premium icons. Enter the "
+#~ "library license code to view and use these."
+#~ msgstr ""
+#~ "Ha elegido una biblioteca de iconos que contiene iconos premium. Ingrese "
+#~ "el icono de licencia para verlo."
+
+#~ msgid "How does this work?"
+#~ msgstr "¿Como funciona esto?"
+
+#~ msgid "Enter %s code"
+#~ msgstr "Ingrese el código% s"
+
+#~ msgid "Import icon library"
+#~ msgstr "Cargar íconos"
+
+#~ msgid ""
+#~ "Should Buttonizer import the icon library into your theme? If your theme "
+#~ "already imports the library you can disable this."
+#~ msgstr ""
+#~ "¿Buttonizer debería importar los íconos a su tema? Si su tema ya carga "
+#~ "íconos, puede deshabilitar esta opción."
+
+#~ msgid "Where can I see my click data of my buttons in Google Analytics?"
+#~ msgstr ""
+#~ "¿Dónde puedo encontrar mis datos de clics de mis botones en Google "
+#~ "Analytics?"
+
+#~ msgid "Other settings"
+#~ msgstr "Otros ajustes"
+
+#~ msgid "Show admin top bar"
+#~ msgstr "Mostrar en la barra superior del administrador"
+
+#~ msgid "Hide Buttonizer in the admin top bar by disabling this setting."
+#~ msgstr ""
+#~ "Ocultar Buttonizer en la barra superior del administrador deshabilitando "
+#~ "esta configuración."
+
+#~ msgid "Show tooltips"
+#~ msgstr "Mostrar información sobre herramientas"
+
+#~ msgid "Hide the tooltips by disabling this setting."
+#~ msgstr ""
+#~ "Ocultar información sobre herramientas deshabilitando esta configuración."
+
+#~ msgid "Subdomain support"
+#~ msgstr "Soporte de subdominio"
+
+#~ msgid ""
+#~ "Some WordPress websites use subdomains for content purposes. Enable this "
+#~ "setting to allow Buttonizer to load on your subdomains. Only enable this "
+#~ "when you need it."
+#~ msgstr ""
+#~ "Algunos sitios web de WordPress usan subdominios para mostrar contenido. "
+#~ "También puede dar permiso a Buttonizer para cargar en estos subdominios. "
+#~ "Active esta función solo cuando la necesite."
+
+#~ msgid "Reset"
+#~ msgstr "Reiniciar"
+
+#~ msgid "This is a way to reset Buttonizer to the default settings."
+#~ msgstr ""
+#~ "Esta es una forma de devolver Buttonizer a la configuración inicial."
+
+#~ msgid "What will happen when I click the red button below?"
+#~ msgstr "¿Qué sucede si presiono el botón rojo a continuación?"
+
+#~ msgid ""
+#~ "The plugin will get a 'factory reset'. All settings of Buttonizer will "
+#~ "get deleted, reverting back to when you first installed and activated "
+#~ "Buttonizer."
+#~ msgstr ""
+#~ "El complemento volverá a la 'configuración de fábrica'. Se eliminarán "
+#~ "todas las configuraciones de Buttonizer, volviendo al principio cuando "
+#~ "acaba de instalar Buttonizer."
+
+#~ msgid "Why would I do that?"
+#~ msgstr "¿Por qué habría de hacer eso?"
+
+#~ msgid ""
+#~ "Perhaps you ruined your buttons, categories or settings and would like to "
+#~ "start from scratch. Or maybe you just feel trying the reset button..."
+#~ msgstr ""
+#~ "Es posible que haya arruinado sus botones, categorías o configuraciones y "
+#~ "esté listo para un nuevo comienzo. O tal vez solo quieras probar el botón "
+#~ "de reinicio ..."
+
+#~ msgid "I have a license, what about that?"
+#~ msgstr "Tengo una licencia, ¿qué pasa con eso?"
+
+#~ msgid ""
+#~ "No worries! Nothing will happen with your license! It only resets the "
+#~ "following:"
+#~ msgstr ""
+#~ "¡No te preocupes! ¡No le pasa nada a tu licencia! Solo restablecerá la "
+#~ "siguiente configuración:"
+
+#~ msgid "Your buttons"
+#~ msgstr "Tus botones"
+
+#~ msgid "Your button groups"
+#~ msgstr "Tus grupos de botones"
+
+#~ msgid "All time schedules"
+#~ msgstr "Todos los horarios"
+
+#~ msgid "All page rules"
+#~ msgstr "Todas las líneas de página"
+
+#~ msgid "All other settings of Buttonizer"
+#~ msgstr "Todas las demás configuraciones de Buttonizer"
+
+#~ msgid "All published settings"
+#~ msgstr "Todas las instituciones publicadas."
+
+#~ msgid "Okay, sounds good. What then?"
+#~ msgstr "Okey, suena bien. ¿Y entonces?"
+
+#~ msgid ""
+#~ "Buttonizer will revert back to the default settings and feel like a fresh "
+#~ "installation. That's all."
+#~ msgstr ""
+#~ "Buttonizer irá a la configuración predeterminada y se comportará como una "
+#~ "nueva instalación. Eso es lo único."
+
+#~ msgid "Okay, I'm ready!"
+#~ msgstr "¡Estoy listo!"
+
+#~ msgid ""
+#~ "Press the red button below to reset Buttonizer. There will be no more "
+#~ "warnings."
+#~ msgstr ""
+#~ "Presione el botón rojo a continuación para restablecer Buttonizer. No "
+#~ "seguirán más advertencias."
+
+#~ msgid "Reset Buttonizer!"
+#~ msgstr "Reset Buttonizer!"
+
+#~ msgid "Loaded changes from previous session"
+#~ msgstr "Ajustes cargados de la sesión anterior"
+
+#~ msgid "Return to preview"
+#~ msgstr "Volver al ejemplo"
+
+#~ msgid "Desktop preview"
+#~ msgstr "Ejemplo de escritorio"
+
+#~ msgid "Tablet preview"
+#~ msgstr "Ejemplo de tableta"
+
+#~ msgid "Mobile preview"
+#~ msgstr "Ejemplo móvil"
+
+#~ msgid "Version %s"
+#~ msgstr "Versión% s"
+
+#~ msgid "Support"
+#~ msgstr "Apoyo"
+
+#~ msgid "Direct support with the Buttonizer developers"
+#~ msgstr "Soporte directo de desarrolladores de Buttonizer"
+
+#~ msgid "Interact with other Buttonizers"
+#~ msgstr "Comunicarse con otros abotonadores"
+
+#~ msgid "Buttonizer tour (recommended!)"
+#~ msgstr "Tour de Buttonizer (¡recomendado!)"
+
+#~ msgid "Start the 2 minute tour"
+#~ msgstr "Comience el recorrido de 2 minutos"
+
+#~ msgid "Buttonizer account"
+#~ msgstr "Cuenta de Buttonizer"
+
+#~ msgid "My Account"
+#~ msgstr "Mi cuenta"
+
+#~ msgid "Upgrade or pricing"
+#~ msgstr "Actualización y precios"
+
+#~ msgid "Affiliation"
+#~ msgstr "Convertirse en un compañero"
+
+#~ msgid "Earn $ by promoting Buttonizer"
+#~ msgstr "Gana $ por promocionar Buttonizer"
+
+#~ msgid "Options"
+#~ msgstr "Opciones"
+
+#~ msgid "Now editing:"
+#~ msgstr "Editando ahora:"
+
+#~ msgid "This creates a new group with 2 buttons inside."
+#~ msgstr "Esto crea un nuevo grupo con 2 botones."
+
+#~ msgid "This creates a new button, outside other groups."
+#~ msgstr "Esto crea un botón, fuera de los otros grupos."
+
+#~ msgid "Learn more about groups and buttons"
+#~ msgstr "Leer más sobre grupos y botones"
+
+#~ msgid "You can't drag the only button left in a group!"
+#~ msgstr ""
+#~ "¡No puede arrastrar este botón ya que este es el único botón que queda!"
+
+#~ msgid "Convert to group"
+#~ msgstr "Convertir a grupo"
+
+#~ msgid "Delete button"
+#~ msgstr "Botón Eliminar"
+
+#~ msgid "Delete group"
+#~ msgstr "Eliminar grupo"
+
+#~ msgid "Are you sure you want to remove this button?"
+#~ msgstr "¿Seguro que quieres eliminar este botón?"
+
+#~ msgid "Are you sure you want to remove this group?"
+#~ msgstr "¿Estás seguro de que deseas eliminar este grupo?"
+
+#~ msgid ""
+#~ "Are you sure you want to remove this full group? It contains %s buttons."
+#~ msgstr ""
+#~ "¿Seguro que quieres eliminar todo el grupo? El grupo contiene% s botones."
+
+#~ msgid "Are you sure you want to remove the button called '%s'?"
+#~ msgstr "¿Seguro que quieres eliminar el botón '% s'?"
+
+#~ msgid "You cannot delete this button because this the only button left."
+#~ msgstr "No puede eliminar este botón porque es el único botón."
+
+#~ msgid "You cannot delete this group because this the only group left."
+#~ msgstr "No puede eliminar este grupo porque es el único grupo."
+
+#~ msgid "Page rules"
+#~ msgstr "Reglas de la página"
+
+#~ msgid "Page Rule Manager"
+#~ msgstr "Gestión de reglas de página"
+
+#~ msgid ""
+#~ "You can setup page rules via this window. When you add pages or "
+#~ "definitions to this page rule, the buttons attached to this page rule "
+#~ "will be shown or hidden depending on their settings as soon this rule is "
+#~ "triggered."
+#~ msgstr ""
+#~ "Puede establecer reglas de página a través de esta ventana. Cuando agrega "
+#~ "páginas o definiciones a esta línea de página, los botones asociados con "
+#~ "ella se mostrarán u ocultarán según su configuración una vez que se "
+#~ "active la línea."
+
+#~ msgid ""
+#~ "You can setup page rules that will get triggered on specific pages or "
+#~ "user roles. You can create unlimited page rules with multiple rules to "
+#~ "trigger."
+#~ msgstr ""
+#~ "Puede establecer configuraciones de página que se activarán en páginas "
+#~ "específicas o roles de usuario. Puede agregar un número ilimitado de "
+#~ "líneas de página con diferentes condiciones."
+
+#~ msgid "Add page rule"
+#~ msgstr "Agregar línea de página"
+
+#~ msgid "Name your page rule:"
+#~ msgstr "Nombra la línea de la página:"
+
+#~ msgid "Show the button on any page"
+#~ msgstr "Mostrar el botón en cada página"
+
+#~ msgid "Remove page rule"
+#~ msgstr "Eliminar línea de página"
+
+#~ msgid "All conditions must meet (AND)"
+#~ msgstr "Debe cumplir con todas las condiciones."
+
+#~ msgid "At least one condition must meet (OR)"
+#~ msgstr "Debe cumplir al menos 1 condición (OF)"
+
+#~ msgid "and"
+#~ msgstr "y"
+
+#~ msgid "or"
+#~ msgstr "o"
+
+#~ msgid "Page"
+#~ msgstr "Página"
+
+#~ msgid "Page title contains"
+#~ msgstr "El título de la página contiene"
+
+#~ msgid "Blog"
+#~ msgstr "Blog"
+
+#~ msgid "Blog title contains"
+#~ msgstr "El título del blog contiene"
+
+#~ msgid "Category"
+#~ msgstr "Categoría"
+
+#~ msgid "URL contains"
+#~ msgstr "URL contiene"
+
+#~ msgid "URL begins with"
+#~ msgstr "La URL comienza con"
+
+#~ msgid "URL ends with"
+#~ msgstr "La URL termina con"
+
+#~ msgid "User has role"
+#~ msgstr "El usuario tiene un rol específico"
+
+#~ msgid "Select one or more items."
+#~ msgstr "Seleccione uno o más artículos."
+
+#~ msgid "Are you sure you want to remove this rule?"
+#~ msgstr "¿Seguro que quieres eliminar esta línea?"
+
+#~ msgid "Aborted. Each page rule must keep at least one rule."
+#~ msgstr "Demolido Cada línea de página debe al menos mantener una línea."
+
+#~ msgid ""
+#~ "You still have selected values, are you sure you want to remove this?"
+#~ msgstr ""
+#~ "Todavía tiene valores seleccionados, ¿está seguro de que desea "
+#~ "eliminarlos?"
+
+#~ msgid "Rule value"
+#~ msgstr "Ajustar valor"
+
+#~ msgid "Time schedules"
+#~ msgstr "Horarios"
+
+#~ msgid "Time schedule"
+#~ msgstr "Calendario"
+
+#~ msgid "Time schedule manager"
+#~ msgstr "Gestión de horarios"
+
+#~ msgid ""
+#~ "You can setup time schedules that will get triggered during specific "
+#~ "times of a day. It is even possible to change the schedule actions for "
+#~ "specific days. You can create an unlimited amount of schedules."
+#~ msgstr ""
+#~ "Puede establecer horarios que se activarán en momentos específicos del "
+#~ "día. Incluso es posible ajustar los horarios para días específicos. Puede "
+#~ "crear un número ilimitado de horarios."
+
+#~ msgid "Add date"
+#~ msgstr "Agregar fecha"
+
+#~ msgid "New schedule"
+#~ msgstr "Nuevo horario"
+
+#~ msgid "Name the new time schedule:"
+#~ msgstr "Nombra el nuevo horario:"
+
+#~ msgid "Rename schedule to:"
+#~ msgstr "Cambiar el nombre del horario a:"
+
+#~ msgid "Show the button at any time"
+#~ msgstr "Mostrar siempre el botón"
+
+#~ msgid "till"
+#~ msgstr "hasta"
+
+#~ msgid "Remove schedule"
+#~ msgstr "Eliminar horario"
+
+#~ msgid "You must keep at least one schedule"
+#~ msgstr "Debes mantener al menos un horario"
+
+#~ msgid "Current timezone:"
+#~ msgstr "Zona horaria actual:"
+
+#~ msgid "Remove date"
+#~ msgstr "Eliminar fecha"
+
+#~ msgid "Are you sure you want to remove this date?"
+#~ msgstr "¿Seguro que quieres eliminar esta fecha?"
+
+#~ msgid "Sorry, the time '%1$s' was invalid. Reverting back to '%2$s'."
+#~ msgstr ""
+#~ "Lo sentimos, el tiempo seleccionado '% 1 $ s' no es válido. El tiempo se "
+#~ "restablece a '% 2 $ s'."
+
+#~ msgid ""
+#~ "The start time '%1$s' conflicts with the end time '%2$s'. Time has been "
+#~ "reverted to '%3$s'. Make sure you have at least 5 minutes overlap."
+#~ msgstr ""
+#~ "La hora de inicio '% 1 $ s' entra en conflicto con la hora de "
+#~ "finalización '% 2 $ s. El tiempo se ha restablecido a '% 3 $ s'. "
+#~ "Asegúrese de tener al menos 5 minutos de holgura."
+
+#~ msgid ""
+#~ "The end time '%1$s' conflicts with the start time '%2$s'. Time has been "
+#~ "reverted to '%3$s'. Make sure you have at least 5 minutes overlap."
+#~ msgstr ""
+#~ "La hora de finalización '% 1 $ s' entra en conflicto con la hora de "
+#~ "inicio '% 2 $ s'. El tiempo se ha restablecido a '% 3 $ s'. Asegúrese de "
+#~ "tener al menos 5 minutos de holgura."
+
+#~ msgid "Weekdays"
+#~ msgstr "Días laborables"
+
+#~ msgid "Monday"
+#~ msgstr "lunes"
+
+#~ msgid "Tuesday"
+#~ msgstr "martes"
+
+#~ msgid "Wednesday"
+#~ msgstr "miércoles"
+
+#~ msgid "Thursday"
+#~ msgstr "jueves"
+
+#~ msgid "Friday"
+#~ msgstr "viernes"
+
+#~ msgid "Saturday"
+#~ msgstr "sábado"
+
+#~ msgid "Sunday"
+#~ msgstr "domingo"
+
+#~ msgid "Start triggering buttons from"
+#~ msgstr "Comience a activar botones desde"
+
+#~ msgid ""
+#~ "Warning! Your start date '%s' hast past the end date of this schedule. If "
+#~ "you do not change this date the schedule will not work."
+#~ msgstr ""
+#~ "¡Advertencia! Su fecha de inicio '% s' es posterior a la fecha de "
+#~ "finalización de este calendario. Si no cambia esto, el horario no "
+#~ "funcionará."
+
+#~ msgid "Stop triggering buttons after (optional)"
+#~ msgstr "Dejar de disparar botones después (opcional)"
+
+#~ msgid "Click to add ending date"
+#~ msgstr "Haga clic para seleccionar una fecha de finalización"
+
+#~ msgid "Select a date in the datepicker below"
+#~ msgstr "Seleccione una fecha de la selección de fecha a continuación"
+
+#~ msgid ""
+#~ "Warning! Your end date '%s' has past the start date of this schedule. If "
+#~ "you do not change this date the schedule will not work."
+#~ msgstr ""
+#~ "¡Advertencia! Su fecha de finalización '% s' es anterior a la fecha de "
+#~ "inicio de este horario. Si no cambia esto, el horario no funcionará."
+
+#~ msgid "Hi Buttonizer!"
+#~ msgstr "Hola Buttonizer!"
+
+#~ msgid ""
+#~ "It appears you've installed Buttonizer 2.0 before. But, you installed "
+#~ "version 1.5 again later on and updated back to 2.0!"
+#~ msgstr ""
+#~ "Parece que ya instaló Buttonizer 2.0 antes y luego volvió a la versión "
+#~ "1.5. ¡Ahora has actualizado a la versión 2.0!"
+
+#~ msgid ""
+#~ "The migration progress did not run as it did back then. In order to "
+#~ "convert your buttons, press the button below!"
+#~ msgstr ""
+#~ "La migración automática no se ha realizado ahora porque se ha hecho "
+#~ "antes. Para volver a migrar sus botones a la última versión, presione el "
+#~ "botón a continuación."
+
+#~ msgid ""
+#~ "If this window keeps popping up, even when you've tried to convert the "
+#~ "buttons, try to reset Buttonizer. Go to the 'cog' icon (%1$s) on the top "
+#~ "bar, select 'Options %2$s' and the tab 'Reset' and follow the "
+#~ "instructions."
+#~ msgstr ""
+#~ "Si esta pantalla sigue apareciendo incluso cuando ha intentado migrar los "
+#~ "botones, intente restablecer Buttonizer. Vaya al ícono de 'engranaje' (% "
+#~ "1 $ s) en la barra superior. Luego vaya a 'Opciones% 2 $ s' y abra la "
+#~ "pestaña 'Restablecer' y siga las instrucciones."
+
+#~ msgid "Convert my buttons!"
+#~ msgstr "¡Migra mis botones!"
+
+#~ msgid "Premium feature"
+#~ msgstr "Función premium"
+
+#~ msgid ""
+#~ "Hi there, this function is a premium feature. We will describe what this "
+#~ "feature will do:"
+#~ msgstr ""
+#~ "Hola, esta característica es para nuestros usuarios premium. "
+#~ "Describiremos lo que hará esta función:"
+
+#~ msgid "What you get as a premium user:"
+#~ msgstr "Lo que obtienes como usuario premium:"
+
+#~ msgid "Go pro"
+#~ msgstr "Hazte usuario premium"
+
+#~ msgid "Show button(groups) using the advanced time schedules"
+#~ msgstr "Mostrar botones basados en horarios avanzados"
+
+#~ msgid "Show button(groups) on specific pages using advanced page rules"
+#~ msgstr ""
+#~ "Mostrar botones en páginas específicas con reglas de página avanzadas"
+
+#~ msgid "Create multiple button groups"
+#~ msgstr "Posibilidad de crear más grupos de botones."
+
+#~ msgid "Custom button background &amp; icon image"
+#~ msgstr "Fondo de botón personalizado e imagen de icono"
+
+#~ msgid "Show or hide on scroll"
+#~ msgstr "Mostrar u ocultar mientras se desplaza"
+
+#~ msgid "Show on timeout"
+#~ msgstr "Mostrar después de cierto tiempo"
+
+#~ msgid "Be able to set CSS class names and button IDs"
+#~ msgstr "Uso de nombres de clase CSS e ID"
+
+#~ msgid "Execute javascript on button clicks"
+#~ msgstr "Ejecute JavaScript con un clic de botón"
+
+#~ msgid "My first time schedule"
+#~ msgstr "Mi primer horario"
+
+#~ msgid "My first page rule"
+#~ msgstr "Mi primera linea de pagina"
+
+#~ msgid "You are able to add multiple groups on different positions"
+#~ msgstr "Tiene la opción de crear múltiples grupos en diferentes posiciones."
+
+#~ msgid "Welcome to Buttonizer"
+#~ msgstr "Bienvenido a Buttonizer"
+
+#~ msgid "We are pleased to welcome you to <b>%s</b>!"
+#~ msgstr "¡Esperamos darle la bienvenida a <b>% s </b>!"
+
+#~ msgid ""
+#~ "We've created a tour for our new users. Would you like to take the tour?"
+#~ msgstr ""
+#~ "Hicimos un recorrido por nuestros nuevos usuarios. ¿Quieres seguir este "
+#~ "recorrido?"
+
+#~ msgid "No thanks, I know how it works"
+#~ msgstr "No gracias, se como funciona"
+
+#~ msgid "Welcome to the Buttonizer tour!"
+#~ msgstr "¡Bienvenido a la gira de Buttonizer!"
+
+#~ msgid ""
+#~ "Start the tour and save time. Master the Buttonizer skills in only two "
+#~ "minutes."
+#~ msgstr ""
+#~ "Comience el recorrido y ahorre tiempo. Domina las habilidades de "
+#~ "Buttonizer en solo dos minutos."
+
+#~ msgid "You can use the %1$s and %2$s keys on your %3$s to navigate."
+#~ msgstr "Puede usar los botones% 1 $ s y% 2 $ s en sus% 3 $ s para navegar."
+
+#~ msgid "Preview"
+#~ msgstr "Ejemplo"
+
+#~ msgid "Menu"
+#~ msgstr "Menú"
+
+#~ msgid "Button group"
+#~ msgstr "Botón de grupo"
+
+#~ msgid ""
+#~ "The buttons in a button group are dedicated to one position. Add multiple "
+#~ "button groups if you want to create more floating action buttons "
+#~ "dedicated to different positions."
+#~ msgstr ""
+#~ "Los botones en un grupo de botones están dedicados a una posición. Cree "
+#~ "múltiples grupos de botones para tener botones en diferentes posiciones."
+
+#~ msgid "Group settings"
+#~ msgstr "Grupo de instituciones"
+
+#~ msgid ""
+#~ "Buttonizer will animate every 10 seconds in order to capture the "
+#~ "visitor's attention."
+#~ msgstr ""
+#~ "Buttonizer se animará cada 10 segundos para llamar la atención del "
+#~ "visitante."
+
+#~ msgid "Click here to add a new button."
+#~ msgstr "Haga clic aquí para agregar un nuevo botón."
+
+#~ msgid ""
+#~ "When enabled, the button will copy the button and label style of the "
+#~ "group."
+#~ msgstr "Cuando esta opción está habilitada, usará el estilo del grupo."
+
+#~ msgid ""
+#~ "Thank you for taking the tour, that's all folks! We hope you're ready to "
+#~ "start implementing Buttonizer to meet your goals! If you have any "
+#~ "questions, ask them on the %s forums!"
+#~ msgstr ""
+#~ "Gracias por hacer este recorrido, eso fue todo. ¡Esperamos que esté listo "
+#~ "para comenzar a usar Buttonizer para lograr sus objetivos! Si tiene "
+#~ "alguna pregunta sobre esto, visite nuestro% s."
+
+#~ msgid ""
+#~ "If you have any feedback regarding the Buttonizer Tour, we'd love to hear "
+#~ "it!"
+#~ msgstr ""
+#~ "Háganos saber si tiene algún comentario sobre Buttonizer Tour, ¡nos "
+#~ "encantaría escucharlo!"
+
+#~ msgid "Permalink Error"
+#~ msgstr "Error de enlace permanente"
+
+#~ msgid ""
+#~ "Buttonizer's requests will not work when using plain permalink. To use "
+#~ "Buttonizer, use a custom permalink"
+#~ msgstr ""
+#~ "Las solicitudes de Buttonizer no funcionan cuando se usa la estructura de "
+#~ "enlace permanente regular. Use un enlace permanente personalizado para "
+#~ "usar Buttonizer"
+
+#~ msgid "License activated"
+#~ msgstr "Licencia activada"
+
+#~ msgid ""
+#~ "Please download and upload the premium version found in the email we have "
+#~ "sent you to use all premium functions."
+#~ msgstr ""
+#~ "Descargue y cargue la versión premium en el correo electrónico que le "
+#~ "enviamos para usar las funciones premium."
+
+#~ msgid "Edit"
+#~ msgstr "Editar"
+
+#~ msgid "Type"
+#~ msgstr "Tipo"
+
+#~ msgid "Select"
+#~ msgstr "Por favor seleccione"
+
+#~ msgid "Learn more"
+#~ msgstr "Más información"
+
+#~ msgid "Create new group"
+#~ msgstr "Crear nuevo grupo"
+
+#~ msgid "Choose a name for the button."
+#~ msgstr "Elige un nombre para el botón."
+
+#~ msgid "Choose a name for the group."
+#~ msgstr "Elige un nombre para el grupo."
+
+#~ msgid "Style"
+#~ msgstr "Estilo"
+
+#~ msgid "Advanced"
+#~ msgstr "Avanzado"
+
+#~ msgid "Color"
+#~ msgstr "Color"
+
+#~ msgid "Select file"
+#~ msgstr "Seleccione Archivo"
+
+#~ msgid "Change file"
+#~ msgstr "Cambiar archivo"
+
+#~ msgid "Rename to:"
+#~ msgstr "Renombrar a:"
+
+#~ msgid "Icon selector"
+#~ msgstr "Selección de iconos"
+
+#~ msgid "Loading icons, please wait..."
+#~ msgstr "Cargando íconos, por favor espere ..."
+
+#~ msgid "Searching for: %1$s, found %2$s results."
+#~ msgstr "Buscar:% 1 $ s,% 2 $ s resultados encontrados."
+
+#~ msgid "Remove filter"
+#~ msgstr "Eliminar filtro"
+
+#~ msgid "Buttonizer has crashed!"
+#~ msgstr "¡Buttonizer se estrelló!"
+
+#~ msgid "Our development team has been notified."
+#~ msgstr "Nuestro equipo de desarrollo ha sido informado."
+
+#~ msgid "If you'd like to help, tell us what happened below."
+#~ msgstr "Si quieres ayudar, cuéntanos qué pasó a continuación."
+
+#~ msgid ""
+#~ "Buttonizer has crashed, but you have not enabled automatic error "
+#~ "reporting! Would you like to become a SUPER contributor and automatically "
+#~ "log errors, including this one?"
+#~ msgstr ""
+#~ "Buttonizer se bloqueó, pero desafortunadamente tiene el registro "
+#~ "automático de errores desactivado. ¿Le gustaría convertirse en un "
+#~ "colaborador SUPER y enviarnos automáticamente mensajes de error, incluido "
+#~ "este?"
+
+#~ msgid "Show button at all times"
+#~ msgstr "Mostrar siempre el botón"
+
+#~ msgid "Show group at all times"
+#~ msgstr "Mostrar siempre al grupo"
+
+#~ msgid "Show button on all pages"
+#~ msgstr "Mostrar el botón en cada página"
+
+#~ msgid "Show group on all pages"
+#~ msgstr "Mostrar el grupo en cada página"
+
+#~ msgid "I'm sure"
+#~ msgstr "Estoy seguro"
+
+#~ msgid "Incorrect entry."
+#~ msgstr "Entrada incorrecta"
+
+#~ msgid "Remove time schedule?"
+#~ msgstr "¿Eliminar horario?"
+
+#~ msgid ""
+#~ "Are you very sure you want to remove this time schedule? Buttons that are "
+#~ "still attached to this time schedule will become visible unless you "
+#~ "attach them to another time schedule or hide them."
+#~ msgstr ""
+#~ "¿Seguro que quieres eliminar este horario? Los botones vinculados a este "
+#~ "horario serán visibles a menos que los vincules a otro horario."
+
+#~ msgid ""
+#~ "There are no buttons attached to this time schedule. You can remove this "
+#~ "safely."
+#~ msgstr ""
+#~ "No hay botones asociados con este horario. Puede quitarlo con seguridad."
+
+#~ msgid "There are <b>%1$s</b> buttons attached to this time schedule!"
+#~ msgstr "¡Hay <b>% 1 $ s </b> botones asociados con este calendario!"
+
+#~ msgid "There is <b>1</b> button attached to this time schedule"
+#~ msgstr "Hay un botón <b> 1 </b> asociado con este horario"
+
+#~ msgid "Do you want to remove this time schedule?"
+#~ msgstr "¿Seguro que quieres eliminar este horario?"
+
+#~ msgid "Cannot delete button"
+#~ msgstr "No se puede eliminar este botón."
+
+#~ msgid "Cannot delete group"
+#~ msgstr "No se puede eliminar este grupo."
+
+#~ msgid "Remove page rule?"
+#~ msgstr "¿Eliminar línea de página?"
+
+#~ msgid ""
+#~ "Are you very sure you want to remove this page rule? Buttons that are "
+#~ "still attached to this page rule will become visible unless you attach "
+#~ "them to another page rule or hide them."
+#~ msgstr ""
+#~ "¿Seguro que quieres eliminar esta línea de página? Los botones vinculados "
+#~ "a esta línea de página serán visibles a menos que los enlace a otra línea "
+#~ "de página."
+
+#~ msgid ""
+#~ "There are no buttons attached to this page rule. You can remove this "
+#~ "safely."
+#~ msgstr ""
+#~ "No hay botones asociados con esta línea de página. Puede quitarlo con "
+#~ "seguridad."
+
+#~ msgid "There are <b>%1$s</b> buttons attached to this page rule!"
+#~ msgstr "¡Hay botones <b>% 1 $ s </b> asociados con esta línea de página!"
+
+#~ msgid "There is <b>1</b> button attached to this page rule"
+#~ msgstr "Hay un botón <b> 1 </b> asociado con esta línea de página"
+
+#~ msgid "Do you want to remove this page rule?"
+#~ msgstr "¿Quieres eliminar esta línea de página?"
+
+#~ msgid "This action is permanent and cannot be undone."
+#~ msgstr "Esta acción es permanente y no se puede deshacer."
+
+#~ msgid "Add button to enable group settings"
+#~ msgstr "Agregar un botón para activar la configuración del grupo"
+
+#~ msgid "General"
+#~ msgstr "General"
+
+#~ msgid "Label style"
+#~ msgstr "Estilo de etiqueta"
+
+#~ msgid "background"
+#~ msgstr "antecedentes"
+
+#~ msgid "Icon Style"
+#~ msgstr "Estilo de icono"
+
+#~ msgid "Image style"
+#~ msgstr "Estilo de imagen"
+
+#~ msgid "Show or hide"
+#~ msgstr "Mostrar u ocultar"
+
+#~ msgid "Select icon"
+#~ msgstr "Seleccionar icono"
+
+#~ msgid "Text color"
+#~ msgstr "Color de texto"
+
+#~ msgid "Font size"
+#~ msgstr "Tamaño de fuente"
+
+#~ msgid "Horizontal"
+#~ msgstr "Horizontal"
+
+#~ msgid "Vertical"
+#~ msgstr "Vertical"
+
+#~ msgid "This setting is not used when using the %s menu style..."
+#~ msgstr "Esta configuración no se usa para el estilo de menú% s ..."
+
+#~ msgid "Toggle show on desktop"
+#~ msgstr "Activar / desactivar la visualización en el escritorio"
+
+#~ msgid "Toggle show on mobile"
+#~ msgstr "Habilitar / deshabilitar en pantalla móvil"
+
+#~ msgid "Use group style"
+#~ msgstr "Usar estilo de grupo"
+
+#~ msgid "Disable USE GROUP STYLE to access these settings"
+#~ msgstr "Deshabilite USE GROUP STYLE para administrar esta configuración"
+
+#~ msgid "Timeout"
+#~ msgstr "Se acabó el tiempo"
+
+#~ msgid "Milliseconds"
+#~ msgstr "Milisegundos"
+
+#~ msgid "Show Buttonizer after %s seconds"
+#~ msgstr "Mostrar Buttonizer después de% s segundos"
+
+#~ msgid "Scroll"
+#~ msgstr "Desplazamiento"
+
+#~ msgid "From top"
+#~ msgstr "Desde arriba"
+
+#~ msgid "Show Buttonizer after 0 seconds"
+#~ msgstr "Mostrar Buttonizer después de 0 segundos"
+
+#~ msgid "Starting visibility"
+#~ msgstr "Iniciar visibilidad"
+
+#~ msgid "Hide"
+#~ msgstr "Esconder"
+
+#~ msgid "Show"
+#~ msgstr "Ver"
+
+#~ msgid "Scroll <b>0%</b> from top of page to <b>SHOW</b> group"
+#~ msgstr ""
+#~ "Desplácese <b> 0% </b> desde la parte superior de la página para mostrar "
+#~ "el <b> grupo </b>"
+
+#~ msgid "Scroll <b>%1$s%2$s</b> from top of page to <b>%3$s</b> group"
+#~ msgstr ""
+#~ "Desplácese <b>% 1 $ s% 2 $ s </b> desde la parte superior de la página al "
+#~ "grupo <b>% 3 $ s </b>"
+
+#~ msgid ""
+#~ "Exit intent can be used to trigger an animation around Buttonizer when a "
+#~ "visitor is leaving your website."
+#~ msgstr ""
+#~ "La intención de salida puede usarse para activar una animación alrededor "
+#~ "de Buttonizer antes de que los visitantes abandonen su sitio web."
+
+#~ msgid "Actions"
+#~ msgstr "Comportamiento"
+
+#~ msgid "Invalid phone number"
+#~ msgstr "Número de teléfono inválido"
+
+#~ msgid "Phone number"
+#~ msgstr "número de teléfono"
+
+#~ msgid "SMS"
+#~ msgstr "MENSAJE DE TEXTO"
+
+#~ msgid "Invalid Page ID."
+#~ msgstr "ID de página no válido"
+
+#~ msgid "Facebook Page ID"
+#~ msgstr "ID de la página de Facebook"
+
+#~ msgid "WhatsApp Chat"
+#~ msgstr "Chat de WhatsApp"
+
+#~ msgid "Social Sharing"
+#~ msgstr "Comparte en las redes sociales"
+
+#~ msgid "Copy URL to clipboard"
+#~ msgstr "Copiar URL al portapapeles"
+
+#~ msgid "Print page"
+#~ msgstr "Imprimir página"
+
+#~ msgid "Website URL"
+#~ msgstr "URL del sitio web"
+
+#~ msgid "Open JavaScript code editor"
+#~ msgstr "Abrir editor de código JavaScript"
+
+#~ msgid "Manage the settings of Buttonizer"
+#~ msgstr "Administrar la configuración de Buttonizer"
+
+#~ msgid "Choose your iconset"
+#~ msgstr "Elige tu conjunto de iconos"
+
+#~ msgid "Google Analytics"
+#~ msgstr "Google analitico"
+
+#~ msgid "Enable Google Analytics"
+#~ msgstr "Habilitar Google Analytics"
+
+#~ msgid "Measure your conversions"
+#~ msgstr "Mide tus conversiones"
+
+#~ msgid ""
+#~ "When enabled, Buttonizer will automatically log clicks to your Google "
+#~ "Analytics account. You can force Buttonizer not to use the Google "
+#~ "Analytics by disabling this switch."
+#~ msgstr ""
+#~ "Cuando esta opción está habilitada, Buttonizer registrará automáticamente "
+#~ "los clics de los botones en su cuenta de Google Analytics. Puede forzar a "
+#~ "Buttonizer a no usar Google Analytics desactivando el control deslizante "
+#~ "de arriba."
+
+#~ msgid ""
+#~ "Google Analytics is automatically detected if you have added it to your "
+#~ "webpage. But, if you don't make use of Google Analytics yet and  this is "
+#~ "your first time, Buttonizer can add it for you."
+#~ msgstr ""
+#~ "Google Analytics se detecta automáticamente si ya lo ha agregado a su "
+#~ "página web. Sin embargo, si aún no está utilizando Google Analytics y es "
+#~ "su primera vez, Buttonizer puede agregarlo por usted."
+
+#~ msgid ""
+#~ "If you have added Google Analytics to your webpage before and Buttonizer "
+#~ "also adds the same Analytics code, it will mess with your analytics data!"
+#~ msgstr ""
+#~ "Si ya ha agregado Google Analytics a su página web y deja que Buttonizer "
+#~ "agregue el mismo código de Analytics, ¡esto alterará sus datos analíticos!"
+
+#~ msgid "UA Code"
+#~ msgstr "Código UA"
+
+#~ msgid "Preferences"
+#~ msgstr "Preferencias"
+
+#~ msgid "Manage your preferences"
+#~ msgstr "Administra tus preferencias"
+
+#~ msgid "Show Buttonizer tips"
+#~ msgstr "Mostrar consejos de Buttonizer"
+
+#~ msgid "Hide the Buttonizer tips in the dashboard by disabling this setting"
+#~ msgstr ""
+#~ "Ocultar los consejos en la parte superior del panel de Buttonizer "
+#~ "deshabilitando esta configuración"
+
+#~ msgid "Use ajax on to load the buttons"
+#~ msgstr "Usa ajax para cargar los botones"
+
+#~ msgid ""
+#~ "This feature has been created to make sure Buttonizer doesn't slow down "
+#~ "your website. If you'd like to show the buttons immediately without "
+#~ "loadtime, disable this setting. The load impect will depend on the amount "
+#~ "of buttons and groups you currently have."
+#~ msgstr ""
+#~ "Esta función está diseñada para garantizar que Buttonizer no ralentice su "
+#~ "sitio web. Si desea que los botones sean visibles inmediatamente sin "
+#~ "tiempo de carga, puede deshabilitar esta opción. El impacto en el tiempo "
+#~ "de carga depende de la cantidad de botones y grupos que tenga."
+
+#~ msgid "Automatic error logging and crash reporting"
+#~ msgstr "Informar automáticamente registros de errores y bloqueos"
+
+#~ msgid ""
+#~ "Enable automatic error logging and crash reporting in order to help us "
+#~ "solve issues within Buttonizer! All data is anonymized automatically."
+#~ msgstr ""
+#~ "¡Habilite el registro automático de errores y los informes de fallas para "
+#~ "ayudarnos a solucionar el Buttonizer! Todos los datos se anonimizan "
+#~ "automáticamente."
+
+#~ msgid "Reset Buttonizer"
+#~ msgstr "Reset Buttonizer"
+
+#~ msgid "If you need a clean install"
+#~ msgstr "Cuando necesitas una instalación nueva"
+
+#~ msgid "Edit group settings"
+#~ msgstr "Editar configuración de grupo"
+
+#~ msgid ""
+#~ "You probably have clicked a link, this made you leave the preview window "
+#~ "of Buttonizer. You cannot see your changes here."
+#~ msgstr ""
+#~ "Es posible que haya hecho clic en un enlace. Esto dejó la pantalla de "
+#~ "vista previa de Buttonizer. No puedes ver ningún cambio que hagas aquí."
+
+#~ msgid "Home"
+#~ msgstr "Visión general"
+
+#~ msgid "Back to overview"
+#~ msgstr "volver al resumen"
+
+#~ msgid "Back to group"
+#~ msgstr "De vuelta al grupo"
+
+#~ msgid "Back to the WordPress dashboard"
+#~ msgstr "Volver al panel de WordPress"
+
+#~ msgid "Follow us for useful tips & tricks!"
+#~ msgstr "¡Síguenos para obtener consejos y trucos útiles!"
+
+#~ msgid "View your license and account details"
+#~ msgstr "Ver la información de su cuenta y licencia"
+
+#~ msgid "A deep dive in all the possibilities"
+#~ msgstr "Una inmersión profunda en todas las posibilidades."
+
+#~ msgid "Choose on which page you want to show a button (group)"
+#~ msgstr "Elija en qué página desea mostrar un botón (grupo)."
+
+#~ msgid "Open Page Rules settings"
+#~ msgstr "Abrir configuración de línea de página"
+
+#~ msgid "Current page rule"
+#~ msgstr "Línea de la página actual"
+
+#~ msgid "Page rule conditions behaviour"
+#~ msgstr "Comportamiento de condición de regla de página"
+
+#~ msgid "Triggers when ONE of the selected values is true"
+#~ msgstr "Se activa cuando UNO de los valores seleccionados es verdadero"
+
+#~ msgid "Conditions"
+#~ msgstr "Condiciones"
+
+#~ msgid "Show group when this page rule is activated"
+#~ msgstr "Mostrar grupo cuando la regla está activada"
+
+#~ msgid "Hide group when this page rule is activated"
+#~ msgstr "Ocultar grupo cuando la regla está activada"
+
+#~ msgid "Show button when this page rule is activated"
+#~ msgstr "Mostrar botón cuando la regla está activada"
+
+#~ msgid "Hide button when this page rule is activated"
+#~ msgstr "Ocultar botón cuando la regla está activada"
+
+#~ msgid "Add condition"
+#~ msgstr "Agregar condición"
+
+#~ msgid "No page rules"
+#~ msgstr "No hay reglas de página"
+
+#~ msgid "No page rule selected"
+#~ msgstr "No se seleccionó ninguna línea de página"
+
+#~ msgid ""
+#~ "There are no rules for this page rule. All buttons attached to this page "
+#~ "rule will be visible. Press 'Add condition' to add one!"
+#~ msgstr ""
+#~ "Aún no se han establecido reglas para esta regla de página. Todos los "
+#~ "botones vinculados a esta línea de página serán visibles. ¡Haga clic en "
+#~ "'Agregar condición' para agregar uno!"
+
+#~ msgid "User is signed in"
+#~ msgstr "El usuario ha iniciado sesión"
+
+#~ msgid "User is signed out"
+#~ msgstr "El usuario ha cerrado sesión"
+
+#~ msgid "Content based"
+#~ msgstr "Contenido basado"
+
+#~ msgid "Url"
+#~ msgstr "URL"
+
+#~ msgid "Users"
+#~ msgstr "Los usuarios"
+
+#~ msgid "For example: Show a call me now button only on opening times"
+#~ msgstr ""
+#~ "Ejemplo: Mostrar un botón de llamarme ahora solo durante el horario de "
+#~ "atención"
+
+#~ msgid "Open time schedule settings"
+#~ msgstr "Configuración de horario abierto"
+
+#~ msgid "Current time schedules:"
+#~ msgstr "Horarios actuales:"
+
+#~ msgid "You have no time schedules"
+#~ msgstr "No tienes horarios"
+
+#~ msgid "No time schedule selected"
+#~ msgstr "No hay horario seleccionado"
+
+#~ msgid "Dates"
+#~ msgstr "fechas"
+
+#~ msgid "Add time schedule"
+#~ msgstr "Agregar horario"
+
+#~ msgid "Show group when this time schedule is activated"
+#~ msgstr "Mostrar grupo cuando el horario está activado"
+
+#~ msgid "Hide group when this time schedule is activated"
+#~ msgstr "Ocultar grupo cuando el horario está activado"
+
+#~ msgid "Show button when this time schedule is activated"
+#~ msgstr "Mostrar botón cuando el horario está activado"
+
+#~ msgid "Hide button when this time schedule is activated"
+#~ msgstr "Ocultar botón cuando el horario está activado"
+
+#~ msgid "Trigger on"
+#~ msgstr "Activar en"
+
+#~ msgid "Don't trigger on"
+#~ msgstr "No activar en"
+
+#~ msgid "Excluded Dates"
+#~ msgstr "Dias excepcionales"
+
+#~ msgid "Add Excluded Date"
+#~ msgstr "Agregar día excepcional"
+
+#~ msgid ""
+#~ "Add specific dates to show or hide the buttons attached to this time "
+#~ "scheme. For example: \"My store is open on January 22th until 22:00 (10 "
+#~ "PM) because of some special evening we organize.\" The rule will "
+#~ "overwrite the default settings for that day."
+#~ msgstr ""
+#~ "Tiene la opción de seleccionar fechas específicas para ocultar o mostrar "
+#~ "botones asociados con este horario. Por ejemplo, puede usar esto en la "
+#~ "siguiente situación: \"Estaré abierto hasta las 22:00 el 22 de enero "
+#~ "debido a un evento especial que estamos organizando\". Esta fecha anulará "
+#~ "la configuración normal para este día."
+
+#~ msgid "Start Date"
+#~ msgstr "Fecha de inicio"
+
+#~ msgid "Did you know that Buttonizer has different group-styles you can use?"
+#~ msgstr "¿Sabía que Buttonizer tiene varios estilos de grupo que puede usar?"
+
+#~ msgid "Click on the buttons to manage their settings"
+#~ msgstr "Haga clic aquí para acceder a la configuración del botón"
+
+#~ msgid "Give your buttons a color"
+#~ msgstr "Dale un color a los botones"
+
+#~ msgid ""
+#~ "A button can only have one action, but you can choose out more than 25 "
+#~ "actions!"
+#~ msgstr ""
+#~ "Un botón solo tiene una acción, ¡pero puedes elegir entre más de 25 "
+#~ "acciones!"
+
+#~ msgid "Turn off these tips in settings"
+#~ msgstr "Puede deshabilitar estos consejos en la configuración"
+
+#~ msgid ""
+#~ "Buttonizer will only show 7 buttons per page as that's the limit of "
+#~ "Material Design"
+#~ msgstr ""
+#~ "Buttonizer mostrará hasta 7 botones por página, ya que ese es el límite "
+#~ "del diseño de materiales"
+
+#~ msgid ""
+#~ "Paste the HEX-code in the colorpicker if you want to use a specific color"
+#~ msgstr ""
+#~ "Pegue un código HEX en el selector de color si desea usar un color "
+#~ "específico"
+
+#~ msgid ""
+#~ "Playing smart with 'Show on desktop' and 'Show on mobile' will give you "
+#~ "up to 14 buttons per page!"
+#~ msgstr ""
+#~ "¡El uso inteligente de 'Mostrar en el escritorio' y 'Mostrar en el móvil' "
+#~ "puede proporcionarle 14 botones por página!"
+
+#~ msgid "You can use page rules to show or hide buttons on certain pages"
+#~ msgstr ""
+#~ "Puede usar reglas de página para mostrar u ocultar botones en páginas "
+#~ "específicas"
+
+#~ msgid ""
+#~ "You can use the social share button action to let a visitor share your "
+#~ "webpage"
+#~ msgstr ""
+#~ "Puede usar la acción del botón \"Compartir en redes sociales\" para "
+#~ "permitir que los visitantes compartan su página web"
+
+#~ msgid "Do you need a tool-tip? ;)"
+#~ msgstr "¿Necesitas información sobre herramientas? ;)"
+
+#~ msgid "You can style the main big button by editting the group"
+#~ msgstr "Puede cambiar el estilo del botón principal editando el grupo"
+
+#~ msgid "You can add a class or id HTML-attribute to a group and a button"
+#~ msgstr "Puede agregar un atributo HTML de clase o id a un grupo o botón"
+
+#~ msgid "Want to make a new similar button? Duplicate your button!"
+#~ msgstr "¿Quieres un botón similar? Duplicarlo!"
+
+#~ msgid "If you have a great tip, let us know! We'll add it :)"
+#~ msgstr "¡Háganos saber si tiene un buen consejo! Luego lo agregamos :)"
+
+#~ msgid "Pssst, click on the group/button name on top"
+#~ msgstr ""
+#~ "Pssst, haga clic en el nombre del grupo / botón en la parte superior"
+
+#~ msgid "Exit Intent... This is where the fun begins!"
+#~ msgstr ""
+#~ "Intento de salida ... ¡Aquí es donde empieza a ser realmente divertido!"
+
+#~ msgid "Double click on Buzzer! for a suprise ;)"
+#~ msgstr "Haga doble clic en el timbre! para una sorpresa;)"
+
+#~ msgid "Click on me for more tips!"
+#~ msgstr "Haga clic para más consejos!"
+
+#~ msgid "Duplicating buttons is disabled for free version"
+#~ msgstr ""
+#~ "Los botones duplicados están deshabilitados para la versión gratuita"
+
+#~ msgid ""
+#~ "You can select images and set them as icon or as button background image."
+#~ msgstr ""
+#~ "Puede seleccionar imágenes para usar como icono de botón y fondo de botón."
+
+#~ msgid ""
+#~ "With this setting, you can make your button appear/hide after certain "
+#~ "amount of time."
+#~ msgstr ""
+#~ "Con esta configuración, puede mostrar u ocultar Buttonizer después de un "
+#~ "tiempo determinado."
+
+#~ msgid ""
+#~ "With this setting, you can make your button appear/hide after scrolling "
+#~ "for a certain amount."
+#~ msgstr ""
+#~ "Esta configuración le permite mostrar u ocultar Buttonizer después de una "
+#~ "cierta cantidad de desplazamiento."
+
+#~ msgid "Thanks for using Buttonizer!"
+#~ msgstr "¡Gracias por usar Buttonizer!"
+
+#~ msgid ""
+#~ "Become a SUPER contributor by automatically sending us crash reports and "
+#~ "error logs. This way we can bugfix your bugs with the speed of light. "
+#~ "Don't worry, all data is anonymized."
+#~ msgstr ""
+#~ "Conviértase en un colaborador SUPER enviándonos automáticamente informes "
+#~ "de fallas y registros de errores. ¡De esta forma podemos resolver sus "
+#~ "errores a la velocidad de la luz! No se preocupe, todos los datos se "
+#~ "hacen anónimos."
+
+#~ msgid "No thanks"
+#~ msgstr "no, gracias"
+
+#~ msgid "Yes please!"
+#~ msgstr "¡Sí por favor!"
+
+#~ msgid "Back to Overview"
+#~ msgstr "volver al resumen"
+
+#~ msgid "Are you sure you want to exit? Your changes have not been saved."
+#~ msgstr "¿Seguro que quieres salir? Sus cambios no se han guardado."
+
+#~ msgid "Save and close"
+#~ msgstr "Guardar y cerrar"
+
+#~ msgid "Clear"
+#~ msgstr "Claro"
+
+#~ msgid "Font family"
+#~ msgstr "Familia tipográfica"
+
+#~ msgid "Type a custom font"
+#~ msgstr "Escribe una fuente personalizada"
+
+#~ msgid "Type \",\" to add %1$s"
+#~ msgstr "Escriba \",\" para agregar% 1 $ s"
+
+#~ msgid "Margin"
+#~ msgstr "Margen"
+
+#~ msgid "Change the position of the label."
+#~ msgstr "Cambiar la posición de la etiqueta."
+
+#~ msgid "Padding"
+#~ msgstr "Relleno"
+
+#~ msgid "Change the background size of the label."
+#~ msgstr "Cambia el tamaño de fondo de la etiqueta."
+
+#~ msgid "Delay"
+#~ msgstr "Retrasar"
+
+#~ msgid "Repeat Count"
+#~ msgstr "Repetir cuenta"
+
+#~ msgid "Enter '0' for unlimited"
+#~ msgstr "Ingrese '0' para ilimitado"
+
+#~ msgid "from"
+#~ msgstr "de"
+
+#~ msgid "Scaled"
+#~ msgstr "Escamoso"
+
+#~ msgid "Absolute"
+#~ msgstr "Absoluto"
+
+#~ msgid "Left"
+#~ msgstr "Izquierda"
+
+#~ msgid "Right"
+#~ msgstr "Correcto"
+
+#~ msgid "Bottom"
+#~ msgstr "Fondo"
+
+#~ msgid "Top"
+#~ msgstr "Parte superior"
+
+#~ msgid "Text only"
+#~ msgstr "Solo texto"
+
+#~ msgid "Text w/ icon"
+#~ msgstr "Texto con icono"
+
+#~ msgid "Open Custom Styling Editor"
+#~ msgstr "Abrir editor de estilo personalizado"
+
+#~ msgid "Custom Styling Editor"
+#~ msgstr "Editor de estilo personalizado"
+
+#~ msgid "Jump once"
+#~ msgstr "Saltar una vez"
+
+#~ msgid "Flip"
+#~ msgstr "Dar la vuelta"
+
+#~ msgid "Go to bottom"
+#~ msgstr "Ir al fondo"
+
+#~ msgid ""
+#~ "This menu style will remove the icon and add the label into the button, "
+#~ "making it one long button."
+#~ msgstr ""
+#~ "Este estilo de menú eliminará el icono y agregará la etiqueta al botón, "
+#~ "convirtiéndolo en un botón largo."
+
+#~ msgid ""
+#~ "This menu style will add the label into the button with an icon, making "
+#~ "it one long button."
+#~ msgstr ""
+#~ "Este estilo de menú agregará la etiqueta al botón con un icono, "
+#~ "convirtiéndolo en un botón largo."
+
+#~ msgid ""
+#~ "With this setting, you can change your animation settings like delay and "
+#~ "repeat count."
+#~ msgstr ""
+#~ "Con esta configuración, puede cambiar la configuración de la animación, "
+#~ "como el retraso y el recuento repetido."
+
+#~ msgid ""
+#~ "With this setting, you can change the font family of the label. You "
+#~ "choose a font add your custom font."
+#~ msgstr ""
+#~ "Con esta configuración, puede cambiar la familia de fuentes de la "
+#~ "etiqueta. Elige una fuente y agrega tu fuente personalizada."
+
+#~ msgid ""
+#~ "With this setting, you can change the margin of the label. Change the "
+#~ "position of the label relative to it's button"
+#~ msgstr ""
+#~ "Con esta configuración, puede cambiar el margen de la etiqueta. Cambiar "
+#~ "la posición de la etiqueta en relación con su botón"
+
+#~ msgid "With this setting, you can change the size of the label."
+#~ msgstr "Con esta configuración, puede cambiar el tamaño de la etiqueta."

@@ -1,0 +1,2322 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Buttonizer\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/buttonizer-"
+"multifunctional-button\n"
+"POT-Creation-Date: 2022-02-01T14:04:08+00:00\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. Plugin Name of the plugin
+msgid "Buttonizer - Smart Floating Action Button"
+msgstr "Buttonizer - Akıllı Yüzen Eylem Düğmesi"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://buttonizer.pro"
+msgstr "https://buttonizer.pro"
+
+#. Description of the plugin
+msgid ""
+"The Buttonizer is a new way to give a boost to your number of interactions, "
+"actions and conversions from your website visitor by adding one or multiple "
+"Customizable Smart Floating Button in the corner of your website."
+msgstr ""
+"Buttonizer, web sitenizin köşesine bir veya daha fazla Özelleştirilebilir "
+"Akıllı Yüzen Düğme ekleyerek web sitenizin ziyaretçisinden elde ettiğiniz "
+"etkileşim, işlem ve dönüşüm sayınızı artırmanın yeni bir yoludur."
+
+#. Author of the plugin
+msgid "Buttonizer"
+msgstr "Buttonizer"
+
+#: app/Admin/Admin.php:46
+msgid "A custom permalink structure is required for Buttonizer to work."
+msgstr ""
+"Buttonizer'ın çalışması için özel bir kalıcı bağlantı yapısı gereklidir."
+
+#: app/Admin/Admin.php:46
+msgid "Go to permalink structure settings."
+msgstr "Kalıcı bağlantı yapı ayarlarına gidin."
+
+#: app/Admin/Admin.php:62 app/Admin/Admin.php:79 app/Utils/Maintain.php:154
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: app/Admin/Admin.php:65
+msgid "Community"
+msgstr "Topluluk"
+
+#: app/Admin/Admin.php:68 app/Admin/Admin.php:77 app/Utils/Maintain.php:163
+msgid "Knowledge base"
+msgstr "Bilgi tabanı"
+
+#: app/Admin/Admin.php:71
+msgid "I need support"
+msgstr "Desteğe ihtiyacım var"
+
+#: app/Admin/Admin.php:76
+msgid "Community forums"
+msgstr "Topluluk forumları"
+
+#: app/Admin/Admin.php:78 app/Utils/Maintain.php:145
+msgid "Manage buttons"
+msgstr "Düğmeleri yönet"
+
+#: app/Admin/template.php:56
+msgid "Buttonizer is loading..."
+msgstr "Buttonizer yükleniyor ..."
+
+#. Translators: First link goes to our knowledge base, the second link goes to the admin panel.
+#: app/Admin/template.php:62
+msgid ""
+"When Buttonizer does not start, <a %1$s>click here</a> to find out what is "
+"going wrong or <a %2$s>click here</a> to return to the WordPress admin "
+"dashboard."
+msgstr ""
+"Buttonizer başlamazsa, neyin yanlış gittiğini öğrenmek için <a %1$s> burayı "
+"tıklayın </a> veya WordPress yönetici kontrol paneline dönmek için <a %2$s> "
+"burayı tıklayın </a>."
+
+#: app/Admin/template.php:71
+msgid ""
+"When you have a slow internet connection or slow webserver, give it a "
+"moment..."
+msgstr ""
+"Yavaş bir internet bağlantınız veya yavaş bir web sunucunuz olduğunda, biraz "
+"bekleyin ..."
+
+#: app/Admin/template.php:80
+msgid ""
+"Buttonizer dashboard does not work on IE11! Please use any other browsers to "
+"customize your buttons. :)"
+msgstr ""
+"Buttonizer panosu IE11'de çalışmıyor! Düğmelerinizi özelleştirmek için "
+"lütfen diğer tarayıcıları kullanın. :)"
+
+#: app/Admin/template.php:88
+msgid ""
+"Hi there! JavaScript is disabled in your browser. Please consider to enable "
+"JavaScript in your browser to use Buttonizer."
+msgstr ""
+"Merhaba! JavaScript tarayıcınızda devre dışı. Lütfen Buttonizer'ı kullanmak "
+"için tarayıcınızda JavaScript'i etkinleştirmeyi düşünün."
+
+#: app/Api/Dashboard/ApiDashboard.php:209 app/Api/Utils/ApiReset.php:57
+#: app/Utils/Update.php:545
+msgid "New group"
+msgstr "Yeni Grup"
+
+#: app/Api/Dashboard/ApiDashboard.php:216 app/Api/Utils/ApiReset.php:64
+#: app/Utils/Update.php:552
+msgid "New button"
+msgstr "Yeni düğme"
+
+#: app/Frontend/Group/Button/Button.php:86
+msgid "The button is hidden on all devices"
+msgstr "Düğme tüm cihazlarda gizlidir"
+
+#: app/Frontend/Group/Button/Button.php:111
+msgid ""
+"The button is hidden because the attached time schedule is <b>triggered</b>."
+msgstr "Eklenen zaman çizelgesi <b> tetiklendi </b> olduğundan düğme gizlenir."
+
+#: app/Frontend/Group/Button/Button.php:112
+msgid ""
+"The button is hidden because the attached time schedule is <b>not triggered</"
+"b> ."
+msgstr ""
+"Eklenen zaman çizelgesi <b> tetiklenmedi </b> olduğundan düğme gizlenir."
+
+#: app/Frontend/Group/Button/Button.php:136
+msgid ""
+"The button is hidden because the attached page rule is <b>triggered</b>."
+msgstr "Ekli sayfa kuralı <b> tetiklendi </b> olduğundan düğme gizlenir."
+
+#: app/Frontend/Group/Button/Button.php:137
+msgid ""
+"The button is hidden because the attached page rule is <b>not triggered</b> ."
+msgstr "Ekli sayfa kuralı <b> tetiklenmedi </b> çünkü düğme gizlendi."
+
+#: app/Frontend/Group/Group.php:126
+msgid "The group is hidden on all devices"
+msgstr "Grup tüm cihazlarda gizlidir"
+
+#: app/Frontend/Group/Group.php:149
+msgid ""
+"The group is hidden because the attached time schedule is <b>not triggered</"
+"b>."
+msgstr "Eklenen zaman çizelgesi <b> tetiklenmedi </b> nedeniyle grup gizlendi."
+
+#: app/Frontend/Group/Group.php:150
+msgid ""
+"The group is hidden because the attached time schedule is <b>triggered</b> ."
+msgstr "Ekli zaman çizelgesi <b> tetiklendi </b> olduğundan grup gizlendi."
+
+#: app/Frontend/Group/Group.php:173
+msgid ""
+"The group is hidden because the attached page rule is <b>not triggered</b>."
+msgstr "Ekli sayfa kuralı <b> tetiklenmedi </b> nedeniyle grup gizlendi."
+
+#: app/Frontend/Group/Group.php:174
+msgid ""
+"The group is hidden because the attached page rule is <b>triggered</b> ."
+msgstr "Ekli sayfa kuralı <b> tetiklendi </b> olduğundan grup gizlendi."
+
+#: app/Utils/Maintain.php:167
+msgid "Find out everything you need to know about Buttonizer"
+msgstr "Buttonizer hakkında bilmeniz gereken her şeyi öğrenin"
+
+#~ msgid "Oh, that was not what we were expecting! Something went wrong."
+#~ msgstr "Oh, beklediğimiz bu değildi! Bir şeyler yanlış gitti."
+
+#~ msgid "Custom javascript error"
+#~ msgstr "Özel javascript hatası"
+
+#~ msgid "Your custom javascript ran into an error. Read the error below:"
+#~ msgstr ""
+#~ "Özel javascriptiniz bir hatayla karşılaştı. Aşağıdaki hatayı okuyun:"
+
+#~ msgid "Could not save settings"
+#~ msgstr "Ayarlar kaydedilemedi"
+
+#~ msgid "Something went wrong while saving your settings:"
+#~ msgstr "Ayarlarınızı kaydederken bir şeyler ters gitti:"
+
+#~ msgid "Only numbers allowed."
+#~ msgstr "Yalnızca sayılara izin verilir."
+
+#~ msgid "For this input, only positive numbers are allowed."
+#~ msgstr "Bu giriş için yalnızca pozitif sayılara izin verilir."
+
+#~ msgid "Invalid email address."
+#~ msgstr "Geçersiz e-posta adresi."
+
+#~ msgid ""
+#~ "Invalid phone number. Please only use number for your phone number. Omit "
+#~ "any zeros, brackets or dashes when adding the phone number in "
+#~ "international format."
+#~ msgstr ""
+#~ "Geçersiz telefon numarası. Lütfen telefon numaranız için sadece numara "
+#~ "kullanın. Telefon numarasını uluslararası biçimde eklerken sıfır, köşeli "
+#~ "ayraç veya tire işareti atlayın."
+
+#~ msgid "This field only allows numbers."
+#~ msgstr "Bu alan yalnızca sayılara izin verir."
+
+#~ msgid "Button"
+#~ msgstr "Buton"
+
+#~ msgid "Group"
+#~ msgstr "grup"
+
+#~ msgid "Confirm"
+#~ msgstr "Onaylamak"
+
+#~ msgid "Search"
+#~ msgstr "Arama"
+
+#~ msgid "Skip"
+#~ msgstr "Atla"
+
+#~ msgid "Disable"
+#~ msgstr "Devre Dışı"
+
+#~ msgid "Disabled"
+#~ msgstr "engelli"
+
+#~ msgid "Save"
+#~ msgstr "Kayıt etmek"
+
+#~ msgid "Saving"
+#~ msgstr "Tasarruf"
+
+#~ msgid "Saving settings"
+#~ msgstr "Ayarları kaydetme"
+
+#~ msgid "Publish"
+#~ msgstr "Yayınla"
+
+#~ msgid "Published"
+#~ msgstr "Yayınlanan"
+
+#~ msgid "Publishing..."
+#~ msgstr "Yayıncılık ..."
+
+#~ msgid "Warning"
+#~ msgstr "Uyarı"
+
+#~ msgid "Next"
+#~ msgstr "Sonraki"
+
+#~ msgid "Previous"
+#~ msgstr "Önceki"
+
+#~ msgid "Save & publish"
+#~ msgstr "Kaydet ve yayınla"
+
+#~ msgid "Loading..."
+#~ msgstr "Yükleniyor..."
+
+#~ msgid "Loading settings..."
+#~ msgstr "Ayarlar yükleniyor ..."
+
+#~ msgid "Building bar..."
+#~ msgstr "İnşaat barı ..."
+
+#~ msgid "Waiting for your website..."
+#~ msgstr "Web siteniz bekleniyor ..."
+
+#~ msgid "It's taking longer than usual, slow website?"
+#~ msgstr "Web siteniz normalden daha uzun sürüyor mu?"
+
+#~ msgid "Skip this step"
+#~ msgstr "Bu adımı atla"
+
+#~ msgid "Initializing..."
+#~ msgstr "Başlatılıyor ..."
+
+#~ msgid "Resetting..."
+#~ msgstr "Sıfırlanıyor ..."
+
+#~ msgid "Running migration..."
+#~ msgstr "Taşıma çalışıyor ..."
+
+#~ msgid "Finishing..."
+#~ msgstr "Bitiricilik..."
+
+#~ msgid "Add button"
+#~ msgstr "Ekle düğmesi"
+
+#~ msgid "Add group"
+#~ msgstr "Grup ekle"
+
+#~ msgid "Text"
+#~ msgstr "Metin"
+
+#~ msgid "Base"
+#~ msgstr "baz"
+
+#~ msgid "Icon"
+#~ msgstr "ikon"
+
+#~ msgid "Search icon"
+#~ msgstr "Arama simgesi"
+
+#~ msgid "Image"
+#~ msgstr "görüntü"
+
+#~ msgid "Select image"
+#~ msgstr "Fotoğraf seç"
+
+#~ msgid "Change image"
+#~ msgstr "Resmi değiştir"
+
+#~ msgid "Click to remove this image"
+#~ msgstr "Bu resmi kaldırmak için tıklayın"
+
+#~ msgid "First button"
+#~ msgstr "İlk düğme"
+
+#~ msgid "Second button"
+#~ msgstr "İkinci düğme"
+
+#~ msgid "Rename"
+#~ msgstr "Adını değiştirmek"
+
+#~ msgid "Delete"
+#~ msgstr "Sil"
+
+#~ msgid "Duplicate"
+#~ msgstr "Çiftleme"
+
+#~ msgid "page rule"
+#~ msgstr "sayfa kuralı"
+
+#~ msgid "time schedule"
+#~ msgstr "zaman çizelgesi"
+
+#~ msgid "Interaction"
+#~ msgstr "etkileşim"
+
+#~ msgid "Background"
+#~ msgstr "Arka fon"
+
+#~ msgid "Need help? Quick-start, tips & tricks"
+#~ msgstr ""
+#~ "Yardıma mı ihtiyacınız var? Hızlı başlangıç, ipuçları ve püf noktaları"
+
+#~ msgid "Need help? Visit our knowledge base!"
+#~ msgstr "Yardıma mı ihtiyacınız var? Bilgi tabanımızı ziyaret edin!"
+
+#~ msgid "Nothing found for:"
+#~ msgstr "Şunun için hiçbir şey bulunamadı:"
+
+#~ msgid "Search icons"
+#~ msgstr "Arama simgeleri"
+
+#~ msgid "Need help? Learn how to use <b>%1$s</b>."
+#~ msgstr ""
+#~ "Yardıma mı ihtiyacınız var? <b>% 1 $ s </b> 'ı nasıl kullanacağınızı "
+#~ "öğrenin."
+
+#~ msgid "OK"
+#~ msgstr "tamam"
+
+#~ msgid "OK, I'll fix this"
+#~ msgstr "Tamam, bunu düzeltirim"
+
+#~ msgid "Close"
+#~ msgstr "Kapat"
+
+#~ msgid "Cancel"
+#~ msgstr "İptal etmek"
+
+#~ msgid "Yes please"
+#~ msgstr "Evet lütfen"
+
+#~ msgid "No thank you"
+#~ msgstr "Hayır teşekkürler"
+
+#~ msgid "Dismiss"
+#~ msgstr "Reddet"
+
+#~ msgid "I've changed my mind"
+#~ msgstr "fikrimi değiştirdim"
+
+#~ msgid "Event tracker"
+#~ msgstr "Etkinlik izleyici"
+
+#~ msgid "Revert changes"
+#~ msgstr "Değişiklikleri geri al"
+
+#~ msgid "Reverting..."
+#~ msgstr "Döndürülüyor ..."
+
+#~ msgid "Are you sure you want to revert your changes?"
+#~ msgstr "Yaptığınız değişiklikleri geri almak istediğinizden emin misiniz?"
+
+#~ msgid ""
+#~ "The current changes will be overwritten by the current published buttons "
+#~ "and settings."
+#~ msgstr ""
+#~ "Geçerli değişikliklerin üzerine, yayınlanan mevcut düğmeler ve ayarlar "
+#~ "yazılır."
+
+#~ msgid "Could not revert settings"
+#~ msgstr "Ayarlar geri alınamadı"
+
+#~ msgid "Something went wrong while reverting your settings."
+#~ msgstr "Ayarlarınızı geri alırken bir şeyler ters gitti."
+
+#~ msgid "Menu style"
+#~ msgstr "Menü stili"
+
+#~ msgid "Group style"
+#~ msgstr "Grup stili"
+
+#~ msgid "Group icon"
+#~ msgstr "Grup simgesi"
+
+#~ msgid "Button style"
+#~ msgstr "Düğme stili"
+
+#~ msgid "Button icon"
+#~ msgstr "Düğme simgesi"
+
+#~ msgid "Label"
+#~ msgstr "Etiket"
+
+#~ msgid "Button name"
+#~ msgstr "Düğme adı"
+
+#~ msgid "This is the button name."
+#~ msgstr "Bu düğme adı."
+
+#~ msgid "Button color"
+#~ msgstr "Düğme rengi"
+
+#~ msgid ""
+#~ "This is the color of your button group and also the default color for "
+#~ "your buttons within this group."
+#~ msgstr ""
+#~ "Bu, düğme grubunuzun rengidir ve ayrıca bu gruptaki düğmeleriniz için "
+#~ "varsayılan renktir."
+
+#~ msgid "Background image"
+#~ msgstr "Arka plan görüntüsü"
+
+#~ msgid ""
+#~ "Upload an image if you want an image as a background instead of a color. "
+#~ "Recommended aspect ratio: square (1:1)."
+#~ msgstr ""
+#~ "Görüntüyü renk yerine arka plan olarak istiyorsanız bir görüntü yükleyin. "
+#~ "Önerilen en boy oranı: kare (1: 1)."
+
+#~ msgid "Border radius"
+#~ msgstr "Sınır yarıçapı"
+
+#~ msgid "Change the roundness of this button group."
+#~ msgstr "Bu düğme grubunun yuvarlaklığını değiştirin."
+
+#~ msgid "Choose an icon from the icon library."
+#~ msgstr "Simge kitaplığından bir simge seçin."
+
+#~ msgid "Icon color"
+#~ msgstr "Simge rengi"
+
+#~ msgid "Change the icon color of this button."
+#~ msgstr "Bu düğmenin simge rengini değiştirin."
+
+#~ msgid "Change the border radius of the image."
+#~ msgstr "Görüntünün kenarlık yarıçapını değiştirin."
+
+#~ msgid ""
+#~ "Choose an image to use as this button or group icon. Recommended aspect "
+#~ "ratio: square (1:1)"
+#~ msgstr ""
+#~ "Bu düğme veya grup simgesi olarak kullanılacak bir resim seçin. Önerilen "
+#~ "en boy oranı: kare (1: 1)"
+
+#~ msgid "Image size"
+#~ msgstr "Görüntü boyutu"
+
+#~ msgid "Change the size of the image."
+#~ msgstr "Görüntünün boyutunu değiştirin."
+
+#~ msgid "Graphic"
+#~ msgstr "Grafik"
+
+#~ msgid "Choose whether to use an icon or image as the button icon."
+#~ msgstr ""
+#~ "Düğme simgesi olarak bir simge mi yoksa resim mi kullanılacağını seçin."
+
+#~ msgid "Icon size"
+#~ msgstr "Simge boyutu"
+
+#~ msgid "Change the icon size of this button."
+#~ msgstr "Bu düğmenin simge boyutunu değiştirin."
+
+#~ msgid "Change the label of this button."
+#~ msgstr "Bu düğmenin etiketini değiştirin."
+
+#~ msgid "Label text"
+#~ msgstr "Metni etiketle"
+
+#~ msgid "Label color"
+#~ msgstr "Etiket rengi"
+
+#~ msgid ""
+#~ "Change the text and background color of the label for this button or "
+#~ "group."
+#~ msgstr ""
+#~ "Bu düğme veya grup için etiketin metnini ve arka plan rengini değiştirin."
+
+#~ msgid "Font size & border radius"
+#~ msgstr "Yazı tipi boyutu ve kenarlık yarıçapı"
+
+#~ msgid ""
+#~ "Change the font size and border radius of the label for this button group."
+#~ msgstr ""
+#~ "Bu düğme grubu için etiketin yazı tipi boyutunu ve kenarlık yarıçapını "
+#~ "değiştirin."
+
+#~ msgid "Animation"
+#~ msgstr "Animasyon"
+
+#~ msgid ""
+#~ "This will animate this button group to get the attention of the visitor. "
+#~ "The animation repeats itself every 10 seconds."
+#~ msgstr ""
+#~ "Bu, ziyaretçinin dikkatini çekmek için bu düğme grubunu canlandıracaktır. "
+#~ "Animasyon kendini her 10 saniyede bir tekrarlar."
+
+#~ msgid "No animation"
+#~ msgstr "Animasyon yok"
+
+#~ msgid "Buttonizer Hello"
+#~ msgstr "Buttonizer Merhaba"
+
+#~ msgid "Bounce"
+#~ msgstr "Sıçrama"
+
+#~ msgid "Jelly"
+#~ msgstr "Jöle"
+
+#~ msgid "Pulse"
+#~ msgstr "Nabız"
+
+#~ msgid "Position"
+#~ msgstr "Durum"
+
+#~ msgid "Change the position of this button group."
+#~ msgstr "Bu düğme grubunun konumunu değiştirin."
+
+#~ msgid "Custom"
+#~ msgstr "görenek"
+
+#~ msgid "Menu Style"
+#~ msgstr "Menü Stili"
+
+#~ msgid "Change the menu style of this button group."
+#~ msgstr "Bu düğme grubunun menü stilini değiştirin."
+
+#~ msgid "Default"
+#~ msgstr "Varsayılan"
+
+#~ msgid "Faded"
+#~ msgstr "Solmuş"
+
+#~ msgid "Corner circle"
+#~ msgstr "Köşe dairesi"
+
+#~ msgid "Build Up"
+#~ msgstr "Kurmak"
+
+#~ msgid "Pop"
+#~ msgstr "Pop"
+
+#~ msgid "Square"
+#~ msgstr "Meydan"
+
+#~ msgid "Rectangle"
+#~ msgstr "Dikdörtgen"
+
+#~ msgid "Visibility"
+#~ msgstr "görünürlük"
+
+#~ msgid ""
+#~ "Always show the label, show the label on hover or hide the label on "
+#~ "<u>desktop devices</u>."
+#~ msgstr ""
+#~ "Her zaman etiketi gösterin, imleci fareyle üzerine getirin veya <u> "
+#~ "masaüstü cihazlarda </u> etiketi gizleyin."
+
+#~ msgid "Always show or hide the label on <u>mobile devices</u>."
+#~ msgstr "Etiketi her zaman <u> mobil cihazlarda </u> gösterin veya gizleyin."
+
+#~ msgid "Always show label"
+#~ msgstr "Her zaman etiketi göster"
+
+#~ msgid "Show label on hover"
+#~ msgstr "Fareyle etiketi göster"
+
+#~ msgid "Hide label"
+#~ msgstr "Etiketi gizle"
+
+#~ msgid "Show on"
+#~ msgstr "Göstermek"
+
+#~ msgid "Device visibility"
+#~ msgstr "Cihaz görünürlüğü"
+
+#~ msgid ""
+#~ "Choose if you want to make this button group visible on desktop and "
+#~ "mobile devices."
+#~ msgstr ""
+#~ "Bu düğme grubunun masaüstü ve mobil cihazlarda görünür olmasını isteyip "
+#~ "istemediğinizi seçin."
+
+#~ msgid "Mobile"
+#~ msgstr "seyyar"
+
+#~ msgid "Desktop"
+#~ msgstr "Masaüstü"
+
+#~ msgid "Start opened"
+#~ msgstr "Başlat açıldı"
+
+#~ msgid "This button group starts opened when this setting is enabled."
+#~ msgstr "Bu ayar etkinleştirildiğinde bu düğme grubu açılmaya başlar."
+
+#~ msgid ""
+#~ "When enabled, this button will use the same style as the button group."
+#~ msgstr "Etkinleştirildiğinde, bu düğme düğme grubuyla aynı stili kullanır."
+
+#~ msgid "Custom ID"
+#~ msgstr "Özel Kimlik"
+
+#~ msgid "Adds a custom 'id' HTML attribute to the button."
+#~ msgstr "Düğmeye özel bir 'id' HTML özelliği ekler."
+
+#~ msgid "You can add a custom ID to each button for styling purposes."
+#~ msgstr ""
+#~ "Stil oluşturma amacıyla her düğmeye özel bir kimlik ekleyebilirsiniz."
+
+#~ msgid "ID name"
+#~ msgstr "Kimlik adı"
+
+#~ msgid "Custom class"
+#~ msgstr "Özel sınıf"
+
+#~ msgid "Adds a custom 'class' HTML attribute to the button."
+#~ msgstr "Düğmeye özel bir 'sınıf' HTML özelliği ekler."
+
+#~ msgid "You can add a custom class to each button for styling purposes."
+#~ msgstr ""
+#~ "Stil oluşturma amacıyla her düğmeye özel bir sınıf ekleyebilirsiniz."
+
+#~ msgid "Class name"
+#~ msgstr "Sınıf adı"
+
+#~ msgid "Page rule"
+#~ msgstr "Sayfa kuralı"
+
+#~ msgid "Manage page rules"
+#~ msgstr "Sayfa kurallarını yönet"
+
+#~ msgid "You cannot select the same page rule as it's group!"
+#~ msgstr "Grubuyla aynı sayfa kuralını seçemezsiniz!"
+
+#~ msgid "Show button when rule is triggered"
+#~ msgstr "Kural tetiklendiğinde düğmeyi göster"
+
+#~ msgid "Hide button when rule is triggered"
+#~ msgstr "Kural tetiklendiğinde düğmeyi gizle"
+
+#~ msgid "Exit intent"
+#~ msgstr "Niyetten çık"
+
+#~ msgid "Enable exit intent"
+#~ msgstr "Çıkış amacını etkinleştir"
+
+#~ msgid ""
+#~ "With this setting, you can trigger Buttonizer to animate before your "
+#~ "guest exits your website."
+#~ msgstr ""
+#~ "Bu ayarla, misafiriniz web sitenizden çıkmadan önce animasyon yapmak için "
+#~ "Buttonizer'ı tetikleyebilirsiniz."
+
+#~ msgid ""
+#~ "Please note: Exit intent will <b>not trigger</b> in preview mode, only in "
+#~ "your LIVE website."
+#~ msgstr ""
+#~ "Lütfen dikkat: Çıkış amacı önizleme modunda, yalnızca LIVE web sitenizde "
+#~ "<b> tetiklenmez </b>."
+
+#~ msgid "When to trigger?"
+#~ msgstr "Ne zaman tetiklenir?"
+
+#~ msgid "Trigger when leaving browser window"
+#~ msgstr "Tarayıcı penceresinden çıkarken tetikleme"
+
+#~ msgid "Trigger on inactivity (2 minutes)"
+#~ msgstr "Hareketsizlik durumunda tetikleme (2 dakika)"
+
+#~ msgid "How often should it be triggered?"
+#~ msgstr "Ne sıklıkla tetiklenmelidir?"
+
+#~ msgid "Only trigger once per page"
+#~ msgstr "Sayfa başına yalnızca bir kez tetikleme"
+
+#~ msgid "Only trigger once per session"
+#~ msgstr "Oturum başına yalnızca bir kez tetikleme"
+
+#~ msgid "Trigger every time"
+#~ msgstr "Her seferinde tetikle"
+
+#~ msgid "Animation on intent"
+#~ msgstr "Niyet üzerinde animasyon"
+
+#~ msgid "Focused"
+#~ msgstr "Odaklı"
+
+#~ msgid "Open menu"
+#~ msgstr "Menüyü aç"
+
+#~ msgid "Jump once and open"
+#~ msgstr "Bir kez zıpla ve aç"
+
+#~ msgid "Flip and open"
+#~ msgstr "Çevir ve aç"
+
+#~ msgid "Button action"
+#~ msgstr "Düğme eylemi"
+
+#~ msgid "Choose a click action for this button."
+#~ msgstr "Bu düğme için bir tıklama işlemi seçin."
+
+#~ msgid "Select button action"
+#~ msgstr "Düğme eylemini seç"
+
+#~ msgid "No button action found for:"
+#~ msgstr "Şunun için düğme eylemi bulunamadı:"
+
+#~ msgid "Popular actions"
+#~ msgstr "Popüler eylemler"
+
+#~ msgid "Click to chat"
+#~ msgstr "Sohbet etmek için tıklayın"
+
+#~ msgid "Social Media"
+#~ msgstr "Sosyal medya"
+
+#~ msgid "Popup"
+#~ msgstr "Açılır"
+
+#~ msgid "Call action (phone number)"
+#~ msgstr "Çağrı eylemi (telefon numarası)"
+
+#~ msgid "Mail action (email address)"
+#~ msgstr "Posta işlemi (e-posta adresi)"
+
+#~ msgid "Back to top"
+#~ msgstr "Başa dönüş"
+
+#~ msgid "Go back one page"
+#~ msgstr "Bir sayfa geri git"
+
+#~ msgid "Share page"
+#~ msgstr "Sayfayı paylaş"
+
+#~ msgid ""
+#~ "Some sms apps does not support a body tag. When this happens, it will "
+#~ "simply open the sms app with the phone number already filled in."
+#~ msgstr ""
+#~ "Bazı sms uygulamaları bir gövde etiketini desteklemez. Bu olduğunda, sms "
+#~ "uygulamasını önceden doldurulmuş telefon numarasıyla açacaktır."
+
+#~ msgid ""
+#~ "Viber does not support a \"chat with phone number \" link. When a user "
+#~ "clicks on this button it will open their \"add contact\" with the number "
+#~ "filled in."
+#~ msgstr ""
+#~ "Viber \"telefon numarası ile sohbet et\" bağlantısını desteklemiyor. Bir "
+#~ "kullanıcı bu düğmeyi tıkladığında, \"kişi ekle\" ifadesini numarayla "
+#~ "birlikte açar."
+
+#~ msgid ""
+#~ "New, Facebook Messenger Chat Widget! First, you'll need to <a "
+#~ "%1$s>whitelist</a> your site on Facebook. Then add your <a %2$s>Page ID</"
+#~ "a> into the input above."
+#~ msgstr ""
+#~ "Yeni, Facebook Messenger Sohbet Widget'ı! Öncelikle, sitenizi Facebook'ta "
+#~ "<a %1$s> beyaz listeye </a> eklemeniz gerekir. Ardından, yukarıdaki "
+#~ "girişe <a %2$s> Sayfa Kimliğinizi </a> ekleyin."
+
+#~ msgid ""
+#~ "You need to install Poptin's WordPress plugin. You can find it <a "
+#~ "%1$s>here</a>. Once you've made a Poptin paste the <a %2$s>direct link</"
+#~ "a> into the input."
+#~ msgstr ""
+#~ "Poptin'in WordPress eklentisini kurmanız gerekiyor. <a %1$s> burada </a> "
+#~ "bulabilirsiniz. Bir Poptin yaptıktan sonra <a %2$s> doğrudan bağlantısını "
+#~ "</a> girişe yapıştırın."
+
+#~ msgid "Share on %s"
+#~ msgstr "% S üzerinde paylaş"
+
+#~ msgid "Share via %s"
+#~ msgstr "% S üzerinden paylaş"
+
+#~ msgid "This URL appears to be invalid. The button may not work as expected."
+#~ msgstr "Bu URL geçersiz görünüyor. Düğme beklendiği gibi çalışmayabilir."
+
+#~ msgid ""
+#~ "Do you miss <b>http://</b> or <b>https://</b>? Perhaps an unnecessary "
+#~ "space is added somewhere."
+#~ msgstr ""
+#~ "<b> http: // </b> veya <b> https: // </b> özlüyor musunuz? Belki de bir "
+#~ "yere gereksiz bir alan eklenir."
+
+#~ msgid ""
+#~ "<b>Insecure URL:</b> Sorry to interrupt, but we advice you to use HTTPS "
+#~ "for your URLS. This is a safer way to transport data."
+#~ msgstr ""
+#~ "<b> Güvenli olmayan URL: </b> Araya girdiğimiz için üzgünüz, ancak "
+#~ "URL'leriniz için HTTPS kullanmanızı öneririz. Bu, veri taşımanın daha "
+#~ "güvenli bir yoludur."
+
+#~ msgid "Javascript function"
+#~ msgstr "Javascript işlevi"
+
+#~ msgid "Warning! Before you continue..."
+#~ msgstr "Uyarı! Devam etmeden önce ..."
+
+#~ msgid ""
+#~ "You are changing this button action from custom javascript to a different "
+#~ "action. Your javascript changes will be lost."
+#~ msgstr ""
+#~ "Bu düğme eylemini özel javascript'ten farklı bir eyleme "
+#~ "değiştiriyorsunuz. Javascript değişiklikleriniz kaybolacak."
+
+#~ msgid "Are you sure you want to proceed?"
+#~ msgstr "Devam etmek istediğinizden emin misiniz?"
+
+#~ msgid ""
+#~ "Fill in your phone number without any spaces and symbols. Read WhatsApps "
+#~ "recommendations by <a %s>clicking here.</a>"
+#~ msgstr ""
+#~ "Telefon numaranızı boşluk ve simge olmadan doldurun. <a %s> Buraya "
+#~ "tıklayarak </a> WhatsApps önerilerini okuyun."
+
+#~ msgid ""
+#~ "When you want to use Twitter DM you will need to find your Twitter User "
+#~ "ID and allow direct messages from anyone. To find your account ID <a "
+#~ "%1$s>click here</a>. And to read more about how to allow direct messages "
+#~ "from anyone, <a %2$s>click here</a>."
+#~ msgstr ""
+#~ "Twitter DM'yi kullanmak istediğinizde Twitter Kullanıcı Kimliğinizi "
+#~ "bulmanız ve herkesten doğrudan iletilere izin vermeniz gerekir. Hesap "
+#~ "kimliğinizi bulmak için <a %1$s> burayı tıklayın </a>. Birinden doğrudan "
+#~ "iletilere nasıl izin verileceği hakkında daha fazla bilgi edinmek için <a "
+#~ "%2$s> burayı tıklayın </a>."
+
+#~ msgid "Message"
+#~ msgstr "İleti"
+
+#~ msgid "Username"
+#~ msgstr "Kullanıcı adı"
+
+#~ msgid "Recipient"
+#~ msgstr "alıcı"
+
+#~ msgid "Subject"
+#~ msgstr "konu"
+
+#~ msgid "Body"
+#~ msgstr "Vücut"
+
+#~ msgid "Open new tab"
+#~ msgstr "Yeni sekme aç"
+
+#~ msgid "When the button is clicked, open in new tab."
+#~ msgstr "Düğme tıklandığında yeni sekmede açın."
+
+#~ msgid "Filters"
+#~ msgstr "Filtreler"
+
+#~ msgid "Styling"
+#~ msgstr "Şekillendirme"
+
+#~ msgid "Timeout & Scroll"
+#~ msgstr "Zaman Aşımı ve Kaydırma"
+
+#~ msgid "Buttonizer settings"
+#~ msgstr "Buttonizer ayarları"
+
+#~ msgid "Icon library"
+#~ msgstr "Simge kütüphanesi"
+
+#~ msgid "free"
+#~ msgstr "Bedava"
+
+#~ msgid "Latest (automatic)"
+#~ msgstr "En son (otomatik)"
+
+#~ msgid ""
+#~ "If your theme automatically loads in a library, just select the correct "
+#~ "icon library instead."
+#~ msgstr ""
+#~ "Temanız otomatik olarak bir kitaplığa yüklenirse, bunun yerine doğru "
+#~ "simge kitaplığını seçin."
+
+#~ msgid "Select version"
+#~ msgstr "Sürüm seç"
+
+#~ msgid ""
+#~ "Select the correct version of the library in order to use the icons in "
+#~ "Buttonizer."
+#~ msgstr ""
+#~ "Buttonizer'daki simgeleri kullanmak için kütüphanenin doğru sürümünü "
+#~ "seçin."
+
+#~ msgid ""
+#~ "You have selected an icon library that has premium icons. Enter the "
+#~ "library license code to view and use these."
+#~ msgstr ""
+#~ "Premium simgeleri olan bir simge kitaplığı seçtiniz. Bunları görüntülemek "
+#~ "ve kullanmak için kütüphane lisans kodunu girin."
+
+#~ msgid "How does this work?"
+#~ msgstr "Bu nasıl çalışıyor?"
+
+#~ msgid "Enter %s code"
+#~ msgstr "% S kodunu girin"
+
+#~ msgid "Import icon library"
+#~ msgstr "Simge kitaplığını içe aktar"
+
+#~ msgid ""
+#~ "Should Buttonizer import the icon library into your theme? If your theme "
+#~ "already imports the library you can disable this."
+#~ msgstr ""
+#~ "Buttonizer simge kitaplığını temanıza aktarmalı mı? Temanız zaten "
+#~ "kütüphaneyi içeri aktarıyorsa bunu devre dışı bırakabilirsiniz."
+
+#~ msgid "Where can I see my click data of my buttons in Google Analytics?"
+#~ msgstr ""
+#~ "Google Analytics'teki düğmelerimin tıklama verilerimi nerede görebilirim?"
+
+#~ msgid "Other settings"
+#~ msgstr "Diğer ayarlar"
+
+#~ msgid "Show admin top bar"
+#~ msgstr "Yönetici üst çubuğunu göster"
+
+#~ msgid "Hide Buttonizer in the admin top bar by disabling this setting."
+#~ msgstr ""
+#~ "Bu ayarı devre dışı bırakarak yönetici üst çubuğundaki Buttonizer'ı gizle."
+
+#~ msgid "Show tooltips"
+#~ msgstr "Araç ipuçlarını göster"
+
+#~ msgid "Hide the tooltips by disabling this setting."
+#~ msgstr "Bu ayarı devre dışı bırakarak araç ipuçlarını gizleyin."
+
+#~ msgid "Subdomain support"
+#~ msgstr "Alt alan adı desteği"
+
+#~ msgid ""
+#~ "Some WordPress websites use subdomains for content purposes. Enable this "
+#~ "setting to allow Buttonizer to load on your subdomains. Only enable this "
+#~ "when you need it."
+#~ msgstr ""
+#~ "Bazı WordPress web siteleri, içerik amacıyla alt alan adları kullanır. "
+#~ "Buttonizer'ın alt alan adlarınıza yüklenmesine izin vermek için bu ayarı "
+#~ "etkinleştirin. Bunu yalnızca ihtiyacınız olduğunda etkinleştirin."
+
+#~ msgid "Reset"
+#~ msgstr "Sıfırla"
+
+#~ msgid "This is a way to reset Buttonizer to the default settings."
+#~ msgstr "Bu, Buttonizer'ı varsayılan ayarlara sıfırlamanın bir yoludur."
+
+#~ msgid "What will happen when I click the red button below?"
+#~ msgstr "Aşağıdaki kırmızı düğmeyi tıkladığımda ne olacak?"
+
+#~ msgid ""
+#~ "The plugin will get a 'factory reset'. All settings of Buttonizer will "
+#~ "get deleted, reverting back to when you first installed and activated "
+#~ "Buttonizer."
+#~ msgstr ""
+#~ "Eklenti bir 'fabrika ayarlarına sıfırlama' alacak. Buttonizer'ın tüm "
+#~ "ayarları silinecek ve Buttonizer'ı ilk kurduğunuzda ve "
+#~ "etkinleştirdiğinizde geri dönecektir."
+
+#~ msgid "Why would I do that?"
+#~ msgstr "Neden bunu yapayım?"
+
+#~ msgid ""
+#~ "Perhaps you ruined your buttons, categories or settings and would like to "
+#~ "start from scratch. Or maybe you just feel trying the reset button..."
+#~ msgstr ""
+#~ "Belki düğmelerinizi, kategorilerinizi veya ayarlarınızı mahvettiniz ve "
+#~ "sıfırdan başlamak istersiniz. Veya sıfırlama düğmesini denediğinizi "
+#~ "hissedebilirsiniz ..."
+
+#~ msgid "I have a license, what about that?"
+#~ msgstr "Lisansım var, buna ne dersin?"
+
+#~ msgid ""
+#~ "No worries! Nothing will happen with your license! It only resets the "
+#~ "following:"
+#~ msgstr ""
+#~ "Telaşa gerek yok! Ehliyetinizde hiçbir şey olmayacak! Yalnızca "
+#~ "aşağıdakileri sıfırlar:"
+
+#~ msgid "Your buttons"
+#~ msgstr "Düğmeleriniz"
+
+#~ msgid "Your button groups"
+#~ msgstr "Düğme gruplarınız"
+
+#~ msgid "All time schedules"
+#~ msgstr "Tüm zaman çizelgeleri"
+
+#~ msgid "All page rules"
+#~ msgstr "Tüm sayfa kuralları"
+
+#~ msgid "All other settings of Buttonizer"
+#~ msgstr "Buttonizer'ın diğer tüm ayarları"
+
+#~ msgid "All published settings"
+#~ msgstr "Yayınlanan tüm ayarlar"
+
+#~ msgid "Okay, sounds good. What then?"
+#~ msgstr "Tamam, kulağa hoş geliyor. Sonra ne?"
+
+#~ msgid ""
+#~ "Buttonizer will revert back to the default settings and feel like a fresh "
+#~ "installation. That's all."
+#~ msgstr ""
+#~ "Buttonizer varsayılan ayarlara geri dönecek ve yeni bir kurulum gibi "
+#~ "hissedecektir. Bu kadar."
+
+#~ msgid "Okay, I'm ready!"
+#~ msgstr "Tamam, hazırım!"
+
+#~ msgid ""
+#~ "Press the red button below to reset Buttonizer. There will be no more "
+#~ "warnings."
+#~ msgstr ""
+#~ "Buttonizer'ı sıfırlamak için aşağıdaki kırmızı düğmeye basın. Başka uyarı "
+#~ "olmayacak."
+
+#~ msgid "Reset Buttonizer!"
+#~ msgstr "Buttonizer'ı Sıfırla!"
+
+#~ msgid "Loaded changes from previous session"
+#~ msgstr "Önceki oturumdan yüklenen değişiklikler"
+
+#~ msgid "Return to preview"
+#~ msgstr "Önizlemeye dön"
+
+#~ msgid "Desktop preview"
+#~ msgstr "Masaüstü önizlemesi"
+
+#~ msgid "Tablet preview"
+#~ msgstr "Tablet önizlemesi"
+
+#~ msgid "Mobile preview"
+#~ msgstr "Mobil önizleme"
+
+#~ msgid "Version %s"
+#~ msgstr "% S sürümü"
+
+#~ msgid "Support"
+#~ msgstr "Destek"
+
+#~ msgid "Direct support with the Buttonizer developers"
+#~ msgstr "Buttonizer geliştiricileri ile doğrudan destek"
+
+#~ msgid "Interact with other Buttonizers"
+#~ msgstr "Diğer Buttonizers ile etkileşime gir"
+
+#~ msgid "Buttonizer tour (recommended!)"
+#~ msgstr "Buttonizer turu (önerilir!)"
+
+#~ msgid "Start the 2 minute tour"
+#~ msgstr "2 dakikalık turu başlatın"
+
+#~ msgid "Buttonizer account"
+#~ msgstr "Buttonizer hesabı"
+
+#~ msgid "My Account"
+#~ msgstr "Hesabım"
+
+#~ msgid "Upgrade or pricing"
+#~ msgstr "Yükseltme veya fiyatlandırma"
+
+#~ msgid "Affiliation"
+#~ msgstr "üyelik"
+
+#~ msgid "Earn $ by promoting Buttonizer"
+#~ msgstr "Buttonizer'ı tanıtarak $ kazanın"
+
+#~ msgid "Options"
+#~ msgstr "Seçenekler"
+
+#~ msgid "Now editing:"
+#~ msgstr "Şimdi düzenleniyor:"
+
+#~ msgid "This creates a new group with 2 buttons inside."
+#~ msgstr "Bu, içinde 2 düğme bulunan yeni bir grup oluşturur."
+
+#~ msgid "This creates a new button, outside other groups."
+#~ msgstr "Bu, diğer grupların dışında yeni bir düğme oluşturur."
+
+#~ msgid "Learn more about groups and buttons"
+#~ msgstr "Gruplar ve düğmeler hakkında daha fazla bilgi edinin"
+
+#~ msgid "You can't drag the only button left in a group!"
+#~ msgstr "Bir grupta kalan tek düğmeyi sürükleyemezsiniz!"
+
+#~ msgid "Convert to group"
+#~ msgstr "Gruba dönüştür"
+
+#~ msgid "Delete button"
+#~ msgstr "Sil düğmesi"
+
+#~ msgid "Delete group"
+#~ msgstr "Grubu sil"
+
+#~ msgid "Are you sure you want to remove this button?"
+#~ msgstr "Bu düğmeyi kaldırmak istediğinizden emin misiniz?"
+
+#~ msgid "Are you sure you want to remove this group?"
+#~ msgstr "Bu grubu kaldırmak istediğinizden emin misiniz?"
+
+#~ msgid ""
+#~ "Are you sure you want to remove this full group? It contains %s buttons."
+#~ msgstr ""
+#~ "Bu grubun tamamını kaldırmak istediğinizden emin misiniz? % S düğmeleri "
+#~ "içerir."
+
+#~ msgid "Are you sure you want to remove the button called '%s'?"
+#~ msgstr "'% S' adlı düğmeyi kaldırmak istediğinizden emin misiniz?"
+
+#~ msgid "You cannot delete this button because this the only button left."
+#~ msgstr "Bu düğmeyi silemezsiniz çünkü kalan tek düğme budur."
+
+#~ msgid "You cannot delete this group because this the only group left."
+#~ msgstr "Kalan tek grup olduğu için bu grubu silemezsiniz."
+
+#~ msgid "Page rules"
+#~ msgstr "Sayfa kuralları"
+
+#~ msgid "Page Rule Manager"
+#~ msgstr "Sayfa Kural Yöneticisi"
+
+#~ msgid ""
+#~ "You can setup page rules via this window. When you add pages or "
+#~ "definitions to this page rule, the buttons attached to this page rule "
+#~ "will be shown or hidden depending on their settings as soon this rule is "
+#~ "triggered."
+#~ msgstr ""
+#~ "Sayfa kurallarını bu pencereden ayarlayabilirsiniz. Bu sayfa kuralına "
+#~ "sayfa veya tanım eklediğinizde, bu sayfa kuralına eklenen düğmeler, bu "
+#~ "kural tetiklendiğinde ayarlarına bağlı olarak gösterilecek veya "
+#~ "gizlenecektir."
+
+#~ msgid ""
+#~ "You can setup page rules that will get triggered on specific pages or "
+#~ "user roles. You can create unlimited page rules with multiple rules to "
+#~ "trigger."
+#~ msgstr ""
+#~ "Belirli sayfalarda veya kullanıcı rollerinde tetiklenecek sayfa kuralları "
+#~ "ayarlayabilirsiniz. Tetiklemek için birden fazla kuralla sınırsız sayfa "
+#~ "kuralı oluşturabilirsiniz."
+
+#~ msgid "Add page rule"
+#~ msgstr "Sayfa kuralı ekle"
+
+#~ msgid "Name your page rule:"
+#~ msgstr "Sayfa kuralınıza bir ad verin:"
+
+#~ msgid "Show the button on any page"
+#~ msgstr "Düğmeyi herhangi bir sayfada göster"
+
+#~ msgid "Remove page rule"
+#~ msgstr "Sayfa kuralını kaldır"
+
+#~ msgid "All conditions must meet (AND)"
+#~ msgstr "Tüm koşullar karşılanmalıdır (AND)"
+
+#~ msgid "At least one condition must meet (OR)"
+#~ msgstr "En az bir koşulun karşılanması gerekir (VEYA)"
+
+#~ msgid "and"
+#~ msgstr "ve"
+
+#~ msgid "or"
+#~ msgstr "veya"
+
+#~ msgid "Page"
+#~ msgstr "Sayfa"
+
+#~ msgid "Page title contains"
+#~ msgstr "Sayfa başlığı şunları içerir:"
+
+#~ msgid "Blog"
+#~ msgstr "Blog"
+
+#~ msgid "Blog title contains"
+#~ msgstr "Blog başlığı şunları içerir"
+
+#~ msgid "Category"
+#~ msgstr "Kategori"
+
+#~ msgid "URL contains"
+#~ msgstr "URL içeriyor"
+
+#~ msgid "URL begins with"
+#~ msgstr "URL ile başlar"
+
+#~ msgid "URL ends with"
+#~ msgstr "URL şununla bitiyor:"
+
+#~ msgid "User has role"
+#~ msgstr "Kullanıcının rolü var"
+
+#~ msgid "Select one or more items."
+#~ msgstr "Bir veya daha fazla öğe seçin."
+
+#~ msgid "Are you sure you want to remove this rule?"
+#~ msgstr "Bu kuralı kaldırmak istediğinizden emin misiniz?"
+
+#~ msgid "Aborted. Each page rule must keep at least one rule."
+#~ msgstr "İptal edildi. Her sayfa kuralı en az bir kural içermelidir."
+
+#~ msgid ""
+#~ "You still have selected values, are you sure you want to remove this?"
+#~ msgstr "Hala değer seçtiniz, bunu kaldırmak istediğinizden emin misiniz?"
+
+#~ msgid "Rule value"
+#~ msgstr "Kural değeri"
+
+#~ msgid "Time schedules"
+#~ msgstr "Zaman çizelgeleri"
+
+#~ msgid "Time schedule"
+#~ msgstr "Zaman çizelgesi"
+
+#~ msgid "Time schedule manager"
+#~ msgstr "Zaman çizelgesi yöneticisi"
+
+#~ msgid ""
+#~ "You can setup time schedules that will get triggered during specific "
+#~ "times of a day. It is even possible to change the schedule actions for "
+#~ "specific days. You can create an unlimited amount of schedules."
+#~ msgstr ""
+#~ "Günün belirli saatlerinde tetiklenecek zaman çizelgeleri "
+#~ "ayarlayabilirsiniz. Belirli günler için program eylemlerini değiştirmek "
+#~ "bile mümkündür. Sınırsız sayıda program oluşturabilirsiniz."
+
+#~ msgid "Add date"
+#~ msgstr "Tarih ekle"
+
+#~ msgid "New schedule"
+#~ msgstr "Yeni program"
+
+#~ msgid "Name the new time schedule:"
+#~ msgstr "Yeni zaman çizelgesini adlandırın:"
+
+#~ msgid "Rename schedule to:"
+#~ msgstr "Zamanlamayı şu şekilde yeniden adlandır:"
+
+#~ msgid "Show the button at any time"
+#~ msgstr "Düğmeyi istediğiniz zaman gösterin"
+
+#~ msgid "till"
+#~ msgstr "kadar"
+
+#~ msgid "Remove schedule"
+#~ msgstr "Zamanlamayı kaldır"
+
+#~ msgid "You must keep at least one schedule"
+#~ msgstr "En az bir program tutmalısınız"
+
+#~ msgid "Current timezone:"
+#~ msgstr "Geçerli saat dilimi:"
+
+#~ msgid "Remove date"
+#~ msgstr "Tarihi kaldır"
+
+#~ msgid "Are you sure you want to remove this date?"
+#~ msgstr "Bu tarihi kaldırmak istediğinizden emin misiniz?"
+
+#~ msgid "Sorry, the time '%1$s' was invalid. Reverting back to '%2$s'."
+#~ msgstr ""
+#~ "Maalesef, '% 1 $ s' zamanı geçersiz. '% 2 $ s' öğesine geri dönülüyor."
+
+#~ msgid ""
+#~ "The start time '%1$s' conflicts with the end time '%2$s'. Time has been "
+#~ "reverted to '%3$s'. Make sure you have at least 5 minutes overlap."
+#~ msgstr ""
+#~ "'% 1 $ s' başlangıç zamanı, '% 2 $ s' bitiş zamanıyla çakışıyor. Zaman, "
+#~ "'% 3 $ s' değerine geri döndürüldü. En az 5 dakika üst üste bindiğinizden "
+#~ "emin olun."
+
+#~ msgid ""
+#~ "The end time '%1$s' conflicts with the start time '%2$s'. Time has been "
+#~ "reverted to '%3$s'. Make sure you have at least 5 minutes overlap."
+#~ msgstr ""
+#~ "'% 1 $ s' bitiş zamanı, '% 2 $ s' başlangıç zamanıyla çakışıyor. Zaman, "
+#~ "'% 3 $ s' değerine geri döndürüldü. En az 5 dakika üst üste bindiğinizden "
+#~ "emin olun."
+
+#~ msgid "Weekdays"
+#~ msgstr "Hafta içi"
+
+#~ msgid "Monday"
+#~ msgstr "Pazartesi"
+
+#~ msgid "Tuesday"
+#~ msgstr "Salı"
+
+#~ msgid "Wednesday"
+#~ msgstr "Çarşamba"
+
+#~ msgid "Thursday"
+#~ msgstr "Perşembe"
+
+#~ msgid "Friday"
+#~ msgstr "Cuma"
+
+#~ msgid "Saturday"
+#~ msgstr "Cumartesi"
+
+#~ msgid "Sunday"
+#~ msgstr "Pazar"
+
+#~ msgid "Start triggering buttons from"
+#~ msgstr "Düğmelerini"
+
+#~ msgid ""
+#~ "Warning! Your start date '%s' hast past the end date of this schedule. If "
+#~ "you do not change this date the schedule will not work."
+#~ msgstr ""
+#~ "Uyarı! Başlangıç tarihiniz '% s' bu programın bitiş tarihini geçiyor. Bu "
+#~ "tarihi değiştirmezseniz, program çalışmaz."
+
+#~ msgid "Stop triggering buttons after (optional)"
+#~ msgstr "Sonra düğmeleri tetiklemeyi durdur (isteğe bağlı)"
+
+#~ msgid "Click to add ending date"
+#~ msgstr "Bitiş tarihi eklemek için tıklayın"
+
+#~ msgid "Select a date in the datepicker below"
+#~ msgstr "Aşağıdaki tarih seçicide bir tarih seçin"
+
+#~ msgid ""
+#~ "Warning! Your end date '%s' has past the start date of this schedule. If "
+#~ "you do not change this date the schedule will not work."
+#~ msgstr ""
+#~ "Uyarı! '% S' bitiş tarihiniz bu programın başlangıç tarihini geçti. Bu "
+#~ "tarihi değiştirmezseniz, program çalışmaz."
+
+#~ msgid "Hi Buttonizer!"
+#~ msgstr "Merhaba Buttonizer!"
+
+#~ msgid ""
+#~ "It appears you've installed Buttonizer 2.0 before. But, you installed "
+#~ "version 1.5 again later on and updated back to 2.0!"
+#~ msgstr ""
+#~ "Buttonizer 2.0'ı daha önce kurduğunuz anlaşılıyor. Ancak, 1.5 sürümünü "
+#~ "daha sonra yeniden yüklediniz ve 2.0'a güncellediniz!"
+
+#~ msgid ""
+#~ "The migration progress did not run as it did back then. In order to "
+#~ "convert your buttons, press the button below!"
+#~ msgstr ""
+#~ "Göç ilerlemesi o zamanki gibi çalışmadı. Düğmelerinizi dönüştürmek için "
+#~ "aşağıdaki düğmeye basın!"
+
+#~ msgid ""
+#~ "If this window keeps popping up, even when you've tried to convert the "
+#~ "buttons, try to reset Buttonizer. Go to the 'cog' icon (%1$s) on the top "
+#~ "bar, select 'Options %2$s' and the tab 'Reset' and follow the "
+#~ "instructions."
+#~ msgstr ""
+#~ "Düğmeleri dönüştürmeye çalışsanız bile bu pencere açılmaya devam ederse, "
+#~ "Buttonizer'ı sıfırlamayı deneyin. Üst çubuktaki 'dişli' simgesine (% 1 $ "
+#~ "s) gidin, 'Seçenekler% 2 $ s' öğesini ve 'Sıfırla' sekmesini seçin ve "
+#~ "talimatları izleyin."
+
+#~ msgid "Convert my buttons!"
+#~ msgstr "Düğmelerimi dönüştür!"
+
+#~ msgid "Premium feature"
+#~ msgstr "Premium özellik"
+
+#~ msgid ""
+#~ "Hi there, this function is a premium feature. We will describe what this "
+#~ "feature will do:"
+#~ msgstr ""
+#~ "Merhaba, bu işlev premium bir özelliktir. Bu özelliğin ne yapacağını "
+#~ "açıklayacağız:"
+
+#~ msgid "What you get as a premium user:"
+#~ msgstr "Premium kullanıcı olarak ne elde edersiniz:"
+
+#~ msgid "Go pro"
+#~ msgstr "Profesyonel ol"
+
+#~ msgid "Show button(groups) using the advanced time schedules"
+#~ msgstr "Gelişmiş zaman çizelgelerini kullanarak düğmeyi (grupları) göster"
+
+#~ msgid "Show button(groups) on specific pages using advanced page rules"
+#~ msgstr ""
+#~ "Gelişmiş sayfa kurallarını kullanarak belirli sayfalardaki düğmeyi "
+#~ "(grupları) göster"
+
+#~ msgid "Create multiple button groups"
+#~ msgstr "Birden çok düğme grubu oluşturma"
+
+#~ msgid "Custom button background &amp; icon image"
+#~ msgstr "Özel düğme arka planı & amp; simge resmi"
+
+#~ msgid "Show or hide on scroll"
+#~ msgstr "Kaydırma sırasında göster veya gizle"
+
+#~ msgid "Show on timeout"
+#~ msgstr "Zaman aşımında göster"
+
+#~ msgid "Be able to set CSS class names and button IDs"
+#~ msgstr "CSS sınıfı adlarını ve düğme kimliklerini ayarlayabilme"
+
+#~ msgid "Execute javascript on button clicks"
+#~ msgstr "Düğme tıklamalarında javascript çalıştır"
+
+#~ msgid "My first time schedule"
+#~ msgstr "İlk seferim"
+
+#~ msgid "My first page rule"
+#~ msgstr "İlk sayfa kuralım"
+
+#~ msgid "You are able to add multiple groups on different positions"
+#~ msgstr "Farklı konumlara birden fazla grup ekleyebilirsiniz"
+
+#~ msgid "Welcome to Buttonizer"
+#~ msgstr "Buttonizer'a hoş geldiniz"
+
+#~ msgid "We are pleased to welcome you to <b>%s</b>!"
+#~ msgstr "Sizi <b>% s </b> 'e davet etmekten mutluluk duyuyoruz!"
+
+#~ msgid ""
+#~ "We've created a tour for our new users. Would you like to take the tour?"
+#~ msgstr ""
+#~ "Yeni kullanıcılarımız için bir tur oluşturduk. Tura katılmak ister "
+#~ "misiniz?"
+
+#~ msgid "No thanks, I know how it works"
+#~ msgstr "Hayır teşekkürler, nasıl çalıştığını biliyorum"
+
+#~ msgid "Welcome to the Buttonizer tour!"
+#~ msgstr "Buttonizer turuna hoş geldiniz!"
+
+#~ msgid ""
+#~ "Start the tour and save time. Master the Buttonizer skills in only two "
+#~ "minutes."
+#~ msgstr ""
+#~ "Tura başlayın ve zaman kazanın. Sadece iki dakika içinde Buttonizer "
+#~ "becerilerinde ustalaşın."
+
+#~ msgid "You can use the %1$s and %2$s keys on your %3$s to navigate."
+#~ msgstr ""
+#~ "Gezinmek için% 3 $ s'nizdeki% 1 $ s ve% 2 $ s tuşlarını kullanabilirsiniz."
+
+#~ msgid "Preview"
+#~ msgstr "Ön izleme"
+
+#~ msgid "Menu"
+#~ msgstr "Menü"
+
+#~ msgid "Button group"
+#~ msgstr "Düğme grubu"
+
+#~ msgid ""
+#~ "The buttons in a button group are dedicated to one position. Add multiple "
+#~ "button groups if you want to create more floating action buttons "
+#~ "dedicated to different positions."
+#~ msgstr ""
+#~ "Bir düğme grubundaki düğmeler bir konuma ayrılmıştır. Farklı konumlara "
+#~ "ayrılmış daha fazla hareketli eylem düğmesi oluşturmak istiyorsanız, "
+#~ "birden fazla düğme grubu ekleyin."
+
+#~ msgid "Group settings"
+#~ msgstr "Grup ayarları"
+
+#~ msgid ""
+#~ "Buttonizer will animate every 10 seconds in order to capture the "
+#~ "visitor's attention."
+#~ msgstr ""
+#~ "Buttonizer, ziyaretçinin dikkatini çekmek için her 10 saniyede bir "
+#~ "animasyon uygulayacaktır."
+
+#~ msgid "Click here to add a new button."
+#~ msgstr "Yeni bir düğme eklemek için burayı tıklayın."
+
+#~ msgid ""
+#~ "When enabled, the button will copy the button and label style of the "
+#~ "group."
+#~ msgstr ""
+#~ "Etkinleştirildiğinde, düğme grubun düğmesini ve etiket stilini kopyalar."
+
+#~ msgid ""
+#~ "Thank you for taking the tour, that's all folks! We hope you're ready to "
+#~ "start implementing Buttonizer to meet your goals! If you have any "
+#~ "questions, ask them on the %s forums!"
+#~ msgstr ""
+#~ "Tura katıldığınız için teşekkürler, hepsi bu kadar! Umarız hedeflerinize "
+#~ "ulaşmak için Buttonizer'ı uygulamaya başlayabilirsiniz! Herhangi bir "
+#~ "sorunuz varsa,% s forumlarında sorun!"
+
+#~ msgid ""
+#~ "If you have any feedback regarding the Buttonizer Tour, we'd love to hear "
+#~ "it!"
+#~ msgstr ""
+#~ "Buttonizer Tour ile ilgili herhangi bir geri bildiriminiz varsa, duymak "
+#~ "isteriz!"
+
+#~ msgid "Permalink Error"
+#~ msgstr "Kalıcı Bağlantı Hatası"
+
+#~ msgid ""
+#~ "Buttonizer's requests will not work when using plain permalink. To use "
+#~ "Buttonizer, use a custom permalink"
+#~ msgstr ""
+#~ "Düz kalıcı bağlantı kullanılırken Buttonizer'ın istekleri çalışmaz. "
+#~ "Buttonizer'ı kullanmak için özel bir kalıcı bağlantı kullanın"
+
+#~ msgid "License activated"
+#~ msgstr "Lisans etkinleştirildi"
+
+#~ msgid ""
+#~ "Please download and upload the premium version found in the email we have "
+#~ "sent you to use all premium functions."
+#~ msgstr ""
+#~ "Lütfen tüm premium işlevleri kullanabilmeniz için size gönderdiğimiz e-"
+#~ "postada bulunan premium sürümü indirin ve yükleyin."
+
+#~ msgid "Edit"
+#~ msgstr "Düzenle"
+
+#~ msgid "Type"
+#~ msgstr "tip"
+
+#~ msgid "Select"
+#~ msgstr "seçmek"
+
+#~ msgid "Learn more"
+#~ msgstr "Daha fazla bilgi edin"
+
+#~ msgid "Create new group"
+#~ msgstr "Yeni Grup Oluştur"
+
+#~ msgid "Choose a name for the button."
+#~ msgstr "Düğme için bir ad seçin."
+
+#~ msgid "Choose a name for the group."
+#~ msgstr "Grup için bir ad seçin."
+
+#~ msgid "Style"
+#~ msgstr "stil"
+
+#~ msgid "Advanced"
+#~ msgstr "ileri"
+
+#~ msgid "Color"
+#~ msgstr "Renk"
+
+#~ msgid "Select file"
+#~ msgstr "Dosya Seç"
+
+#~ msgid "Change file"
+#~ msgstr "Dosyayı değiştir"
+
+#~ msgid "Rename to:"
+#~ msgstr "Şununla yeniden adlandır:"
+
+#~ msgid "Icon selector"
+#~ msgstr "Simge seçici"
+
+#~ msgid "Loading icons, please wait..."
+#~ msgstr "Simgeler yükleniyor, lütfen bekleyin ..."
+
+#~ msgid "Searching for: %1$s, found %2$s results."
+#~ msgstr "% 1 $ s aranıyor,% 2 $ s sonuç bulundu."
+
+#~ msgid "Remove filter"
+#~ msgstr "Filtreyi kaldır"
+
+#~ msgid "Buttonizer has crashed!"
+#~ msgstr "Buttonizer çöktü!"
+
+#~ msgid "Our development team has been notified."
+#~ msgstr "Geliştirme ekibimiz bilgilendirildi."
+
+#~ msgid "If you'd like to help, tell us what happened below."
+#~ msgstr "Eğer yardım etmek isterseniz, bize aşağıda neler olduğunu söyleyin."
+
+#~ msgid ""
+#~ "Buttonizer has crashed, but you have not enabled automatic error "
+#~ "reporting! Would you like to become a SUPER contributor and automatically "
+#~ "log errors, including this one?"
+#~ msgstr ""
+#~ "Buttonizer çöktü, ancak otomatik hata raporlamayı etkinleştirmediniz! "
+#~ "SUPER katılımcısı olmak ve bu hata da dahil olmak üzere hataları otomatik "
+#~ "olarak kaydetmek ister misiniz?"
+
+#~ msgid "Show button at all times"
+#~ msgstr "Her zaman göster düğmesi"
+
+#~ msgid "Show group at all times"
+#~ msgstr "Grubu her zaman göster"
+
+#~ msgid "Show button on all pages"
+#~ msgstr "Düğmeyi tüm sayfalarda göster"
+
+#~ msgid "Show group on all pages"
+#~ msgstr "Grubu tüm sayfalarda göster"
+
+#~ msgid "I'm sure"
+#~ msgstr "eminim"
+
+#~ msgid "Incorrect entry."
+#~ msgstr "Yanlış giriş."
+
+#~ msgid "Remove time schedule?"
+#~ msgstr "Zaman çizelgesi kaldırılsın mı?"
+
+#~ msgid ""
+#~ "Are you very sure you want to remove this time schedule? Buttons that are "
+#~ "still attached to this time schedule will become visible unless you "
+#~ "attach them to another time schedule or hide them."
+#~ msgstr ""
+#~ "Bu zaman çizelgesini kaldırmak istediğinizden emin misiniz? Bu zaman "
+#~ "çizelgesine hala bağlı olan düğmeler, başka bir zaman çizelgesine "
+#~ "eklemediğiniz veya gizlemediğiniz sürece görünür hale gelir."
+
+#~ msgid ""
+#~ "There are no buttons attached to this time schedule. You can remove this "
+#~ "safely."
+#~ msgstr ""
+#~ "Bu zaman çizelgesine eklenmiş düğme yok. Bunu güvenle kaldırabilirsiniz."
+
+#~ msgid "There are <b>%1$s</b> buttons attached to this time schedule!"
+#~ msgstr "Bu zaman çizelgesine <b>% 1 $ s </b> düğme eklendi!"
+
+#~ msgid "There is <b>1</b> button attached to this time schedule"
+#~ msgstr "Bu zaman çizelgesine eklenmiş <b> 1 </b> düğmesi var"
+
+#~ msgid "Do you want to remove this time schedule?"
+#~ msgstr "Bu zaman çizelgesini kaldırmak istiyor musunuz?"
+
+#~ msgid "Cannot delete button"
+#~ msgstr "Silinemiyor düğmesi"
+
+#~ msgid "Cannot delete group"
+#~ msgstr "Grup silinemiyor"
+
+#~ msgid "Remove page rule?"
+#~ msgstr "Sayfa kuralı kaldırılsın mı?"
+
+#~ msgid ""
+#~ "Are you very sure you want to remove this page rule? Buttons that are "
+#~ "still attached to this page rule will become visible unless you attach "
+#~ "them to another page rule or hide them."
+#~ msgstr ""
+#~ "Bu sayfa kuralını kaldırmak istediğinizden emin misiniz? Bu sayfa "
+#~ "kuralına hala bağlı olan düğmeler, başka bir sayfa kuralına eklenmedikçe "
+#~ "veya gizlenmedikçe görünür hale gelir."
+
+#~ msgid ""
+#~ "There are no buttons attached to this page rule. You can remove this "
+#~ "safely."
+#~ msgstr ""
+#~ "Bu sayfa kuralına iliştirilmiş düğme yok. Bunu güvenle kaldırabilirsiniz."
+
+#~ msgid "There are <b>%1$s</b> buttons attached to this page rule!"
+#~ msgstr "Bu sayfa kuralına eklenmiş <b>% 1 $ s </b> düğmeleri var!"
+
+#~ msgid "There is <b>1</b> button attached to this page rule"
+#~ msgstr "Bu sayfa kuralına eklenmiş <b> 1 </b> düğmesi var"
+
+#~ msgid "Do you want to remove this page rule?"
+#~ msgstr "Bu sayfa kuralını kaldırmak istiyor musunuz?"
+
+#~ msgid "This action is permanent and cannot be undone."
+#~ msgstr "Bu işlem kalıcıdır ve geri alınamaz."
+
+#~ msgid "Add button to enable group settings"
+#~ msgstr "Grup ayarlarını etkinleştirmek için Ekle düğmesi"
+
+#~ msgid "General"
+#~ msgstr "Genel"
+
+#~ msgid "Label style"
+#~ msgstr "Etiket stili"
+
+#~ msgid "background"
+#~ msgstr "arka fon"
+
+#~ msgid "Icon Style"
+#~ msgstr "Simge Stili"
+
+#~ msgid "Image style"
+#~ msgstr "Görüntü tarzı"
+
+#~ msgid "Show or hide"
+#~ msgstr "Göster veya gizle"
+
+#~ msgid "Select icon"
+#~ msgstr "Simge seç"
+
+#~ msgid "Text color"
+#~ msgstr "Metin rengi"
+
+#~ msgid "Font size"
+#~ msgstr "Yazı Boyutu"
+
+#~ msgid "Horizontal"
+#~ msgstr "Yatay"
+
+#~ msgid "Vertical"
+#~ msgstr "Dikey"
+
+#~ msgid "This setting is not used when using the %s menu style..."
+#~ msgstr "% S menü stilini kullanırken bu ayar kullanılmaz ..."
+
+#~ msgid "Toggle show on desktop"
+#~ msgstr "Masaüstündeki şovu aç / kapat"
+
+#~ msgid "Toggle show on mobile"
+#~ msgstr "Mobil cihazda şovu aç / kapat"
+
+#~ msgid "Use group style"
+#~ msgstr "Grup stilini kullan"
+
+#~ msgid "Disable USE GROUP STYLE to access these settings"
+#~ msgstr "Bu ayarlara erişmek için GROUP STYLE KULLANIMINI devre dışı bırak"
+
+#~ msgid "Timeout"
+#~ msgstr "Zaman aşımı"
+
+#~ msgid "Milliseconds"
+#~ msgstr "milisaniyeler"
+
+#~ msgid "Show Buttonizer after %s seconds"
+#~ msgstr "% S saniye sonra Buttonizer'ı göster"
+
+#~ msgid "Scroll"
+#~ msgstr "Kaydırma"
+
+#~ msgid "From top"
+#~ msgstr "Yukarıdan"
+
+#~ msgid "Show Buttonizer after 0 seconds"
+#~ msgstr "0 saniye sonra Buttonizer'ı göster"
+
+#~ msgid "Starting visibility"
+#~ msgstr "Başlangıç görünürlüğü"
+
+#~ msgid "Hide"
+#~ msgstr "Saklamak"
+
+#~ msgid "Show"
+#~ msgstr "Göstermek"
+
+#~ msgid "Scroll <b>0%</b> from top of page to <b>SHOW</b> group"
+#~ msgstr ""
+#~ "Sayfanın üst kısmından <b>% 0 </b> 'ı <b> GÖSTER </b> grubuna kaydırın"
+
+#~ msgid "Scroll <b>%1$s%2$s</b> from top of page to <b>%3$s</b> group"
+#~ msgstr ""
+#~ "<b>% 1 $ s% 2 $ s </b> sayfasını sayfanın üstünden <b>% 3 $ s </b> "
+#~ "grubuna kaydırın"
+
+#~ msgid ""
+#~ "Exit intent can be used to trigger an animation around Buttonizer when a "
+#~ "visitor is leaving your website."
+#~ msgstr ""
+#~ "Çıkış amacı, bir ziyaretçi web sitenizden ayrılırken Buttonizer "
+#~ "çevresinde bir animasyonu tetiklemek için kullanılabilir."
+
+#~ msgid "Actions"
+#~ msgstr "Hareketler"
+
+#~ msgid "Invalid phone number"
+#~ msgstr "Geçersiz telefon numarası"
+
+#~ msgid "Phone number"
+#~ msgstr "Telefon numarası"
+
+#~ msgid "SMS"
+#~ msgstr "SMS"
+
+#~ msgid "Invalid Page ID."
+#~ msgstr "Geçersiz Sayfa Kimliği."
+
+#~ msgid "Facebook Page ID"
+#~ msgstr "Facebook Sayfa Kimliği"
+
+#~ msgid "WhatsApp Chat"
+#~ msgstr "WhatsApp Sohbeti"
+
+#~ msgid "Social Sharing"
+#~ msgstr "Sosyal paylaşım"
+
+#~ msgid "Copy URL to clipboard"
+#~ msgstr "URL'yi panoya kopyala"
+
+#~ msgid "Print page"
+#~ msgstr "Sayfayı yazdır"
+
+#~ msgid "Website URL"
+#~ msgstr "Web Sitesi URL'si"
+
+#~ msgid "Open JavaScript code editor"
+#~ msgstr "JavaScript kod düzenleyicisini aç"
+
+#~ msgid "Manage the settings of Buttonizer"
+#~ msgstr "Buttonizer ayarlarını yönetin"
+
+#~ msgid "Choose your iconset"
+#~ msgstr "Simge setinizi seçin"
+
+#~ msgid "Google Analytics"
+#~ msgstr "Google Analytics"
+
+#~ msgid "Enable Google Analytics"
+#~ msgstr "Google Analytics'i etkinleştir"
+
+#~ msgid "Measure your conversions"
+#~ msgstr "Dönüşümlerinizi ölçün"
+
+#~ msgid ""
+#~ "When enabled, Buttonizer will automatically log clicks to your Google "
+#~ "Analytics account. You can force Buttonizer not to use the Google "
+#~ "Analytics by disabling this switch."
+#~ msgstr ""
+#~ "Etkinleştirildiğinde, Buttonizer tıklamaları otomatik olarak Google "
+#~ "Analytics hesabınıza kaydeder. Buttonizer'ı bu anahtarı devre dışı "
+#~ "bırakarak Google Analytics'i kullanmaya zorlayabilirsiniz."
+
+#~ msgid ""
+#~ "Google Analytics is automatically detected if you have added it to your "
+#~ "webpage. But, if you don't make use of Google Analytics yet and  this is "
+#~ "your first time, Buttonizer can add it for you."
+#~ msgstr ""
+#~ "Google Analytics, web sayfanıza eklediyseniz otomatik olarak algılanır. "
+#~ "Ancak, henüz Google Analytics'ten yararlanmıyorsanız ve bu ilk defa "
+#~ "kullanıyorsanız, Buttonizer bunu sizin için ekleyebilir."
+
+#~ msgid ""
+#~ "If you have added Google Analytics to your webpage before and Buttonizer "
+#~ "also adds the same Analytics code, it will mess with your analytics data!"
+#~ msgstr ""
+#~ "Daha önce web sayfanıza Google Analytics'i eklediyseniz ve Buttonizer da "
+#~ "aynı Analytics kodunu eklediyse, analiz verilerinizle karıştırılacaktır!"
+
+#~ msgid "UA Code"
+#~ msgstr "UA Kodu"
+
+#~ msgid "Preferences"
+#~ msgstr "Tercihler"
+
+#~ msgid "Manage your preferences"
+#~ msgstr "Tercihlerinizi yönetin"
+
+#~ msgid "Show Buttonizer tips"
+#~ msgstr "Buttonizer ipuçlarını göster"
+
+#~ msgid "Hide the Buttonizer tips in the dashboard by disabling this setting"
+#~ msgstr ""
+#~ "Bu ayarı devre dışı bırakarak kontrol panelindeki Buttonizer ipuçlarını "
+#~ "gizleyin"
+
+#~ msgid "Use ajax on to load the buttons"
+#~ msgstr "Düğmeleri yüklemek için ajax on kullanın"
+
+#~ msgid ""
+#~ "This feature has been created to make sure Buttonizer doesn't slow down "
+#~ "your website. If you'd like to show the buttons immediately without "
+#~ "loadtime, disable this setting. The load impect will depend on the amount "
+#~ "of buttons and groups you currently have."
+#~ msgstr ""
+#~ "Bu özellik, Buttonizer'ın web sitenizi yavaşlatmadığından emin olmak için "
+#~ "oluşturulmuştur. Düğmeleri yükleme süresi olmadan hemen göstermek "
+#~ "istiyorsanız bu ayarı devre dışı bırakın. Yük etkisi, o anda sahip "
+#~ "olduğunuz düğme ve grupların miktarına bağlı olacaktır."
+
+#~ msgid "Automatic error logging and crash reporting"
+#~ msgstr "Otomatik hata kaydı ve kilitlenme raporlaması"
+
+#~ msgid ""
+#~ "Enable automatic error logging and crash reporting in order to help us "
+#~ "solve issues within Buttonizer! All data is anonymized automatically."
+#~ msgstr ""
+#~ "Buttonizer'daki sorunları çözmemize yardımcı olmak için otomatik hata "
+#~ "günlüğü tutma ve kilitlenme raporlamasını etkinleştirin! Tüm veriler "
+#~ "otomatik olarak anonimleştirilir."
+
+#~ msgid "Reset Buttonizer"
+#~ msgstr "Buttonizer'ı Sıfırla"
+
+#~ msgid "If you need a clean install"
+#~ msgstr "Temiz bir kuruluma ihtiyacınız varsa"
+
+#~ msgid "Edit group settings"
+#~ msgstr "Grup ayarlarını düzenleme"
+
+#~ msgid ""
+#~ "You probably have clicked a link, this made you leave the preview window "
+#~ "of Buttonizer. You cannot see your changes here."
+#~ msgstr ""
+#~ "Muhtemelen bir bağlantıyı tıkladınız, bu da Buttonizer'ın önizleme "
+#~ "penceresinden çıkmanıza neden oldu. Değişikliklerinizi burada "
+#~ "göremezsiniz."
+
+#~ msgid "Home"
+#~ msgstr "Ev"
+
+#~ msgid "Back to overview"
+#~ msgstr "Geri dön"
+
+#~ msgid "Back to group"
+#~ msgstr "Gruba dön"
+
+#~ msgid "Back to the WordPress dashboard"
+#~ msgstr "WordPress kontrol paneline geri dön"
+
+#~ msgid "Follow us for useful tips & tricks!"
+#~ msgstr "Yararlı ipuçları ve püf noktaları için bizi takip edin!"
+
+#~ msgid "View your license and account details"
+#~ msgstr "Lisansınızı ve hesap ayrıntılarınızı görüntüleyin"
+
+#~ msgid "A deep dive in all the possibilities"
+#~ msgstr "Tüm olasılıklarda derin bir dalış"
+
+#~ msgid "Choose on which page you want to show a button (group)"
+#~ msgstr "Hangi sayfada bir düğme (grup) göstermek istediğinizi seçin"
+
+#~ msgid "Open Page Rules settings"
+#~ msgstr "Sayfa Kuralları ayarlarını aç"
+
+#~ msgid "Current page rule"
+#~ msgstr "Geçerli sayfa kuralı"
+
+#~ msgid "Page rule conditions behaviour"
+#~ msgstr "Sayfa kuralı koşulları davranışı"
+
+#~ msgid "Triggers when ONE of the selected values is true"
+#~ msgstr "Seçilen değerlerden BİRİ doğru olduğunda tetiklenir"
+
+#~ msgid "Conditions"
+#~ msgstr "Koşullar"
+
+#~ msgid "Show group when this page rule is activated"
+#~ msgstr "Bu sayfa kuralı etkinleştirildiğinde grubu göster"
+
+#~ msgid "Hide group when this page rule is activated"
+#~ msgstr "Bu sayfa kuralı etkinleştirildiğinde grubu gizle"
+
+#~ msgid "Show button when this page rule is activated"
+#~ msgstr "Bu sayfa kuralı etkinleştirildiğinde düğmeyi göster"
+
+#~ msgid "Hide button when this page rule is activated"
+#~ msgstr "Bu sayfa kuralı etkinleştirildiğinde düğmeyi gizle"
+
+#~ msgid "Add condition"
+#~ msgstr "Koşul ekle"
+
+#~ msgid "No page rules"
+#~ msgstr "Sayfa kuralı yok"
+
+#~ msgid "No page rule selected"
+#~ msgstr "Hiçbir sayfa kuralı seçilmedi"
+
+#~ msgid ""
+#~ "There are no rules for this page rule. All buttons attached to this page "
+#~ "rule will be visible. Press 'Add condition' to add one!"
+#~ msgstr ""
+#~ "Bu sayfa kuralı için kural yok. Bu sayfa kuralına iliştirilmiş tüm "
+#~ "düğmeler görünür olacak. Bir tane eklemek için 'Koşul ekle'ye basın!"
+
+#~ msgid "User is signed in"
+#~ msgstr "Kullanıcı oturum açtı"
+
+#~ msgid "User is signed out"
+#~ msgstr "Kullanıcı oturumu kapattı"
+
+#~ msgid "Content based"
+#~ msgstr "İçerik tabanlı"
+
+#~ msgid "Url"
+#~ msgstr "URL"
+
+#~ msgid "Users"
+#~ msgstr "Kullanıcılar"
+
+#~ msgid "For example: Show a call me now button only on opening times"
+#~ msgstr "Örneğin: Beni şimdi ara düğmesini sadece açılış saatlerinde göster"
+
+#~ msgid "Open time schedule settings"
+#~ msgstr "Açık zaman çizelgesi ayarları"
+
+#~ msgid "Current time schedules:"
+#~ msgstr "Şimdiki zaman çizelgeleri:"
+
+#~ msgid "You have no time schedules"
+#~ msgstr "Zaman çizelgeniz yok"
+
+#~ msgid "No time schedule selected"
+#~ msgstr "Zaman çizelgesi seçilmedi"
+
+#~ msgid "Dates"
+#~ msgstr "Tarih"
+
+#~ msgid "Add time schedule"
+#~ msgstr "Zaman çizelgesi ekle"
+
+#~ msgid "Show group when this time schedule is activated"
+#~ msgstr "Bu zaman çizelgesi etkinleştirildiğinde grubu göster"
+
+#~ msgid "Hide group when this time schedule is activated"
+#~ msgstr "Bu zaman çizelgesi etkinleştirildiğinde grubu gizle"
+
+#~ msgid "Show button when this time schedule is activated"
+#~ msgstr "Bu zaman çizelgesi etkinleştirildiğinde düğmeyi göster"
+
+#~ msgid "Hide button when this time schedule is activated"
+#~ msgstr "Bu zaman çizelgesi etkinleştirildiğinde düğmeyi gizle"
+
+#~ msgid "Trigger on"
+#~ msgstr "Tetikleyici açık"
+
+#~ msgid "Don't trigger on"
+#~ msgstr "Tetikleme"
+
+#~ msgid "Excluded Dates"
+#~ msgstr "Hariç Tutulan Tarihler"
+
+#~ msgid "Add Excluded Date"
+#~ msgstr "Hariç Tutulan Tarih Ekle"
+
+#~ msgid ""
+#~ "Add specific dates to show or hide the buttons attached to this time "
+#~ "scheme. For example: \"My store is open on January 22th until 22:00 (10 "
+#~ "PM) because of some special evening we organize.\" The rule will "
+#~ "overwrite the default settings for that day."
+#~ msgstr ""
+#~ "Bu zaman planına eklenmiş düğmeleri göstermek veya gizlemek için belirli "
+#~ "tarihler ekleyin. Örneğin: \"Mağazam, düzenlediğimiz bazı özel akşamlar "
+#~ "nedeniyle 22 Ocak - 22:00 (22:00) saatleri arasında açık.\" Kural, o gün "
+#~ "için varsayılan ayarların üzerine yazılır."
+
+#~ msgid "Start Date"
+#~ msgstr "Başlangıç tarihi"
+
+#~ msgid "Did you know that Buttonizer has different group-styles you can use?"
+#~ msgstr ""
+#~ "Buttonizer'ın kullanabileceğiniz farklı grup stilleri olduğunu biliyor "
+#~ "muydunuz?"
+
+#~ msgid "Click on the buttons to manage their settings"
+#~ msgstr "Ayarlarını yönetmek için düğmelere tıklayın"
+
+#~ msgid "Give your buttons a color"
+#~ msgstr "Düğmelerinize bir renk verin"
+
+#~ msgid ""
+#~ "A button can only have one action, but you can choose out more than 25 "
+#~ "actions!"
+#~ msgstr ""
+#~ "Bir düğmenin yalnızca bir eylemi olabilir, ancak 25'ten fazla eylem "
+#~ "seçebilirsiniz!"
+
+#~ msgid "Turn off these tips in settings"
+#~ msgstr "Ayarlarda bu ipuçlarını kapatın"
+
+#~ msgid ""
+#~ "Buttonizer will only show 7 buttons per page as that's the limit of "
+#~ "Material Design"
+#~ msgstr ""
+#~ "Buttonizer, Malzeme Tasarımının sınırı olduğu için sayfa başına yalnızca "
+#~ "7 düğme gösterecektir"
+
+#~ msgid ""
+#~ "Paste the HEX-code in the colorpicker if you want to use a specific color"
+#~ msgstr ""
+#~ "Belirli bir renk kullanmak istiyorsanız HEX kodunu renk seçiciye "
+#~ "yapıştırın"
+
+#~ msgid ""
+#~ "Playing smart with 'Show on desktop' and 'Show on mobile' will give you "
+#~ "up to 14 buttons per page!"
+#~ msgstr ""
+#~ "'Masaüstünde göster' ve 'Mobilde göster' ile akıllıca oynamak size sayfa "
+#~ "başına en fazla 14 düğme kazandıracak!"
+
+#~ msgid "You can use page rules to show or hide buttons on certain pages"
+#~ msgstr ""
+#~ "Belirli sayfalardaki düğmeleri göstermek veya gizlemek için sayfa "
+#~ "kurallarını kullanabilirsiniz"
+
+#~ msgid ""
+#~ "You can use the social share button action to let a visitor share your "
+#~ "webpage"
+#~ msgstr ""
+#~ "Bir ziyaretçinin web sayfanızı paylaşmasına izin vermek için sosyal "
+#~ "paylaşım düğmesi işlemini kullanabilirsiniz"
+
+#~ msgid "Do you need a tool-tip? ;)"
+#~ msgstr "Araç ipucuna mı ihtiyacınız var? ;)"
+
+#~ msgid "You can style the main big button by editting the group"
+#~ msgstr "Grubu düzenleyerek ana büyük düğmeyi şekillendirebilirsiniz"
+
+#~ msgid "You can add a class or id HTML-attribute to a group and a button"
+#~ msgstr ""
+#~ "Bir gruba ve düğmeye sınıf veya kimlik HTML özelliği ekleyebilirsiniz"
+
+#~ msgid "Want to make a new similar button? Duplicate your button!"
+#~ msgstr "Yeni bir benzer düğme yapmak ister misiniz? Düğmenizi çoğaltın!"
+
+#~ msgid "If you have a great tip, let us know! We'll add it :)"
+#~ msgstr "Harika bir ipucunuz varsa, bize bildirin! Ekleyeceğiz :)"
+
+#~ msgid "Pssst, click on the group/button name on top"
+#~ msgstr "Pssst, üstteki grup / düğme adına tıklayın"
+
+#~ msgid "Exit Intent... This is where the fun begins!"
+#~ msgstr "Niyetten Çık ... Eğlence burada başlıyor!"
+
+#~ msgid "Double click on Buzzer! for a suprise ;)"
+#~ msgstr "Buzzer'e çift tıklayın! bir sürpriz için;)"
+
+#~ msgid "Click on me for more tips!"
+#~ msgstr "Daha fazla ipucu için bana tıklayın!"
+
+#~ msgid "Duplicating buttons is disabled for free version"
+#~ msgstr "Ücretsiz sürüm için çoğaltma düğmeleri devre dışı bırakıldı"
+
+#~ msgid ""
+#~ "You can select images and set them as icon or as button background image."
+#~ msgstr ""
+#~ "Görüntüleri seçebilir ve bunları simge veya düğme arka plan görüntüsü "
+#~ "olarak ayarlayabilirsiniz."
+
+#~ msgid ""
+#~ "With this setting, you can make your button appear/hide after certain "
+#~ "amount of time."
+#~ msgstr ""
+#~ "Bu ayarla düğmenizin belli bir süre sonra görünmesini / gizlenmesini "
+#~ "sağlayabilirsiniz."
+
+#~ msgid ""
+#~ "With this setting, you can make your button appear/hide after scrolling "
+#~ "for a certain amount."
+#~ msgstr ""
+#~ "Bu ayarla, belirli bir miktar kaydırdıktan sonra düğmenizin görünmesini / "
+#~ "gizlenmesini sağlayabilirsiniz."
+
+#~ msgid "Thanks for using Buttonizer!"
+#~ msgstr "Buttonizer'ı kullandığınız için teşekkürler!"
+
+#~ msgid ""
+#~ "Become a SUPER contributor by automatically sending us crash reports and "
+#~ "error logs. This way we can bugfix your bugs with the speed of light. "
+#~ "Don't worry, all data is anonymized."
+#~ msgstr ""
+#~ "Bize otomatik olarak kilitlenme raporları ve hata günlükleri göndererek "
+#~ "bir SUPER katkısı olun. Bu şekilde hatalarınızı ışık hızıyla "
+#~ "düzeltebiliriz. Endişelenmeyin, tüm veriler anonimleştirilir."
+
+#~ msgid "No thanks"
+#~ msgstr "Hayır teşekkürler"
+
+#~ msgid "Yes please!"
+#~ msgstr "Evet lütfen!"
+
+#~ msgid "Back to Overview"
+#~ msgstr "Geri Dön"
+
+#~ msgid "Are you sure you want to exit? Your changes have not been saved."
+#~ msgstr ""
+#~ "Çıkmak istediğine emin misin? Yaptığınız değişiklikler kaydedilmedi."
+
+#~ msgid "Save and close"
+#~ msgstr "Kaydet ve kapat"
+
+#~ msgid "Clear"
+#~ msgstr "Açık"
+
+#~ msgid "Font family"
+#~ msgstr "Font ailesi"
+
+#~ msgid "Type a custom font"
+#~ msgstr "Özel bir yazı tipi yazın"
+
+#~ msgid "Type \",\" to add %1$s"
+#~ msgstr "% 1 $ s eklemek için \",\" yazın"
+
+#~ msgid "Margin"
+#~ msgstr "kenar"
+
+#~ msgid "Change the position of the label."
+#~ msgstr "Etiketin konumunu değiştirin."
+
+#~ msgid "Padding"
+#~ msgstr "Dolgu malzemesi"
+
+#~ msgid "Change the background size of the label."
+#~ msgstr "Etiketin arka plan boyutunu değiştirin."
+
+#~ msgid "Delay"
+#~ msgstr "gecikme"
+
+#~ msgid "Repeat Count"
+#~ msgstr "Tekrarlama Sayısı"
+
+#~ msgid "Enter '0' for unlimited"
+#~ msgstr "Sınırsız için '0' girin"
+
+#~ msgid "from"
+#~ msgstr "itibaren"
+
+#~ msgid "Scaled"
+#~ msgstr "pullu"
+
+#~ msgid "Absolute"
+#~ msgstr "kesin"
+
+#~ msgid "Left"
+#~ msgstr "Ayrıldı"
+
+#~ msgid "Right"
+#~ msgstr "Sağ"
+
+#~ msgid "Bottom"
+#~ msgstr "Alt"
+
+#~ msgid "Top"
+#~ msgstr "Üst"
+
+#~ msgid "Text only"
+#~ msgstr "Sadece yazı"
+
+#~ msgid "Text w/ icon"
+#~ msgstr "Simge içeren metin"
+
+#~ msgid "Open Custom Styling Editor"
+#~ msgstr "Özel Stil Düzenleyiciyi Aç"
+
+#~ msgid "Custom Styling Editor"
+#~ msgstr "Özel Stil Editörü"
+
+#~ msgid "Jump once"
+#~ msgstr "Bir kez zıpla"
+
+#~ msgid "Flip"
+#~ msgstr "fiske"
+
+#~ msgid "Go to bottom"
+#~ msgstr "En alta git"
+
+#~ msgid ""
+#~ "This menu style will remove the icon and add the label into the button, "
+#~ "making it one long button."
+#~ msgstr ""
+#~ "Bu menü stili simgeyi kaldıracak ve düğmeyi düğmeye ekleyerek uzun bir "
+#~ "düğme haline getirecektir."
+
+#~ msgid ""
+#~ "This menu style will add the label into the button with an icon, making "
+#~ "it one long button."
+#~ msgstr ""
+#~ "Bu menü stili etiketi bir simgeyle düğmeye ekleyerek uzun bir düğme "
+#~ "haline getirir."
+
+#~ msgid ""
+#~ "With this setting, you can change your animation settings like delay and "
+#~ "repeat count."
+#~ msgstr ""
+#~ "Bu ayarla gecikme ve tekrar sayısı gibi animasyon ayarlarınızı "
+#~ "değiştirebilirsiniz."
+
+#~ msgid ""
+#~ "With this setting, you can change the font family of the label. You "
+#~ "choose a font add your custom font."
+#~ msgstr ""
+#~ "Bu ayarla etiketin yazı tipi ailesini değiştirebilirsiniz. Özel yazı "
+#~ "tipinizi eklemek için bir yazı tipi seçersiniz."
+
+#~ msgid ""
+#~ "With this setting, you can change the margin of the label. Change the "
+#~ "position of the label relative to it's button"
+#~ msgstr ""
+#~ "Bu ayarla etiketin kenar boşluğunu değiştirebilirsiniz. Etiketin konumunu "
+#~ "düğmeye göre değiştirme"
+
+#~ msgid "With this setting, you can change the size of the label."
+#~ msgstr "Bu ayarla etiketin boyutunu değiştirebilirsiniz."

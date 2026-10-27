@@ -1,0 +1,2118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Buttonizer\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/buttonizer-multifunctional-button\n"
+"POT-Creation-Date: 2022-02-01T14:04:08+00:00\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. Plugin Name of the plugin
+msgid "Buttonizer - Smart Floating Action Button"
+msgstr "Buttonizer - स्मार्ट फ्लोटिंग एक्शन बटन"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://buttonizer.pro"
+msgstr "https://buttonizer.pro"
+
+#. Description of the plugin
+msgid ""
+"The Buttonizer is a new way to give a boost to your number of interactions, actions and "
+"conversions from your website visitor by adding one or multiple Customizable Smart Floating "
+"Button in the corner of your website."
+msgstr ""
+"अपने वेबसाइट के कोने में एक या एक से अधिक अनुकूलन योग्य स्मार्ट फ़्लोटिंग बटन जोड़कर अपनी वेबसाइट के विज़िटर से "
+"आपकी इंटरैक्शन, क्रियाओं और रूपांतरणों की संख्या को बढ़ावा देने के लिए Buttonizer एक नया तरीका है।"
+
+#. Author of the plugin
+msgid "Buttonizer"
+msgstr "Buttonizer"
+
+#: app/Admin/Admin.php:46
+msgid "A custom permalink structure is required for Buttonizer to work."
+msgstr "Buttonizer काम करने के लिए एक कस्टम पर्मलिंक संरचना की आवश्यकता है।"
+
+#: app/Admin/Admin.php:46
+msgid "Go to permalink structure settings."
+msgstr "पर्मलिंक संरचना सेटिंग्स पर जाएं।"
+
+#: app/Admin/Admin.php:62 app/Admin/Admin.php:79 app/Utils/Maintain.php:154
+msgid "Settings"
+msgstr "समायोजन"
+
+#: app/Admin/Admin.php:65
+msgid "Community"
+msgstr "समुदाय"
+
+#: app/Admin/Admin.php:68 app/Admin/Admin.php:77 app/Utils/Maintain.php:163
+msgid "Knowledge base"
+msgstr "ज्ञानधार"
+
+#: app/Admin/Admin.php:71
+msgid "I need support"
+msgstr "मुझे समर्थन की जरूरत है"
+
+#: app/Admin/Admin.php:76
+msgid "Community forums"
+msgstr "सामुदायिक फ़ोरम्स"
+
+#: app/Admin/Admin.php:78 app/Utils/Maintain.php:145
+msgid "Manage buttons"
+msgstr "बटन प्रबंधित करें"
+
+#: app/Admin/template.php:56
+msgid "Buttonizer is loading..."
+msgstr "बटन लोड हो रहा है ..."
+
+#. Translators: First link goes to our knowledge base, the second link goes to the admin panel.
+#: app/Admin/template.php:62
+msgid ""
+"When Buttonizer does not start, <a %1$s>click here</a> to find out what is going wrong or <a "
+"%2$s>click here</a> to return to the WordPress admin dashboard."
+msgstr ""
+"जब Buttonizer प्रारंभ नहीं होता है, तो वर्डप्रेस व्यवस्थापक के डैशबोर्ड पर वापस लौटने के लिए यह पता लगाने के "
+"लिए कि क्या गलत हो रहा है या <a %2$s> यहां क्लिक करें </a> के लिए <a %1$s> यहां क्लिक करें </a>।"
+
+#: app/Admin/template.php:71
+msgid "When you have a slow internet connection or slow webserver, give it a moment..."
+msgstr "जब आपके पास एक धीमा इंटरनेट कनेक्शन या धीमा वेबसर्वर है, तो इसे एक क्षण दें ..."
+
+#: app/Admin/template.php:80
+msgid ""
+"Buttonizer dashboard does not work on IE11! Please use any other browsers to customize your "
+"buttons. :)"
+msgstr ""
+"Buttonizer डैशबोर्ड IE11 पर काम नहीं करता है! कृपया अपने बटनों को अनुकूलित करने के लिए किसी अन्य ब्राउज़र का "
+"उपयोग करें। :)"
+
+#: app/Admin/template.php:88
+msgid ""
+"Hi there! JavaScript is disabled in your browser. Please consider to enable JavaScript in your "
+"browser to use Buttonizer."
+msgstr ""
+"नमस्ते! आपके ब्राउजर में जावास्क्रिप्ट अक्षम है। Buttonizer का उपयोग करने के लिए कृपया अपने ब्राउज़र में "
+"जावास्क्रिप्ट को सक्षम करने पर विचार करें।"
+
+#: app/Api/Dashboard/ApiDashboard.php:209 app/Api/Utils/ApiReset.php:57 app/Utils/Update.php:545
+msgid "New group"
+msgstr "नया समूह"
+
+#: app/Api/Dashboard/ApiDashboard.php:216 app/Api/Utils/ApiReset.php:64 app/Utils/Update.php:552
+msgid "New button"
+msgstr "नया बटन"
+
+#: app/Frontend/Group/Button/Button.php:86
+msgid "The button is hidden on all devices"
+msgstr "बटन सभी उपकरणों पर छिपा हुआ है"
+
+#: app/Frontend/Group/Button/Button.php:111
+msgid "The button is hidden because the attached time schedule is <b>triggered</b>."
+msgstr "बटन छिपा हुआ है क्योंकि संलग्न समय अनुसूची <b> ट्रिगर </ b> है।"
+
+#: app/Frontend/Group/Button/Button.php:112
+msgid "The button is hidden because the attached time schedule is <b>not triggered</b> ."
+msgstr "बटन छिपा हुआ है क्योंकि संलग्न समय अनुसूची <b> ट्रिगर नहीं </ b> है।"
+
+#: app/Frontend/Group/Button/Button.php:136
+msgid "The button is hidden because the attached page rule is <b>triggered</b>."
+msgstr "बटन छिपा हुआ है क्योंकि संलग्न पृष्ठ नियम <b> ट्रिगर </ b> है।"
+
+#: app/Frontend/Group/Button/Button.php:137
+msgid "The button is hidden because the attached page rule is <b>not triggered</b> ."
+msgstr "बटन छिपा हुआ है क्योंकि संलग्न पृष्ठ नियम <b> ट्रिगर नहीं है </ b>।"
+
+#: app/Frontend/Group/Group.php:126
+msgid "The group is hidden on all devices"
+msgstr "समूह सभी उपकरणों पर छिपा हुआ है"
+
+#: app/Frontend/Group/Group.php:149
+msgid "The group is hidden because the attached time schedule is <b>not triggered</b>."
+msgstr "समूह छिपा हुआ है क्योंकि संलग्न समय अनुसूची <b> ट्रिगर नहीं </ b> है।"
+
+#: app/Frontend/Group/Group.php:150
+msgid "The group is hidden because the attached time schedule is <b>triggered</b> ."
+msgstr "समूह छिपा हुआ है क्योंकि संलग्न समय अनुसूची <b> ट्रिगर </ b> है।"
+
+#: app/Frontend/Group/Group.php:173
+msgid "The group is hidden because the attached page rule is <b>not triggered</b>."
+msgstr "समूह छिपा हुआ है क्योंकि संलग्न पृष्ठ नियम <b> ट्रिगर नहीं है </ b>।"
+
+#: app/Frontend/Group/Group.php:174
+msgid "The group is hidden because the attached page rule is <b>triggered</b> ."
+msgstr "समूह छिपा हुआ है क्योंकि संलग्न पृष्ठ नियम <b> ट्रिगर </ b> है।"
+
+#: app/Utils/Maintain.php:167
+msgid "Find out everything you need to know about Buttonizer"
+msgstr "Buttonizer के बारे में जानने के लिए आपको जो कुछ भी जानना चाहिए, वह सब कुछ पता करें"
+
+#~ msgid "Oh, that was not what we were expecting! Something went wrong."
+#~ msgstr "ओह, यह वह नहीं था जिसकी हम उम्मीद कर रहे थे! कुछ गलत हो गया।"
+
+#~ msgid "Custom javascript error"
+#~ msgstr "कस्टम जावास्क्रिप्ट त्रुटि"
+
+#~ msgid "Your custom javascript ran into an error. Read the error below:"
+#~ msgstr "आपकी कस्टम जावास्क्रिप्ट त्रुटि में चली गई। नीचे त्रुटि पढ़ें:"
+
+#~ msgid "Could not save settings"
+#~ msgstr "सेटिंग्स को सहेज नहीं सका"
+
+#~ msgid "Something went wrong while saving your settings:"
+#~ msgstr "आपकी सेटिंग सहेजते समय कुछ गड़बड़ हुई:"
+
+#~ msgid "Only numbers allowed."
+#~ msgstr "केवल संख्या की अनुमति है।"
+
+#~ msgid "For this input, only positive numbers are allowed."
+#~ msgstr "इस इनपुट के लिए, केवल सकारात्मक संख्याओं की अनुमति है।"
+
+#~ msgid "Invalid email address."
+#~ msgstr "अमान्य ईमेल पता।"
+
+#~ msgid ""
+#~ "Invalid phone number. Please only use number for your phone number. Omit any zeros, brackets "
+#~ "or dashes when adding the phone number in international format."
+#~ msgstr ""
+#~ "अवैध फोन नंबर। कृपया केवल अपने फ़ोन नंबर के लिए नंबर का उपयोग करें। अंतरराष्ट्रीय प्रारूप में फोन नंबर जोड़ते समय "
+#~ "किसी भी शून्य, कोष्ठक या डैश को छोड़ दें।"
+
+#~ msgid "This field only allows numbers."
+#~ msgstr "यह फ़ील्ड केवल संख्या की अनुमति देती है।"
+
+#~ msgid "Button"
+#~ msgstr "बटन"
+
+#~ msgid "Group"
+#~ msgstr "समूह"
+
+#~ msgid "Confirm"
+#~ msgstr "पुष्टि करें"
+
+#~ msgid "Search"
+#~ msgstr "खोज"
+
+#~ msgid "Skip"
+#~ msgstr "छोड़ें"
+
+#~ msgid "Disable"
+#~ msgstr "अक्षम"
+
+#~ msgid "Disabled"
+#~ msgstr "विकलांग"
+
+#~ msgid "Save"
+#~ msgstr "सहेजें"
+
+#~ msgid "Saving"
+#~ msgstr "सहेजा जा रहा है"
+
+#~ msgid "Saving settings"
+#~ msgstr "सेटिंग सहेज रहा है"
+
+#~ msgid "Publish"
+#~ msgstr "प्रकाशित करना"
+
+#~ msgid "Published"
+#~ msgstr "प्रकाशित"
+
+#~ msgid "Publishing..."
+#~ msgstr "प्रकाशन ..."
+
+#~ msgid "Warning"
+#~ msgstr "चेतावनी"
+
+#~ msgid "Next"
+#~ msgstr "आगे"
+
+#~ msgid "Previous"
+#~ msgstr "पिछला"
+
+#~ msgid "Save & publish"
+#~ msgstr "सहेजें और प्रकाशित करें"
+
+#~ msgid "Loading..."
+#~ msgstr "लोड हो रहा है ..."
+
+#~ msgid "Loading settings..."
+#~ msgstr "सेटिंग लोड हो रही हैं ..."
+
+#~ msgid "Building bar..."
+#~ msgstr "बिल्डिंग बार ..."
+
+#~ msgid "Waiting for your website..."
+#~ msgstr "आपकी वेबसाइट की प्रतीक्षा की जा रही है ..."
+
+#~ msgid "It's taking longer than usual, slow website?"
+#~ msgstr "यह सामान्य से अधिक समय ले रहा है, धीमी वेबसाइट?"
+
+#~ msgid "Skip this step"
+#~ msgstr "इस स्टेप को छोड़ दें"
+
+#~ msgid "Initializing..."
+#~ msgstr "प्रारंभ हो रहा है ..."
+
+#~ msgid "Resetting..."
+#~ msgstr "रीसेट कर रहा है ..."
+
+#~ msgid "Running migration..."
+#~ msgstr "प्रवास चल रहा है ..."
+
+#~ msgid "Finishing..."
+#~ msgstr "समाप्त हो रहा है ..."
+
+#~ msgid "Add button"
+#~ msgstr "बटन जोड़ें"
+
+#~ msgid "Add group"
+#~ msgstr "समूह जोड़ें"
+
+#~ msgid "Text"
+#~ msgstr "टेक्स्ट"
+
+#~ msgid "Base"
+#~ msgstr "आधार"
+
+#~ msgid "Icon"
+#~ msgstr "चिह्न"
+
+#~ msgid "Search icon"
+#~ msgstr "खोज आइकन"
+
+#~ msgid "Image"
+#~ msgstr "छवि"
+
+#~ msgid "Select image"
+#~ msgstr "छवि चुने"
+
+#~ msgid "Change image"
+#~ msgstr "चित्र को बदलें"
+
+#~ msgid "Click to remove this image"
+#~ msgstr "इस छवि को निकालने के लिए क्लिक करें"
+
+#~ msgid "First button"
+#~ msgstr "पहला बटन"
+
+#~ msgid "Second button"
+#~ msgstr "दूसरा बटन"
+
+#~ msgid "Rename"
+#~ msgstr "नाम बदलें"
+
+#~ msgid "Delete"
+#~ msgstr "हटाएं"
+
+#~ msgid "Duplicate"
+#~ msgstr "डुप्लिकेट"
+
+#~ msgid "page rule"
+#~ msgstr "पृष्ठ नियम"
+
+#~ msgid "time schedule"
+#~ msgstr "समय सारणी"
+
+#~ msgid "Interaction"
+#~ msgstr "इंटरेक्शन"
+
+#~ msgid "Background"
+#~ msgstr "पृष्ठभूमि"
+
+#~ msgid "Need help? Quick-start, tips & tricks"
+#~ msgstr "मदद की ज़रूरत है? त्वरित शुरुआत, टिप्स और ट्रिक्स"
+
+#~ msgid "Need help? Visit our knowledge base!"
+#~ msgstr "मदद की ज़रूरत है? हमारे ज्ञानकोष पर जाएँ!"
+
+#~ msgid "Nothing found for:"
+#~ msgstr "इसके लिए कुछ नहीं मिला:"
+
+#~ msgid "Search icons"
+#~ msgstr "आइकन खोजें"
+
+#~ msgid "Need help? Learn how to use <b>%1$s</b>."
+#~ msgstr "मदद की ज़रूरत है? <B>% 1 $ s </ b> का उपयोग करना सीखें।"
+
+#~ msgid "OK"
+#~ msgstr "ठीक है"
+
+#~ msgid "OK, I'll fix this"
+#~ msgstr "ठीक है, मैं इसे ठीक कर दूंगा"
+
+#~ msgid "Close"
+#~ msgstr "बंद करे"
+
+#~ msgid "Cancel"
+#~ msgstr "रद्द करना"
+
+#~ msgid "Yes please"
+#~ msgstr "हाँ कृपया"
+
+#~ msgid "No thank you"
+#~ msgstr "नहीं धन्यवाद"
+
+#~ msgid "Dismiss"
+#~ msgstr "खारिज"
+
+#~ msgid "I've changed my mind"
+#~ msgstr "मैंने अपना इरादा बदल लिया है"
+
+#~ msgid "Event tracker"
+#~ msgstr "इवेंट ट्रैकर"
+
+#~ msgid "Revert changes"
+#~ msgstr "परिवर्तन वापस करें"
+
+#~ msgid "Reverting..."
+#~ msgstr "वापस ला रहा है ..."
+
+#~ msgid "Are you sure you want to revert your changes?"
+#~ msgstr "क्या आप वाकई अपने परिवर्तनों को वापस लाना चाहते हैं?"
+
+#~ msgid "The current changes will be overwritten by the current published buttons and settings."
+#~ msgstr "वर्तमान परिवर्तनों को वर्तमान प्रकाशित बटन और सेटिंग्स द्वारा अधिलेखित कर दिया जाएगा।"
+
+#~ msgid "Could not revert settings"
+#~ msgstr "सेटिंग्स को वापस नहीं किया जा सका"
+
+#~ msgid "Something went wrong while reverting your settings."
+#~ msgstr "आपकी सेटिंग को वापस करते समय कुछ गलत हो गया।"
+
+#~ msgid "Menu style"
+#~ msgstr "मेनू शैली"
+
+#~ msgid "Group style"
+#~ msgstr "समूह शैली"
+
+#~ msgid "Group icon"
+#~ msgstr "समूह आइकन"
+
+#~ msgid "Button style"
+#~ msgstr "बटन शैली"
+
+#~ msgid "Button icon"
+#~ msgstr "बटन आइकन"
+
+#~ msgid "Label"
+#~ msgstr "लेबल"
+
+#~ msgid "Button name"
+#~ msgstr "बटन का नाम"
+
+#~ msgid "This is the button name."
+#~ msgstr "यह बटन का नाम है।"
+
+#~ msgid "Button color"
+#~ msgstr "बटन का रंग"
+
+#~ msgid ""
+#~ "This is the color of your button group and also the default color for your buttons within "
+#~ "this group."
+#~ msgstr "यह आपके बटन समूह का रंग है और इस समूह के भीतर आपके बटनों का डिफ़ॉल्ट रंग भी है।"
+
+#~ msgid "Background image"
+#~ msgstr "पृष्ठभूमि छवि"
+
+#~ msgid ""
+#~ "Upload an image if you want an image as a background instead of a color. Recommended aspect "
+#~ "ratio: square (1:1)."
+#~ msgstr ""
+#~ "एक छवि अपलोड करें यदि आप एक छवि को एक रंग के बजाय पृष्ठभूमि के रूप में चाहते हैं। अनुशंसित पहलू अनुपात: वर्ग "
+#~ "(1: 1)।"
+
+#~ msgid "Border radius"
+#~ msgstr "सीमा त्रिज्या"
+
+#~ msgid "Change the roundness of this button group."
+#~ msgstr "इस बटन समूह की गोलाई को बदलें।"
+
+#~ msgid "Choose an icon from the icon library."
+#~ msgstr "आइकन लाइब्रेरी से एक आइकन चुनें।"
+
+#~ msgid "Icon color"
+#~ msgstr "चिह्न का रंग"
+
+#~ msgid "Change the icon color of this button."
+#~ msgstr "इस बटन का आइकन रंग बदलें।"
+
+#~ msgid "Change the border radius of the image."
+#~ msgstr "छवि की सीमा त्रिज्या बदलें।"
+
+#~ msgid ""
+#~ "Choose an image to use as this button or group icon. Recommended aspect ratio: square (1:1)"
+#~ msgstr "इस बटन या समूह आइकन के रूप में उपयोग करने के लिए एक छवि चुनें। अनुशंसित पहलू अनुपात: वर्ग (1: 1)"
+
+#~ msgid "Image size"
+#~ msgstr "छवि का आकार"
+
+#~ msgid "Change the size of the image."
+#~ msgstr "छवि का आकार बदलें।"
+
+#~ msgid "Graphic"
+#~ msgstr "ग्राफिक"
+
+#~ msgid "Choose whether to use an icon or image as the button icon."
+#~ msgstr "चुनें कि बटन आइकन के रूप में किसी आइकन या छवि का उपयोग करना है या नहीं।"
+
+#~ msgid "Icon size"
+#~ msgstr "चिह्न का आकार"
+
+#~ msgid "Change the icon size of this button."
+#~ msgstr "इस बटन के आइकन का आकार बदलें।"
+
+#~ msgid "Change the label of this button."
+#~ msgstr "इस बटन का लेबल बदलें।"
+
+#~ msgid "Label text"
+#~ msgstr "लेबल पाठ"
+
+#~ msgid "Label color"
+#~ msgstr "लेबल का रंग"
+
+#~ msgid "Change the text and background color of the label for this button or group."
+#~ msgstr "इस बटन या समूह के लिए लेबल का पाठ और पृष्ठभूमि रंग बदलें।"
+
+#~ msgid "Font size & border radius"
+#~ msgstr "फ़ॉन्ट आकार और सीमा त्रिज्या"
+
+#~ msgid "Change the font size and border radius of the label for this button group."
+#~ msgstr "इस बटन समूह के लिए लेबल का फ़ॉन्ट आकार और सीमा त्रिज्या बदलें।"
+
+#~ msgid "Animation"
+#~ msgstr "एनीमेशन"
+
+#~ msgid ""
+#~ "This will animate this button group to get the attention of the visitor. The animation "
+#~ "repeats itself every 10 seconds."
+#~ msgstr ""
+#~ "यह आगंतुक का ध्यान आकर्षित करने के लिए इस बटन समूह को चेतन करेगा। एनीमेशन हर 10 सेकंड में खुद को दोहराता है।"
+
+#~ msgid "No animation"
+#~ msgstr "कोई एनीमेशन नहीं"
+
+#~ msgid "Buttonizer Hello"
+#~ msgstr "बटनवाला नमस्कार"
+
+#~ msgid "Bounce"
+#~ msgstr "उछाल"
+
+#~ msgid "Jelly"
+#~ msgstr "जेली"
+
+#~ msgid "Pulse"
+#~ msgstr "नाड़ी"
+
+#~ msgid "Position"
+#~ msgstr "स्थान"
+
+#~ msgid "Change the position of this button group."
+#~ msgstr "इस बटन समूह की स्थिति बदलें।"
+
+#~ msgid "Custom"
+#~ msgstr "रिवाज"
+
+#~ msgid "Menu Style"
+#~ msgstr "शैली मेनू"
+
+#~ msgid "Change the menu style of this button group."
+#~ msgstr "इस बटन समूह की मेनू शैली बदलें।"
+
+#~ msgid "Default"
+#~ msgstr "चूक"
+
+#~ msgid "Faded"
+#~ msgstr "फीका"
+
+#~ msgid "Corner circle"
+#~ msgstr "कोने का घेरा"
+
+#~ msgid "Build Up"
+#~ msgstr "बनाया"
+
+#~ msgid "Pop"
+#~ msgstr "पॉप"
+
+#~ msgid "Square"
+#~ msgstr "वर्ग"
+
+#~ msgid "Rectangle"
+#~ msgstr "आयत"
+
+#~ msgid "Visibility"
+#~ msgstr "दृश्यता"
+
+#~ msgid ""
+#~ "Always show the label, show the label on hover or hide the label on <u>desktop devices</u>."
+#~ msgstr "हमेशा लेबल दिखाएं, होवर पर लेबल दिखाएं या <u> डेस्कटॉप डिवाइस </ u> पर लेबल छिपाएं।"
+
+#~ msgid "Always show or hide the label on <u>mobile devices</u>."
+#~ msgstr "<U> मोबाइल उपकरणों </ u> पर हमेशा लेबल दिखाएं या छिपाएँ।"
+
+#~ msgid "Always show label"
+#~ msgstr "हमेशा लेबल दिखाएं"
+
+#~ msgid "Show label on hover"
+#~ msgstr "होवर पर लेबल दिखाएं"
+
+#~ msgid "Hide label"
+#~ msgstr "लेबल छिपाएं"
+
+#~ msgid "Show on"
+#~ msgstr "दिखा दो"
+
+#~ msgid "Device visibility"
+#~ msgstr "डिवाइस की दृश्यता"
+
+#~ msgid "Choose if you want to make this button group visible on desktop and mobile devices."
+#~ msgstr "चुनें कि क्या आप इस बटन समूह को डेस्कटॉप और मोबाइल उपकरणों पर दिखाई देना चाहते हैं।"
+
+#~ msgid "Mobile"
+#~ msgstr "मोबाइल"
+
+#~ msgid "Desktop"
+#~ msgstr "डेस्कटॉप"
+
+#~ msgid "Start opened"
+#~ msgstr "स्टार्ट खोला"
+
+#~ msgid "This button group starts opened when this setting is enabled."
+#~ msgstr "यह सेटिंग सक्षम होने पर यह बटन समूह खुलता है।"
+
+#~ msgid "When enabled, this button will use the same style as the button group."
+#~ msgstr "सक्षम होने पर, यह बटन बटन समूह के समान शैली का उपयोग करेगा।"
+
+#~ msgid "Custom ID"
+#~ msgstr "कस्टम आईडी"
+
+#~ msgid "Adds a custom 'id' HTML attribute to the button."
+#~ msgstr "बटन के लिए एक कस्टम 'आईडी' HTML विशेषता जोड़ता है।"
+
+#~ msgid "You can add a custom ID to each button for styling purposes."
+#~ msgstr "आप स्टाइल उद्देश्यों के लिए प्रत्येक बटन पर एक कस्टम आईडी जोड़ सकते हैं।"
+
+#~ msgid "ID name"
+#~ msgstr "आईडी का नाम"
+
+#~ msgid "Custom class"
+#~ msgstr "कस्टम वर्ग"
+
+#~ msgid "Adds a custom 'class' HTML attribute to the button."
+#~ msgstr "बटन के लिए एक कस्टम 'क्लास' HTML विशेषता जोड़ता है।"
+
+#~ msgid "You can add a custom class to each button for styling purposes."
+#~ msgstr "आप स्टाइल उद्देश्यों के लिए प्रत्येक बटन के लिए एक कस्टम वर्ग जोड़ सकते हैं।"
+
+#~ msgid "Class name"
+#~ msgstr "कक्षा का नाम"
+
+#~ msgid "Page rule"
+#~ msgstr "पृष्ठ नियम"
+
+#~ msgid "Manage page rules"
+#~ msgstr "पृष्ठ नियम प्रबंधित करें"
+
+#~ msgid "You cannot select the same page rule as it's group!"
+#~ msgstr "आप समूह के रूप में उसी पृष्ठ नियम का चयन नहीं कर सकते हैं!"
+
+#~ msgid "Show button when rule is triggered"
+#~ msgstr "नियम ट्रिगर होने पर बटन दिखाएं"
+
+#~ msgid "Hide button when rule is triggered"
+#~ msgstr "नियम ट्रिगर होने पर बटन छिपाएं"
+
+#~ msgid "Exit intent"
+#~ msgstr "इरादे से बाहर निकलें"
+
+#~ msgid "Enable exit intent"
+#~ msgstr "बाहर निकलने के इरादे को सक्षम करें"
+
+#~ msgid ""
+#~ "With this setting, you can trigger Buttonizer to animate before your guest exits your "
+#~ "website."
+#~ msgstr ""
+#~ "इस सेटिंग के साथ, आप अपने अतिथि को आपकी वेबसाइट से बाहर करने से पहले चेतनकर्ता को चेतन के लिए ट्रिगर कर "
+#~ "सकते हैं।"
+
+#~ msgid ""
+#~ "Please note: Exit intent will <b>not trigger</b> in preview mode, only in your LIVE website."
+#~ msgstr ""
+#~ "कृपया ध्यान दें: बाहर निकलने का इरादा <b> ट्रिगर नहीं होगा </ b> पूर्वावलोकन मोड में, केवल आपकी LIVE "
+#~ "वेबसाइट में।"
+
+#~ msgid "When to trigger?"
+#~ msgstr "कब ट्रिगर करना है?"
+
+#~ msgid "Trigger when leaving browser window"
+#~ msgstr "ब्राउज़र विंडो छोड़ने पर ट्रिगर"
+
+#~ msgid "Trigger on inactivity (2 minutes)"
+#~ msgstr "निष्क्रियता पर ट्रिगर (2 मिनट)"
+
+#~ msgid "How often should it be triggered?"
+#~ msgstr "इसे कितनी बार ट्रिगर किया जाना चाहिए?"
+
+#~ msgid "Only trigger once per page"
+#~ msgstr "प्रति पृष्ठ केवल एक बार ट्रिगर करें"
+
+#~ msgid "Only trigger once per session"
+#~ msgstr "केवल प्रति सत्र एक बार ट्रिगर करें"
+
+#~ msgid "Trigger every time"
+#~ msgstr "हर बार ट्रिगर"
+
+#~ msgid "Animation on intent"
+#~ msgstr "आशय पर एनीमेशन"
+
+#~ msgid "Focused"
+#~ msgstr "ध्यान केंद्रित"
+
+#~ msgid "Open menu"
+#~ msgstr "मेनू खोलें"
+
+#~ msgid "Jump once and open"
+#~ msgstr "एक बार कूदो और खोलो"
+
+#~ msgid "Flip and open"
+#~ msgstr "पलटें और खोलें"
+
+#~ msgid "Button action"
+#~ msgstr "बटन कार्रवाई"
+
+#~ msgid "Choose a click action for this button."
+#~ msgstr "इस बटन के लिए एक क्लिक क्रिया चुनें।"
+
+#~ msgid "Select button action"
+#~ msgstr "बटन कार्रवाई का चयन करें"
+
+#~ msgid "No button action found for:"
+#~ msgstr "कोई बटन कार्रवाई नहीं मिली:"
+
+#~ msgid "Popular actions"
+#~ msgstr "लोकप्रिय क्रियाएं"
+
+#~ msgid "Click to chat"
+#~ msgstr "चैट करने के लिए क्लिक करें"
+
+#~ msgid "Social Media"
+#~ msgstr "सामाजिक मीडिया"
+
+#~ msgid "Popup"
+#~ msgstr "पॉप अप"
+
+#~ msgid "Call action (phone number)"
+#~ msgstr "कॉल एक्शन (फोन नंबर)"
+
+#~ msgid "Mail action (email address)"
+#~ msgstr "मेल कार्रवाई (ईमेल पता)"
+
+#~ msgid "Back to top"
+#~ msgstr "वापस शीर्ष पर"
+
+#~ msgid "Go back one page"
+#~ msgstr "एक पृष्ठ पर वापस जाएं"
+
+#~ msgid "Share page"
+#~ msgstr "पृष्ठ सांझा करें"
+
+#~ msgid ""
+#~ "Some sms apps does not support a body tag. When this happens, it will simply open the sms "
+#~ "app with the phone number already filled in."
+#~ msgstr ""
+#~ "कुछ एसएमएस ऐप्स बॉडी टैग का समर्थन नहीं करते हैं। जब ऐसा होता है, तो यह केवल फ़ोन नंबर के साथ पहले से भरे हुए "
+#~ "एसएमएस नंबर को खोल देगा।"
+
+#~ msgid ""
+#~ "Viber does not support a \"chat with phone number \" link. When a user clicks on this button "
+#~ "it will open their \"add contact\" with the number filled in."
+#~ msgstr ""
+#~ "Viber \"फोन नंबर के साथ चैट\" लिंक का समर्थन नहीं करता है। जब कोई उपयोगकर्ता इस बटन पर क्लिक करेगा तो "
+#~ "यह भरे हुए नंबर के साथ अपना \"ऐड कॉन्टैक्ट\" खोलेगा।"
+
+#~ msgid ""
+#~ "New, Facebook Messenger Chat Widget! First, you'll need to <a %1$s>whitelist</a> your site "
+#~ "on Facebook. Then add your <a %2$s>Page ID</a> into the input above."
+#~ msgstr ""
+#~ "नई, फेसबुक मैसेंजर चैट विजेट! सबसे पहले, आपको फेसबुक पर अपनी साइट को%% +s> श्वेतसूची </a> की आवश्यकता होगी। "
+#~ "फिर ऊपर के इनपुट में अपना <a %2$s> पेज आईडी </a> जोड़ें।"
+
+#~ msgid ""
+#~ "You need to install Poptin's WordPress plugin. You can find it <a %1$s>here</a>. Once you've "
+#~ "made a Poptin paste the <a %2$s>direct link</a> into the input."
+#~ msgstr ""
+#~ "आपको पॉप्टिन के वर्डप्रेस प्लगइन को स्थापित करना होगा। आप इसे यहां <a %1$s> </a> पा सकते हैं। एक बार जब "
+#~ "आप एक पॉपटिन बना लेते हैं तो इनपुट में <a %2$s> सीधा लिंक </a> पेस्ट कर देते हैं।"
+
+#~ msgid "Share on %s"
+#~ msgstr "% S पर साझा करें"
+
+#~ msgid "Share via %s"
+#~ msgstr "% S के माध्यम से साझा करें"
+
+#~ msgid "This URL appears to be invalid. The button may not work as expected."
+#~ msgstr "यह URL अमान्य प्रतीत होता है। बटन अपेक्षा के अनुरूप काम नहीं कर सकता है।"
+
+#~ msgid ""
+#~ "Do you miss <b>http://</b> or <b>https://</b>? Perhaps an unnecessary space is added "
+#~ "somewhere."
+#~ msgstr ""
+#~ "क्या आपको <b> http: // </ b> या <b> https: // </ b> याद है? शायद एक अनावश्यक स्थान कहीं जोड़ा जाता "
+#~ "है।"
+
+#~ msgid ""
+#~ "<b>Insecure URL:</b> Sorry to interrupt, but we advice you to use HTTPS for your URLS. This "
+#~ "is a safer way to transport data."
+#~ msgstr ""
+#~ "<b> असुरक्षित URL: </ b> व्यवधान के लिए क्षमा करें, लेकिन हम आपको अपने URL के लिए HTTPS का उपयोग करने "
+#~ "की सलाह देते हैं। यह डेटा ट्रांसपोर्ट करने का एक सुरक्षित तरीका है।"
+
+#~ msgid "Javascript function"
+#~ msgstr "जावास्क्रिप्ट समारोह"
+
+#~ msgid "Warning! Before you continue..."
+#~ msgstr "चेतावनी! इससे पहले कि आप जारी रखें ..."
+
+#~ msgid ""
+#~ "You are changing this button action from custom javascript to a different action. Your "
+#~ "javascript changes will be lost."
+#~ msgstr ""
+#~ "आप इस बटन क्रिया को कस्टम जावास्क्रिप्ट से भिन्न क्रिया में बदल रहे हैं। आपके जावास्क्रिप्ट परिवर्तन खो जाएंगे।"
+
+#~ msgid "Are you sure you want to proceed?"
+#~ msgstr "क्या आप सुनिश्चित रूप से आगे बढ़ना चाहते हैं?"
+
+#~ msgid ""
+#~ "Fill in your phone number without any spaces and symbols. Read WhatsApps recommendations by "
+#~ "<a %s>clicking here.</a>"
+#~ msgstr ""
+#~ "बिना किसी स्पेस और सिंबल के अपना फोन नंबर भरें। यहां क्लिक करके <a %s> </a> द्वारा व्हाट्सएप की सिफारिशों "
+#~ "को पढ़ें"
+
+#~ msgid ""
+#~ "When you want to use Twitter DM you will need to find your Twitter User ID and allow direct "
+#~ "messages from anyone. To find your account ID <a %1$s>click here</a>. And to read more about "
+#~ "how to allow direct messages from anyone, <a %2$s>click here</a>."
+#~ msgstr ""
+#~ "जब आप ट्विटर डीएम का उपयोग करना चाहते हैं, तो आपको अपना ट्विटर यूजर आईडी ढूंढना होगा और किसी से भी "
+#~ "सीधे संदेश की अनुमति देनी होगी। अपना खाता आईडी खोजने के लिए <a %1$s> यहां क्लिक करें </a>। और किसी से "
+#~ "प्रत्यक्ष संदेश कैसे प्राप्त करने के बारे में अधिक पढ़ने के लिए, <a %2$s> यहां क्लिक करें </a>।"
+
+#~ msgid "Message"
+#~ msgstr "संदेश"
+
+#~ msgid "Username"
+#~ msgstr "उपयोगकर्ता नाम"
+
+#~ msgid "Recipient"
+#~ msgstr "प्राप्त करने वाला"
+
+#~ msgid "Subject"
+#~ msgstr "विषय"
+
+#~ msgid "Body"
+#~ msgstr "तन"
+
+#~ msgid "Open new tab"
+#~ msgstr "नया टैब खोलें"
+
+#~ msgid "When the button is clicked, open in new tab."
+#~ msgstr "जब बटन पर क्लिक किया जाता है, तो नए टैब में खोलें।"
+
+#~ msgid "Filters"
+#~ msgstr "फिल्टर"
+
+#~ msgid "Styling"
+#~ msgstr "स्टाइलिंग"
+
+#~ msgid "Timeout & Scroll"
+#~ msgstr "टाइमआउट और स्क्रॉल करें"
+
+#~ msgid "Buttonizer settings"
+#~ msgstr "बटन सेटिंग्स"
+
+#~ msgid "Icon library"
+#~ msgstr "आइकन लाइब्रेरी"
+
+#~ msgid "free"
+#~ msgstr "नि: शुल्क"
+
+#~ msgid "Latest (automatic)"
+#~ msgstr "नवीनतम (स्वचालित)"
+
+#~ msgid ""
+#~ "If your theme automatically loads in a library, just select the correct icon library instead."
+#~ msgstr ""
+#~ "यदि आपका विषय स्वचालित रूप से किसी लाइब्रेरी में लोड होता है, तो इसके बजाय सही आइकन लाइब्रेरी का चयन करें।"
+
+#~ msgid "Select version"
+#~ msgstr "संस्करण का चयन करें"
+
+#~ msgid "Select the correct version of the library in order to use the icons in Buttonizer."
+#~ msgstr "Buttonizer में आइकन का उपयोग करने के लिए लाइब्रेरी के सही संस्करण का चयन करें।"
+
+#~ msgid ""
+#~ "You have selected an icon library that has premium icons. Enter the library license code to "
+#~ "view and use these."
+#~ msgstr ""
+#~ "आपने एक आइकन लाइब्रेरी का चयन किया है जिसमें प्रीमियम आइकन हैं। इन्हें देखने और उपयोग करने के लिए लाइब्रेरी "
+#~ "लाइसेंस कोड दर्ज करें।"
+
+#~ msgid "How does this work?"
+#~ msgstr "यह कैसे काम करता है?"
+
+#~ msgid "Enter %s code"
+#~ msgstr "% S कोड दर्ज करें"
+
+#~ msgid "Import icon library"
+#~ msgstr "आइकन लाइब्रेरी आयात करें"
+
+#~ msgid ""
+#~ "Should Buttonizer import the icon library into your theme? If your theme already imports the "
+#~ "library you can disable this."
+#~ msgstr ""
+#~ "क्या Buttonizer को आपके विषय में आइकन लाइब्रेरी आयात करना चाहिए? यदि आपका विषय पहले से ही पुस्तकालय को "
+#~ "आयात करता है तो आप इसे अक्षम कर सकते हैं।"
+
+#~ msgid "Where can I see my click data of my buttons in Google Analytics?"
+#~ msgstr "मैं Google Analytics में अपना क्लिक डेटा या अपने बटन कहां देख सकता हूं?"
+
+#~ msgid "Other settings"
+#~ msgstr "अन्य सेटिंग"
+
+#~ msgid "Show admin top bar"
+#~ msgstr "व्यवस्थापक शीर्ष बार दिखाएं"
+
+#~ msgid "Hide Buttonizer in the admin top bar by disabling this setting."
+#~ msgstr "इस सेटिंग को अक्षम करके व्यवस्थापक शीर्ष पट्टी में बटन छिपाएं।"
+
+#~ msgid "Show tooltips"
+#~ msgstr "टूलटिप्स दिखाएं"
+
+#~ msgid "Hide the tooltips by disabling this setting."
+#~ msgstr "इस सेटिंग को अक्षम करके टूलटिप्स छिपाएँ।"
+
+#~ msgid "Subdomain support"
+#~ msgstr "उपडोमेन समर्थन"
+
+#~ msgid ""
+#~ "Some WordPress websites use subdomains for content purposes. Enable this setting to allow "
+#~ "Buttonizer to load on your subdomains. Only enable this when you need it."
+#~ msgstr ""
+#~ "कुछ वर्डप्रेस वेबसाइट सामग्री उद्देश्यों के लिए उप डोमेन का उपयोग करती हैं। अपने सबडोमेन पर Buttonizer को "
+#~ "लोड करने की अनुमति देने के लिए इस सेटिंग को सक्षम करें। इसे केवल तब सक्षम करें जब आपको इसकी आवश्यकता हो।"
+
+#~ msgid "Reset"
+#~ msgstr "रीसेट"
+
+#~ msgid "This is a way to reset Buttonizer to the default settings."
+#~ msgstr "यह Buttonizer को डिफ़ॉल्ट सेटिंग्स पर रीसेट करने का एक तरीका है।"
+
+#~ msgid "What will happen when I click the red button below?"
+#~ msgstr "नीचे दिए गए लाल बटन पर क्लिक करने पर क्या होगा?"
+
+#~ msgid ""
+#~ "The plugin will get a 'factory reset'. All settings of Buttonizer will get deleted, "
+#~ "reverting back to when you first installed and activated Buttonizer."
+#~ msgstr ""
+#~ "प्लगइन को 'फ़ैक्टरी रीसेट' मिलेगा। Buttonizer की सभी सेटिंग्स हटा दी जाएंगी, जब आप पहली बार इंस्टॉल और "
+#~ "सक्रिय किए गए Buttonizer पर वापस जाते हैं।"
+
+#~ msgid "Why would I do that?"
+#~ msgstr "मैं ऐसा क्यों करूंगा?"
+
+#~ msgid ""
+#~ "Perhaps you ruined your buttons, categories or settings and would like to start from "
+#~ "scratch. Or maybe you just feel trying the reset button..."
+#~ msgstr ""
+#~ "शायद आपने अपने बटन, श्रेणियों या सेटिंग्स को बर्बाद कर दिया है और खरोंच से शुरू करना चाहते हैं। या हो सकता है "
+#~ "कि आप बस रीसेट बटन की कोशिश कर रहे हैं ..."
+
+#~ msgid "I have a license, what about that?"
+#~ msgstr "मेरे पास लाइसेंस है, उसका क्या?"
+
+#~ msgid "No worries! Nothing will happen with your license! It only resets the following:"
+#~ msgstr "कोई चिंता नहीं! आपके लाइसेंस से कुछ नहीं होगा! यह केवल निम्नलिखित को रीसेट करता है:"
+
+#~ msgid "Your buttons"
+#~ msgstr "आपके बटन"
+
+#~ msgid "Your button groups"
+#~ msgstr "आपके बटन समूह"
+
+#~ msgid "All time schedules"
+#~ msgstr "सभी समय कार्यक्रम"
+
+#~ msgid "All page rules"
+#~ msgstr "सभी पृष्ठ नियम"
+
+#~ msgid "All other settings of Buttonizer"
+#~ msgstr "Buttonizer के अन्य सभी सेटिंग्स"
+
+#~ msgid "All published settings"
+#~ msgstr "सभी प्रकाशित सेटिंग्स"
+
+#~ msgid "Okay, sounds good. What then?"
+#~ msgstr "ठीक! सही लग रहा है। फिर क्या?"
+
+#~ msgid ""
+#~ "Buttonizer will revert back to the default settings and feel like a fresh installation. "
+#~ "That's all."
+#~ msgstr "Buttonizer डिफ़ॉल्ट सेटिंग्स पर वापस लौटेगा और नए इंस्टॉलेशन की तरह महसूस करेगा। बस इतना ही।"
+
+#~ msgid "Okay, I'm ready!"
+#~ msgstr "ठीक है, मैं तैयार हूँ!"
+
+#~ msgid "Press the red button below to reset Buttonizer. There will be no more warnings."
+#~ msgstr "Buttonizer रीसेट करने के लिए नीचे लाल बटन दबाएं। और कोई चेतावनी नहीं होगी।"
+
+#~ msgid "Reset Buttonizer!"
+#~ msgstr "बटन रीसेट करें!"
+
+#~ msgid "Loaded changes from previous session"
+#~ msgstr "पिछले सत्र से लोड परिवर्तन"
+
+#~ msgid "Return to preview"
+#~ msgstr "पूर्वावलोकन पर वापस लौटें"
+
+#~ msgid "Desktop preview"
+#~ msgstr "डेस्कटॉप पूर्वावलोकन"
+
+#~ msgid "Tablet preview"
+#~ msgstr "गोली का पूर्वावलोकन"
+
+#~ msgid "Mobile preview"
+#~ msgstr "मोबाइल पूर्वावलोकन"
+
+#~ msgid "Version %s"
+#~ msgstr "संस्करण% s"
+
+#~ msgid "Support"
+#~ msgstr "सहयोग"
+
+#~ msgid "Direct support with the Buttonizer developers"
+#~ msgstr "Buttonizer डेवलपर्स के साथ प्रत्यक्ष समर्थन"
+
+#~ msgid "Interact with other Buttonizers"
+#~ msgstr "अन्य Buttonizers के साथ बातचीत"
+
+#~ msgid "Buttonizer tour (recommended!)"
+#~ msgstr "Buttonizer दौरे (अनुशंसित!)"
+
+#~ msgid "Start the 2 minute tour"
+#~ msgstr "2 मिनट की यात्रा शुरू करें"
+
+#~ msgid "Buttonizer account"
+#~ msgstr "बटन खाता"
+
+#~ msgid "My Account"
+#~ msgstr "मेरा खाता"
+
+#~ msgid "Upgrade or pricing"
+#~ msgstr "उन्नयन या मूल्य निर्धारण"
+
+#~ msgid "Affiliation"
+#~ msgstr "संबंधन"
+
+#~ msgid "Earn $ by promoting Buttonizer"
+#~ msgstr "Buttonizer को बढ़ावा देकर $ कमाएँ"
+
+#~ msgid "Options"
+#~ msgstr "विकल्प"
+
+#~ msgid "Now editing:"
+#~ msgstr "अब संपादन:"
+
+#~ msgid "This creates a new group with 2 buttons inside."
+#~ msgstr "यह अंदर 2 बटन के साथ एक नया समूह बनाता है।"
+
+#~ msgid "This creates a new button, outside other groups."
+#~ msgstr "यह अन्य समूहों के बाहर एक नया बटन बनाता है।"
+
+#~ msgid "Learn more about groups and buttons"
+#~ msgstr "समूह और बटन के बारे में अधिक जानें"
+
+#~ msgid "You can't drag the only button left in a group!"
+#~ msgstr "आप एक समूह में बचे एकमात्र बटन को नहीं खींच सकते हैं!"
+
+#~ msgid "Convert to group"
+#~ msgstr "समूह में परिवर्तित करें"
+
+#~ msgid "Delete button"
+#~ msgstr "बटन हटाएँ"
+
+#~ msgid "Delete group"
+#~ msgstr "समूह हटाएँ"
+
+#~ msgid "Are you sure you want to remove this button?"
+#~ msgstr "क्या आप वाकई इस बटन को हटाना चाहते हैं?"
+
+#~ msgid "Are you sure you want to remove this group?"
+#~ msgstr "क्या आप वाकई इस समूह को निकालना चाहते हैं?"
+
+#~ msgid "Are you sure you want to remove this full group? It contains %s buttons."
+#~ msgstr "क्या आप वाकई इस पूर्ण समूह को निकालना चाहते हैं? इसमें% s बटन हैं।"
+
+#~ msgid "Are you sure you want to remove the button called '%s'?"
+#~ msgstr "क्या आप वाकई '% s' नामक बटन को हटाना चाहते हैं?"
+
+#~ msgid "You cannot delete this button because this the only button left."
+#~ msgstr "आप इस बटन को नहीं हटा सकते क्योंकि यह एकमात्र बटन बचा है।"
+
+#~ msgid "You cannot delete this group because this the only group left."
+#~ msgstr "आप इस समूह को हटा नहीं सकते क्योंकि यह एकमात्र समूह बचा है।"
+
+#~ msgid "Page rules"
+#~ msgstr "पृष्ठ नियम"
+
+#~ msgid "Page Rule Manager"
+#~ msgstr "पेज नियम प्रबंधक"
+
+#~ msgid ""
+#~ "You can setup page rules via this window. When you add pages or definitions to this page "
+#~ "rule, the buttons attached to this page rule will be shown or hidden depending on their "
+#~ "settings as soon this rule is triggered."
+#~ msgstr ""
+#~ "आप इस विंडो के माध्यम से पेज रूल्स सेटअप कर सकते हैं। जब आप इस पृष्ठ नियम में पृष्ठ या परिभाषाएँ जोड़ते हैं, तो इस "
+#~ "नियम के ट्रिगर होते ही इस पृष्ठ नियम से जुड़े बटन दिखाए जाएंगे या छिपाए जाएंगे।"
+
+#~ msgid ""
+#~ "You can setup page rules that will get triggered on specific pages or user roles. You can "
+#~ "create unlimited page rules with multiple rules to trigger."
+#~ msgstr ""
+#~ "आप पृष्ठ नियमों को सेटअप कर सकते हैं जो विशिष्ट पृष्ठों या उपयोगकर्ता भूमिकाओं पर ट्रिगर हो जाएंगे। आप ट्रिगर "
+#~ "करने के लिए कई नियमों के साथ असीमित पृष्ठ नियम बना सकते हैं।"
+
+#~ msgid "Add page rule"
+#~ msgstr "पेज नियम जोड़ें"
+
+#~ msgid "Name your page rule:"
+#~ msgstr "अपना पृष्ठ नियम नाम दें:"
+
+#~ msgid "Show the button on any page"
+#~ msgstr "किसी भी पृष्ठ पर बटन दिखाएं"
+
+#~ msgid "Remove page rule"
+#~ msgstr "पृष्ठ नियम निकालें"
+
+#~ msgid "All conditions must meet (AND)"
+#~ msgstr "सभी शर्तों को पूरा करना होगा (और)"
+
+#~ msgid "At least one condition must meet (OR)"
+#~ msgstr "कम से कम एक शर्त पूरी करनी होगी (OR)"
+
+#~ msgid "and"
+#~ msgstr "तथा"
+
+#~ msgid "or"
+#~ msgstr "या"
+
+#~ msgid "Page"
+#~ msgstr "पृष्ठ"
+
+#~ msgid "Page title contains"
+#~ msgstr "पृष्ठ शीर्षक शामिल हैं"
+
+#~ msgid "Blog"
+#~ msgstr "ब्लॉग"
+
+#~ msgid "Blog title contains"
+#~ msgstr "ब्लॉग शीर्षक शामिल हैं"
+
+#~ msgid "Category"
+#~ msgstr "वर्ग"
+
+#~ msgid "URL contains"
+#~ msgstr "URL में सम्‍मिलित है"
+
+#~ msgid "URL begins with"
+#~ msgstr "URL से शुरू होता है"
+
+#~ msgid "URL ends with"
+#~ msgstr "URL के साथ समाप्त होता है"
+
+#~ msgid "User has role"
+#~ msgstr "उपयोगकर्ता की भूमिका है"
+
+#~ msgid "Select one or more items."
+#~ msgstr "एक या अधिक आइटम का चयन करें।"
+
+#~ msgid "Are you sure you want to remove this rule?"
+#~ msgstr "क्या आप वाकई इस नियम को हटाना चाहते हैं?"
+
+#~ msgid "Aborted. Each page rule must keep at least one rule."
+#~ msgstr "निरस्त किया गया। प्रत्येक पृष्ठ नियम में कम से कम एक नियम अवश्य होना चाहिए।"
+
+#~ msgid "You still have selected values, are you sure you want to remove this?"
+#~ msgstr "आपने अभी भी मानों का चयन किया है, क्या आप वाकई इसे हटाना चाहते हैं?"
+
+#~ msgid "Rule value"
+#~ msgstr "नियम मान"
+
+#~ msgid "Time schedules"
+#~ msgstr "समय सारिणी"
+
+#~ msgid "Time schedule"
+#~ msgstr "समय सारणी"
+
+#~ msgid "Time schedule manager"
+#~ msgstr "समय सारिणी प्रबंधक"
+
+#~ msgid ""
+#~ "You can setup time schedules that will get triggered during specific times of a day. It is "
+#~ "even possible to change the schedule actions for specific days. You can create an unlimited "
+#~ "amount of schedules."
+#~ msgstr ""
+#~ "आप एक दिन के विशिष्ट समय के दौरान ट्रिगर होने वाले टाइम शेड्यूल को सेटअप कर सकते हैं। विशिष्ट दिनों के लिए "
+#~ "शेड्यूल क्रियाओं को बदलना संभव है। आप असीमित मात्रा में कार्यक्रम बना सकते हैं।"
+
+#~ msgid "Add date"
+#~ msgstr "तारीख जोड़ें"
+
+#~ msgid "New schedule"
+#~ msgstr "नई सारणी"
+
+#~ msgid "Name the new time schedule:"
+#~ msgstr "नए समय कार्यक्रम का नाम दें:"
+
+#~ msgid "Rename schedule to:"
+#~ msgstr "इसका नाम बदलें:"
+
+#~ msgid "Show the button at any time"
+#~ msgstr "किसी भी समय बटन दिखाएं"
+
+#~ msgid "till"
+#~ msgstr "जब तक"
+
+#~ msgid "Remove schedule"
+#~ msgstr "शेड्यूल निकालें"
+
+#~ msgid "You must keep at least one schedule"
+#~ msgstr "आपको कम से कम एक शेड्यूल रखना चाहिए"
+
+#~ msgid "Current timezone:"
+#~ msgstr "वर्तमान समयक्षेत्र:"
+
+#~ msgid "Remove date"
+#~ msgstr "तारीख निकालें"
+
+#~ msgid "Are you sure you want to remove this date?"
+#~ msgstr "क्या आप वाकई इस तिथि को निकालना चाहते हैं?"
+
+#~ msgid "Sorry, the time '%1$s' was invalid. Reverting back to '%2$s'."
+#~ msgstr "क्षमा करें, '% 1 $ s' का समय अमान्य था। '% 2 $ s' पर वापस लौटना।"
+
+#~ msgid ""
+#~ "The start time '%1$s' conflicts with the end time '%2$s'. Time has been reverted to '%3$s'. "
+#~ "Make sure you have at least 5 minutes overlap."
+#~ msgstr ""
+#~ "प्रारंभ समय '% 1 $ s' अंत समय '% 2 $ s' के साथ संघर्ष करता है। समय को '% 3 $ s' में वापस कर दिया गया "
+#~ "है। सुनिश्चित करें कि आपके पास कम से कम 5 मिनट ओवरलैप हैं।"
+
+#~ msgid ""
+#~ "The end time '%1$s' conflicts with the start time '%2$s'. Time has been reverted to '%3$s'. "
+#~ "Make sure you have at least 5 minutes overlap."
+#~ msgstr ""
+#~ "अंत समय '% 1 $ s' का प्रारंभ समय '% 2 $ s' के साथ टकराव होता है। समय को '% 3 $ s' में वापस कर दिया "
+#~ "गया है। सुनिश्चित करें कि आपके पास कम से कम 5 मिनट ओवरलैप हैं।"
+
+#~ msgid "Weekdays"
+#~ msgstr "काम करने के दिन"
+
+#~ msgid "Monday"
+#~ msgstr "सोमवार"
+
+#~ msgid "Tuesday"
+#~ msgstr "मंगलवार"
+
+#~ msgid "Wednesday"
+#~ msgstr "बुधवार"
+
+#~ msgid "Thursday"
+#~ msgstr "गुरूवार"
+
+#~ msgid "Friday"
+#~ msgstr "शुक्रवार"
+
+#~ msgid "Saturday"
+#~ msgstr "शनिवार"
+
+#~ msgid "Sunday"
+#~ msgstr "रविवार"
+
+#~ msgid "Start triggering buttons from"
+#~ msgstr "से बटन ट्रिगर करना शुरू करें"
+
+#~ msgid ""
+#~ "Warning! Your start date '%s' hast past the end date of this schedule. If you do not change "
+#~ "this date the schedule will not work."
+#~ msgstr ""
+#~ "चेतावनी! इस अनुसूची की अंतिम तिथि से पहले आपकी आरंभ तिथि '% s' है। यदि आप इस तिथि को नहीं बदलते हैं तो "
+#~ "शेड्यूल काम नहीं करेगा।"
+
+#~ msgid "Stop triggering buttons after (optional)"
+#~ msgstr "(वैकल्पिक) के बाद ट्रिगर बटन बंद करो"
+
+#~ msgid "Click to add ending date"
+#~ msgstr "अंतिम तिथि जोड़ने के लिए क्लिक करें"
+
+#~ msgid "Select a date in the datepicker below"
+#~ msgstr "नीचे दी गई तारीख में तारीख का चयन करें"
+
+#~ msgid ""
+#~ "Warning! Your end date '%s' has past the start date of this schedule. If you do not change "
+#~ "this date the schedule will not work."
+#~ msgstr ""
+#~ "चेतावनी! आपकी अंतिम तिथि '% s' में इस अनुसूची की आरंभ तिथि है। यदि आप इस तिथि को नहीं बदलते हैं तो शेड्यूल "
+#~ "काम नहीं करेगा।"
+
+#~ msgid "Hi Buttonizer!"
+#~ msgstr "हाय बटनवाला!"
+
+#~ msgid ""
+#~ "It appears you've installed Buttonizer 2.0 before. But, you installed version 1.5 again "
+#~ "later on and updated back to 2.0!"
+#~ msgstr ""
+#~ "ऐसा प्रतीत होता है कि आपने पहले Buttonizer 2.0 स्थापित किया है। लेकिन, आपने बाद में संस्करण 1.5 फिर से "
+#~ "स्थापित किया और 2.0 पर वापस अपडेट किया!"
+
+#~ msgid ""
+#~ "The migration progress did not run as it did back then. In order to convert your buttons, "
+#~ "press the button below!"
+#~ msgstr ""
+#~ "माइग्रेशन प्रगति तब तक नहीं चली जैसा कि उसने वापस किया था। अपने बटन बदलने के लिए, नीचे दिए गए बटन को "
+#~ "दबाएं!"
+
+#~ msgid ""
+#~ "If this window keeps popping up, even when you've tried to convert the buttons, try to reset "
+#~ "Buttonizer. Go to the 'cog' icon (%1$s) on the top bar, select 'Options %2$s' and the tab "
+#~ "'Reset' and follow the instructions."
+#~ msgstr ""
+#~ "यदि यह विंडो पॉप अप करती रहती है, तब भी जब आपने बटन को बदलने की कोशिश की है, तो Buttonizer को "
+#~ "रीसेट करने का प्रयास करें। शीर्ष बार पर 'कॉग' आइकन (% 1 $ s) पर जाएं, 'विकल्प% 2 $ s' और टैब 'रीसेट' "
+#~ "चुनें और निर्देशों का पालन करें।"
+
+#~ msgid "Convert my buttons!"
+#~ msgstr "मेरे बटन कन्वर्ट!"
+
+#~ msgid "Premium feature"
+#~ msgstr "प्रीमियम सुविधा"
+
+#~ msgid ""
+#~ "Hi there, this function is a premium feature. We will describe what this feature will do:"
+#~ msgstr "नमस्ते, यह फंक्शन एक प्रीमियम फीचर है। हम वर्णन करेंगे कि यह सुविधा क्या करेगी:"
+
+#~ msgid "What you get as a premium user:"
+#~ msgstr "आपको प्रीमियम उपयोगकर्ता के रूप में क्या मिलता है:"
+
+#~ msgid "Go pro"
+#~ msgstr "पेशेवर बनो"
+
+#~ msgid "Show button(groups) using the advanced time schedules"
+#~ msgstr "उन्नत समय सारणी का उपयोग करके बटन (समूह) दिखाएं"
+
+#~ msgid "Show button(groups) on specific pages using advanced page rules"
+#~ msgstr "उन्नत पृष्ठ नियमों का उपयोग करके विशिष्ट पृष्ठों पर बटन (समूह) दिखाएं"
+
+#~ msgid "Create multiple button groups"
+#~ msgstr "कई बटन समूह बनाएं"
+
+#~ msgid "Custom button background &amp; icon image"
+#~ msgstr "कस्टम बटन पृष्ठभूमि & amp; आइकन छवि"
+
+#~ msgid "Show or hide on scroll"
+#~ msgstr "स्क्रॉल पर दिखाएँ या छिपाएँ"
+
+#~ msgid "Show on timeout"
+#~ msgstr "टाइमआउट पर दिखाएं"
+
+#~ msgid "Be able to set CSS class names and button IDs"
+#~ msgstr "सीएसएस वर्ग के नाम और बटन आईडी सेट करने में सक्षम हो"
+
+#~ msgid "Execute javascript on button clicks"
+#~ msgstr "बटन के क्लिक पर जावास्क्रिप्ट निष्पादित करें"
+
+#~ msgid "My first time schedule"
+#~ msgstr "मेरा पहली बार का कार्यक्रम"
+
+#~ msgid "My first page rule"
+#~ msgstr "मेरा पहला पृष्ठ नियम"
+
+#~ msgid "You are able to add multiple groups on different positions"
+#~ msgstr "आप विभिन्न पदों पर कई समूह जोड़ सकते हैं"
+
+#~ msgid "Welcome to Buttonizer"
+#~ msgstr "Buttonizer में आपका स्वागत है"
+
+#~ msgid "We are pleased to welcome you to <b>%s</b>!"
+#~ msgstr "हम आपका स्वागत करते हुए प्रसन्न हैं <b>% s </ b>!"
+
+#~ msgid "We've created a tour for our new users. Would you like to take the tour?"
+#~ msgstr "हमने अपने नए उपयोगकर्ताओं के लिए एक दौरा बनाया है। क्या आप टूर पर जाना चाहेंगे?"
+
+#~ msgid "No thanks, I know how it works"
+#~ msgstr "नहीं धन्यवाद, मुझे पता है कि यह कैसे काम करता है"
+
+#~ msgid "Welcome to the Buttonizer tour!"
+#~ msgstr "Buttonizer दौरे में आपका स्वागत है!"
+
+#~ msgid "Start the tour and save time. Master the Buttonizer skills in only two minutes."
+#~ msgstr "दौरे शुरू करें और समय बचाएं। केवल दो मिनट में Buttonizer कौशल मास्टर।"
+
+#~ msgid "You can use the %1$s and %2$s keys on your %3$s to navigate."
+#~ msgstr "आप नेविगेट करने के लिए अपने% 3 $ s पर% 1 $ s और% 2 $ s कुंजी का उपयोग कर सकते हैं।"
+
+#~ msgid "Preview"
+#~ msgstr "पूर्वावलोकन"
+
+#~ msgid "Menu"
+#~ msgstr "मेन्यू"
+
+#~ msgid "Button group"
+#~ msgstr "बटन समूह"
+
+#~ msgid ""
+#~ "The buttons in a button group are dedicated to one position. Add multiple button groups if "
+#~ "you want to create more floating action buttons dedicated to different positions."
+#~ msgstr ""
+#~ "एक बटन समूह में बटन एक स्थिति के लिए समर्पित हैं। यदि आप विभिन्न पदों के लिए समर्पित अधिक अस्थायी कार्रवाई "
+#~ "बटन बनाना चाहते हैं, तो कई बटन समूह जोड़ें।"
+
+#~ msgid "Group settings"
+#~ msgstr "समूह सेटिंग्स"
+
+#~ msgid "Buttonizer will animate every 10 seconds in order to capture the visitor's attention."
+#~ msgstr "आगंतुक का ध्यान आकर्षित करने के लिए हर 10 सेकंड में Buttonizer चेतन करेगा।"
+
+#~ msgid "Click here to add a new button."
+#~ msgstr "एक नया बटन जोड़ने के लिए यहां क्लिक करें।"
+
+#~ msgid "When enabled, the button will copy the button and label style of the group."
+#~ msgstr "सक्षम होने पर, बटन समूह की बटन और लेबल शैली की प्रतिलिपि बना देगा।"
+
+#~ msgid ""
+#~ "Thank you for taking the tour, that's all folks! We hope you're ready to start implementing "
+#~ "Buttonizer to meet your goals! If you have any questions, ask them on the %s forums!"
+#~ msgstr ""
+#~ "दौरे लेने के लिए धन्यवाद, यह सभी लोग हैं! हमें उम्मीद है कि आप अपने लक्ष्यों को पूरा करने के लिए Buttonizer "
+#~ "लागू करना शुरू करने के लिए तैयार हैं! यदि आपके कोई प्रश्न हैं, तो उन्हें% s फ़ोरम पर पूछें!"
+
+#~ msgid "If you have any feedback regarding the Buttonizer Tour, we'd love to hear it!"
+#~ msgstr "यदि आपके पास Buttonizer Tour के संबंध में कोई प्रतिक्रिया है, तो हम इसे सुनना पसंद करेंगे!"
+
+#~ msgid "Permalink Error"
+#~ msgstr "पर्मलिंक त्रुटि"
+
+#~ msgid ""
+#~ "Buttonizer's requests will not work when using plain permalink. To use Buttonizer, use a "
+#~ "custom permalink"
+#~ msgstr ""
+#~ "सादे पर्मलिंक का उपयोग करते समय बटनर के अनुरोध काम नहीं करेंगे। Buttonizer का उपयोग करने के लिए, एक कस्टम "
+#~ "पर्मलिंक का उपयोग करें"
+
+#~ msgid "License activated"
+#~ msgstr "लाइसेंस सक्रिय"
+
+#~ msgid ""
+#~ "Please download and upload the premium version found in the email we have sent you to use "
+#~ "all premium functions."
+#~ msgstr ""
+#~ "कृपया ईमेल में प्राप्त प्रीमियम संस्करण को डाउनलोड करें और अपलोड करें जिसे हमने आपको सभी प्रीमियम कार्यों का "
+#~ "उपयोग करने के लिए भेजा है।"
+
+#~ msgid "Edit"
+#~ msgstr "संपादित करें"
+
+#~ msgid "Type"
+#~ msgstr "प्रकार"
+
+#~ msgid "Select"
+#~ msgstr "चुनते हैं"
+
+#~ msgid "Learn more"
+#~ msgstr "और अधिक जानें"
+
+#~ msgid "Create new group"
+#~ msgstr "नया समूह बनाएं"
+
+#~ msgid "Choose a name for the button."
+#~ msgstr "बटन के लिए एक नाम चुनें।"
+
+#~ msgid "Choose a name for the group."
+#~ msgstr "समूह के लिए एक नाम चुनें।"
+
+#~ msgid "Style"
+#~ msgstr "अंदाज"
+
+#~ msgid "Advanced"
+#~ msgstr "उन्नत"
+
+#~ msgid "Color"
+#~ msgstr "रंग"
+
+#~ msgid "Select file"
+#~ msgstr "फ़ाइल का चयन करें"
+
+#~ msgid "Change file"
+#~ msgstr "फ़ाइल बदलें"
+
+#~ msgid "Rename to:"
+#~ msgstr "का नाम बदलें:"
+
+#~ msgid "Icon selector"
+#~ msgstr "आइकन चयनकर्ता"
+
+#~ msgid "Loading icons, please wait..."
+#~ msgstr "प्रतीक लोड हो रहे हैं, कृपया प्रतीक्षा करें ..."
+
+#~ msgid "Searching for: %1$s, found %2$s results."
+#~ msgstr "के लिए खोज:% 1 $ s,% 2 $ s परिणाम मिला।"
+
+#~ msgid "Remove filter"
+#~ msgstr "फ़िल्टर निकालें"
+
+#~ msgid "Buttonizer has crashed!"
+#~ msgstr "बटन लगाने वाला दुर्घटनाग्रस्त हो गया!"
+
+#~ msgid "Our development team has been notified."
+#~ msgstr "हमारी विकास टीम को सूचित कर दिया गया है।"
+
+#~ msgid "If you'd like to help, tell us what happened below."
+#~ msgstr "यदि आप मदद करना चाहते हैं, तो हमें बताएं कि नीचे क्या हुआ है।"
+
+#~ msgid ""
+#~ "Buttonizer has crashed, but you have not enabled automatic error reporting! Would you like "
+#~ "to become a SUPER contributor and automatically log errors, including this one?"
+#~ msgstr ""
+#~ "Buttonizer दुर्घटनाग्रस्त हो गया है, लेकिन आपने स्वचालित त्रुटि रिपोर्टिंग सक्षम नहीं की है! क्या आप एक सुपर "
+#~ "योगदानकर्ता बनना चाहते हैं और इस सहित, स्वचालित रूप से त्रुटियों को लॉग इन करेंगे?"
+
+#~ msgid "Show button at all times"
+#~ msgstr "हर समय बटन दिखाएं"
+
+#~ msgid "Show group at all times"
+#~ msgstr "हर समय समूह दिखाएं"
+
+#~ msgid "Show button on all pages"
+#~ msgstr "सभी पृष्ठों पर बटन दिखाएं"
+
+#~ msgid "Show group on all pages"
+#~ msgstr "सभी पृष्ठों पर समूह दिखाएं"
+
+#~ msgid "I'm sure"
+#~ msgstr "मुझे यकीन है"
+
+#~ msgid "Incorrect entry."
+#~ msgstr "गलत प्रविष्टि।"
+
+#~ msgid "Remove time schedule?"
+#~ msgstr "समय अनुसूची निकालें?"
+
+#~ msgid ""
+#~ "Are you very sure you want to remove this time schedule? Buttons that are still attached to "
+#~ "this time schedule will become visible unless you attach them to another time schedule or "
+#~ "hide them."
+#~ msgstr ""
+#~ "क्या आप इस समय शेड्यूल को निकालना चाहते हैं? बटन जो इस समय अनुसूची से अभी भी जुड़े हुए हैं वे तब तक दृश्यमान हो "
+#~ "जाते हैं जब तक आप उन्हें किसी अन्य समय सूची में संलग्न नहीं करते या छिपाते नहीं हैं।"
+
+#~ msgid "There are no buttons attached to this time schedule. You can remove this safely."
+#~ msgstr "इस समय अनुसूची में कोई बटन नहीं हैं। आप इसे सुरक्षित रूप से निकाल सकते हैं।"
+
+#~ msgid "There are <b>%1$s</b> buttons attached to this time schedule!"
+#~ msgstr "इस समय अनुसूची में संलग्न <b>% 1 $ s </ b> बटन हैं!"
+
+#~ msgid "There is <b>1</b> button attached to this time schedule"
+#~ msgstr "इस समय अनुसूची में <b> 1 </ b> बटन जुड़ा हुआ है"
+
+#~ msgid "Do you want to remove this time schedule?"
+#~ msgstr "क्या आप इस समय-सारणी को निकालना चाहते हैं?"
+
+#~ msgid "Cannot delete button"
+#~ msgstr "बटन को हटा नहीं सकता"
+
+#~ msgid "Cannot delete group"
+#~ msgstr "समूह को हटा नहीं सकता"
+
+#~ msgid "Remove page rule?"
+#~ msgstr "पृष्ठ नियम निकालें?"
+
+#~ msgid ""
+#~ "Are you very sure you want to remove this page rule? Buttons that are still attached to this "
+#~ "page rule will become visible unless you attach them to another page rule or hide them."
+#~ msgstr ""
+#~ "क्या आप वाकई इस पृष्ठ नियम को हटाना चाहते हैं? बटन जो अभी भी इस पृष्ठ नियम से जुड़े हुए हैं वे तब तक दृश्यमान "
+#~ "हो जाएंगे जब तक आप उन्हें किसी अन्य पृष्ठ नियम से संलग्न नहीं करते या छिपाते नहीं हैं।"
+
+#~ msgid "There are no buttons attached to this page rule. You can remove this safely."
+#~ msgstr "इस पृष्ठ नियम से कोई बटन नहीं जुड़ा है। आप इसे सुरक्षित रूप से निकाल सकते हैं।"
+
+#~ msgid "There are <b>%1$s</b> buttons attached to this page rule!"
+#~ msgstr "इस पृष्ठ नियम से जुड़े <b>% 1 $ s </ b> बटन हैं!"
+
+#~ msgid "There is <b>1</b> button attached to this page rule"
+#~ msgstr "इस पृष्ठ नियम से जुड़ा <b> 1 </ b> बटन है"
+
+#~ msgid "Do you want to remove this page rule?"
+#~ msgstr "क्या आप इस पृष्ठ नियम को हटाना चाहते हैं?"
+
+#~ msgid "This action is permanent and cannot be undone."
+#~ msgstr "यह क्रिया स्थायी है और पूर्ववत नहीं की जा सकती।"
+
+#~ msgid "Add button to enable group settings"
+#~ msgstr "समूह सेटिंग्स सक्षम करने के लिए बटन जोड़ें"
+
+#~ msgid "General"
+#~ msgstr "सामान्य"
+
+#~ msgid "Label style"
+#~ msgstr "लेबल शैली"
+
+#~ msgid "background"
+#~ msgstr "पृष्ठभूमि"
+
+#~ msgid "Icon Style"
+#~ msgstr "चिह्न शैली"
+
+#~ msgid "Image style"
+#~ msgstr "छवि शैली"
+
+#~ msgid "Show or hide"
+#~ msgstr "दिखाना या छिपाना"
+
+#~ msgid "Select icon"
+#~ msgstr "आइकन का चयन करें"
+
+#~ msgid "Text color"
+#~ msgstr "लिखावट का रंग"
+
+#~ msgid "Font size"
+#~ msgstr "फ़ॉन्ट आकार"
+
+#~ msgid "Horizontal"
+#~ msgstr "क्षैतिज"
+
+#~ msgid "Vertical"
+#~ msgstr "खड़ा"
+
+#~ msgid "This setting is not used when using the %s menu style..."
+#~ msgstr "% S मेनू शैली का उपयोग करते समय इस सेटिंग का उपयोग नहीं किया जाता है ..."
+
+#~ msgid "Toggle show on desktop"
+#~ msgstr "डेस्कटॉप पर टॉगल शो"
+
+#~ msgid "Toggle show on mobile"
+#~ msgstr "मोबाइल पर टॉगल शो"
+
+#~ msgid "Use group style"
+#~ msgstr "समूह शैली का उपयोग करें"
+
+#~ msgid "Disable USE GROUP STYLE to access these settings"
+#~ msgstr "इन सेटिंग्स तक पहुंचने के लिए USE GROUP STYLE को अक्षम करें"
+
+#~ msgid "Timeout"
+#~ msgstr "समय समाप्त"
+
+#~ msgid "Milliseconds"
+#~ msgstr "मिलीसेकंड"
+
+#~ msgid "Show Buttonizer after %s seconds"
+#~ msgstr "% S सेकंड के बाद Buttonizer दिखाएँ"
+
+#~ msgid "Scroll"
+#~ msgstr "स्क्रॉल"
+
+#~ msgid "From top"
+#~ msgstr "ऊपर से"
+
+#~ msgid "Show Buttonizer after 0 seconds"
+#~ msgstr "0 सेकंड के बाद Buttonizer दिखाएँ"
+
+#~ msgid "Starting visibility"
+#~ msgstr "दृश्यता शुरू करना"
+
+#~ msgid "Hide"
+#~ msgstr "छिपाना"
+
+#~ msgid "Show"
+#~ msgstr "प्रदर्शन"
+
+#~ msgid "Scroll <b>0%</b> from top of page to <b>SHOW</b> group"
+#~ msgstr "स्क्रॉल करें <b> 0% </ b> पृष्ठ के ऊपर से <b> SHOW </ b> समूह"
+
+#~ msgid "Scroll <b>%1$s%2$s</b> from top of page to <b>%3$s</b> group"
+#~ msgstr "स्क्रॉल करें <b>% 1 $ s% 2 $ s </ b> पृष्ठ के शीर्ष से <b>% 3 $ s </ b> समूह"
+
+#~ msgid ""
+#~ "Exit intent can be used to trigger an animation around Buttonizer when a visitor is leaving "
+#~ "your website."
+#~ msgstr ""
+#~ "जब आपका आगंतुक आपकी वेबसाइट से बाहर निकल रहा हो, तो एक्सिट आशय का उपयोग बटनाइज़र के आसपास एक एनीमेशन "
+#~ "को ट्रिगर करने के लिए किया जा सकता है।"
+
+#~ msgid "Actions"
+#~ msgstr "क्रिया"
+
+#~ msgid "Invalid phone number"
+#~ msgstr "अवैध फोन नंबर"
+
+#~ msgid "Phone number"
+#~ msgstr "फ़ोन नंबर"
+
+#~ msgid "SMS"
+#~ msgstr "पाठ संदेश"
+
+#~ msgid "Invalid Page ID."
+#~ msgstr "अमान्य पृष्ठ ID।"
+
+#~ msgid "Facebook Page ID"
+#~ msgstr "फेसबुक पेज आईडी"
+
+#~ msgid "WhatsApp Chat"
+#~ msgstr "व्हाट्सएप चैट"
+
+#~ msgid "Social Sharing"
+#~ msgstr "सामाजिक साझाकरण"
+
+#~ msgid "Copy URL to clipboard"
+#~ msgstr "URL को क्लिपबोर्ड पर कॉपी करें"
+
+#~ msgid "Print page"
+#~ msgstr "परचे को छापें"
+
+#~ msgid "Website URL"
+#~ msgstr "वेबसाइट यू.आर. एल"
+
+#~ msgid "Open JavaScript code editor"
+#~ msgstr "जावास्क्रिप्ट कोड संपादक खोलें"
+
+#~ msgid "Manage the settings of Buttonizer"
+#~ msgstr "Buttonizer की सेटिंग प्रबंधित करें"
+
+#~ msgid "Choose your iconset"
+#~ msgstr "अपना आइकॉनसेट चुनें"
+
+#~ msgid "Google Analytics"
+#~ msgstr "गूगल विश्लेषिकी"
+
+#~ msgid "Enable Google Analytics"
+#~ msgstr "Google Analytics सक्षम करें"
+
+#~ msgid "Measure your conversions"
+#~ msgstr "अपने रूपांतरणों को मापें"
+
+#~ msgid ""
+#~ "When enabled, Buttonizer will automatically log clicks to your Google Analytics account. You "
+#~ "can force Buttonizer not to use the Google Analytics by disabling this switch."
+#~ msgstr ""
+#~ "सक्षम होने पर, Buttonizer स्वचालित रूप से आपके Google Analytics खाते में क्लिक लॉग करेगा। आप इस स्विच को "
+#~ "अक्षम करके Google Analytics का उपयोग नहीं करने के लिए Buttonizer को बाध्य कर सकते हैं।"
+
+#~ msgid ""
+#~ "Google Analytics is automatically detected if you have added it to your webpage. But, if you "
+#~ "don't make use of Google Analytics yet and  this is your first time, Buttonizer can add it "
+#~ "for you."
+#~ msgstr ""
+#~ "यदि आपने इसे अपने वेबपृष्ठ में जोड़ा है, तो Google Analytics का स्वचालित रूप से पता लगाया जाता है। लेकिन, "
+#~ "यदि आप अभी तक Google Analytics का उपयोग नहीं करते हैं और यह आपका पहली बार है, तो Buttonizer आपके "
+#~ "लिए इसे जोड़ सकता है।"
+
+#~ msgid ""
+#~ "If you have added Google Analytics to your webpage before and Buttonizer also adds the same "
+#~ "Analytics code, it will mess with your analytics data!"
+#~ msgstr ""
+#~ "यदि आपने पहले अपने वेबपेज पर Google Analytics को जोड़ा है और Buttonizer भी उसी Analytics कोड को "
+#~ "जोड़ता है, तो यह आपके विश्लेषिकी डेटा के साथ गड़बड़ करेगा!"
+
+#~ msgid "UA Code"
+#~ msgstr "यूए कोड"
+
+#~ msgid "Preferences"
+#~ msgstr "पसंद"
+
+#~ msgid "Manage your preferences"
+#~ msgstr "अपनी प्राथमिकताएं प्रबंधित करें"
+
+#~ msgid "Show Buttonizer tips"
+#~ msgstr "Buttonizer युक्तियाँ दिखाएँ"
+
+#~ msgid "Hide the Buttonizer tips in the dashboard by disabling this setting"
+#~ msgstr "इस सेटिंग को अक्षम करके डैशबोर्ड में Buttonizer युक्तियाँ छिपाएँ"
+
+#~ msgid "Use ajax on to load the buttons"
+#~ msgstr "बटन को लोड करने के लिए अजाक्स का उपयोग करें"
+
+#~ msgid ""
+#~ "This feature has been created to make sure Buttonizer doesn't slow down your website. If "
+#~ "you'd like to show the buttons immediately without loadtime, disable this setting. The load "
+#~ "impect will depend on the amount of buttons and groups you currently have."
+#~ msgstr ""
+#~ "यह सुविधा यह सुनिश्चित करने के लिए बनाई गई है कि Buttonizer आपकी वेबसाइट को धीमा न करे। यदि आप बिना "
+#~ "लोड किए तुरंत बटन दिखाना चाहते हैं, तो इस सेटिंग को अक्षम करें। लोड अशुद्धियां आपके वर्तमान में मौजूद बटनों और "
+#~ "समूहों की मात्रा पर निर्भर करेंगी।"
+
+#~ msgid "Automatic error logging and crash reporting"
+#~ msgstr "स्वचालित त्रुटि लॉगिंग और क्रैश रिपोर्टिंग"
+
+#~ msgid ""
+#~ "Enable automatic error logging and crash reporting in order to help us solve issues within "
+#~ "Buttonizer! All data is anonymized automatically."
+#~ msgstr ""
+#~ "Buttonizer के भीतर मुद्दों को हल करने में मदद करने के लिए स्वचालित त्रुटि लॉगिंग और क्रैश रिपोर्टिंग सक्षम करें! "
+#~ "सभी डेटा स्वचालित रूप से अज्ञात है।"
+
+#~ msgid "Reset Buttonizer"
+#~ msgstr "बटन रीसेट करें"
+
+#~ msgid "If you need a clean install"
+#~ msgstr "यदि आपको एक साफ स्थापित करने की आवश्यकता है"
+
+#~ msgid "Edit group settings"
+#~ msgstr "समूह सेटिंग्स संपादित करें"
+
+#~ msgid ""
+#~ "You probably have clicked a link, this made you leave the preview window of Buttonizer. You "
+#~ "cannot see your changes here."
+#~ msgstr ""
+#~ "आपने शायद एक लिंक पर क्लिक किया है, इससे आप Buttonizer की पूर्वावलोकन विंडो छोड़ देते हैं। आप यहाँ अपने "
+#~ "परिवर्तन नहीं देख सकते हैं।"
+
+#~ msgid "Home"
+#~ msgstr "घर"
+
+#~ msgid "Back to overview"
+#~ msgstr "अवलोकन पर वापस जाएं"
+
+#~ msgid "Back to group"
+#~ msgstr "वापस समूह में"
+
+#~ msgid "Back to the WordPress dashboard"
+#~ msgstr "वर्डप्रेस डैशबोर्ड पर वापस"
+
+#~ msgid "Follow us for useful tips & tricks!"
+#~ msgstr "उपयोगी टिप्स और ट्रिक्स के लिए हमें फॉलो करें!"
+
+#~ msgid "View your license and account details"
+#~ msgstr "अपना लाइसेंस और खाता विवरण देखें"
+
+#~ msgid "A deep dive in all the possibilities"
+#~ msgstr "सभी संभावनाओं में एक गहरा गोता"
+
+#~ msgid "Choose on which page you want to show a button (group)"
+#~ msgstr "आप किस पृष्ठ पर एक बटन दिखाना चाहते हैं (समूह)"
+
+#~ msgid "Open Page Rules settings"
+#~ msgstr "पृष्ठ नियम सेटिंग खोलें"
+
+#~ msgid "Current page rule"
+#~ msgstr "वर्तमान पृष्ठ नियम"
+
+#~ msgid "Page rule conditions behaviour"
+#~ msgstr "पृष्ठ नियम शर्तें व्यवहार"
+
+#~ msgid "Triggers when ONE of the selected values is true"
+#~ msgstr "ट्रिगर जब चयनित मानों में से एक सत्य है"
+
+#~ msgid "Conditions"
+#~ msgstr "शर्तेँ"
+
+#~ msgid "Show group when this page rule is activated"
+#~ msgstr "यह पृष्ठ नियम सक्रिय होने पर समूह दिखाएँ"
+
+#~ msgid "Hide group when this page rule is activated"
+#~ msgstr "जब यह पृष्ठ नियम सक्रिय हो जाए तो समूह छिपाएँ"
+
+#~ msgid "Show button when this page rule is activated"
+#~ msgstr "यह पृष्ठ नियम सक्रिय होने पर बटन दिखाएं"
+
+#~ msgid "Hide button when this page rule is activated"
+#~ msgstr "इस पृष्ठ नियम के सक्रिय होने पर बटन छिपाएं"
+
+#~ msgid "Add condition"
+#~ msgstr "शर्त जोड़ें"
+
+#~ msgid "No page rules"
+#~ msgstr "कोई पृष्ठ नियम नहीं"
+
+#~ msgid "No page rule selected"
+#~ msgstr "कोई पृष्ठ नियम चयनित नहीं है"
+
+#~ msgid ""
+#~ "There are no rules for this page rule. All buttons attached to this page rule will be "
+#~ "visible. Press 'Add condition' to add one!"
+#~ msgstr ""
+#~ "इस पृष्ठ नियम के लिए कोई नियम नहीं हैं। इस पृष्ठ नियम से जुड़े सभी बटन दिखाई देंगे। एक जोड़ने के लिए 'स्थिति "
+#~ "जोड़ें' दबाएं!"
+
+#~ msgid "User is signed in"
+#~ msgstr "उपयोगकर्ता में साइन इन है"
+
+#~ msgid "User is signed out"
+#~ msgstr "उपयोगकर्ता पर हस्ताक्षर किए गए हैं"
+
+#~ msgid "Content based"
+#~ msgstr "सामग्री आधारित"
+
+#~ msgid "Url"
+#~ msgstr "यूआरएल"
+
+#~ msgid "Users"
+#~ msgstr "उपयोगकर्ता"
+
+#~ msgid "For example: Show a call me now button only on opening times"
+#~ msgstr "उदाहरण के लिए: कॉल मी शो नाउ बटन ओनली ओपनिंग टाइम"
+
+#~ msgid "Open time schedule settings"
+#~ msgstr "ओपन टाइम शेड्यूल सेटिंग्स"
+
+#~ msgid "Current time schedules:"
+#~ msgstr "वर्तमान समय कार्यक्रम:"
+
+#~ msgid "You have no time schedules"
+#~ msgstr "आपके पास कोई समय-सारिणी नहीं है"
+
+#~ msgid "No time schedule selected"
+#~ msgstr "कोई समय शेड्यूल चयनित नहीं है"
+
+#~ msgid "Dates"
+#~ msgstr "खजूर"
+
+#~ msgid "Add time schedule"
+#~ msgstr "समय अनुसूची जोड़ें"
+
+#~ msgid "Show group when this time schedule is activated"
+#~ msgstr "इस समय अनुसूची के सक्रिय होने पर समूह दिखाएँ"
+
+#~ msgid "Hide group when this time schedule is activated"
+#~ msgstr "इस समय अनुसूची के सक्रिय होने पर समूह छिपाएँ"
+
+#~ msgid "Show button when this time schedule is activated"
+#~ msgstr "इस समय अनुसूची के सक्रिय होने पर बटन दिखाएं"
+
+#~ msgid "Hide button when this time schedule is activated"
+#~ msgstr "इस समय अनुसूची के सक्रिय होने पर बटन छिपाएं"
+
+#~ msgid "Trigger on"
+#~ msgstr "पर ट्रिगर"
+
+#~ msgid "Don't trigger on"
+#~ msgstr "पर ट्रिगर मत करो"
+
+#~ msgid "Excluded Dates"
+#~ msgstr "छूटे हुए दिनांक"
+
+#~ msgid "Add Excluded Date"
+#~ msgstr "बहिष्कृत तिथि जोड़ें"
+
+#~ msgid ""
+#~ "Add specific dates to show or hide the buttons attached to this time scheme. For example: "
+#~ "\"My store is open on January 22th until 22:00 (10 PM) because of some special evening we "
+#~ "organize.\" The rule will overwrite the default settings for that day."
+#~ msgstr ""
+#~ "इस समय योजना से जुड़े बटन दिखाने या छिपाने के लिए विशिष्ट तिथियों को जोड़ें। उदाहरण के लिए: \"मेरा स्टोर 22 "
+#~ "जनवरी को 22:00 (रात 10 बजे) तक खुला रहता है क्योंकि कुछ विशेष शाम हम आयोजित करते हैं।\" नियम उस दिन के "
+#~ "लिए डिफ़ॉल्ट सेटिंग्स को अधिलेखित कर देगा।"
+
+#~ msgid "Start Date"
+#~ msgstr "आरंभ करने की तिथि"
+
+#~ msgid "Did you know that Buttonizer has different group-styles you can use?"
+#~ msgstr "क्या आप जानते हैं कि Buttonizer की अलग-अलग समूह-शैलियाँ हैं जिनका आप उपयोग कर सकते हैं?"
+
+#~ msgid "Click on the buttons to manage their settings"
+#~ msgstr "उनकी सेटिंग प्रबंधित करने के लिए बटन पर क्लिक करें"
+
+#~ msgid "Give your buttons a color"
+#~ msgstr "अपने बटनों को एक रंग दें"
+
+#~ msgid "A button can only have one action, but you can choose out more than 25 actions!"
+#~ msgstr "एक बटन में केवल एक क्रिया हो सकती है, लेकिन आप 25 से अधिक क्रियाओं को चुन सकते हैं!"
+
+#~ msgid "Turn off these tips in settings"
+#~ msgstr "सेटिंग्स में इन युक्तियों को बंद करें"
+
+#~ msgid "Buttonizer will only show 7 buttons per page as that's the limit of Material Design"
+#~ msgstr "Buttonizer प्रति पेज केवल 7 बटन दिखाएगा क्योंकि यह सामग्री डिजाइन की सीमा है"
+
+#~ msgid "Paste the HEX-code in the colorpicker if you want to use a specific color"
+#~ msgstr "यदि आप किसी विशिष्ट रंग का उपयोग करना चाहते हैं, तो कलरपिकर में HEX कोड पेस्ट करें"
+
+#~ msgid ""
+#~ "Playing smart with 'Show on desktop' and 'Show on mobile' will give you up to 14 buttons per "
+#~ "page!"
+#~ msgstr "'शो ऑन डेस्कटॉप ’और on मोबाइल पर शो’ के साथ स्मार्ट खेलना आपको प्रति पृष्ठ 14 बटन देगा!"
+
+#~ msgid "You can use page rules to show or hide buttons on certain pages"
+#~ msgstr "कुछ पृष्ठों पर बटन दिखाने या छिपाने के लिए आप पृष्ठ नियमों का उपयोग कर सकते हैं"
+
+#~ msgid "You can use the social share button action to let a visitor share your webpage"
+#~ msgstr "आप आगंतुक को अपना वेबपृष्ठ साझा करने के लिए सामाजिक शेयर बटन कार्रवाई का उपयोग कर सकते हैं"
+
+#~ msgid "Do you need a tool-tip? ;)"
+#~ msgstr "क्या आपको टूल टिप की आवश्यकता है? ;)"
+
+#~ msgid "You can style the main big button by editting the group"
+#~ msgstr "आप समूह को संपादित करके मुख्य बड़े बटन को स्टाइल कर सकते हैं"
+
+#~ msgid "You can add a class or id HTML-attribute to a group and a button"
+#~ msgstr "आप एक समूह और एक बटन के लिए एक वर्ग या आईडी HTML विशेषता जोड़ सकते हैं"
+
+#~ msgid "Want to make a new similar button? Duplicate your button!"
+#~ msgstr "एक नया समान बटन बनाना चाहते हैं? अपना बटन डुप्लिकेट करें!"
+
+#~ msgid "If you have a great tip, let us know! We'll add it :)"
+#~ msgstr "यदि आपके पास एक महान टिप है, तो हमें बताएं! हम इसे जोड़ देंगे :)"
+
+#~ msgid "Pssst, click on the group/button name on top"
+#~ msgstr "Pssst, शीर्ष पर समूह / बटन नाम पर क्लिक करें"
+
+#~ msgid "Exit Intent... This is where the fun begins!"
+#~ msgstr "इरादे से बाहर ... यह वह जगह है जहाँ मज़ा शुरू होता है!"
+
+#~ msgid "Double click on Buzzer! for a suprise ;)"
+#~ msgstr "बजर पर डबल क्लिक करें! एक सुप्रीत के लिए;)"
+
+#~ msgid "Click on me for more tips!"
+#~ msgstr "अधिक युक्तियों के लिए मुझ पर क्लिक करें!"
+
+#~ msgid "Duplicating buttons is disabled for free version"
+#~ msgstr "डुप्लिकेट बटन नि: शुल्क संस्करण के लिए अक्षम है"
+
+#~ msgid "You can select images and set them as icon or as button background image."
+#~ msgstr "आप छवियों का चयन कर सकते हैं और उन्हें आइकन या बटन पृष्ठभूमि छवि के रूप में सेट कर सकते हैं।"
+
+#~ msgid "With this setting, you can make your button appear/hide after certain amount of time."
+#~ msgstr "इस सेटिंग के साथ, आप निश्चित समय के बाद अपने बटन को प्रकट / छुपा सकते हैं।"
+
+#~ msgid ""
+#~ "With this setting, you can make your button appear/hide after scrolling for a certain amount."
+#~ msgstr "इस सेटिंग के साथ, आप एक निश्चित राशि तक स्क्रॉल करने के बाद अपने बटन को प्रकट / छुपा सकते हैं।"
+
+#~ msgid "Thanks for using Buttonizer!"
+#~ msgstr "Buttonizer का उपयोग करने के लिए धन्यवाद!"
+
+#~ msgid ""
+#~ "Become a SUPER contributor by automatically sending us crash reports and error logs. This "
+#~ "way we can bugfix your bugs with the speed of light. Don't worry, all data is anonymized."
+#~ msgstr ""
+#~ "स्वचालित रूप से हमें क्रैश रिपोर्ट और त्रुटि लॉग भेजकर सुपर योगदानकर्ता बनें। इस तरह से हम प्रकाश की गति के "
+#~ "साथ आपके कीड़े को खराब कर सकते हैं। चिंता न करें, सभी डेटा अज्ञात है।"
+
+#~ msgid "No thanks"
+#~ msgstr "जी नहीं, धन्यवाद"
+
+#~ msgid "Yes please!"
+#~ msgstr "हाँ कृपया!"
+
+#~ msgid "Back to Overview"
+#~ msgstr "अवलोकन पर वापस जाएं"
+
+#~ msgid "Are you sure you want to exit? Your changes have not been saved."
+#~ msgstr "क्या आप निश्चित हैं आपकी बाहर निकलने की इच्छा है? आपके परिवर्तन सहेजे नहीं गए हैं।"
+
+#~ msgid "Save and close"
+#~ msgstr "सहेजें और बंद करें"
+
+#~ msgid "Clear"
+#~ msgstr "स्पष्ट"
+
+#~ msgid "Font family"
+#~ msgstr "फ़ॉन्ट परिवार"
+
+#~ msgid "Type a custom font"
+#~ msgstr "एक कस्टम फॉन्ट टाइप करें"
+
+#~ msgid "Type \",\" to add %1$s"
+#~ msgstr "टाइप करें \",\"% 1 $ s जोड़ने के लिए"
+
+#~ msgid "Margin"
+#~ msgstr "हाशिया"
+
+#~ msgid "Change the position of the label."
+#~ msgstr "लेबल की स्थिति बदलें।"
+
+#~ msgid "Padding"
+#~ msgstr "गद्दी"
+
+#~ msgid "Change the background size of the label."
+#~ msgstr "लेबल का बैकग्राउंड आकार बदलें।"
+
+#~ msgid "Delay"
+#~ msgstr "विलंब"
+
+#~ msgid "Repeat Count"
+#~ msgstr "बार-बार गिनती"
+
+#~ msgid "Enter '0' for unlimited"
+#~ msgstr "असीमित के लिए '0' दर्ज करें"
+
+#~ msgid "from"
+#~ msgstr "से"
+
+#~ msgid "Scaled"
+#~ msgstr "परतदार"
+
+#~ msgid "Absolute"
+#~ msgstr "पूर्ण"
+
+#~ msgid "Left"
+#~ msgstr "बाएं"
+
+#~ msgid "Right"
+#~ msgstr "सही"
+
+#~ msgid "Bottom"
+#~ msgstr "तल"
+
+#~ msgid "Top"
+#~ msgstr "ऊपर"
+
+#~ msgid "Text only"
+#~ msgstr "सिर्फ टेक्स्ट"
+
+#~ msgid "Text w/ icon"
+#~ msgstr "पाठ w / आइकन"
+
+#~ msgid "Open Custom Styling Editor"
+#~ msgstr "कस्टम स्टाइलिंग संपादक खोलें"
+
+#~ msgid "Custom Styling Editor"
+#~ msgstr "कस्टम स्टाइलिंग संपादक"
+
+#~ msgid "Jump once"
+#~ msgstr "एक बार कूदो"
+
+#~ msgid "Flip"
+#~ msgstr "फ्लिप"
+
+#~ msgid "Go to bottom"
+#~ msgstr "सबसे नीचे जाएं"
+
+#~ msgid ""
+#~ "This menu style will remove the icon and add the label into the button, making it one long "
+#~ "button."
+#~ msgstr "यह मेनू स्टाइल आइकन को हटा देगा और बटन में लेबल जोड़ देगा, जिससे यह एक लंबा बटन बन जाएगा।"
+
+#~ msgid ""
+#~ "This menu style will add the label into the button with an icon, making it one long button."
+#~ msgstr "यह मेनू स्टाइल आइकन के साथ बटन में लेबल जोड़ देगा, जिससे यह एक लंबा बटन बन जाएगा।"
+
+#~ msgid "With this setting, you can change your animation settings like delay and repeat count."
+#~ msgstr "इस सेटिंग के साथ, आप अपनी एनीमेशन सेटिंग्स को बदल सकते हैं जैसे देरी और रिपीट काउंट।"
+
+#~ msgid ""
+#~ "With this setting, you can change the font family of the label. You choose a font add your "
+#~ "custom font."
+#~ msgstr ""
+#~ "इस सेटिंग के साथ, आप लेबल के फ़ॉन्ट परिवार को बदल सकते हैं। आप अपने कस्टम फ़ॉन्ट को जोड़ने वाला फ़ॉन्ट चुनें।"
+
+#~ msgid ""
+#~ "With this setting, you can change the margin of the label. Change the position of the label "
+#~ "relative to it's button"
+#~ msgstr "इस सेटिंग के साथ, आप लेबल के मार्जिन को बदल सकते हैं। बटन के सापेक्ष लेबल की स्थिति बदलें"
+
+#~ msgid "With this setting, you can change the size of the label."
+#~ msgstr "इस सेटिंग के साथ, आप लेबल का आकार बदल सकते हैं।"

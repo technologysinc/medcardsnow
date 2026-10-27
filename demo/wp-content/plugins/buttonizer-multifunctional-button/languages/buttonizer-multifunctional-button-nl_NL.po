@@ -1,0 +1,2151 @@
+# Copyright (C) 2019 Buttonizer
+# This file is distributed under the same license as the Buttonizer - Smart Floating Action Button plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Buttonizer - Smart Floating Action Button 2.0.4\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/buttonizer-"
+"multifunctional-button\n"
+"POT-Creation-Date: 2022-02-01T14:04:08+00:00\n"
+"PO-Revision-Date: 2022-02-01 15:16+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Domain: buttonizer-multifunctional-button\n"
+
+#. Plugin Name of the plugin
+msgid "Buttonizer - Smart Floating Action Button"
+msgstr "Buttonizer - Slimme zwevende actieknop"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://buttonizer.pro"
+msgstr "https://buttonizer.pro"
+
+#. Description of the plugin
+msgid ""
+"The Buttonizer is a new way to give a boost to your number of interactions, "
+"actions and conversions from your website visitor by adding one or multiple "
+"Customizable Smart Floating Button in the corner of your website."
+msgstr ""
+"De Buttonizer is een nieuwe manier om je interacties, acties en conversies "
+"te boosten op je website door een of meerdere slimme knoppen toe te voegen "
+"in de hoeken van je website."
+
+#. Author of the plugin
+msgid "Buttonizer"
+msgstr "Buttonizer"
+
+#: app/Admin/Admin.php:46
+msgid "A custom permalink structure is required for Buttonizer to work."
+msgstr ""
+"Een aangepaste permalink-structuur is vereist om Buttonizer te laten werken."
+
+#: app/Admin/Admin.php:46
+msgid "Go to permalink structure settings."
+msgstr "Ga naar de permalink-structuur instellingen."
+
+#: app/Admin/Admin.php:62 app/Admin/Admin.php:79 app/Utils/Maintain.php:154
+msgid "Settings"
+msgstr "Instellingen"
+
+#: app/Admin/Admin.php:65
+msgid "Community"
+msgstr "Community"
+
+#: app/Admin/Admin.php:68 app/Admin/Admin.php:77 app/Utils/Maintain.php:163
+msgid "Knowledge base"
+msgstr "Kennisbank"
+
+#: app/Admin/Admin.php:71
+msgid "I need support"
+msgstr "Ik heb hulp nodig"
+
+#: app/Admin/Admin.php:76
+msgid "Community forums"
+msgstr "Community forums"
+
+#: app/Admin/Admin.php:78 app/Utils/Maintain.php:145
+msgid "Manage buttons"
+msgstr "Beheer knoppen"
+
+#: app/Admin/template.php:56
+msgid "Buttonizer is loading..."
+msgstr "Buttonizer is aan het laden..."
+
+#. Translators: First link goes to our knowledge base, the second link goes to the admin panel.
+#: app/Admin/template.php:62
+msgid ""
+"When Buttonizer does not start, <a %1$s>click here</a> to find out what is "
+"going wrong or <a %2$s>click here</a> to return to the WordPress admin "
+"dashboard."
+msgstr ""
+"Wanneer Buttonizer niet start, <a %1$s>klik hier</a> om te kijken wat er "
+"fout gaat of <a %2$s>klik hier</a> om terug te gaan naar het admin dashboard."
+
+#: app/Admin/template.php:71
+msgid ""
+"When you have a slow internet connection or slow webserver, give it a "
+"moment..."
+msgstr ""
+"Wanneer je een trage internetverbinding of webserver hebt, een klein "
+"momentje geduld..."
+
+#: app/Admin/template.php:80
+msgid ""
+"Buttonizer dashboard does not work on IE11! Please use any other browsers to "
+"customize your buttons. :)"
+msgstr ""
+"Buttonizer dashboard werkt niet op IE11! Gebruik een andere browser om uw "
+"knoppen aan te passen. :)"
+
+#: app/Admin/template.php:88
+msgid ""
+"Hi there! JavaScript is disabled in your browser. Please consider to enable "
+"JavaScript in your browser to use Buttonizer."
+msgstr ""
+"Hoi! Javascript is uitgeschakeld in je browser. Neem de overweging om "
+"javascript in te schakelen om Buttonizer te gebruiken."
+
+#: app/Api/Dashboard/ApiDashboard.php:209 app/Api/Utils/ApiReset.php:57
+#: app/Utils/Update.php:545
+msgid "New group"
+msgstr "Nieuwe groep"
+
+#: app/Api/Dashboard/ApiDashboard.php:216 app/Api/Utils/ApiReset.php:64
+#: app/Utils/Update.php:552
+msgid "New button"
+msgstr "Nieuwe knop"
+
+#: app/Frontend/Group/Button/Button.php:86
+msgid "The button is hidden on all devices"
+msgstr "De knop is verborgen op alle apparaten"
+
+#: app/Frontend/Group/Button/Button.php:111
+msgid ""
+"The button is hidden because the attached time schedule is <b>triggered</b>."
+msgstr ""
+"De knop is verborgen omdat de gekoppelde tijdschema is <b>geactiveerd</b>."
+
+#: app/Frontend/Group/Button/Button.php:112
+msgid ""
+"The button is hidden because the attached time schedule is <b>not triggered</"
+"b> ."
+msgstr ""
+"De knop is verborgen omdat de gekoppelde tijdschema <b>niet is geactiveerd</"
+"b>."
+
+#: app/Frontend/Group/Button/Button.php:136
+msgid ""
+"The button is hidden because the attached page rule is <b>triggered</b>."
+msgstr ""
+"De knop is verborgen omdat de gekoppelde pagina regel is <b>geactiveerd</b>."
+
+#: app/Frontend/Group/Button/Button.php:137
+msgid ""
+"The button is hidden because the attached page rule is <b>not triggered</b> ."
+msgstr ""
+"De knop is verborgen omdat de gekoppelde pagina regel <b>niet is "
+"geactiveerd</b>."
+
+#: app/Frontend/Group/Group.php:126
+msgid "The group is hidden on all devices"
+msgstr "De groep is verborgen op alle apparaten"
+
+#: app/Frontend/Group/Group.php:149
+msgid ""
+"The group is hidden because the attached time schedule is <b>not triggered</"
+"b>."
+msgstr ""
+"De groep is verborgen omdat de gekoppelde tijdschema <b>niet is geactiveerd</"
+"b>."
+
+#: app/Frontend/Group/Group.php:150
+msgid ""
+"The group is hidden because the attached time schedule is <b>triggered</b> ."
+msgstr ""
+"De groep is verborgen omdat de gekoppelde tijdschema is <b>geactiveerd</b>."
+
+#: app/Frontend/Group/Group.php:173
+msgid ""
+"The group is hidden because the attached page rule is <b>not triggered</b>."
+msgstr ""
+"De groep is verborgen omdat de gekoppelde pagina regel <b>niet is "
+"geactiveerd</b>."
+
+#: app/Frontend/Group/Group.php:174
+msgid ""
+"The group is hidden because the attached page rule is <b>triggered</b> ."
+msgstr ""
+"De groep is verborgen omdat de gekoppelde pagina regel is <b>geactiveerd</b>."
+
+#: app/Utils/Maintain.php:167
+msgid "Find out everything you need to know about Buttonizer"
+msgstr "Ontdek alles wat je moet weten over Buttonizer"
+
+#~ msgid "Oh, that was not what we were expecting! Something went wrong."
+#~ msgstr "Oh, dat was niet wat ik had verwacht! Er ging iets mis."
+
+#~ msgid "Custom javascript error"
+#~ msgstr "Aangepaste Javascript foutmelding"
+
+#~ msgid "Your custom javascript ran into an error. Read the error below:"
+#~ msgstr ""
+#~ "Je aangepaste javascript veroorzaakte een foutmelding. Lees de "
+#~ "foutmelding hieronder:"
+
+#~ msgid "Could not save settings"
+#~ msgstr "Kon de instellingen niet opslaan"
+
+#~ msgid "Something went wrong while saving your settings:"
+#~ msgstr "Er ging iets mis tijdens het opslaan van uw instellingen:"
+
+#~ msgid "Only numbers allowed."
+#~ msgstr "Alleen nummers toegestaan."
+
+#~ msgid "For this input, only positive numbers are allowed."
+#~ msgstr "Voor deze instelling zijn alleen positieve nummers toegestaan."
+
+#~ msgid "Permalink Error"
+#~ msgstr "Permalink-fout"
+
+#~ msgid ""
+#~ "Buttonizer's requests will not work when using plain permalink. To use "
+#~ "Buttonizer, use a custom permalink"
+#~ msgstr ""
+#~ "De verzoeken van Buttonizer werken niet wanneer de gewone permalink "
+#~ "structuur wordt gebruikt. Gebruik een aangepaste permalink om Buttonizer "
+#~ "te gebruiken"
+
+#~ msgid "Invalid email address."
+#~ msgstr "Ongeldig email adres."
+
+#~ msgid ""
+#~ "Invalid phone number. Please only use number for your phone number. Omit "
+#~ "any zeros, brackets or dashes when adding the phone number in "
+#~ "international format."
+#~ msgstr ""
+#~ "Ongeldig telefoonnummer. Gebruik alleen de nummernotatie. Laat nullen, "
+#~ "haakjes of streepjes weg wanneer je gebruik maakt van het internationale "
+#~ "formaat."
+
+#~ msgid "This field only allows numbers."
+#~ msgstr "Dit velt staat alleen nummers toe."
+
+#~ msgid "License activated"
+#~ msgstr "Licentie geactiveerd"
+
+#~ msgid ""
+#~ "Please download and upload the premium version found in the email we have "
+#~ "sent you to use all premium functions."
+#~ msgstr ""
+#~ "Download en upload de premium-versie in de e-mail die we je hebben "
+#~ "gestuurd om gebruik te maken van de premium functionaliteiten."
+
+#~ msgid "Button"
+#~ msgstr "Knop"
+
+#~ msgid "Group"
+#~ msgstr "Groep"
+
+#~ msgid "Custom"
+#~ msgstr "Aangepast"
+
+#~ msgid "Confirm"
+#~ msgstr "Bevestig"
+
+#~ msgid "Search"
+#~ msgstr "Zoek"
+
+#~ msgid "Skip"
+#~ msgstr "Overslaan"
+
+#~ msgid "Edit"
+#~ msgstr "Bewerk"
+
+#~ msgid "Type"
+#~ msgstr "Type"
+
+#~ msgid "or"
+#~ msgstr "of"
+
+#~ msgid "Select"
+#~ msgstr "Selecteer"
+
+#~ msgid "Learn more"
+#~ msgstr "Meer informatie"
+
+#~ msgid "Disable"
+#~ msgstr "Deactiveren"
+
+#~ msgid "Disabled"
+#~ msgstr "Gedeactiveerd"
+
+#~ msgid "Save"
+#~ msgstr "Opslaan"
+
+#~ msgid "Saving"
+#~ msgstr "Opslaan"
+
+#~ msgid "Saving settings"
+#~ msgstr "Aan het opslaan"
+
+#~ msgid "Publish"
+#~ msgstr "Publiceer"
+
+#~ msgid "Published"
+#~ msgstr "Gepubliceerd"
+
+#~ msgid "Publishing..."
+#~ msgstr "Publiceren..."
+
+#~ msgid "Warning"
+#~ msgstr "Waarschuwing"
+
+#~ msgid "Next"
+#~ msgstr "Volgende"
+
+#~ msgid "Previous"
+#~ msgstr "Vorige"
+
+#~ msgid "Save & publish"
+#~ msgstr "Opslaan & publiceren"
+
+#~ msgid "Loading..."
+#~ msgstr "Laden..."
+
+#~ msgid "Loading settings..."
+#~ msgstr "Instellingen laden..."
+
+#~ msgid "Building bar..."
+#~ msgstr "Balk laden..."
+
+#~ msgid "Waiting for your website..."
+#~ msgstr "We wachten op je website..."
+
+#~ msgid "It's taking longer than usual, slow website?"
+#~ msgstr "Het duurt langer dan gebruikelijk, langzame website?"
+
+#~ msgid "Skip this step"
+#~ msgstr "Sla deze stap over"
+
+#~ msgid "Initializing..."
+#~ msgstr "Initialiseren..."
+
+#~ msgid "Resetting..."
+#~ msgstr "Resetten..."
+
+#~ msgid "Running migration..."
+#~ msgstr "Migratie aan het uitvoeren..."
+
+#~ msgid "Finishing..."
+#~ msgstr "Afronden..."
+
+#~ msgid "Add button"
+#~ msgstr "Knop toevoegen"
+
+#~ msgid "Add group"
+#~ msgstr "Groep toevoegen"
+
+#~ msgid "Create new group"
+#~ msgstr "Maak nieuwe groep"
+
+#~ msgid "Choose a name for the button."
+#~ msgstr "Kies een naam voor de knop."
+
+#~ msgid "Choose a name for the group."
+#~ msgstr "Kies een naam voor de groep."
+
+#~ msgid "Style"
+#~ msgstr "Stijl"
+
+#~ msgid "Advanced"
+#~ msgstr "Geavanceerd"
+
+#~ msgid "Text"
+#~ msgstr "Tekst"
+
+#~ msgid "Base"
+#~ msgstr "Basis"
+
+#~ msgid "Icon"
+#~ msgstr "Icoon"
+
+#~ msgid "Color"
+#~ msgstr "Kleur"
+
+#~ msgid "Image"
+#~ msgstr "Afbeelding"
+
+#~ msgid "Select image"
+#~ msgstr "Selecteer afbeelding"
+
+#~ msgid "Change image"
+#~ msgstr "Verander afbeelding"
+
+#~ msgid "Select file"
+#~ msgstr "Selecteer bestand"
+
+#~ msgid "Change file"
+#~ msgstr "Verander bestand"
+
+#~ msgid "Click to remove this image"
+#~ msgstr "Klik om de afbeelding te verwijderen"
+
+#~ msgid "First button"
+#~ msgstr "Eerste knop"
+
+#~ msgid "Second button"
+#~ msgstr "Tweede knop"
+
+#~ msgid "Rename"
+#~ msgstr "Hernoem"
+
+#~ msgid "Rename to:"
+#~ msgstr "Hernoemen naar:"
+
+#~ msgid "Delete"
+#~ msgstr "Verwijder"
+
+#~ msgid "Duplicate"
+#~ msgstr "Dupliceer"
+
+#~ msgid "page rule"
+#~ msgstr "pagina regel"
+
+#~ msgid "time schedule"
+#~ msgstr "tijdschema"
+
+#~ msgid "Interaction"
+#~ msgstr "Interactie"
+
+#~ msgid "Background"
+#~ msgstr "Achtergrond"
+
+#~ msgid "Need help? Quick-start, tips & tricks"
+#~ msgstr "Hulp nodig? Quick-start, tips & tricks"
+
+#~ msgid "Need help? Visit our knowledge base!"
+#~ msgstr "Hulp nodig? Bezoek ons kennis bank!"
+
+#~ msgid "Nothing found for:"
+#~ msgstr "Niks gevonden voor:"
+
+#~ msgid "Icon selector"
+#~ msgstr "Icoon selectie"
+
+#~ msgid "Search icon"
+#~ msgstr "Icoon zoeken"
+
+#~ msgid "Loading icons, please wait..."
+#~ msgstr "Iconen worden geladen, even geduld alstublieft..."
+
+#~ msgid "Searching for: %1$s, found %2$s results."
+#~ msgstr "Zoeken naar: %1$s, %2$s resultaten gevonden."
+
+#~ msgid "Remove filter"
+#~ msgstr "Filter verwijderen"
+
+#~ msgid "Buttonizer has crashed!"
+#~ msgstr "Buttonizer is gecrashed!"
+
+#~ msgid "Our development team has been notified."
+#~ msgstr "Ons development team is op de hoogte gesteld."
+
+#~ msgid "If you'd like to help, tell us what happened below."
+#~ msgstr "Als je wilt helpen, vertel ons hieronder wat er is gebeurd."
+
+#~ msgid ""
+#~ "Buttonizer has crashed, but you have not enabled automatic error "
+#~ "reporting! Would you like to become a SUPER contributor and automatically "
+#~ "log errors, including this one?"
+#~ msgstr ""
+#~ "Buttonizer is gecrashed, maar helaas heb je automatische errorlog "
+#~ "versturen uitstaan! Zou je het leuk vinden om SUPER-bijdrager te worden "
+#~ "en automatisch foutmelding naar ons toe te sturen, inclusief deze?"
+
+#~ msgid "Need help? Learn how to use <b>%1$s</b>."
+#~ msgstr ""
+#~ "Hulp nodig? Meer informatie over hoe je de knopactie <b>%1$s</b> gebruikt."
+
+#~ msgid "Show button at all times"
+#~ msgstr "De knop altijd weergeven"
+
+#~ msgid "Show group at all times"
+#~ msgstr "De groep altijd weergeven"
+
+#~ msgid "Show button on all pages"
+#~ msgstr "Laat de knop op elke pagina zien"
+
+#~ msgid "Show group on all pages"
+#~ msgstr "Laat de groep op elke pagina zien"
+
+#~ msgid "OK"
+#~ msgstr "Okey"
+
+#~ msgid "OK, I'll fix this"
+#~ msgstr "Okey, ik los dit op"
+
+#~ msgid "I'm sure"
+#~ msgstr "Ik weet het zeker"
+
+#~ msgid "Close"
+#~ msgstr "Sluiten"
+
+#~ msgid "Cancel"
+#~ msgstr "Annuleren"
+
+#~ msgid "Incorrect entry."
+#~ msgstr "Onjuiste invoer."
+
+#~ msgid "Yes please"
+#~ msgstr "Ja graag"
+
+#~ msgid "No thank you"
+#~ msgstr "Nee bedankt"
+
+#~ msgid "Dismiss"
+#~ msgstr "Negeer"
+
+#~ msgid "I've changed my mind"
+#~ msgstr "Ik ben van gedachten veranderd"
+
+#~ msgid "Remove time schedule?"
+#~ msgstr "Tijdschema verwijderen?"
+
+#~ msgid ""
+#~ "Are you very sure you want to remove this time schedule? Buttons that are "
+#~ "still attached to this time schedule will become visible unless you "
+#~ "attach them to another time schedule or hide them."
+#~ msgstr ""
+#~ "Weet je zeker dat je dit tijdschema wilt verwijderen? Knoppen die staan "
+#~ "gekoppeld aan dit tijdschema zullen zichtbaar worden tenzij je ze koppelt "
+#~ "aan een andere tijdschema."
+
+#~ msgid ""
+#~ "There are no buttons attached to this time schedule. You can remove this "
+#~ "safely."
+#~ msgstr ""
+#~ "Er zijn geen knoppen gekoppeld aan dit tijdschema. Je kan deze veilig "
+#~ "verwijderen."
+
+#~ msgid "There are <b>%1$s</b> buttons attached to this time schedule!"
+#~ msgstr "Er zijn <b>%1$s</b> knoppen gekoppeld aan dit tijdschema!"
+
+#~ msgid "There is <b>1</b> button attached to this time schedule"
+#~ msgstr "Er is <b>1</b> knop gekoppeld aan dit tijdschema"
+
+#~ msgid "Do you want to remove this time schedule?"
+#~ msgstr "Weet je zeker dat je deze tijdschema wilt verwijderen?"
+
+#~ msgid "Delete button"
+#~ msgstr "Verwijder knop"
+
+#~ msgid "Are you sure you want to remove this button?"
+#~ msgstr "Weet je zeker dat je deze knop wilt verwijderen?"
+
+#~ msgid "Are you sure you want to remove the button called '%s'?"
+#~ msgstr "Weet je zeker dat je de knop '%s' wilt verwijderen?"
+
+#~ msgid "Cannot delete button"
+#~ msgstr "Kan deze knop niet verwijderen"
+
+#~ msgid "You cannot delete this button because this the only button left."
+#~ msgstr "Je kan deze knop niet verwijderen omdat het de enige knop is."
+
+#~ msgid "Delete group"
+#~ msgstr "Verwijder groep"
+
+#~ msgid "Are you sure you want to remove this group?"
+#~ msgstr "Weet je zeker dat je deze groep wilt verwijderen?"
+
+#~ msgid ""
+#~ "Are you sure you want to remove this full group? It contains %s buttons."
+#~ msgstr ""
+#~ "Weet je heel zeker dat je de gehele groep wilt verwijderen? De groep "
+#~ "bevat %s knoppen."
+
+#~ msgid "Cannot delete group"
+#~ msgstr "Kan deze groep niet verwijderen"
+
+#~ msgid "You cannot delete this group because this the only group left."
+#~ msgstr "Je kan deze groep niet verwijderen omdat het de enige groep is."
+
+#~ msgid "Remove page rule?"
+#~ msgstr "Pagina regel verwijderen?"
+
+#~ msgid ""
+#~ "Are you very sure you want to remove this page rule? Buttons that are "
+#~ "still attached to this page rule will become visible unless you attach "
+#~ "them to another page rule or hide them."
+#~ msgstr ""
+#~ "Weet je zeker dat je deze pagina regel wilt verwijderen? Knoppen die "
+#~ "staan gekoppeld aan deze pagina regel zullen zichtbaar worden tenzij je "
+#~ "ze koppelt aan een andere pagina regel."
+
+#~ msgid ""
+#~ "There are no buttons attached to this page rule. You can remove this "
+#~ "safely."
+#~ msgstr ""
+#~ "Er zijn geen knoppen gekoppeld aan deze pagina regel. Je kan deze veilig "
+#~ "verwijderen."
+
+#~ msgid "There are <b>%1$s</b> buttons attached to this page rule!"
+#~ msgstr "Er zijn <b>%1$s</b> knoppen gekoppeld aan deze pagina regel!"
+
+#~ msgid "There is <b>1</b> button attached to this page rule"
+#~ msgstr "Er is <b>1</b> knop gekoppeld aan deze pagina regel"
+
+#~ msgid "Do you want to remove this page rule?"
+#~ msgstr "Wil je deze paginaregel verwijderen?"
+
+#~ msgid "This action is permanent and cannot be undone."
+#~ msgstr "Deze actie is permanent en kan niet ongedaan worden gemaakt."
+
+#~ msgid "Event tracker"
+#~ msgstr "Event tracker"
+
+#~ msgid "Revert changes"
+#~ msgstr "Wijzigingen ongedaan maken"
+
+#~ msgid "Reverting..."
+#~ msgstr "Ongedaan maken..."
+
+#~ msgid "Are you sure you want to revert your changes?"
+#~ msgstr "Weet je zeker dat je je wijzigingen ongedaan wilt maken?"
+
+#~ msgid ""
+#~ "The current changes will be overwritten by the current published buttons "
+#~ "and settings."
+#~ msgstr ""
+#~ "Je wijzigingen zullen worden overschreven door de huidige gepubliceerde "
+#~ "knoppen en instellingen."
+
+#~ msgid "Could not revert settings"
+#~ msgstr "Kon de instellingen niet ongedaan maken"
+
+#~ msgid "Something went wrong while reverting your settings."
+#~ msgstr "Er ging iets mis tijdens het ongedaan maken van uw instellingen."
+
+#~ msgid "Add button to enable group settings"
+#~ msgstr "Voeg een knop toe om groep instellingen te activeren"
+
+#~ msgid "Menu style"
+#~ msgstr "Menustijl"
+
+#~ msgid "General"
+#~ msgstr "Algemeen"
+
+#~ msgid "Group style"
+#~ msgstr "Groep stijl"
+
+#~ msgid "Group icon"
+#~ msgstr "Groep icoon"
+
+#~ msgid "Button style"
+#~ msgstr "Knop stijl"
+
+#~ msgid "Button icon"
+#~ msgstr "Knop icoon"
+
+#~ msgid "Label style"
+#~ msgstr "Label stijl"
+
+#~ msgid "background"
+#~ msgstr "achtergrond"
+
+#~ msgid "Icon Style"
+#~ msgstr "Icoon stijl"
+
+#~ msgid "Image style"
+#~ msgstr "Afbeelding stijl"
+
+#~ msgid "Show or hide"
+#~ msgstr "Weergeven of verbergen"
+
+#~ msgid "Button name"
+#~ msgstr "Knopnaam"
+
+#~ msgid "This is the button name."
+#~ msgstr "Dit is de knopnaam."
+
+#~ msgid "Button color"
+#~ msgstr "Knop kleur"
+
+#~ msgid ""
+#~ "This is the color of your button group and also the default color for "
+#~ "your buttons within this group."
+#~ msgstr ""
+#~ "Dit is de kleur van de knopgroep en ook gelijk de standaardkleur van de "
+#~ "knoppen in de groep."
+
+#~ msgid "Background image"
+#~ msgstr "Achtergrond afbeelding"
+
+#~ msgid ""
+#~ "Upload an image if you want an image as a background instead of a color. "
+#~ "Recommended aspect ratio: square (1:1)."
+#~ msgstr ""
+#~ "Upload een afbeelding wanneer je een foto als achtergrond wilt in plaats "
+#~ "van een kleur. Aanbevolen formaat is: vierkant (1:1)."
+
+#~ msgid "Border radius"
+#~ msgstr "Border-radius"
+
+#~ msgid "Change the roundness of this button group."
+#~ msgstr "Verander de rondte van deze knop."
+
+#~ msgid "Select icon"
+#~ msgstr "Selecteer icoon"
+
+#~ msgid "Choose an icon from the icon library."
+#~ msgstr "Kies een icoon uit de icoon bibliotheek."
+
+#~ msgid "Icon color"
+#~ msgstr "Icoon kleur"
+
+#~ msgid "Change the icon color of this button."
+#~ msgstr "Verander de icoonkleur van deze knop."
+
+#~ msgid "Change the border radius of the image."
+#~ msgstr "Verander de hoek-rondte van de afbeelding."
+
+#~ msgid ""
+#~ "Choose an image to use as this button or group icon. Recommended aspect "
+#~ "ratio: square (1:1)"
+#~ msgstr ""
+#~ "Kies een afbeelding om deze te gebruiken als knop of groep icoon. "
+#~ "Aanbevolen formaat is: vierkant (1:1)"
+
+#~ msgid "Image size"
+#~ msgstr "Afbeeldingsgrootte"
+
+#~ msgid "Change the size of the image."
+#~ msgstr "Verander de grootte van de afbeelding."
+
+#~ msgid "Graphic"
+#~ msgstr "Grafisch"
+
+#~ msgid "Choose whether to use an icon or image as the button icon."
+#~ msgstr ""
+#~ "Kies of je gebruik wilt maken van een icoon of een afbeelding als knop-"
+#~ "icoon."
+
+#~ msgid "Icon size"
+#~ msgstr "Icoon grootte"
+
+#~ msgid "Change the icon size of this button."
+#~ msgstr "Verander de icoon grootte van deze knop."
+
+#~ msgid "Label"
+#~ msgstr "Label"
+
+#~ msgid "Change the label of this button."
+#~ msgstr "Verander de label van deze knop."
+
+#~ msgid "Label text"
+#~ msgstr "Label tekst"
+
+#~ msgid "Text color"
+#~ msgstr "Tekst kleur"
+
+#~ msgid ""
+#~ "Change the text and background color of the label for this button or "
+#~ "group."
+#~ msgstr ""
+#~ "Verander de tekst en achtergrondkleur van de label van deze knop of "
+#~ "knopgroep."
+
+#~ msgid "Font size & border radius"
+#~ msgstr "Lettertype grootte & border-radius"
+
+#~ msgid ""
+#~ "Change the font size and border radius of the label for this button group."
+#~ msgstr ""
+#~ "Verander de font size en rand-hoek van de label voor deze knop of "
+#~ "knopgroep."
+
+#~ msgid "Font size"
+#~ msgstr "Lettertypegrootte"
+
+#~ msgid "Animation"
+#~ msgstr "Animatie"
+
+#~ msgid ""
+#~ "This will animate this button group to get the attention of the visitor. "
+#~ "The animation repeats itself every 10 seconds."
+#~ msgstr ""
+#~ "Deze optie zal de knopgroep animeren om de aandacht te trekken van de "
+#~ "bezoeker. De animatie wordt om de 10 seconden herhaald."
+
+#~ msgid "No animation"
+#~ msgstr "Geen animatie"
+
+#~ msgid "Buttonizer Hello"
+#~ msgstr "Buttonizer Hallo"
+
+#~ msgid "Bounce"
+#~ msgstr "Springen"
+
+#~ msgid "Jelly"
+#~ msgstr "Pudding"
+
+#~ msgid "Pulse"
+#~ msgstr "Pulse"
+
+#~ msgid "Position"
+#~ msgstr "Positie"
+
+#~ msgid "Change the position of this button group."
+#~ msgstr "Verander de positie van de knopgroep."
+
+#~ msgid "Horizontal"
+#~ msgstr "Horizontaal"
+
+#~ msgid "Vertical"
+#~ msgstr "Verticaal"
+
+#~ msgid "Menu Style"
+#~ msgstr "Menustijl"
+
+#~ msgid "Change the menu style of this button group."
+#~ msgstr "Verander de menustijl van deze knopgroep."
+
+#~ msgid "This setting is not used when using the %s menu style..."
+#~ msgstr "Deze instelling wordt niet gebruikt voor de %s menustijl..."
+
+#~ msgid "Default"
+#~ msgstr "Standaard"
+
+#~ msgid "Faded"
+#~ msgstr "Faded"
+
+#~ msgid "Corner circle"
+#~ msgstr "Hoekcirkel"
+
+#~ msgid "Build Up"
+#~ msgstr "Opbouwen"
+
+#~ msgid "Pop"
+#~ msgstr "Pop"
+
+#~ msgid "Square"
+#~ msgstr "Vierkant"
+
+#~ msgid "Rectangle"
+#~ msgstr "Rechthoek"
+
+#~ msgid "Visibility"
+#~ msgstr "Zichtbaarheid"
+
+#~ msgid ""
+#~ "Always show the label, show the label on hover or hide the label on "
+#~ "<u>desktop devices</u>."
+#~ msgstr ""
+#~ "Altijd de label weergeven, alleen weergeven wanneer je er met de muis "
+#~ "overheen gaat, of verberg de label op <u>desktop</u>."
+
+#~ msgid "Always show or hide the label on <u>mobile devices</u>."
+#~ msgstr ""
+#~ "Altijd de label weergeven of verberg de label op <u>mobiele apparaten</u>."
+
+#~ msgid "Always show label"
+#~ msgstr "Label altijd tonen"
+
+#~ msgid "Show label on hover"
+#~ msgstr "Label alleen tonen bij muis-hover"
+
+#~ msgid "Hide label"
+#~ msgstr "Label verbergen"
+
+#~ msgid "Show on"
+#~ msgstr "Weergeven op"
+
+#~ msgid "Device visibility"
+#~ msgstr "Apparaatzichtbaarheid"
+
+#~ msgid ""
+#~ "Choose if you want to make this button group visible on desktop and "
+#~ "mobile devices."
+#~ msgstr ""
+#~ "Kies of u deze knopgroep zichtbaar wilt maken op desktops en mobiele "
+#~ "apparaten."
+
+#~ msgid "Mobile"
+#~ msgstr "Mobiel"
+
+#~ msgid "Desktop"
+#~ msgstr "Desktop"
+
+#~ msgid "Toggle show on desktop"
+#~ msgstr "Schakel op desktop weergeven in/uit"
+
+#~ msgid "Toggle show on mobile"
+#~ msgstr "Schakel op mobiel weergeven in/uit"
+
+#~ msgid "Start opened"
+#~ msgstr "Start geopend"
+
+#~ msgid "This button group starts opened when this setting is enabled."
+#~ msgstr "De knopgroep start geopend wanneer deze instelling geactiveerd is."
+
+#~ msgid "Use group style"
+#~ msgstr "Gebruik groep-stijl"
+
+#~ msgid ""
+#~ "When enabled, this button will use the same style as the button group."
+#~ msgstr ""
+#~ "Wanneer deze optie is ingeschakeld zal deze de stijl van de groep "
+#~ "gebruiken."
+
+#~ msgid "Disable USE GROUP STYLE to access these settings"
+#~ msgstr "Schakel GEBRUIK GROEP-STIJL uit om deze instelling te beheren"
+
+#~ msgid "Custom ID"
+#~ msgstr "Aangepast ID"
+
+#~ msgid "Adds a custom 'id' HTML attribute to the button."
+#~ msgstr "Voegt een aangepast 'id' HTML attribuut toe aan de knop."
+
+#~ msgid "You can add a custom ID to each button for styling purposes."
+#~ msgstr ""
+#~ "Je kan aan elke knop een aangepaste ID toevoegen voor extra styling."
+
+#~ msgid "ID name"
+#~ msgstr "ID naam"
+
+#~ msgid "Custom class"
+#~ msgstr "Aangepaste class"
+
+#~ msgid "Adds a custom 'class' HTML attribute to the button."
+#~ msgstr "Voegt een aangepast 'class' HTML attribuut toe aan de knop."
+
+#~ msgid "You can add a custom class to each button for styling purposes."
+#~ msgstr ""
+#~ "Je kan aan elke knop een aangepaste class toevoegen voor extra styling."
+
+#~ msgid "Class name"
+#~ msgstr "Class naam"
+
+#~ msgid "Page rule"
+#~ msgstr "Pagina regel"
+
+#~ msgid "Manage page rules"
+#~ msgstr "Beheer pagina regels"
+
+#~ msgid "You cannot select the same page rule as it's group!"
+#~ msgstr "Je kan niet dezelfde pagina-regel kiezen als de groep!"
+
+#~ msgid "Show button when rule is triggered"
+#~ msgstr "Toon knop wanneer de regel wordt getriggered"
+
+#~ msgid "Hide button when rule is triggered"
+#~ msgstr "Verberg knop wanneer de regel wordt getriggered"
+
+#~ msgid "Timeout"
+#~ msgstr "Time-out"
+
+#~ msgid "Milliseconds"
+#~ msgstr "Milliseconden"
+
+#~ msgid "Show Buttonizer after %s seconds"
+#~ msgstr "Laat Buttonizer zien na %s seconden"
+
+#~ msgid "Scroll"
+#~ msgstr "Scrollen"
+
+#~ msgid "From top"
+#~ msgstr "Van boven"
+
+#~ msgid "Show Buttonizer after 0 seconds"
+#~ msgstr "Laat Buttonizer zien na 0 seconden"
+
+#~ msgid "Starting visibility"
+#~ msgstr "Start zichtbaarheid"
+
+#~ msgid "Hide"
+#~ msgstr "Verberg"
+
+#~ msgid "Show"
+#~ msgstr "Weergeven"
+
+#~ msgid "Scroll <b>0%</b> from top of page to <b>SHOW</b> group"
+#~ msgstr ""
+#~ "Scroll <b>0%</b> vanaf de bovenkant van de pagina om de groep <b>weer te "
+#~ "geven</b>"
+
+#~ msgid "Scroll <b>%1$s%2$s</b> from top of page to <b>%3$s</b> group"
+#~ msgstr ""
+#~ "Scroll <b>%1$s%2$s</b> vanaf de bovenkant van de pagina om de groep <b>"
+#~ "%3$s</b>"
+
+#~ msgid "Exit intent"
+#~ msgstr "Exit intent"
+
+#~ msgid "Enable exit intent"
+#~ msgstr "Exit intent inschakelen"
+
+#~ msgid ""
+#~ "With this setting, you can trigger Buttonizer to animate before your "
+#~ "guest exits your website."
+#~ msgstr ""
+#~ "Met deze instelling kun je Buttonizer laten animeren wanneer de gast je "
+#~ "website wilt verlaten."
+
+#~ msgid ""
+#~ "Exit intent can be used to trigger an animation around Buttonizer when a "
+#~ "visitor is leaving your website."
+#~ msgstr ""
+#~ "Exit intent kan gebruikt worden om een animatie te activeren rondom "
+#~ "Buttonizer voordat bezoekers je website verlaten."
+
+#~ msgid ""
+#~ "Please note: Exit intent will <b>not trigger</b> in preview mode, only in "
+#~ "your LIVE website."
+#~ msgstr ""
+#~ "Let op: Exit intent zal niet worden <b>geactiveerd</b> in voorbeeld-"
+#~ "modus, alleen op uw LIVE-website zal dit te zien zijn."
+
+#~ msgid "When to trigger?"
+#~ msgstr "Wanneer activeren?"
+
+#~ msgid "Trigger when leaving browser window"
+#~ msgstr "Trigger wanneer de browser wordt verlaten"
+
+#~ msgid "Trigger on inactivity (2 minutes)"
+#~ msgstr "Trigger op inactiviteit (2 minuten)"
+
+#~ msgid "How often should it be triggered?"
+#~ msgstr "Hoe vaak moet het worden geactiveerd?"
+
+#~ msgid "Only trigger once per page"
+#~ msgstr "Eenmalig per pagina"
+
+#~ msgid "Only trigger once per session"
+#~ msgstr "Eenmalig per bezoek-sessie"
+
+#~ msgid "Trigger every time"
+#~ msgstr "Altijd triggeren"
+
+#~ msgid "Animation on intent"
+#~ msgstr "Animatie bij intentie"
+
+#~ msgid "Focused"
+#~ msgstr "Gefocust"
+
+#~ msgid "Open menu"
+#~ msgstr "Open menu"
+
+#~ msgid "Jump once and open"
+#~ msgstr "Spring en open"
+
+#~ msgid "Flip and open"
+#~ msgstr "Flip en open"
+
+#~ msgid "Button action"
+#~ msgstr "Knop actie"
+
+#~ msgid "Choose a click action for this button."
+#~ msgstr "Kies een klik-actie voor deze knop."
+
+#~ msgid "Select button action"
+#~ msgstr "Selecteer knop-actie"
+
+#~ msgid "No button action found for:"
+#~ msgstr "Geen knop-actie gevonden voor:"
+
+#~ msgid "Popular actions"
+#~ msgstr "Populaire acties"
+
+#~ msgid "Click to chat"
+#~ msgstr "Klik om te chatten"
+
+#~ msgid "Social Media"
+#~ msgstr "Sociale media"
+
+#~ msgid "Popup"
+#~ msgstr "Pop-up"
+
+#~ msgid "Actions"
+#~ msgstr "Acties"
+
+#~ msgid "Call action (phone number)"
+#~ msgstr "Bel actie (telefoonnummer)"
+
+#~ msgid "Invalid phone number"
+#~ msgstr "Telefoonnummer ongeldig"
+
+#~ msgid "Phone number"
+#~ msgstr "Telefoonnummer"
+
+#~ msgid "Mail action (email address)"
+#~ msgstr "E-mail actie (e-mail adres)"
+
+#~ msgid "Back to top"
+#~ msgstr "Terug naar boven"
+
+#~ msgid "Go back one page"
+#~ msgstr "Vorige pagina"
+
+#~ msgid "Share page"
+#~ msgstr "Deel pagina"
+
+#~ msgid "SMS"
+#~ msgstr "SMS"
+
+#~ msgid ""
+#~ "Viber does not support a \"chat with phone number \" link. When a user "
+#~ "clicks on this button it will open their \"add contact\" with the number "
+#~ "filled in."
+#~ msgstr ""
+#~ "Viber ondersteunt geen link om te chatten. Wanneer een gebruiker op deze "
+#~ "knop drukt zal hun \"contact toevoegen\" worden geopend met dit "
+#~ "telefoonnummer vooringesteld."
+
+#~ msgid ""
+#~ "New, Facebook Messenger Chat Widget! First, you'll need to <a "
+#~ "%1$s>whitelist</a> your site on Facebook. Then add your <a %2$s>Page ID</"
+#~ "a> into the input above."
+#~ msgstr ""
+#~ "Nieuw, Facebook Messenger Chat Widget! Als eerste moet je je website <a "
+#~ "%1$s>toestaan</a> via Facebook. Daarna moet je de <a %2$s>Pagina ID</a> "
+#~ "hierboven invullen."
+
+#~ msgid "Invalid Page ID."
+#~ msgstr "Pagina ID ongeldig."
+
+#~ msgid "Facebook Page ID"
+#~ msgstr "Facebook pagina ID"
+
+#~ msgid "WhatsApp Chat"
+#~ msgstr "WhatsApp Chat"
+
+#~ msgid ""
+#~ "You need to install Poptin's WordPress plugin. You can find it <a "
+#~ "%1$s>here</a>. Once you've made a Poptin paste the <a %2$s>direct link</"
+#~ "a> into the input."
+#~ msgstr ""
+#~ "Wanneer je hiervan gebruik wilt maken moet je de Poptin's WordPress "
+#~ "plugin installeren. Deze kun je <a %1$s>hier</a> vinden. Vul daarna "
+#~ "hierboven de <a %2$s>directe link</a> in."
+
+#~ msgid "Share on %s"
+#~ msgstr "Delen op %s"
+
+#~ msgid "Social Sharing"
+#~ msgstr "Delen op sociale netwerken"
+
+#~ msgid "Copy URL to clipboard"
+#~ msgstr "URL naar klembord kopiëren"
+
+#~ msgid "Print page"
+#~ msgstr "Pagina printen"
+
+#~ msgid "Share via %s"
+#~ msgstr "Delen via %s"
+
+#~ msgid "Website URL"
+#~ msgstr "Website URL"
+
+#~ msgid "This URL appears to be invalid. The button may not work as expected."
+#~ msgstr ""
+#~ "Dit lijkt op een ongeldige link. De knop werkt mogelijk niet zoals "
+#~ "verwacht."
+
+#~ msgid ""
+#~ "Do you miss <b>http://</b> or <b>https://</b>? Perhaps an unnecessary "
+#~ "space is added somewhere."
+#~ msgstr ""
+#~ "Mis je <b>http://</b> of <b>https://</b>? Misschien heb je een onnodige "
+#~ "spatie ergens toegevoegd."
+
+#~ msgid ""
+#~ "<b>Insecure URL:</b> Sorry to interrupt, but we advice you to use HTTPS "
+#~ "for your URLS. This is a safer way to transport data."
+#~ msgstr ""
+#~ "<b>Onveilige link:</b> Sorry voor het storen, maar we adviseren je om "
+#~ "HTTPS te gebruiken voor je links waar mogelijk. Dit is een veiligere "
+#~ "manier voor het transporteren van data."
+
+#~ msgid "Javascript function"
+#~ msgstr "Javascript functie"
+
+#~ msgid "Open JavaScript code editor"
+#~ msgstr "Open JavaScript code editor"
+
+#~ msgid "Warning! Before you continue..."
+#~ msgstr "Waarschuwing! Voordat je verdergaat..."
+
+#~ msgid ""
+#~ "You are changing this button action from custom javascript to a different "
+#~ "action. Your javascript changes will be lost."
+#~ msgstr ""
+#~ "Je veranderd de knopactie van aangepaste javascript naar een andere "
+#~ "actie. Je javascript wijzigingen zullen verloren gaan."
+
+#~ msgid "Are you sure you want to proceed?"
+#~ msgstr "Weet je zeker dat je verder wilt gaan?"
+
+#~ msgid ""
+#~ "Fill in your phone number without any spaces and symbols. Read WhatsApps "
+#~ "recommendations by <a %s>clicking here.</a>"
+#~ msgstr ""
+#~ "Vul je telefoonnummer in zonder spaties en symbolen. Lees WhatsApps "
+#~ "aanbevelingen door <a %s>hier te klikken.</a>"
+
+#~ msgid ""
+#~ "When you want to use Twitter DM you will need to find your Twitter User "
+#~ "ID and allow direct messages from anyone. To find your account ID <a "
+#~ "%1$s>click here</a>. And to read more about how to allow direct messages "
+#~ "from anyone, <a %2$s>click here</a>."
+#~ msgstr ""
+#~ "Om Twitter DM te gebruiken moet je eerst je Twitter User ID vinden en "
+#~ "directe berichten van iedereen toestaan. Om je account ID te vinden <a "
+#~ "%1$s>klik je hier</a>. Om meer informatie te vinden over hoe je directe "
+#~ "berichten van iedereen toestaat, <a %2$s>klik hier</a>."
+
+#~ msgid "Message"
+#~ msgstr "Bericht"
+
+#~ msgid "Username"
+#~ msgstr "Gebruikersnaam"
+
+#~ msgid "Recipient"
+#~ msgstr "Ontvanger"
+
+#~ msgid "Subject"
+#~ msgstr "Onderwerp"
+
+#~ msgid "Body"
+#~ msgstr "Inhoud"
+
+#~ msgid "Open new tab"
+#~ msgstr "Open in een nieuw tabblad"
+
+#~ msgid "When the button is clicked, open in new tab."
+#~ msgstr "Wanneer er op de knop wordt geklikt, open in een nieuw tabblad."
+
+#~ msgid "Filters"
+#~ msgstr "Filters"
+
+#~ msgid "Styling"
+#~ msgstr "Stijl"
+
+#~ msgid "Timeout & Scroll"
+#~ msgstr "Time-out & Scrollen"
+
+#~ msgid "Buttonizer settings"
+#~ msgstr "Buttonizer instellingen"
+
+#~ msgid "Manage the settings of Buttonizer"
+#~ msgstr "Beheer de instellingen van Buttonizer"
+
+#~ msgid "Icon library"
+#~ msgstr "Icoon set"
+
+#~ msgid "Choose your iconset"
+#~ msgstr "Kies je iconenset"
+
+#~ msgid "free"
+#~ msgstr "gratis"
+
+#~ msgid "Latest (automatic)"
+#~ msgstr "Laatste (automatisch)"
+
+#~ msgid ""
+#~ "If your theme automatically loads in a library, just select the correct "
+#~ "icon library instead."
+#~ msgstr ""
+#~ "Wanneer je thema automatisch iconen inlaad moet je de juiste icoon-"
+#~ "bibliotheek kiezen."
+
+#~ msgid "Select version"
+#~ msgstr "Selecteer versie"
+
+#~ msgid ""
+#~ "Select the correct version of the library in order to use the icons in "
+#~ "Buttonizer."
+#~ msgstr ""
+#~ "Selecteer de juiste versie van de iconen die je gebruikt op je website "
+#~ "zodat je deze kunt selecteren in Buttonizer."
+
+#~ msgid ""
+#~ "You have selected an icon library that has premium icons. Enter the "
+#~ "library license code to view and use these."
+#~ msgstr ""
+#~ "Je hebt een icoon bibliotheek gekozen die premium iconen bevat. Vul de "
+#~ "icoon-licentie in om deze weer te geven."
+
+#~ msgid "How does this work?"
+#~ msgstr "Hoe werkt dit?"
+
+#~ msgid "Enter %s code"
+#~ msgstr "Vul de %s code in"
+
+#~ msgid "Import icon library"
+#~ msgstr "Iconen inladen"
+
+#~ msgid ""
+#~ "Should Buttonizer import the icon library into your theme? If your theme "
+#~ "already imports the library you can disable this."
+#~ msgstr ""
+#~ "Moet Buttonizer de iconen importeren in je thema? Wanneer je thema al "
+#~ "iconen inlaad kan je deze optie uitschakelen."
+
+#~ msgid "Google Analytics"
+#~ msgstr "Google Analytics"
+
+#~ msgid "Enable Google Analytics"
+#~ msgstr "Google Analytics inschakelen"
+
+#~ msgid "Measure your conversions"
+#~ msgstr "Meet je conversies"
+
+#~ msgid ""
+#~ "When enabled, Buttonizer will automatically log clicks to your Google "
+#~ "Analytics account. You can force Buttonizer not to use the Google "
+#~ "Analytics by disabling this switch."
+#~ msgstr ""
+#~ "Wanneer deze optie is ingeschakeld zal Buttonizer automatisch de "
+#~ "knopklikken loggen naar je Google Analytics account. Je kan door de "
+#~ "schuif hierboven uit te zetten Buttonizer forceren om geen gebruik te "
+#~ "maken van Google Analytics."
+
+#~ msgid ""
+#~ "Google Analytics is automatically detected if you have added it to your "
+#~ "webpage. But, if you don't make use of Google Analytics yet and  this is "
+#~ "your first time, Buttonizer can add it for you."
+#~ msgstr ""
+#~ "Google Analytics wordt automatisch gedetecteerd als je deze al op je "
+#~ "webpagina hebt toegevoegd. Maar, als je nog geen gebruik maakt van Google "
+#~ "Analytics en het je eerste keer is, dan kan Buttonizer deze voor je "
+#~ "toevoegen."
+
+#~ msgid ""
+#~ "If you have added Google Analytics to your webpage before and Buttonizer "
+#~ "also adds the same Analytics code, it will mess with your analytics data!"
+#~ msgstr ""
+#~ "Wanneer je Google Analytics al aan je webpagina hebt toegevoegd en je "
+#~ "laat Buttonizer dezelfde Analytics code toevoegen, zal dit knoeien met je "
+#~ "analytics gegevens!"
+
+#~ msgid "UA Code"
+#~ msgstr "UA Code"
+
+#~ msgid "Where can I see my click data of my buttons in Google Analytics?"
+#~ msgstr ""
+#~ "Waar kan ik mijn klik-data vinden van mijn knoppen in Google Analytics?"
+
+#~ msgid "Preferences"
+#~ msgstr "Voorkeuren"
+
+#~ msgid "Manage your preferences"
+#~ msgstr "Beheer je voorkeuren"
+
+#~ msgid "Show admin top bar"
+#~ msgstr "Weergeven in de admin bovenbalk"
+
+#~ msgid "Hide Buttonizer in the admin top bar by disabling this setting."
+#~ msgstr ""
+#~ "Verberg Buttonizer in de admin top balk door deze instelling uit te "
+#~ "schakelen."
+
+#~ msgid "Show tooltips"
+#~ msgstr "Tooltips weergeven"
+
+#~ msgid "Hide the tooltips by disabling this setting."
+#~ msgstr "Verberg tooltips door deze instelling uit te schakelen."
+
+#~ msgid "Show Buttonizer tips"
+#~ msgstr "Geef Buttonizer tips weer"
+
+#~ msgid "Hide the Buttonizer tips in the dashboard by disabling this setting"
+#~ msgstr ""
+#~ "Verberg de tips bovenin het Buttonizer dashboard door deze instelling uit "
+#~ "te schakelen"
+
+#~ msgid "Subdomain support"
+#~ msgstr "Subdomein ondersteuning"
+
+#~ msgid ""
+#~ "Some WordPress websites use subdomains for content purposes. Enable this "
+#~ "setting to allow Buttonizer to load on your subdomains. Only enable this "
+#~ "when you need it."
+#~ msgstr ""
+#~ "Sommige WordPress website gebruiken subdomeinen om content weer te geven. "
+#~ "Je kan Buttonizer toestemming geven om ook op deze subdomeinen te laden. "
+#~ "Zet deze functie alleen aan als je dit nodig hebt."
+
+#~ msgid "Use ajax on to load the buttons"
+#~ msgstr "Gebruik ajax om de knoppen te laden"
+
+#~ msgid ""
+#~ "This feature has been created to make sure Buttonizer doesn't slow down "
+#~ "your website. If you'd like to show the buttons immediately without "
+#~ "loadtime, disable this setting. The load impect will depend on the amount "
+#~ "of buttons and groups you currently have."
+#~ msgstr ""
+#~ "Deze functie is gemaakt om ervoor te zorgen dat Buttonizer je website "
+#~ "niet vertraagt. Als je de knoppen direct zonder laadtijd zichtbaar wilt "
+#~ "hebben kun je deze optie uitschakelen. De impact op de laadtijd hangt af "
+#~ "van het aantal knoppen en groepen dat je hebt."
+
+#~ msgid "Automatic error logging and crash reporting"
+#~ msgstr "Automatisch error logs en crash melden"
+
+#~ msgid ""
+#~ "Enable automatic error logging and crash reporting in order to help us "
+#~ "solve issues within Buttonizer! All data is anonymized automatically."
+#~ msgstr ""
+#~ "Schakel automatische foutregistratie en crashrapportage in om ons te "
+#~ "helpen met het oplossen van problemen in Buttonizer! Alle gegevens worden "
+#~ "automatisch geanonimiseerd."
+
+#~ msgid "Reset Buttonizer"
+#~ msgstr "Reset Buttonizer"
+
+#~ msgid "If you need a clean install"
+#~ msgstr "Wanneer je een frisse installatie nodig hebt"
+
+#~ msgid "This is a way to reset Buttonizer to the default settings."
+#~ msgstr ""
+#~ "Dit is een manier om Buttonizer terug naar de begin-instellingen te laten "
+#~ "gaan."
+
+#~ msgid "What will happen when I click the red button below?"
+#~ msgstr "Wat gebeurt er als ik op de rode knop hieronder druk?"
+
+#~ msgid ""
+#~ "The plugin will get a 'factory reset'. All settings of Buttonizer will "
+#~ "get deleted, reverting back to when you first installed and activated "
+#~ "Buttonizer."
+#~ msgstr ""
+#~ "De plugin zal teruggaan naar de 'fabrieksinstellingen'. Alle instellingen "
+#~ "van Buttonizer zullen worden verwijderd, terug naar het begin toen je net "
+#~ "Buttonizer installeerde."
+
+#~ msgid "Why would I do that?"
+#~ msgstr "Waarom zou ik dat doen?"
+
+#~ msgid ""
+#~ "Perhaps you ruined your buttons, categories or settings and would like to "
+#~ "start from scratch. Or maybe you just feel trying the reset button..."
+#~ msgstr ""
+#~ "Mogelijk heb je je knoppen, categorieën of instellingen geruïneerd en ben "
+#~ "je toe aan een nieuw begin. Of misschien wil gewoon je de resetknop "
+#~ "uitproberen..."
+
+#~ msgid "I have a license, what about that?"
+#~ msgstr "Ik heb een licentie, wat gebeurt daarmee?"
+
+#~ msgid ""
+#~ "No worries! Nothing will happen with your license! It only resets the "
+#~ "following:"
+#~ msgstr ""
+#~ "Maak je geen zorgen! Er gebeurt niets met je licentie! Het zal alleen de "
+#~ "volgende instellingen resetten:"
+
+#~ msgid "Your buttons"
+#~ msgstr "Jouw knoppen"
+
+#~ msgid "Your button groups"
+#~ msgstr "Jouw knop groepen"
+
+#~ msgid "All time schedules"
+#~ msgstr "Alle tijdschema's"
+
+#~ msgid "All page rules"
+#~ msgstr "Alle pagina regels"
+
+#~ msgid "All other settings of Buttonizer"
+#~ msgstr "Alle andere instellingen van Buttonizer"
+
+#~ msgid "All published settings"
+#~ msgstr "Alle gepubliceerde instellingen"
+
+#~ msgid "Okay, sounds good. What then?"
+#~ msgstr "Okey, klinkt goed. En dan?"
+
+#~ msgid ""
+#~ "Buttonizer will revert back to the default settings and feel like a fresh "
+#~ "installation. That's all."
+#~ msgstr ""
+#~ "Buttonizer zal gaan naar de standaard instellingen en zal zich gedragen "
+#~ "als een nieuwe installatie. Dat is het enige."
+
+#~ msgid "Okay, I'm ready!"
+#~ msgstr "Okey, ik ben er klaar voor!"
+
+#~ msgid ""
+#~ "Press the red button below to reset Buttonizer. There will be no more "
+#~ "warnings."
+#~ msgstr ""
+#~ "Druk op de rode knop hieronder om Buttonizer te resetten. Er zullen geen "
+#~ "waarschuwingen meer volgen."
+
+#~ msgid "Reset Buttonizer!"
+#~ msgstr "Reset Buttonizer!"
+
+#~ msgid "Loaded changes from previous session"
+#~ msgstr "Aanpassingen geladen van de vorige sessie"
+
+#~ msgid "Edit group settings"
+#~ msgstr "Bewerk groepsinstellingen"
+
+#~ msgid ""
+#~ "You probably have clicked a link, this made you leave the preview window "
+#~ "of Buttonizer. You cannot see your changes here."
+#~ msgstr ""
+#~ "Mogelijk heb je op een link gekikt. Daardoor verliet je het "
+#~ "voorbeeldscherm van Buttonizer. Aanpassingen die je maakt kun je hier "
+#~ "niet zien."
+
+#~ msgid "Return to preview"
+#~ msgstr "Terugkeren naar voorbeeld"
+
+#~ msgid "Desktop preview"
+#~ msgstr "Desktop voorbeeld"
+
+#~ msgid "Tablet preview"
+#~ msgstr "Tablet voorbeeld"
+
+#~ msgid "Mobile preview"
+#~ msgstr "Mobiel voorbeeld"
+
+#~ msgid "Home"
+#~ msgstr "Overzicht"
+
+#~ msgid "Back to overview"
+#~ msgstr "Terug naar het overzicht"
+
+#~ msgid "Back to group"
+#~ msgstr "Terug naar de groep"
+
+#~ msgid "Version %s"
+#~ msgstr "Versie %s"
+
+#~ msgid "Support"
+#~ msgstr "Ondersteuning"
+
+#~ msgid "Direct support with the Buttonizer developers"
+#~ msgstr "Directe ondersteuning van de Buttonizer developers"
+
+#~ msgid "Interact with other Buttonizers"
+#~ msgstr "Communiceer met andere Buttonizers"
+
+#~ msgid "Buttonizer tour (recommended!)"
+#~ msgstr "Buttonizer tour (aanbevolen!)"
+
+#~ msgid "Start the 2 minute tour"
+#~ msgstr "Start de 2 minuten tour"
+
+#~ msgid "Back to the WordPress dashboard"
+#~ msgstr "Terug naar de WordPress dashboard"
+
+#~ msgid "Follow us for useful tips & tricks!"
+#~ msgstr "Volg ons voor handige tips & tricks!"
+
+#~ msgid "Buttonizer account"
+#~ msgstr "Buttonizer account"
+
+#~ msgid "My Account"
+#~ msgstr "Mijn account"
+
+#~ msgid "View your license and account details"
+#~ msgstr "Bekijk je account informatie en licentie"
+
+#~ msgid "Upgrade or pricing"
+#~ msgstr "Upgraden en prijzen"
+
+#~ msgid "A deep dive in all the possibilities"
+#~ msgstr "Een diepe duik in alle mogelijkheden"
+
+#~ msgid "Affiliation"
+#~ msgstr "Partner worden"
+
+#~ msgid "Earn $ by promoting Buttonizer"
+#~ msgstr "Verdien $ voor het promoten van Buttonizer"
+
+#~ msgid "Options"
+#~ msgstr "Opties"
+
+#~ msgid "Now editing:"
+#~ msgstr "Nu aan het bewerken:"
+
+#~ msgid "This creates a new group with 2 buttons inside."
+#~ msgstr "Dit maakt een nieuwe groep aan met 2 knoppen."
+
+#~ msgid "This creates a new button, outside other groups."
+#~ msgstr "Dit maakt een knop aan, buiten  de andere groepen."
+
+#~ msgid "Learn more about groups and buttons"
+#~ msgstr "Lees meer over groepen en knoppen"
+
+#~ msgid "You can't drag the only button left in a group!"
+#~ msgstr ""
+#~ "Je kan deze knop niet slepen aangezien dit de enige knop is die over is!"
+
+#~ msgid "Convert to group"
+#~ msgstr "Converteren naar groep"
+
+#~ msgid "Page rules"
+#~ msgstr "Paginaregels"
+
+#~ msgid "Choose on which page you want to show a button (group)"
+#~ msgstr "Kies op welke pagina je een knop(groep) wilt laten zien."
+
+#~ msgid "Page Rule Manager"
+#~ msgstr "Pagina regel beheer"
+
+#~ msgid ""
+#~ "You can setup page rules via this window. When you add pages or "
+#~ "definitions to this page rule, the buttons attached to this page rule "
+#~ "will be shown or hidden depending on their settings as soon this rule is "
+#~ "triggered."
+#~ msgstr ""
+#~ "Je kan pagina regels instellen via dit venster. Wanneer je pagina's of "
+#~ "definities toevoegt aan deze pagina regel zullen knoppen die hieraan "
+#~ "gekoppeld staan worden weergegeven of verborgen, afhankelijk van je "
+#~ "instellingen zodra de regel wordt getriggerd."
+
+#~ msgid ""
+#~ "You can setup page rules that will get triggered on specific pages or "
+#~ "user roles. You can create unlimited page rules with multiple rules to "
+#~ "trigger."
+#~ msgstr ""
+#~ "Je kan pagina instellingen instellen die zullen worden getriggerd op "
+#~ "specifieke pagina's of gebruikersrollen. Je kan een onbeperkt aantal "
+#~ "pagina regels toevoegen met verschillende condities."
+
+#~ msgid "Add page rule"
+#~ msgstr "Pagina regel toevoegen"
+
+#~ msgid "Name your page rule:"
+#~ msgstr "Geef de pagina regel een naam:"
+
+#~ msgid "Show the button on any page"
+#~ msgstr "Laat de knop op elke pagina zien"
+
+#~ msgid "Remove page rule"
+#~ msgstr "Pagina regel verwijderen"
+
+#~ msgid "Open Page Rules settings"
+#~ msgstr "Open paginaregel instellingen"
+
+#~ msgid "Current page rule"
+#~ msgstr "Huidige paginaregel"
+
+#~ msgid "Page rule conditions behaviour"
+#~ msgstr "Pagina regel conditie gedrag"
+
+#~ msgid "Triggers when ONE of the selected values is true"
+#~ msgstr "Activeert wanneer ÉÉN van de geselecteerde waarden waar is"
+
+#~ msgid "Conditions"
+#~ msgstr "Condities"
+
+#~ msgid "Show group when this page rule is activated"
+#~ msgstr "Toon groep wanneer de regel wordt geactiveerd"
+
+#~ msgid "Hide group when this page rule is activated"
+#~ msgstr "Verberg groep wanneer de regel wordt geactiveerd"
+
+#~ msgid "Show button when this page rule is activated"
+#~ msgstr "Toon knop wanneer de regel wordt geactiveerd"
+
+#~ msgid "Hide button when this page rule is activated"
+#~ msgstr "Verberg knop wanneer de regel wordt geactiveerd"
+
+#~ msgid "Add condition"
+#~ msgstr "Conditie toevoegen"
+
+#~ msgid "No page rules"
+#~ msgstr "Geen paginaregels"
+
+#~ msgid "No page rule selected"
+#~ msgstr "Geen paginaregel geselecteerd"
+
+#~ msgid ""
+#~ "There are no rules for this page rule. All buttons attached to this page "
+#~ "rule will be visible. Press 'Add condition' to add one!"
+#~ msgstr ""
+#~ "Er zijn nog geen regels ingesteld voor deze pagina regel. Alle knoppen "
+#~ "gekoppeld aan deze pagina regel zullen zichtbaar zijn. Klik op 'Conditie "
+#~ "toevoegen' om er een toe te voegen!"
+
+#~ msgid "All conditions must meet (AND)"
+#~ msgstr "Moet voldoen aan alle condities (EN)"
+
+#~ msgid "At least one condition must meet (OR)"
+#~ msgstr "Moet voldoen aan minimaal 1 conditie (OF)"
+
+#~ msgid "and"
+#~ msgstr "en"
+
+#~ msgid "Page"
+#~ msgstr "Pagina"
+
+#~ msgid "Page title contains"
+#~ msgstr "Pagina titel bevat"
+
+#~ msgid "Blog"
+#~ msgstr "Blog"
+
+#~ msgid "Blog title contains"
+#~ msgstr "Blog titel bevat"
+
+#~ msgid "Category"
+#~ msgstr "Categorie"
+
+#~ msgid "URL contains"
+#~ msgstr "URL bevat"
+
+#~ msgid "URL begins with"
+#~ msgstr "URL begint met"
+
+#~ msgid "URL ends with"
+#~ msgstr "URL eindigt met"
+
+#~ msgid "User has role"
+#~ msgstr "Gebruiker heeft specifieke rol"
+
+#~ msgid "User is signed in"
+#~ msgstr "Gebruiker is ingelogd"
+
+#~ msgid "User is signed out"
+#~ msgstr "Gebruiker is uitgelogd"
+
+#~ msgid "Content based"
+#~ msgstr "Content gebaseerd"
+
+#~ msgid "Url"
+#~ msgstr "URL"
+
+#~ msgid "Users"
+#~ msgstr "Gebruikers"
+
+#~ msgid "Select one or more items."
+#~ msgstr "Selecteer een of meer items."
+
+#~ msgid "Are you sure you want to remove this rule?"
+#~ msgstr "Weet je zeker dat je deze regel wilt verwijderen?"
+
+#~ msgid "Aborted. Each page rule must keep at least one rule."
+#~ msgstr "Afgebroken. Elke pagina regel moet in ieder geval één regel houden."
+
+#~ msgid ""
+#~ "You still have selected values, are you sure you want to remove this?"
+#~ msgstr ""
+#~ "Je hebt nog geselecteerde waarden, weet je zeker dat je deze wilt "
+#~ "verwijderen?"
+
+#~ msgid "Rule value"
+#~ msgstr "Regel waarde"
+
+#~ msgid "Time schedules"
+#~ msgstr "Tijdschema's"
+
+#~ msgid "For example: Show a call me now button only on opening times"
+#~ msgstr "Voorbeeld: Toon een bel mij nu-knop alleen op openingstijden"
+
+#~ msgid "Time schedule"
+#~ msgstr "Tijdschema"
+
+#~ msgid "Time schedule manager"
+#~ msgstr "Tijdschema beheer"
+
+#~ msgid ""
+#~ "You can setup time schedules that will get triggered during specific "
+#~ "times of a day. It is even possible to change the schedule actions for "
+#~ "specific days. You can create an unlimited amount of schedules."
+#~ msgstr ""
+#~ "Je kan tijdschema's instellen die zullen worden getriggerd op specifieke "
+#~ "tijdstippen van een dag. Het is zelfs mogelijk om de tijdschema's aan te "
+#~ "passen voor specifieke dagen. Je kan een onbeperkt aantal tijdschema's "
+#~ "aanmaken."
+
+#~ msgid "Open time schedule settings"
+#~ msgstr "Open tijdschema instellingen"
+
+#~ msgid "Current time schedules:"
+#~ msgstr "Huidige tijdschema's:"
+
+#~ msgid "You have no time schedules"
+#~ msgstr "Je hebt geen tijdschema's"
+
+#~ msgid "No time schedule selected"
+#~ msgstr "Geen tijdschema geselecteerd"
+
+#~ msgid "Dates"
+#~ msgstr "Datums"
+
+#~ msgid "Add time schedule"
+#~ msgstr "Tijdschema toevoegen"
+
+#~ msgid "Add date"
+#~ msgstr "Datum toevoegen"
+
+#~ msgid "New schedule"
+#~ msgstr "Nieuwe tijdschema"
+
+#~ msgid "Name the new time schedule:"
+#~ msgstr "Geef het nieuwe tijdsschema een naam:"
+
+#~ msgid "Rename schedule to:"
+#~ msgstr "Hernoem tijdschema naar:"
+
+#~ msgid "Show the button at any time"
+#~ msgstr "De knop altijd weergeven"
+
+#~ msgid "till"
+#~ msgstr "tot"
+
+#~ msgid "Show group when this time schedule is activated"
+#~ msgstr "Toon groep wanneer het tijdschema wordt geactiveerd"
+
+#~ msgid "Hide group when this time schedule is activated"
+#~ msgstr "Verberg groep wanneer het tijdschema wordt geactiveerd"
+
+#~ msgid "Show button when this time schedule is activated"
+#~ msgstr "Toon knop wanneer het tijdschema wordt geactiveerd"
+
+#~ msgid "Hide button when this time schedule is activated"
+#~ msgstr "Verberg knop wanneer het tijdschema wordt geactiveerd"
+
+#~ msgid "Trigger on"
+#~ msgstr "Activeer op"
+
+#~ msgid "Don't trigger on"
+#~ msgstr "Niet activeren op"
+
+#~ msgid "Remove schedule"
+#~ msgstr "Tijdschema verwijderen"
+
+#~ msgid "You must keep at least one schedule"
+#~ msgstr "Je moet minimaal één tijdschema behouden"
+
+#~ msgid "Current timezone:"
+#~ msgstr "Huidige tijdzone:"
+
+#~ msgid "Remove date"
+#~ msgstr "Datum verwijderen"
+
+#~ msgid "Are you sure you want to remove this date?"
+#~ msgstr "Weet je zeker dat je deze datum wilt verwijderen?"
+
+#~ msgid "Sorry, the time '%1$s' was invalid. Reverting back to '%2$s'."
+#~ msgstr ""
+#~ "Sorry, de gekozen tijd '%1$s' is niet geldig. De tijd wordt teruggezet "
+#~ "naar '%2$s'."
+
+#~ msgid ""
+#~ "The start time '%1$s' conflicts with the end time '%2$s'. Time has been "
+#~ "reverted to '%3$s'. Make sure you have at least 5 minutes overlap."
+#~ msgstr ""
+#~ "De starttijd '%1$s' heeft een conflict met de eindtijd '%2$s. De tijd is "
+#~ "teruggezet naar '%3$s'. Zorg dat je minimaal 5 minuten speling hebt."
+
+#~ msgid ""
+#~ "The end time '%1$s' conflicts with the start time '%2$s'. Time has been "
+#~ "reverted to '%3$s'. Make sure you have at least 5 minutes overlap."
+#~ msgstr ""
+#~ "De eindtijd '%1$s' heeft een conflict met de starttijd '%2$s'. De tijd is "
+#~ "teruggezet naar '%3$s'. Zorg dat je minimaal 5 minuten speling hebt."
+
+#~ msgid "Weekdays"
+#~ msgstr "Weekdagen"
+
+#~ msgid "Monday"
+#~ msgstr "maandag"
+
+#~ msgid "Tuesday"
+#~ msgstr "dinsdag"
+
+#~ msgid "Wednesday"
+#~ msgstr "woensdag"
+
+#~ msgid "Thursday"
+#~ msgstr "donderdag"
+
+#~ msgid "Friday"
+#~ msgstr "vrijdag"
+
+#~ msgid "Saturday"
+#~ msgstr "zaterdag"
+
+#~ msgid "Sunday"
+#~ msgstr "zondag"
+
+#~ msgid "Excluded Dates"
+#~ msgstr "Uitgezonderde dagen"
+
+#~ msgid "Add Excluded Date"
+#~ msgstr "Uitgezonderde dag toevoegen"
+
+#~ msgid ""
+#~ "Add specific dates to show or hide the buttons attached to this time "
+#~ "scheme. For example: \"My store is open on January 22th until 22:00 (10 "
+#~ "PM) because of some special evening we organize.\" The rule will "
+#~ "overwrite the default settings for that day."
+#~ msgstr ""
+#~ "Je hebt de mogelijkheid om specifieke data te selecteren om knoppen te "
+#~ "verbergen of weer te geven die aan dit tijdschema gekoppeld zijn. Je kan "
+#~ "dit bijvoorbeeld in de volgende situatie gebruiken: \"Ik ben op 22 "
+#~ "januari geopend tot 22:00 vanwege een speciaal evenement dat we "
+#~ "organiseren.\". Deze datum zal de normale instellingen van deze dag "
+#~ "overschrijven."
+
+#~ msgid "Start triggering buttons from"
+#~ msgstr "Start triggering knoppen vanaf"
+
+#~ msgid "Start Date"
+#~ msgstr "Startdatum"
+
+#~ msgid ""
+#~ "Warning! Your start date '%s' hast past the end date of this schedule. If "
+#~ "you do not change this date the schedule will not work."
+#~ msgstr ""
+#~ "Waarschuwing! Je startdatum '%s' is later dan de einddatum van dit "
+#~ "tijdschema. Als je dit niet aanpast zal de tijdschema niet werken."
+
+#~ msgid "Stop triggering buttons after (optional)"
+#~ msgstr "Stop triggering knoppen na (optioneel)"
+
+#~ msgid "Click to add ending date"
+#~ msgstr "Klik om een einddatum te selecteren"
+
+#~ msgid "Select a date in the datepicker below"
+#~ msgstr "Selecteer een datum in de datumkiezen hieronder"
+
+#~ msgid ""
+#~ "Warning! Your end date '%s' has past the start date of this schedule. If "
+#~ "you do not change this date the schedule will not work."
+#~ msgstr ""
+#~ "Waarschuwing! Je einddatum '%s' is voor de startdatum van dit tijdschema. "
+#~ "Als je dit niet aanpast zal het tijdschema niet werken."
+
+#~ msgid "Hi Buttonizer!"
+#~ msgstr "Hoi Buttonizer!"
+
+#~ msgid ""
+#~ "It appears you've installed Buttonizer 2.0 before. But, you installed "
+#~ "version 1.5 again later on and updated back to 2.0!"
+#~ msgstr ""
+#~ "Het lijkt er op dat je Buttonizer 2.0 al eens eerder hebt geïnstalleerd "
+#~ "en toen bent teruggegaan naar versie 1.5. Nu ben je geüpdatet naar versie "
+#~ "2.0!"
+
+#~ msgid ""
+#~ "The migration progress did not run as it did back then. In order to "
+#~ "convert your buttons, press the button below!"
+#~ msgstr ""
+#~ "De automatische migratie is nu niet uitgevoerd omdat dit al eerder is "
+#~ "gebeurt. Om je knoppen opnieuw te migreren naar de nieuwste versie druk "
+#~ "je op de knop hieronder!"
+
+#~ msgid ""
+#~ "If this window keeps popping up, even when you've tried to convert the "
+#~ "buttons, try to reset Buttonizer. Go to the 'cog' icon (%1$s) on the top "
+#~ "bar, select 'Options %2$s' and the tab 'Reset' and follow the "
+#~ "instructions."
+#~ msgstr ""
+#~ "Wanneer dit scherm blijft opkomen, zelfs wanneer je hebt geprobeerd om de "
+#~ "knoppen te migreren, probeer dan Buttonizer te resetten. Ga naar het "
+#~ "'tandwiel' icoon (%1$s) in de bovenste balk. Ga dan naar 'Opties %2$s' en "
+#~ "open het tabje 'Reset' en volg de instructies."
+
+#~ msgid "Convert my buttons!"
+#~ msgstr "Migreer mijn knoppen!"
+
+#~ msgid "Did you know that Buttonizer has different group-styles you can use?"
+#~ msgstr ""
+#~ "Wist je dat Buttonizer verschillende groep-stijlen heeft die je kan "
+#~ "gebruiken?"
+
+#~ msgid "Click on the buttons to manage their settings"
+#~ msgstr "Klik hier om de knopinstellingen te openen"
+
+#~ msgid "Give your buttons a color"
+#~ msgstr "Geef de knoppen een kleur"
+
+#~ msgid ""
+#~ "A button can only have one action, but you can choose out more than 25 "
+#~ "actions!"
+#~ msgstr ""
+#~ "Een knop heeft maar één actie, maar je kan kiezen uit meer dan 25 acties!"
+
+#~ msgid "Turn off these tips in settings"
+#~ msgstr "Je kan deze tips in de instellingen uitzetten"
+
+#~ msgid ""
+#~ "Buttonizer will only show 7 buttons per page as that's the limit of "
+#~ "Material Design"
+#~ msgstr ""
+#~ "Buttonizer zal maximaal 7 knoppen per pagina weergeven aangezien dat de "
+#~ "limiet is van Material Design"
+
+#~ msgid ""
+#~ "Paste the HEX-code in the colorpicker if you want to use a specific color"
+#~ msgstr ""
+#~ "Plak een HEX-code in de kleurkiezer als je een specifieke kleur wilt "
+#~ "gebruiken"
+
+#~ msgid ""
+#~ "Playing smart with 'Show on desktop' and 'Show on mobile' will give you "
+#~ "up to 14 buttons per page!"
+#~ msgstr ""
+#~ "Slim omgaan met de 'Weergeven op desktop' en 'Weergeven op mobiel' kan je "
+#~ "14 knoppen per pagina opleveren!"
+
+#~ msgid "You can use page rules to show or hide buttons on certain pages"
+#~ msgstr ""
+#~ "Je kan pagina regels gebruiken om knoppen op bepaalde pagina's weer te "
+#~ "geven of te verbergen"
+
+#~ msgid ""
+#~ "You can use the social share button action to let a visitor share your "
+#~ "webpage"
+#~ msgstr ""
+#~ "Je kan gebruik maken van de 'Delen op social media' knopactie om "
+#~ "bezoekers je webpagina te laten delen"
+
+#~ msgid "Do you need a tool-tip? ;)"
+#~ msgstr "Heb je een tool-tip nodig? ;)"
+
+#~ msgid "You can style the main big button by editting the group"
+#~ msgstr ""
+#~ "Je kan de stijl van de hoofdknop aanpassen door de groep te bewerken"
+
+#~ msgid "You can add a class or id HTML-attribute to a group and a button"
+#~ msgstr ""
+#~ "Je kan een class of id HTML-attribute toevoegen aan een groep of knop"
+
+#~ msgid "Want to make a new similar button? Duplicate your button!"
+#~ msgstr "Wil je een vergelijkbare knop? Dupliceer hem!"
+
+#~ msgid "If you have a great tip, let us know! We'll add it :)"
+#~ msgstr ""
+#~ "Laat het ons weten als je een goede tip hebt! Dan voegen we 'm toe :)"
+
+#~ msgid "Pssst, click on the group/button name on top"
+#~ msgstr "Pssst, klik op de groep/knop naam bovenin"
+
+#~ msgid "Exit Intent... This is where the fun begins!"
+#~ msgstr "Exit intent…. Hier begint het pas echt leuk te worden!"
+
+#~ msgid "Double click on Buzzer! for a suprise ;)"
+#~ msgstr "Dubbelklik op de Buzzer! voor een verassing ;)"
+
+#~ msgid "Click on me for more tips!"
+#~ msgstr "Klik voor meer tips!"
+
+#~ msgid "Premium feature"
+#~ msgstr "Premium functie"
+
+#~ msgid ""
+#~ "Hi there, this function is a premium feature. We will describe what this "
+#~ "feature will do:"
+#~ msgstr ""
+#~ "Hoi daar, deze functie is voor onze premium gebruikers. We zullen "
+#~ "beschrijven wat deze functie zal doen:"
+
+#~ msgid "What you get as a premium user:"
+#~ msgstr "Wat je krijgt als premium gebruiker:"
+
+#~ msgid "Go pro"
+#~ msgstr "Wordt premium gebruiker"
+
+#~ msgid "Show button(groups) using the advanced time schedules"
+#~ msgstr "Toon knoppen op basis van geavanceerde tijdschema's"
+
+#~ msgid "Show button(groups) on specific pages using advanced page rules"
+#~ msgstr "Toon knoppen op specifieke pagina's met geavanceerde paginaregels"
+
+#~ msgid "Create multiple button groups"
+#~ msgstr "Mogelijkheid om meer knopgroepen te maken"
+
+#~ msgid "Custom button background &amp; icon image"
+#~ msgstr "Aangepaste knopachtergrond & pictogram afbeelding"
+
+#~ msgid "Show or hide on scroll"
+#~ msgstr "Weergeven of verbergen tijdens scrollen"
+
+#~ msgid "Show on timeout"
+#~ msgstr "Weergeven na bepaalde tijd"
+
+#~ msgid "Be able to set CSS class names and button IDs"
+#~ msgstr "Gebruik maken van CSS class namen en ID's"
+
+#~ msgid "Execute javascript on button clicks"
+#~ msgstr "Javascript uitvoeren bij een knop klik"
+
+#~ msgid "My first time schedule"
+#~ msgstr "Mijn eerste tijdschema"
+
+#~ msgid "Duplicating buttons is disabled for free version"
+#~ msgstr "Knoppen dupliceren is uitgeschakeld voor de gratis versie"
+
+#~ msgid "My first page rule"
+#~ msgstr "Mijn eerste pagina regel"
+
+#~ msgid "You are able to add multiple groups on different positions"
+#~ msgstr ""
+#~ "Je hebt de mogelijkheid om meerdere groepen aan te maken op verschillende "
+#~ "posities"
+
+#~ msgid ""
+#~ "You can select images and set them as icon or as button background image."
+#~ msgstr ""
+#~ "Je kan afbeeldingen selecteren om als knop-icoon en knop-achtergrond te "
+#~ "gebruiken."
+
+#~ msgid ""
+#~ "With this setting, you can make your button appear/hide after certain "
+#~ "amount of time."
+#~ msgstr ""
+#~ "Met deze instelling kun je Buttonizer weergeven of verbergen na een "
+#~ "bepaalde tijd."
+
+#~ msgid ""
+#~ "With this setting, you can make your button appear/hide after scrolling "
+#~ "for a certain amount."
+#~ msgstr ""
+#~ "Met deze instelling kun je Buttonizer weergeven of verbergen na een "
+#~ "bepaalde hoeveelheid scrollen."
+
+#~ msgid "Thanks for using Buttonizer!"
+#~ msgstr "Bedankt voor het gebruiken van Buttonizer!"
+
+#~ msgid "We are pleased to welcome you to <b>%s</b>!"
+#~ msgstr "We verwelkomen u graag bij <b>%s</b>!"
+
+#~ msgid ""
+#~ "Become a SUPER contributor by automatically sending us crash reports and "
+#~ "error logs. This way we can bugfix your bugs with the speed of light. "
+#~ "Don't worry, all data is anonymized."
+#~ msgstr ""
+#~ "Wordt SUPER-bijdrager door automatisch crashrapporten en error logs naar "
+#~ "ons toe te sturen. Op deze manier kunnen we je fouten met lichtsnelheid "
+#~ "oplossen! Geen zorgen, alle data is geanonimiseerd."
+
+#~ msgid "No thanks"
+#~ msgstr "Nee bedankt"
+
+#~ msgid "Yes please!"
+#~ msgstr "Ja graag!"
+
+#~ msgid ""
+#~ "We've created a tour for our new users. Would you like to take the tour?"
+#~ msgstr ""
+#~ "We hebben een tour gemaakt voor onze nieuwe gebruikers. Wil je deze tour "
+#~ "volgen?"
+
+#~ msgid "No thanks, I know how it works"
+#~ msgstr "Nee bedankt, ik weet hoe het werkt"
+
+#~ msgid "Back to Overview"
+#~ msgstr "Terug naar het overzicht"

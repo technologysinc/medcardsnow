@@ -1,0 +1,38 @@
+19-09-2026 13:01:11 - INFO  - 9.3.9 - 7671 - 19.1 MB/512 MB - medcardsnowadmin > Start upgrade from 0.0.0 to 9.3.9
+19-09-2026 13:01:12 - INFO  - 9.3.9 - 7671 - 18.8 MB/512 MB - medcardsnowadmin > Array
+(
+    [wp_newsletter_emails] => Created table `wp_newsletter_emails`
+)
+
+19-09-2026 13:01:12 - INFO  - 9.3.9 - 7671 - 18.8 MB/512 MB - medcardsnowadmin > Array
+(
+    [wp_newsletter_sent] => Created table `wp_newsletter_sent`
+)
+
+19-09-2026 13:01:12 - INFO  - 9.3.9 - 7671 - 18.8 MB/512 MB - medcardsnowadmin > Array
+(
+    [wp_newsletter] => Created table `wp_newsletter`
+)
+
+19-09-2026 13:01:12 - INFO  - 9.3.9 - 7671 - 18.8 MB/512 MB - medcardsnowadmin > Array
+(
+    [wp_newsletter_user_logs] => Created table `wp_newsletter_user_logs`
+)
+
+19-09-2026 13:01:12 - INFO  - 9.3.9 - 7671 - 18.8 MB/512 MB - medcardsnowadmin > Array
+(
+    [wp_newsletter_user_meta] => Created table `wp_newsletter_user_meta`
+)
+
+19-09-2026 13:01:12 - INFO  - 9.3.9 - 7671 - 18.8 MB/512 MB - medcardsnowadmin > Array
+(
+    [wp_newsletter_stats] => Created table `wp_newsletter_stats`
+)
+
+19-09-2026 13:01:12 - INFO  - 9.3.9 - 7671 - 18.8 MB/512 MB - medcardsnowadmin > Array
+(
+    [wp_newsletter_logs] => Created table `wp_newsletter_logs`
+)
+
+19-09-2026 13:01:12 - INFO  - 9.3.9 - 7671 - 18.8 MB/512 MB - medcardsnowadmin > Backing up options of 0.0.0
+19-09-2026 13:01:12 - INFO  - 9.3.9 - 7671 - 18.8 MB/512 MB - medcardsnowadmin > End

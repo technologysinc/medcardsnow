@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modernlisim Plugin Documentation</title>
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #070600;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Paper Layout */
+        .paper {
+            background: #FFFCF9;
+            width: 70%;
+            max-width: 900px;
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: bold;
+            color: #000;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #000;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 20px;
+            color: #000;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        p {
+            color: #000;
+            line-height: 1.6;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        ul li {
+            color: #000;
+        }
+
+        code {
+            background: #edf2f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 14px;
+            color: #000;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #0000001c;
+            margin: 20px 0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #8d99ae;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="paper">
+        <h1>Modernlisim Plugin Documentation</h1>
+
+        <h2>Plugin Overview</h2>
+        <p>The <b>Medical Patient Verification Plugin</b> by Modernlisim is a WordPress solution designed to manage and
+            verify patient records. It provides functionalities for:</p>
+        <ul>
+            <li>Adding and managing patient records.</li>
+            <li>Frontend verification via a unique code.</li>
+            <li>Backend management for viewing and deleting records.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Installation Guide</h2>
+        <ol>
+            <li>Download the plugin ZIP file from the provided source.</li>
+            <li>Log in to your WordPress admin dashboard.</li>
+            <li>Navigate to <b>Plugins > Add New</b>.</li>
+            <li>Click the <b>Upload Plugin</b> button at the top of the page.</li>
+            <li>Choose the downloaded ZIP file and click <b>Install Now</b>.</li>
+            <li>Once installed, click <b>Activate Plugin</b> to enable it on your website.</li>
+            <li>After activation, access the plugin from the <b>Patient Verification</b> menu in the admin dashboard.
+            </li>
+        </ol>
+        <p><b>Note:</b> Ensure your server runs PHP version 8.0 and WordPress version 6.7.1 or higher for optimal
+            performance.</p>
+
+
+        <hr>
+
+        <h2>Features</h2>
+        <ul>
+            <li>Unique 7-digit verification code generation.</li>
+            <li>Shortcode for embedding a verification form.</li>
+            <li>AJAX-based form submission for smooth user experience.</li>
+            <li>Real-time error handling with user-friendly feedback.</li>
+            <li>Customizable design via CSS for seamless website integration.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Shortcode</h2>
+        <p>Use the shortcode below to display the verification form on any WordPress page or post:</p>
+        <code>[patient_verification]</code>
+        <p>This shortcode renders a user-friendly form with fields for entering the verification code.</p>
+
+        <h3>Shortcode Attributes</h3>
+        <ul>
+            <li><b>placeholder_text:</b> Custom placeholder text for the input field.</li>
+            <li><b>button_text:</b> Custom text for the submit button.</li>
+        </ul>
+        <p>Example:</p>
+        <code>[patient_verification placeholder_text="Enter Code" button_text="Verify"]</code>
+
+        <hr>
+
+        <h2>Admin Menu</h2>
+        <h3>Menu Items</h3>
+        <ul>
+            <li><b>Patient Verification:</b> Add new patient records.</li>
+            <li><b>View Records:</b> View and delete existing patient records.</li>
+        </ul>
+        <p>The admin menu provides an intuitive interface for managing patient data and monitoring verification
+            attempts.</p>
+
+        <hr>
+
+        <h2>Technical Details</h2>
+        <h3>Database Structure</h3>
+        <p>The plugin uses a custom table:</p>
+        <code>{prefix}_patient_verifications</code>
+        <p>Fields:</p>
+        <ul>
+            <li><b>id:</b> Auto-incremented primary key.</li>
+            <li><b>patient_name:</b> Name of the patient.</li>
+            <li><b>doctor_name:</b> Name of the doctor.</li>
+            <li><b>verification_code:</b> Unique code for verification.</li>
+            <li><b>expiry_date:</b> Expiry date for the code.</li>
+            <li><b>is_expired:</b> Boolean indicating whether the code is expired.</li>
+        </ul>
+
+        <h3>AJAX Workflow</h3>
+        <p>The plugin uses AJAX for seamless frontend interaction:</p>
+        <ul>
+            <li>Form submission triggers an AJAX request.</li>
+            <li>Verification logic runs in the backend.</li>
+            <li>Results are returned to the user without page refresh.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Customization</h2>
+        <h3>Styling</h3>
+        <p>The plugin's styles can be customized by overriding the CSS classes in your theme:</p>
+        <ul>
+            <li><b>.ver-code:</b> Input field for the verification code.</li>
+            <li><b>.ver-output-error:</b> Error message container.</li>
+            <li><b>.ver-out-success:</b> Success message container.</li>
+        </ul>
+        <p>Example:</p>
+        <code>
+            .ver-code { 
+                border: 2px solid #ef233c; 
+                padding: 10px; 
+                font-size: 16px; 
+            }
+        </code>
+
+        <hr>
+
+        <h2>Troubleshooting</h2>
+        <ul>
+            <li>Ensure the plugin is installed and activated.</li>
+            <li>Verify the database table `{prefix}_patient_verifications` exists.</li>
+            <li>Check AJAX URL configurations if the form does not work.</li>
+            <li>Test shortcode placement in a WordPress post or page.</li>
+            <li>Review console logs for potential JavaScript errors.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Q: What is the compatible PHP version?</h3>
+        <p>A: For security reasons, the plugin is compatible with PHP version 8.0.</p>
+
+        <h3>Q: What is the compatible WordPress version?</h3>
+        <p>A: The plugin is compatible with WordPress versions 6.7.1 and above.</p>
+
+        <h3>Q: What is the tested WordPress version?</h3>
+        <p>A: The plugin has been tested up to WordPress version 6.7.1.</p>
+
+        <h3>Q: What is the plugin development date?</h3>
+        <p>A: The plugin was developed on 14-12-2024.</p>
+
+        <h3>Q: Who developed the plugin?</h3>
+        <p>A: The plugin was developed by Modernlisim. Visit us at <a href="https://www.modernlisim.com"
+                target="_blank">www.modernlisim.com</a>.</p>
+
+        <h3>Q: How do I delete a patient's verification code?</h3>
+        <p>A: Use the "delete button" functionality in the admin menu to delete the record.</p>
+
+        <h3>Q: How can I change the plugin's style?</h3>
+        <p>A: You can update the style by editing the <code>style.css</code> file available in the root directory of the
+            plugin folder.</p>
+
+
+        <div class="footer">
+            &copy; 2024 Modernlisim. All Rights Reserved.
+        </div>
+    </div>
+</body>
+
+</html>

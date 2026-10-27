@@ -1,0 +1,736 @@
+#forminator-module-932 {
+					border-color: #000000;
+					}
+
+
+#forminator-module-932 .forminator-pagination-footer .forminator-button-paypal {
+			flex: 1;
+	}
+#forminator-module-932 .forminator-button-paypal > .paypal-buttons {
+		}
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-response-message,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-response-message p {
+		font-size: 15px;
+	}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-response-message.forminator-error {
+					background-color: #F9E4E8;
+							box-shadow: inset 2px 0 0 0 #E51919;
+			-moz-box-shadow: inset 2px 0 0 0 #E51919;
+			-webkit-box-shadow: inset 2px 0 0 0 #E51919;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-response-message.forminator-error:hover,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-response-message.forminator-error:focus,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-response-message.forminator-error:active {
+					box-shadow: inset 2px 0 0 0 #E51919;
+			-moz-box-shadow: inset 2px 0 0 0 #E51919;
+			-webkit-box-shadow: inset 2px 0 0 0 #E51919;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-response-message.forminator-error,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-response-message.forminator-error p {
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-response-message.forminator-success {
+					background-color: #BCEEE6;
+							box-shadow: inset 2px 0 0 0 #067963;
+			-moz-box-shadow: inset 2px 0 0 0 #067963;
+			-webkit-box-shadow: inset 2px 0 0 0 #067963;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-response-message.forminator-success:hover,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-response-message.forminator-success:focus,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-response-message.forminator-success:active {
+					box-shadow: inset 2px 0 0 0 #067963;
+			-moz-box-shadow: inset 2px 0 0 0 #067963;
+			-webkit-box-shadow: inset 2px 0 0 0 #067963;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-response-message.forminator-success,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-response-message.forminator-success p {
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-response-message.forminator-loading {
+					background-color: #F8F8F8;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-response-message.forminator-loading,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-response-message.forminator-loading p {
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-title {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-subtitle {
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-label {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-label .forminator-required {
+					color: #E51919;
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-description-password {
+		display: block;
+	}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-description,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-description p {
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-error-message {
+		font-size: 12px;
+	}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-error-message {
+					background-color: #F9E4E8;
+							color: #333333;
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-input {
+							}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-iti-input .iti__selected-dial-code {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-input:disabled,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-calculation:disabled {
+					-webkit-text-fill-color: #000000;
+				opacity: 1;
+	}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-input:hover,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-iti-input:hover .iti__selected-dial-code {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-input:focus,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-input:active,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-iti-input:focus-within .iti__selected-dial-code,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-iti-input:active .iti__selected-dial-code {
+			}
+
+	
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-input input,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-input input:hover,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-input input:focus,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-input input:active {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-input::placeholder {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-input:-moz-placeholder {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-input::-moz-placeholder {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-input:-ms-input-placeholder {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-input::-webkit-input-placeholder {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-is_hover .forminator-input {
+					}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-is_active .forminator-input {
+					}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-has_error .forminator-input {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-input-with-icon [class*="forminator-icon-"] {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-input-with-icon:hover [class*="forminator-icon-"] {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-is_active .forminator-input-with-icon [class*="forminator-icon-"] {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-is_active .forminator-input-with-icon [class*="forminator-icon-"] {
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-suffix {
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-prefix {
+			}
+
+
+		#forminator-module-932 .forminator-field .forminator-radio .forminator-radio-image span,
+		#forminator-module-932 .forminator-field .forminator-checkbox .forminator-checkbox-image span {
+							width: 70px;
+							height: 70px;
+					}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-textarea {
+							}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-textarea:hover {
+			}
+
+	
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-textarea:focus,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-textarea:active {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-is_hover .forminator-textarea {
+					}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-is_active .forminator-textarea {
+					}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-has_error .forminator-textarea {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-textarea::placeholder {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-textarea:-moz-placeholder {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-textarea::-moz-placeholder {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-textarea:-ms-input-placeholder {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-textarea::-webkit-input-placeholder {
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-radio {
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-checkbox,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-checkbox__label,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-checkbox__label p,
+	.forminator-select-dropdown-container--open .forminator-custom-form-932.forminator-dropdown--basic .forminator-checkbox {
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-consent,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-consent__label,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-consent__label p {
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select .selection .select2-selection--single[role="combobox"] {
+					border-color: #777771;
+							background-color: #EDEDED;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select .selection .select2-selection--single[role="combobox"] .select2-selection__rendered {
+					color: #000000;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select .selection .select2-selection--single[role="combobox"] .select2-selection__arrow {
+					color: #777771;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select .selection .select2-selection--single[role="combobox"]:hover {
+					border-color: #097BAA;
+							background-color: #E6E6E6;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select .selection .select2-selection--single[role="combobox"]:hover .select2-selection__rendered {
+					color: #000000;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select .selection .select2-selection--single[role="combobox"]:hover .select2-selection__arrow {
+					color: #097BAA;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select .selection .select2-selection--single[role="combobox"]:focus,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select.select2-container--open .selection .select2-selection--single[role="combobox"] {
+					border-color: #097BAA;
+							background-color: #E6E6E6;
+			}
+
+	
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select .selection .select2-selection--single[role="combobox"]:focus .select2-selection__rendered,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select.select2-container--open .selection .select2-selection--single[role="combobox"] .select2-selection__rendered {
+					color: #000000;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select .selection .select2-selection--single[role="combobox"]:focus .select2-selection__arrow,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select.select2-container--open .selection .select2-selection--single[role="combobox"] .select2-selection__arrow {
+					color: #097BAA;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-field.forminator-has_error .forminator-select2 + .forminator-select .selection .select2-selection--single[role="combobox"] {
+					border-color: #E51919;
+			}
+
+
+	.forminator-select-dropdown-container--open .forminator-custom-form-932.forminator-dropdown--basic {
+					border-color: #097BAA;
+							background-color: #E6E6E6;
+			}
+
+	.forminator-select-dropdown-container--open .forminator-custom-form-932.forminator-dropdown--basic .select2-results .select2-results__options .select2-results__option,
+	.forminator-select-dropdown-container--open .forminator-custom-form-932.forminator-dropdown--basic .select2-results .select2-results__options .select2-results__option span:not(.forminator-checkbox-box) {
+					color: #777771;
+			}
+
+	.forminator-select-dropdown-container--open .forminator-custom-form-932.forminator-dropdown--basic .select2-results .select2-results__options .select2-results__option:not(.select2-results__option--selected).select2-results__option--highlighted,
+	.forminator-select-dropdown-container--open .forminator-custom-form-932.forminator-dropdown--basic .select2-results .select2-results__options .select2-results__option:not(.select2-results__option--selected).select2-results__option--highlighted span:not(.forminator-checkbox-box) {
+					background-color: #DDDDDD;
+							color: #000000;
+			}
+
+	
+	.forminator-select-dropdown-container--open .forminator-custom-form-932.forminator-dropdown--basic .select2-results .select2-results__options .select2-results__option.select2-results__option--selected,
+	.forminator-select-dropdown-container--open .forminator-custom-form-932.forminator-dropdown--basic .select2-results .select2-results__options .select2-results__option.select2-results__option--selected span:not(.forminator-checkbox-box) {
+					background-color: #097BAA;
+							color: #FFFFFF;
+			}
+
+	.forminator-select-dropdown-container--open .forminator-custom-form-932.forminator-dropdown--basic .select2-search input,
+	.forminator-select-dropdown-container--open .forminator-custom-form-932.forminator-dropdown--basic .select2-search input:focus,
+	.forminator-select-dropdown-container--open .forminator-custom-form-932.forminator-dropdown--basic .select2-search input:hover {
+							}
+
+	
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-multiselect {
+					border-color: #777771;
+							background-color: #E6E6E6;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-has_error .forminator-multiselect {
+					border-color: #E51919;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-multiselect .forminator-option {
+					color: #777771;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-multiselect .forminator-option:hover,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-multiselect .forminator-option:focus-within {
+					background-color: #DDDDDD;
+							color: #000000;
+			}
+
+	
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-multiselect .forminator-option.forminator-is_checked {
+					background-color: #097BAA;
+							color: #FFFFFF;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2-selections > li {
+					background-color: #888888;
+							color: #FFFFFF;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2-selections > li > button {
+					color: #FFFFFF;
+			}
+
+
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select .selection .select2-selection--multiple[role="combobox"] {
+					border-color: #777771;
+							background-color: #EDEDED;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select .selection .select2-selection--multiple[role="combobox"] .select2-selection__rendered {
+					color: #000000;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select .selection .select2-selection--multiple[role="combobox"] .select2-selection__arrow {
+					color: #777771;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select .selection .select2-selection--multiple[role="combobox"]:hover {
+					border-color: #097BAA;
+							background-color: #E6E6E6;
+			}
+
+	
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select .selection .select2-selection--multiple[role="combobox"]:hover .select2-selection__rendered {
+					color: #000000;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select .selection .select2-selection--multiple[role="combobox"]:hover .select2-selection__arrow {
+					color: #097BAA;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select .selection .select2-selection--multiple[role="combobox"]:focus,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select.select2-container--open .selection .select2-selection--multiple[role="combobox"] {
+					border-color: #097BAA;
+							background-color: #E6E6E6;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select .selection .select2-selection--multiple[role="combobox"]:focus .select2-selection__rendered,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select.select2-container--open .selection .select2-selection--multiple[role="combobox"] .select2-selection__rendered {
+					color: #000000;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select .selection .select2-selection--multiple[role="combobox"]:focus .select2-selection__arrow,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-select2 + .forminator-select.select2-container--open .selection .select2-selection--multiple[role="combobox"] .select2-selection__arrow {
+					color: #097BAA;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-field.forminator-has_error .forminator-select2 + .forminator-select .selection .select2-selection--multiple[role="combobox"] {
+					border-color: #E51919;
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-upload {
+					}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-upload:hover {
+					}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-upload:focus,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-upload:active {
+					}
+
+	
+	
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-file-upload > span {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-delete {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-delete:hover {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-delete:focus,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-delete:active {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-delete [class*="forminator-icon-"] {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-delete:hover [class*="forminator-icon-"] {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-delete:focus [class*="forminator-icon-"],
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-delete:active [class*="forminator-icon-"] {
+			}
+
+
+	/*
+	====================
+	MU Panel Color Styles
+	====================
+	*/
+
+	/* STATE: Default */
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-multi-upload {
+		cursor: pointer;
+							}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-multi-upload .forminator-multi-upload-message p {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-multi-upload .forminator-multi-upload-message p a,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-multi-upload .forminator-multi-upload-message p a:visited,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-multi-upload .forminator-multi-upload-message p a:hover,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-multi-upload .forminator-multi-upload-message p a:focus {
+			}
+
+	/* STATE: Hover */
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-multi-upload:hover {
+							}
+
+	/* STATE: Focus */
+
+	
+	
+	/* STATE: Drag Over */
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-multi-upload.forminator-dragover {
+							}
+
+	/* STATE: Error */
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-has_error .forminator-multi-upload {
+							}
+
+	/*
+	====================
+	MU File Color Styles
+	====================
+	*/
+
+	/* STATE: Default */
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-uploaded-file .forminator-uploaded-file--preview {
+					}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-uploaded-file .forminator-uploaded-file--preview [class*="forminator-icon-"] {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-uploaded-file .forminator-uploaded-file--title {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-uploaded-file .forminator-uploaded-file--size {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-uploaded-file .forminator-uploaded-file--size [class*="forminator-icon-"] {
+			}
+
+	/* Error */
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-uploaded-file.forminator-has_error .forminator-uploaded-file--image,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-uploaded-file.forminator-has_error .forminator-uploaded-file--preview {
+					}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-uploaded-file.forminator-has_error .forminator-uploaded-file--preview [class*="forminator-icon-"] {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-uploaded-file.forminator-has_error .forminator-uploaded-file--size [class*="forminator-icon-"] {
+			}
+
+
+	/*
+	====================
+	Signature Colors
+	====================
+	*/
+
+	/* STATE: Default */
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-signature {
+					border-color: #777771;
+							background-color: #EDEDED !important;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-signature .forminator-signature--placeholder {
+			}
+
+	/* STATE: Hover */
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-field-signature.forminator-is_hover .forminator-signature {
+					border-color: #097BAA;
+							background-color: #E6E6E6 !important;
+			}
+
+	/* STATE: Error */
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-field-signature.forminator-has_error .forminator-signature {
+					border-color: #E51919;
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-submit {
+					background-color: #000000;
+							color: #ffffff;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-submit:hover {
+					}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-submit:focus,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-submit:active {
+					}
+
+	
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-pagination-steps .forminator-break {
+					background-color: #777771;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-pagination-steps .forminator-break:before {
+					background-color: #097BAA;
+			}
+
+	
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-pagination-steps .forminator-step .forminator-step-label {
+					color: #097BAA;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-pagination-steps .forminator-step .forminator-step-dot {
+					border-color: #777771;
+							background-color: #097BAA;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-pagination-steps .forminator-step.forminator-current ~ .forminator-step .forminator-step-label {
+					color: #777771;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-pagination-steps .forminator-step.forminator-current ~ .forminator-step .forminator-step-dot {
+					border-color: #777771;
+							background-color: #777771;
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-pagination-progress .forminator-progress-label {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-pagination-progress .forminator-progress-bar {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-pagination-progress .forminator-progress-bar span {
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-back {
+					}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-back:hover {
+					}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-back:focus,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-back:active {
+					}
+
+	
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-next {
+					}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-next:hover {
+					}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-next:focus,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-button-next:active {
+					}
+
+	
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-repeater-field {
+					background: rgba(248, 248, 248, 0.5);
+							box-shadow: inset 5px 0px 0px rgba(221, 221, 221, 0.5);
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-repeater-field .forminator-grouped-fields {
+					border-bottom: 1px solid rgba(170, 170, 170, 0.5);
+			}
+
+
+.forminator-ui#forminator-module-932.forminator-design--basic .forminator-repeater-field .forminator-grouped-fields:last-child {
+	border-bottom: unset;
+}
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-repeater-action-link {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-repeater-action-link:hover {
+			}
+
+	
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-repeater-action-link:active,
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-repeater-action-link:focus {
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-repeater-action-icon {
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-repeater-action-icon:hover {
+			}
+
+	
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-repeater-action-icon:active {
+			}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-repeater-action-button {
+							}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-repeater-action-button:hover {
+							}
+
+	
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-repeater-action-button:active {
+							}
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .StripeElement:not(.forminator-stripe-payment-element) {
+		padding: 9px;
+		border-width: 1px;
+		border-style: solid;
+		border-radius: 2px;
+					border-color: #777771;
+							background-color: #EDEDED;
+							color: #000000;
+				transition: 0.2s ease;
+	}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .StripeElement:not(.forminator-stripe-payment-element):hover {
+					border-color: #097BAA;
+							background-color: #E6E6E6;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .StripeElement--focus,
+	.forminator-ui#forminator-module-932.forminator-design--basic .StripeElement--focus:hover {
+					border-color: #097BAA;
+							background-color: #E6E6E6;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .StripeElement--invalid,
+	.forminator-ui#forminator-module-932.forminator-design--basic .StripeElement--invalid:hover,
+	.forminator-ui#forminator-module-932.forminator-design--basic .StripeElement--focus.StripeElement--invalid {
+					border-color: #E51919;
+			}
+
+
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-rating-suffix {
+					color: #888;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-rating-item [class*=forminator-icon-]:before {
+					color: #aaa;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-rating-item.forminator-rating-hover [class*=forminator-icon-]:before {
+					color: #ff7e41;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-rating-item.forminator-rating-selected [class*=forminator-icon-]:before {
+					color: #ff7e41;
+			}
+
+	
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-radio {
+		font-size: 15px;
+		font-family: inherit;
+		font-weight: 400;
+	}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-slider .forminator-slider-amount {
+		font-size: 16px;
+		font-family: inherit;
+		font-weight: 400;
+	}
+
+	
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-slider .forminator-slider-amount {
+					color: inherit;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-slider .forminator-slider-limit {
+					color: inherit;
+			}
+
+	.forminator-ui#forminator-module-932.forminator-design--basic .forminator-slider .forminator-slider-labels {
+					color: inherit;
+			}

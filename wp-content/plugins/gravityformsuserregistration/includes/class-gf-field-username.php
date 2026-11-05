@@ -9,6 +9,15 @@ class GF_Field_Username extends GF_Field_Text {
 	public $type = 'username';
 
 	/**
+	 * Whether the field can be used in a repeater.
+	 *
+	 * @since 5.5.2
+	 *
+	 * @var bool
+	 */
+	public $repeatable = false;
+
+	/**
 	 * Adds the field button to the specified group.
 	 *
 	 * @param array $field_groups
@@ -33,11 +42,9 @@ class GF_Field_Username extends GF_Field_Text {
 
 					// Prepare username button.
 					$username_button = array(
-						'value'      => $new_button['text'],
+						'value'            => $new_button['text'],
 						'class'            => 'button',
 						'data-type'        => $this->type,
-						'onclick'          => "StartAddField('{$this->type}');",
-						'onkeypress'       => "StartAddField('{$this->type}');",
 						'text'             => $this->get_form_editor_field_title(),
 						'data-icon'        => empty( $new_button['icon'] ) ? $this->get_form_editor_field_icon() : $new_button['icon'],
 						'data-description' => empty( $new_button['description'] ) ? $this->get_form_editor_field_description() : $new_button['description'],

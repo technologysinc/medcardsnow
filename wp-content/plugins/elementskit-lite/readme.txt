@@ -4,7 +4,7 @@ Tags: Elementor addons, mega menu builder,  header footer builder, elementor add
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 4.0.9
+Stable tag: 4.1.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,11 +14,11 @@ Join millions who empower their websites with ElementsKit Elementor Addons. Get 
 
 **[ELEMENTSKIT, ALL-IN-ONE ELEMENTOR ADDON](https://wpmet.com/plugin/elementskit/?utm_source=org&utm_medium=readme), EMPOWERING 2 MILLION+ USERS WITH 100+ ELEMENTOR WIDGETS, ELEMENTOR ELEMENTS & 1000+ ELEMENTOR TEMPLATES.**
 
-The ultimate addons for Elementor, ElementsKit is a nice, comprehensive page builder solution with **100+** Elementor Widgets, **20+** modules, & ever-growing Elementor template library.
+The ultimate addons for [Elementor](https://wordpress.org/plugins/elementor/), ElementsKit is the comprehensive Elementor page builder plugin, 100+ Elementor Widgets, **20+** modules, & ever-growing Elementor template library.
 
 This popular Elementor addons expands your capabilities with an easy drag-and-drop interface, featuring a **header-footer builder, mega menu builder**, and **custom widget builder**.
 
-Besides exclusive design elements & templates, ElementsKit offers copy-paste across domains, conditional content visibility, and advanced widgets for content, forms, posts, charts, parallax and WooCommerce for building Elementor sites.
+Besides exclusive design elements & templates, this page builder plugin offers copy-paste across domains, conditional content visibility, and advanced Elementor widgets for content, forms, posts, charts, parallax and WooCommerce for building Elementor sites.
 
 Now, **[ElementsKit 4.0](https://wpmet.com/elementskit-4-0/?utm_source=org&utm_medium=readme)** loads up to 80% faster, meets WCAG 2.1 AA accessibility standards, and works with Elementor's Angie AI.
 
@@ -285,7 +285,7 @@ ElementsKit allows to showcase authentic user feedback from trusted platforms wh
 **<strong></strong><br />🔶 [Yelp](https://wpmet.com/plugin/elementskit/yelp-review/?utm_source=org&utm_medium=readme) 🔶 [Facebook Review](https://wpmet.com/plugin/elementskit/facebook-review/?utm_source=org&utm_medium=readme) 🔶**
 
 ### PRO Modules in Premium Elementor Addon version
-To empower [Elementor page builder](https://wpmet.com/plugin/elementskit/?utm_source=org&utm_medium=readme), ElementsKit has some exclusive premium modules:
+To empower [Elementor page builder](https://wpmet.com/plugin/elementskit/?utm_source=org&utm_medium=readme), this plugin has some exclusive premium modules:
 
 **🟢** [**Conditional Content Module**](https://wpmet.com/plugin/elementskit/conditional-content/?utm_source=org&utm_medium=readme) Show or hide a specific part of your webpage or content based on certain conditions.
 
@@ -326,8 +326,10 @@ https://youtu.be/3Az1F_yXQ4I?si=Mg2Zk_-ML-AXTZMk
 
 **👉** Learn [How to Install & Use ElementsKit](https://wpmet.com/doc/how-to-purchase-and-activate-elementskit-pro-license/#1-toc-title)
 
+**👉** We don't collect or store any personal data outside of your WordPress installation. For more visit our [privacy policy page.](https://wpmet.com/privacy-policy/?utm_source=org&utm_medium=readme)
+
 ###  🤝 BACKED BY A TRUSTED TEAM
-ElementsKit is brought to you by Wpmet, a name **trusted by 10,00,000 satisfied users worldwide!**
+ElementsKit is brought to you by Wpmet, a name trusted by 1,000,000+ satisfied users worldwide.
 
 ### » DOCUMENTATION & SUPPORT
 
@@ -357,6 +359,12 @@ ElementsKit is brought to you by Wpmet, a name **trusted by 10,00,000 satisfied 
 Visit  [wpmet](https://wpmet.com/?utm_source=org&utm_medium=readme) for essential WordPress [Tutorials, Tips & Tricks](https://wpmet.com/blog)!
 
 == Changelog ==
+= ElementsKit Elementor Addons Version: 4.1.0 (2026-11-02) =
+* Removed: Unused legacy data migration framework.
+* Removed: Inactive Heartbeat-based migration runner and progress logger.
+* Removed: Unused historical icon and WPML translation migration routines.
+* Security: Secured Mailchimp form configuration against unauthorized changes.
+
 = ElementsKit Elementor Addons Version: 4.0.9 (2026-10-20) =
 * Improved: Moved Pro-only One Page Scroll navigation styles to ElementsKit Pro.
 * Improved: Moved Pro-only Nav Menu dropdown indicator icons to ElementsKit Pro.
@@ -969,41 +977,6 @@ Fixed: Apostrophe on the Label Name field of Widget builder causing Fatal Error
 Fixed: Compatibility with php v8.0 of Widget builder
 Fixed: Content padding issue in Team widget
 Tweaked: Dual button transparent hover not working
-
-ElementsKit Elementor Addons Version: 2.6.3 (2022-07-17)
-Added: Nav menu widget border controls for menu items
-Added: Control for Header Offcanvas wrapper padding
-Added: Social Icons widget's demo to Template library
-Fixed: Code optimized
-Fixed: Iconbox border issue
-Fixed: Magnific popup CSS conflict with Essential addon
-Fixed: Can't import the Charity Page from Template library
-Fixed: One Page Scroll conflict with Responsive feature of Elementor
-Fixed: Widgets and modules active toggle button not working
-Fixed: Lottie widget not working with twenty twenty-two
-Fixed: Neve theme compatibility fix for header and footer
-Fixed: The Black Overlay of Mobile Menu is getting pulled off
-Fixed: Sticky Functionality of Electro not working when ElementsKit is activated
-Tweaked: Typo issue
-
-ElementsKit Elementor Addons Version: 2.6.2 (2022-06-20)
-Fixed: Twitter feed widget token not working
-Fixed: WPML compatibility
-Fixed: Post tab control
-Fixed: Console error for image-accordion widget
-Fixed: Widgets and modules active toggle button not working
-Tweaked: Php cs security improvement
-Tweaked: Control and placeholder of the Funfact widget
-
-ElementsKit Elementor Addons Version: 2.6.1 (2022-05-24)
-Added: Form signature fields.
-Added: Form conditional fields for Elementor.
-Added: Form reset button.
-Added: Google sheet for Elementor form.
-Fixed: TablePress JS error in Elementor editor.
-Fixed: Repeater field error in the Business Hour widget.
-Fixed: Id attributes were not printing in the Tab widget.
-Improved: Added more secure escaping for HTML printing.
 
 ElementsKit Elementor Addons Version: 2.6.0 (2022-05-20)
 Improved: Added more secure escaping for HTML printing.

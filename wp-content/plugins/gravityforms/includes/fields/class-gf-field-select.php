@@ -10,6 +10,15 @@ class GF_Field_Select extends GF_Field {
 	public $type = 'select';
 
 	/**
+	 * Whether the field can be used in a repeater.
+	 *
+	 * @since 3.2.0
+	 *
+	 * @var bool
+	 */
+	public $repeatable = true;
+
+	/**
 	 * Indicates if this field supports state validation.
 	 *
 	 * @since 2.5.11
@@ -71,6 +80,38 @@ class GF_Field_Select extends GF_Field {
 
 	public function is_conditional_logic_supported() {
 		return true;
+	}
+
+	/**
+	 * Indicates if state validation should be skipped if the submitted value is blank.
+	 *
+	 * Value will be blank when the placeholder is selected.
+	 *
+	 * @since 3.0
+	 *
+	 * @param string|int $key The field or input ID.
+	 *
+	 * @return bool
+	 */
+	public function skip_state_validation_if_blank( $key ) {
+		return ! rgblank( $this->placeholder );
+	}
+
+	/**
+	 * Prepares the value that will be hashed on form display as part of the state.
+	 *
+	 * @since 3.0
+	 *
+	 * @param string|array $value The default value.
+	 *
+	 * @return null|array
+	 */
+	public function get_values_for_state_hash( $value ) {
+		$id = $this->id;
+
+		return array(
+			$id => $this->get_choices_for_state_hash(),
+		);
 	}
 
 	public function get_field_input( $form, $value = '', $entry = null ) {
@@ -167,7 +208,9 @@ class GF_Field_Select extends GF_Field {
 			$ary[] = GFCommon::format_variable_value( $val, $url_encode, $esc_html, $format );
 		}
 
-		return GFCommon::implode_non_blank( ', ', $ary );
+		$separator = $url_encode ? urlencode( ', ' ) : ', ';
+
+		return GFCommon::implode_non_blank( $separator, $ary );
 	}
 
 	/**
@@ -192,14 +235,25 @@ class GF_Field_Select extends GF_Field {
 		return esc_html( $this->get_selected_choice_output( $value, rgar( $entry, 'currency' ), $use_text ) );
 	}
 
-	public function get_value_export( $entry, $input_id = '', $use_text = false, $is_csv = false ) {
-		if ( empty( $input_id ) ) {
-			$input_id = $this->id;
+	/**
+	 * Format a single Select field value for export.
+	 *
+	 * @since 3.2.0
+	 *
+	 * @param mixed      $value    The raw value for $input_id.
+	 * @param array      $entry    The entry currently being processed.
+	 * @param string|int $input_id The field or input ID.
+	 * @param bool       $use_text When processing choice based fields should the choice text be returned instead of the value.
+	 * @param bool       $is_csv   Is the value going to be used in the .csv entries export?
+	 *
+	 * @return string
+	 */
+	protected function format_value_export( $value, $entry, $input_id = '', $use_text = false, $is_csv = false ) {
+		if ( is_array( $value ) ) {
+			return '';
 		}
 
-		$value = rgar( $entry, $input_id );
-
-		return $is_csv ? $value : GFCommon::selection_display( $value, $this, rgar( $entry, 'currency' ), $use_text );
+		return $is_csv ? (string) $value : GFCommon::selection_display( $value, $this, rgar( $entry, 'currency' ), $use_text );
 	}
 
 	/**
@@ -218,7 +272,39 @@ class GF_Field_Select extends GF_Field {
 			return parent::sanitize_entry_value( $value, $form_id );
 		}
 
-		return wp_strip_all_tags( $value );
+		if ( rgblank( $value ) ) {
+			return '';
+		}
+
+		$sanitized = wp_strip_all_tags( $value );
+		$this->post_entry_value_sanitization( $value, $sanitized, 'wp_strip_all_tags' );
+
+		return $sanitized;
+	}
+
+	/**
+	 * Sanitize and format the value before it is saved to the Entry Object.
+	 *
+	 * @since 3.0.0
+	 * @since 3.0.3 Updated to use $this->prepare_post_category_value_save_input().
+	 *
+	 * @param string $value          The value to be saved.
+	 * @param array  $form           The Form object currently being processed.
+	 * @param string $input_name     The input name used when accessing the $_POST.
+	 * @param int    $entry_id       The ID of the entry currently being processed.
+	 * @param array  $entry          The entry currently being processed.
+	 * @param string $repeater_index The repeater index if the field is inside a repeater.
+	 *
+	 * @return array|string The sanitized and formatted input value to be saved.
+	 */
+	public function get_value_save_input( $value, $form, $input_name, $entry_id, $entry, $repeater_index = '' ) {
+		if ( $this->type === 'post_category' ) {
+			return $this->prepare_post_category_value_save_input( $value );
+		}
+
+		$value = parent::get_value_save_input( $value, $form, $input_name, $entry_id, $entry, $repeater_index );
+
+		return $this->clear_blank_price_value( $value );
 	}
 
 	/**

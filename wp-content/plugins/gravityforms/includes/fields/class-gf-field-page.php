@@ -8,6 +8,15 @@ class GF_Field_Page extends GF_Field {
 
 	public $type = 'page';
 
+	/**
+	 * Whether there can be more than one of this field type per form.
+	 *
+	 * @since 3.0.0
+	 *
+	 * @var bool
+	 */
+	public $duplicatable = true;
+
 	public function get_form_editor_field_title() {
 		return esc_attr__( 'Page', 'gravityforms' );
 	}
@@ -36,7 +45,7 @@ class GF_Field_Page extends GF_Field {
 		return 'gform-icon--page';
 	}
 
-	function get_form_editor_field_settings() {
+	public function get_form_editor_field_settings() {
 		return array(
 			'next_button_setting',
 			'previous_button_setting',

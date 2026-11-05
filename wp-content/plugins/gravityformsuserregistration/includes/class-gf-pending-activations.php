@@ -61,8 +61,9 @@ class GF_Pending_Activations {
 	public function cron_remove_passwords() {
 		global $wpdb;
 
+		require_once gf_user_registration()->get_base_path() . '/includes/signups.php';
+
 		if ( ! is_multisite() ) {
-			require_once gf_user_registration()->get_base_path() . '/includes/signups.php';
 			GFUserSignups::prep_signups_functionality();
 		}
 
@@ -76,10 +77,7 @@ class GF_Pending_Activations {
 
 		foreach ( $results as $signup ) {
 
-			$signup->meta = maybe_unserialize( $signup->meta );
-			if ( ! is_array( $signup->meta ) ) {
-				$signup->meta = array();
-			}
+			$signup->meta = GFUserSignups::maybe_unserialize_signup_meta( $signup->meta );
 
 			$signup->meta['password'] = '';
 
@@ -176,7 +174,7 @@ class GF_Pending_Activations {
 		printf( '<header class="gform-settings-panel__header"><h4 class="gform-settings-panel__title"><span>%s</span></h4></header>', __( 'Pending Activations', 'gravityformsuserregistration' ) );
 		?>
 
-		<div class="gform-settings-panel__content">
+		<div class="gform-settings-panel__content" id="entry_list_form">
 			<form id="list_form" method="post" action="">
 
 				<?php
@@ -264,16 +262,21 @@ class GF_Pending_Activations {
 	}
 
 	/**
-	 * Get pending activations or total pending activations.
+	 * Get pending activations for the current site, or a count of them.
+	 *
+	 * Signups live in the network-wide signups table, which has no site column.
+	 * Entry IDs also overlap across subsites. Results are always limited to
+	 * signups whose activation key is stored on an entry on the current site.
+	 * When a form ID is given, results are limited to that form as well.
 	 *
 	 * @since unknown
 	 *
-	 * @param int   $form_id The Form ID
-	 * @param array $args    {
+	 * @param int|string $form_id The form ID, or an empty value / "all" for every form on the current site.
+	 * @param array      $args    {
 	 *     Query args for returned results. Supported:
 	 *
 	 *     @type string order     ASC or DESC.
-	 *     @type string orderby   Column to sort by.
+	 *     @type string order_by  Column to sort by.
 	 *     @type int    page      Page number of results.
 	 *     @type int    per_page  Number of results to return per page.
 	 *     @type bool   get_total If total rows should be returned.
@@ -326,54 +329,42 @@ class GF_Pending_Activations {
 		$limit_offset = $get_total ? '' : "LIMIT $per_page OFFSET $offset";
 		$method       = $get_total ? 'get_var' : 'get_results';
 
-		if ( $form_id ) {
-			$entry_table      = self::get_entry_table_name();
-			$entry_meta_table = self::get_entry_meta_table_name();
+		$entry_table      = self::get_entry_table_name();
+		$entry_meta_table = self::get_entry_meta_table_name();
 
-			$entry_id_column = version_compare( self::get_gravityforms_db_version(), '2.3-dev-1', '<' ) ? 'lead_id' : 'entry_id';
+		$entry_id_column = version_compare( self::get_gravityforms_db_version(), '2.3-dev-1', '<' ) ? 'lead_id' : 'entry_id';
 
-			$charset_db = empty( $wpdb->charset ) ? 'utf8mb4' : $wpdb->charset;
+		$charset_db = empty( $wpdb->charset ) ? 'utf8mb4' : $wpdb->charset;
 
-			$collate = ! empty( $wpdb->collate ) ? " COLLATE {$wpdb->collate}" : '';
+		$collate = ! empty( $wpdb->collate ) ? " COLLATE {$wpdb->collate}" : '';
 
-			$activation_key_col = 's.activation_key';
-			$meta_value_col     = 'lm.meta_value';
+		$activation_key_col = 's.activation_key';
+		$meta_value_col     = 'lm.meta_value';
 
-			// Convert Charset only if necessary.
-			$activation_key_charset = self::get_column_charset( 'activation_key', $wpdb->signups );
-			$meta_value_charset     = self::get_column_charset( 'meta_value', $entry_meta_table );
+		// Convert Charset only if necessary.
+		$activation_key_charset = self::get_column_charset( 'activation_key', $wpdb->signups );
+		$meta_value_charset     = self::get_column_charset( 'meta_value', $entry_meta_table );
 
-			// Check if activation_key needs to be converted.
-			if ( $activation_key_charset !== $charset_db ) {
-				$activation_key_col = "CONVERT( s.activation_key USING {$charset_db} )";
-			}
-
-			// Check if meta_value needs to be converted.
-			if ( $meta_value_charset !== $charset_db ) {
-				$meta_value_col = "CONVERT( lm.meta_value USING {$charset_db} )";
-			}
-
-			$select = $get_total ? 'SELECT count(s.activation_key)' : 'SELECT s.*';
-			$sql    = "
-                $select FROM {$entry_meta_table} lm
-                INNER JOIN {$wpdb->signups} s ON {$activation_key_col} = {$meta_value_col} {$collate} AND lm.meta_key = 'activation_key'
-                INNER JOIN {$entry_table} l ON l.id = lm.{$entry_id_column}
-                $where
-                $order
-                $limit_offset";
-
-			$results = $wpdb->$method( $sql );
-		} else {
-			$select  = $get_total ? 'SELECT count(s.activation_key)' : 'SELECT s.*';
-			$results = $wpdb->$method(
-				"$select FROM $wpdb->signups s
-                $where
-                $order
-                $limit_offset"
-			);
+		// Check if activation_key needs to be converted.
+		if ( $activation_key_charset !== $charset_db ) {
+			$activation_key_col = "CONVERT( s.activation_key USING {$charset_db} )";
 		}
 
-		return $results;
+		// Check if meta_value needs to be converted.
+		if ( $meta_value_charset !== $charset_db ) {
+			$meta_value_col = "CONVERT( lm.meta_value USING {$charset_db} )";
+		}
+
+		$select = $get_total ? 'SELECT count(s.activation_key)' : 'SELECT s.*';
+		$sql    = "
+			$select FROM {$entry_meta_table} lm
+			INNER JOIN {$wpdb->signups} s ON {$activation_key_col} = {$meta_value_col} {$collate} AND lm.meta_key = 'activation_key'
+			INNER JOIN {$entry_table} l ON l.id = lm.{$entry_id_column}
+			$where
+			$order
+			$limit_offset";
+
+		return $wpdb->$method( $sql );
 	}
 
 	/**
@@ -393,7 +384,7 @@ class GF_Pending_Activations {
 		if ( '' === $db_name && defined( 'DB_NAME' ) ) {
 			$db_name = DB_NAME;
 		}
-		
+
 		return $wpdb->get_var(
 			$wpdb->prepare(
 				'SELECT character_set_name FROM information_schema.`COLUMNS` WHERE table_schema = %s AND table_name = %s AND column_name = %s',
@@ -408,8 +399,10 @@ class GF_Pending_Activations {
 	 * Handle User activation form submission.
 	 */
 	public static function handle_submission() {
-		if ( ! wp_verify_nonce( rgpost( 'action_nonce' ), 'action' ) && ! check_admin_referer( 'action_nonce', 'action_nonce' ) ) {
-			die( 'You have failed...' );
+		check_admin_referer( 'action', 'action_nonce' );
+
+		if ( ! GFCommon::current_user_can_any( array( 'promote_users', 'gravityforms_user_registration' ) ) ) {
+			wp_die( esc_html__( 'You do not have permission to perform this action.', 'gravityformsuserregistration' ) );
 		}
 
 		require_once( gf_user_registration()->get_base_path() . '/includes/signups.php' );
@@ -427,6 +420,8 @@ class GF_Pending_Activations {
 		}
 
 		foreach ( $items as $key ) {
+			$key = sanitize_text_field( $key );
+
 			switch ( $action ) {
 
 				case 'delete':
@@ -436,7 +431,8 @@ class GF_Pending_Activations {
 						break;
 					}
 
-					if ( $success ) {
+					// delete_signup() returns a WP_Error when the key is not on this site. That object is truthy.
+					if ( ! is_wp_error( $success ) && $success ) {
 						gf_user_registration()->add_message_once(
 							_n(
 								'User registration deleted.',
@@ -639,10 +635,13 @@ class GF_Pending_Activations {
 		$entry_id       = rgar( $args['entry'], 'id' );
 		$activation_key = GFUserSignups::get_lead_activation_key( $entry_id );
 
+		$confirm_title   = esc_html__( 'Activate User', 'gravityformsuserregistration' );
+		$confirm_message = esc_html__( 'Are you sure you want to activate this user? \'Cancel\' to stop, \'OK\' to activate.', 'gravityformsuserregistration' );
+
 		?>
 
 		<div id="gf_user_pending_activation">
-			<a onclick="activateUser( '<?php echo $activation_key; ?>' );" class="button" id="gf_user_pending_activate_link" style="vertical-align:middle;">
+			<a data-dialog-title="<?php echo esc_attr( $confirm_title ); ?>" data-dialog-confirm="<?php echo esc_attr( $confirm_message ); ?>" data-dialog-callback="activateUser" class="button" id="gf_user_pending_activate_link" style="vertical-align:middle;">
 				<?php esc_html_e( 'Activate User', 'gravityformsuserregistration' ); ?>
 			</a>
 			<?php gform_tooltip( sprintf( '<h6>%s</h6> %s', esc_html__( 'Pending Activation', 'gravityformsuserregistration' ), esc_html__( 'This entry created a user who is pending activation. Click the "Activate User" button to activate the user.', 'gravityformsuserregistration' ) ) ); ?>
@@ -650,11 +649,9 @@ class GF_Pending_Activations {
 
 		<script type="text/javascript">
 
-			function activateUser(activationKey) {
+			function activateUser() {
 
-				if (!confirm(<?php echo json_encode( esc_html__( 'Are you sure you want to activate this user?', 'gravityformsuserregistration' ) ); ?>)) {
-					return;
-				}
+				var activationKey = '<?php echo esc_js( $activation_key ); ?>';
 
 				var spinner = new ajaxSpinner('#gf_user_pending_activate_link', 'margin-left:10px');
 
@@ -685,7 +682,7 @@ class GF_Pending_Activations {
 			function ajaxSpinner(elem, style) {
 
 				this.elem = elem;
-				this.image = '<img src="<?php echo GFCommon::get_base_url(); ?>/images/spinner.gif" style="' + style + '" />';
+				this.image = '<img src="<?php echo GFCommon::get_base_url(); ?>/images/spinner.svg" style="' + style + '" />';
 
 				this.init = function () {
 					this.spinner = jQuery(this.image);

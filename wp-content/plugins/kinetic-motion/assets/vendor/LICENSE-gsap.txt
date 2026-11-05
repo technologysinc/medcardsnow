@@ -1,0 +1,5 @@
+GSAP (GreenSock Animation Platform) 3.15.0
+Copyright (c) 2008-2026, GreenSock. All rights reserved.
+Licensed under the GreenSock "Standard No Charge" license: https://gsap.com/standard-license
+Files: gsap.min.js, ScrollTrigger.min.js, SplitText.min.js, ScrambleTextPlugin.min.js, CustomEase.min.js
+Source: https://github.com/greensock/GSAP

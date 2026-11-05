@@ -14,6 +14,15 @@ class GF_Field_Checkbox extends GF_Field {
 	public $type = 'checkbox';
 
 	/**
+	 * Whether the field can be used in a repeater.
+	 *
+	 * @since 3.2.0
+	 *
+	 * @var bool
+	 */
+	public $repeatable = true;
+
+	/**
 	 * Indicates if this field supports state validation.
 	 *
 	 * @since 2.5.11
@@ -464,9 +473,18 @@ class GF_Field_Checkbox extends GF_Field {
 		// Get parameter values for field.
 		$parameter_values = GFFormsModel::get_parameter_value( $this->inputName, $field_values, $this );
 
-		// If parameter values exist but are not an array, convert to array.
-		if ( ! empty( $parameter_values ) && ! is_array( $parameter_values ) ) {
-			$parameter_values = explode( ',', $parameter_values );
+		if ( ! is_array( $parameter_values ) ) {
+			$parameter_values = empty( $parameter_values ) ? array() : explode( ',', $parameter_values );
+		}
+
+		// Add default selected choices to field_values.
+		if ( is_array( $this->choices ) ) {
+			foreach ( $this->choices as $choice ) {
+				$choice_value = rgar( $choice, 'value' );
+				if ( rgar( $choice, 'isSelected' ) && ! in_array( $choice_value, $parameter_values, true ) ) {
+					$parameter_values[] = $choice_value;
+				}
+			}
 		}
 
 		// If no inputs are defined, return an empty string.
@@ -491,40 +509,33 @@ class GF_Field_Checkbox extends GF_Field {
 
 			} else {
 
-				if ( is_array( $parameter_values ) ) {
+				foreach ( $parameter_values as $item ) {
 
-					foreach ( $parameter_values as $item ) {
+					$item = trim( $item );
 
-						$item = trim( $item );
-
-						if ( rgar( $input, 'key' ) ) {
-							$choice_id = $this->get_choice_id_from_input_key( $input['key'] );
-							if ( '' == $choice_id ) {
-								continue;
-							}
-							$choice = $this->choices[ $choice_id ];
-						} else {
-							$choice = $this->choices[ $choice_index ];
+					if ( rgar( $input, 'key' ) ) {
+						$choice_id = $this->get_choice_id_from_input_key( $input['key'] );
+						if ( '' === $choice_id ) {
+							continue;
 						}
-
-						if ( GFFormsModel::choice_value_match( $this, $choice, $item ) ) {
-							$value[ $input['id'] . '' ] = $item;
-							break;
-						}
-
+						$choice = $this->choices[ $choice_id ];
+					} else {
+						$choice = $this->choices[ $choice_index ];
 					}
 
+					if ( GFFormsModel::choice_value_match( $this, $choice, $item ) ) {
+						$value[ $input['id'] . '' ] = $item;
+						break;
+					}
 				}
-
 			}
 
 			// Increase choice index.
-			$choice_index ++;
+			$choice_index++;
 
 		}
 
 		return $value;
-
 	}
 
 	public function validate( $value, $form ) {
@@ -549,6 +560,49 @@ class GF_Field_Checkbox extends GF_Field {
 		}
 	}
 
+	/**
+	 * Indicates if state validation should be skipped if the submitted value is blank.
+	 *
+	 * Input value will be blank when the input is not checked.
+	 *
+	 * @since 3.0
+	 *
+	 * @return bool
+	 */
+	public function skip_state_validation_if_blank( $key ) {
+		return true;
+	}
+
+	/**
+	 * Prepares the value that will be hashed on form display as part of the state.
+	 *
+	 * @since 3.0
+	 *
+	 * @param string|array $value The default value.
+	 *
+	 * @return null|array
+	 */
+	public function get_values_for_state_hash( $value ) {
+		$id     = $this->id;
+		$index  = 1;
+		$return = array();
+
+		foreach ( $this->choices as $choice ) {
+			// Checkboxes for Choice fields already have a unique ID.
+			if ( $this->has_persistent_choices() ) {
+				$input_id = $this->get_input_id_from_choice_key( rgar( $choice, 'key' ) );
+			} else {
+				if ( $index % 10 === 0 ) { //hack to skip numbers ending in 0. so that 5.1 doesn't conflict with 5.10
+					++$index;
+				}
+				$input_id = $id . '.' . $index++;
+			}
+
+			$return[ $input_id ] = $this->get_choice_option_value( $choice );
+		}
+
+		return $return;
+	}
 
 
 	// # ENTRY RELATED --------------------------------------------------------------------------------------------------
@@ -658,6 +712,10 @@ class GF_Field_Checkbox extends GF_Field {
 
 		} else {
 
+			if ( $format === 'html' && ! rgblank( $value ) ) {
+				return wp_kses( $value, $this->get_entry_allowed_html() );
+			}
+
 			return $value;
 
 		}
@@ -753,27 +811,31 @@ class GF_Field_Checkbox extends GF_Field {
 			$ary[] = GFCommon::format_variable_value( $val, $url_encode, $esc_html, $format );
 		}
 
-		return GFCommon::implode_non_blank( ', ', $ary );
+		$separator = $url_encode ? urlencode( ', ' ) : ', ';
+
+		return GFCommon::implode_non_blank( $separator, $ary );
 
 	}
 
 	/**
 	 * Sanitize and format the value before it is saved to the Entry Object.
 	 *
-	 * @since  Unknown
-	 * @access public
+	 * @since 3.0.0
+	 * @since 3.0.3 Updated to use $this->prepare_post_category_value_save_input().
 	 *
-	 * @param string $value      The value to be saved.
-	 * @param array  $form       The Form Object currently being processed.
-	 * @param string $input_name The input name used when accessing the $_POST.
-	 * @param int    $lead_id    The ID of the Entry currently being processed.
-	 * @param array  $lead       The Entry Object currently being processed.
+	 * @param string $value          The value to be saved.
+	 * @param array  $form           The Form object currently being processed.
+	 * @param string $input_name     The input name used when accessing the $_POST.
+	 * @param int    $entry_id        The ID of the entry currently being processed.
+	 * @param array  $entry           The entry currently being processed.
+	 * @param string $repeater_index The repeater index if the field is inside a repeater.
 	 *
-	 * @uses GF_Field_Checkbox::sanitize_entry_value()
-	 *
-	 * @return array|string The safe value.
+	 * @return array|string The sanitized and formatted input value to be saved.
 	 */
-	public function get_value_save_entry( $value, $form, $input_name, $lead_id, $lead ) {
+	public function get_value_save_input( $value, $form, $input_name, $entry_id, $entry, $repeater_index = '' ) {
+		if ( $this->type === 'post_category' ) {
+			return $this->prepare_post_category_value_save_input( $value );
+		}
 
 		if ( rgblank( $value ) ) {
 
@@ -791,13 +853,15 @@ class GF_Field_Checkbox extends GF_Field {
 
 			}
 
-			return implode( ',', $value );
+			$value = implode( ',', $value );
 
 		} else {
 
-			return $this->sanitize_entry_value( $value, $form['id'] );
+			$value = $this->sanitize_entry_value( $value, $form['id'] );
 
 		}
+
+		return $this->clear_blank_price_value( $value );
 
 	}
 
@@ -825,25 +889,24 @@ class GF_Field_Checkbox extends GF_Field {
 	}
 
 	/**
-	 * Format the entry value before it is used in entry exports and by framework add-ons using GFAddOn::get_field_value().
+	 * Format a single Checkbox field value for export.
 	 *
-	 * @since  Unknown
-	 * @access public
+	 * @since 3.2.0
 	 *
+	 * @param mixed      $value    The raw value for $input_id, or a nested item array for whole-field values.
 	 * @param array      $entry    The entry currently being processed.
-	 * @param string     $input_id The field or input ID.
-	 * @param bool|false $use_text When processing choice based fields should the choice text be returned instead of the value.
-	 * @param bool|false $is_csv   Is the value going to be used in the .csv entries export?
-	 *
-	 * @uses GFCommon::get_label()
-	 * @uses GFCommon::selection_display()
-	 * @uses GF_Field_Checkbox::is_checkbox_checked()
+	 * @param string|int $input_id The field or input ID.
+	 * @param bool       $use_text When processing choice based fields should the choice text be returned instead of the value.
+	 * @param bool       $is_csv   Is the value going to be used in the .csv entries export?
 	 *
 	 * @return string
 	 */
-	public function get_value_export( $entry, $input_id = '', $use_text = false, $is_csv = false ) {
+	protected function format_value_export( $value, $entry, $input_id = '', $use_text = false, $is_csv = false ) {
+		if ( empty( $input_id ) ) {
+			$input_id = $this->id;
+		}
 
-		if ( empty( $input_id ) || absint( $input_id ) == $input_id ) {
+		if ( absint( $input_id ) == $input_id ) {
 
 			$selected = array();
 
@@ -851,8 +914,8 @@ class GF_Field_Checkbox extends GF_Field {
 
 				$index = (string) $input['id'];
 
-				if ( ! rgempty( $index, $entry ) ) {
-					$selected[] = GFCommon::selection_display( rgar( $entry, $index ), $this, rgar( $entry, 'currency' ), $use_text );
+				if ( ! rgempty( $index, $value ) ) {
+					$selected[] = GFCommon::selection_display( rgar( $value, $index ), $this, rgar( $entry, 'currency' ), $use_text );
 				}
 
 			}
@@ -861,13 +924,14 @@ class GF_Field_Checkbox extends GF_Field {
 
 		} else if ( $is_csv ) {
 
-			$value = $this->is_checkbox_checked( $input_id, GFCommon::get_label( $this, $input_id ), $entry );
+			$source = is_array( $value ) ? $value : array( $input_id => $value );
+			$value  = $this->is_checkbox_checked( $input_id, GFCommon::get_label( $this, $input_id ), $source );
 
 			return empty( $value ) ? '' : $value;
 
 		} else {
 
-			return GFCommon::selection_display( rgar( $entry, $input_id ), $this, rgar( $entry, 'currency' ), $use_text );
+			return GFCommon::selection_display( $value, $this, rgar( $entry, 'currency' ), $use_text );
 
 		}
 
@@ -909,7 +973,7 @@ class GF_Field_Checkbox extends GF_Field {
 			$choice_number = 1;
 			$count         = 1;
 			// Determine max choices to show in the form editor if Display in columns setting is enabled.
-			$max_choices = $this->enableDisplayInColumns === true ? 10 : 5;
+			$max_choices = $this->enableDisplayInColumns === true || ( isset( $this->choiceAlignment ) && $this->choiceAlignment === 'columns' ) ? 10 : 5;
 
 			/**
 			 * A filter that allows for the setting of the maximum number of choices shown in
@@ -1002,6 +1066,7 @@ class GF_Field_Checkbox extends GF_Field {
 			foreach ( $this->choices as $choice ) {
 
 				$aria_describedby = ( $choice_number === 1 && $need_aria_describedby ) ? $this->get_choice_aria_describedby( $form_id ) : '';
+				$is_first_choice  = ( $choice_number === 1 );
 
 				// Hack to skip numbers ending in 0, so that 5.1 doesn't conflict with 5.10.
 				if ( $choice_number % 10 == 0 ) {
@@ -1032,9 +1097,10 @@ class GF_Field_Checkbox extends GF_Field {
 					$choice_value .= '|' . $price;
 				}
 
-				$choice_value  = esc_attr( $choice_value );
-				$choice_markup = "<{$tag} class='gchoice gchoice_{$id}'>
-								<input class='gfield-choice-input' name='input_{$input_id}' type='checkbox'  value='{$choice_value}' {$checked} id='choice_{$id}' {$tabindex} {$disabled_text} {$aria_describedby}/>
+				$choice_value    = esc_attr( $choice_value );
+				$aria_labelledby = $is_first_choice ? $this->get_aria_labelledby( "label_{$id}" ) : '';
+				$choice_markup   = "<{$tag} class='gchoice gchoice_{$id}'>
+								<input class='gfield-choice-input' name='input_{$input_id}' type='checkbox'  value='{$choice_value}' {$checked} id='choice_{$id}' {$tabindex} {$disabled_text} {$aria_describedby} {$aria_labelledby}/>
 								<label for='choice_{$id}' id='label_{$id}' class='gform-field-label gform-field-label--type-inline'>{$choice['text']}</label>
 							</{$tag}>";
 
@@ -1164,9 +1230,7 @@ class GF_Field_Checkbox extends GF_Field {
 
 							} else if ( $this->enablePrice ) {
 
-								$ary   = explode( '|', $entry[ $field_id ] );
-								$val   = count( $ary ) > 0 ? $ary[0] : '';
-								$price = count( $ary ) > 1 ? $ary[1] : '';
+								list( $val, $price ) = rgexplode( '|', rgar( $entry, $field_id ), 2, true );
 
 								if ( $val == $choice['value'] ) {
 									return $choice['value'];
@@ -1288,26 +1352,19 @@ class GF_Field_Checkbox extends GF_Field {
 	public function sanitize_entry_value( $value, $form_id ) {
 
 		// If the value is an array, return an empty string.
-		if ( is_array( $value ) ) {
+		if ( is_array( $value ) || rgblank( $value ) ) {
 			return '';
 		}
 
 		// Get allowable tags for field value.
 		$allowable_tags = $this->get_allowable_tags( $form_id );
 
-		// If allowable tags are defined, strip unallowed tags.
-		if ( $allowable_tags !== true ) {
-			$value = strip_tags( $value, $allowable_tags );
-		}
+		$original_value = $value;
+		$value          = wp_kses( $value, $this->get_entry_allowed_html( $allowable_tags ) );
 
-		// Sanitize value.
-		$allowed_protocols = wp_allowed_protocols();
-		$value             = wp_kses_no_null( $value, array( 'slash_zero' => 'keep' ) );
-		$value             = wp_kses_hook( $value, 'post', $allowed_protocols );
-		$value             = wp_kses_split( $value, 'post', $allowed_protocols );
+		$this->post_entry_value_sanitization( $original_value, $value, 'wp_kses' );
 
 		return $value;
-
 	}
 
 	// # FIELD FILTER UI HELPERS ---------------------------------------------------------------------------------------

@@ -12,7 +12,7 @@ if(!defined('UNLIMITED_ELEMENTS_INC'))
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 if(!defined("UNLIMITED_ELEMENTS_VERSION"))
-	define("UNLIMITED_ELEMENTS_VERSION", "2.0.24");
+	define("UNLIMITED_ELEMENTS_VERSION", "2.0.27");
 
 
 //disable elementor support for debugging purposes. keep it commented

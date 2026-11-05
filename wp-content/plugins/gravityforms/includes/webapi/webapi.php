@@ -39,6 +39,7 @@ if ( class_exists( 'GFForms' ) ) {
 
 		private $_private_key;
 		private $_public_key;
+		private $authenticated_submission_request = false;
 
 		// Members plugin integration
 		protected $_capabilities = array( 'gravityforms_api', 'gravityforms_api_settings' );
@@ -335,12 +336,12 @@ if ( class_exists( 'GFForms' ) ) {
 		 *
 		 */
 		public function output_webapi_json() {
-			if ( !empty( $_GET['subview'] ) && $_GET['subview'] === 'gravityformswebapi' ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			if ( ! empty( $_GET['subview'] ) && $_GET['subview'] === 'gravityformswebapi' ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 				// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo '<script>
 				var gf_webapi_vars = {
 					"api_enabled": ' . $this->is_api_enabled() . ',
-					"enable_api_checkbox_checked": ' . $this->get_setting( "enabled" ) . ',
+					"enable_api_checkbox_checked": ' . $this->get_setting( 'enabled', '0' ) . ',
 				};</script>';
 				//phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
@@ -395,19 +396,10 @@ if ( class_exists( 'GFForms' ) ) {
 
 						<!-- User -->
 						<div class="gform-settings-field gform-settings-field__select">
-							<label id="label-user" class="gform-settings-label" for="gform-webapi-user"><?php esc_html_e( 'User', 'gravityforms' ); ?></label>
-							<select id="gform-webapi-user" aria-labelledby="label-user">
-								<?php
-								$users = $this->get_users();
-								foreach ( $users as $user ) {
-									printf(
-										'<option value="%s">%s</option>',
-										esc_attr( $user['value'] ),
-										esc_html( $user['label'] )
-									);
-								}
-								?>
-							</select>
+							<label class="gform-settings-label"><?php esc_html_e( 'User', 'gravityforms' ); ?></label>
+							<div class="gform-webapi-user-select">
+								<!-- dropdown is populated dynamically in js/src/admin/settings/gfwebapi.js -->
+							</div>
 						</div>
 
 						<!-- Permissions -->
@@ -483,14 +475,27 @@ if ( class_exists( 'GFForms' ) ) {
 			return esc_html__( 'Gravity Forms API Settings', 'gravityforms' );
 		}
 
-		public function get_users() {
-			$args = apply_filters( 'gform_webapi_get_users_settings_page', array( 'number' => 3000 ) );
+		/**
+		 * Get users for the user select field in the API key settings
+		 *
+		 * @param array $args
+		 * @param string $search
+		 * @return array
+		 */
+		public static function get_users( $args = array(), $search = '' ) {
+			$args = wp_parse_args( $args, array( 'number' => 10 ) );
+			$args = apply_filters( 'gform_webapi_get_users_settings_page', $args );
+
+			if ( ! empty( $search ) ) {
+				$args['search']         = '*' . $search . '*';
+				$args['search_columns'] = array( 'user_login', 'user_email', 'display_name' );
+			}
 
 			$accounts = get_users( $args );
 
 			$account_choices = array();
 			foreach ( $accounts as $account ) {
-				if ( ! $this->user_can_access_api( $account ) ) {
+				if ( ! self::user_can_access_api( $account ) ) {
 					continue;
 				}
 
@@ -504,6 +509,19 @@ if ( class_exists( 'GFForms' ) ) {
 		}
 
 		/**
+		 * Get the label for a user based on their ID.
+		 *
+		 * @since 2.10.2
+		 * @param int $user_id
+		 * @return string
+		 */
+		private function get_user_label( $user_id ) {
+			$user = get_user_by( 'id', absint( $user_id ) );
+
+			return $user ? $user->user_login : '';
+		}
+
+		/**
 		 * Checks if a user has one or more capabilities to access Gravity Forms REST API endpoints.
 		 *
 		 * @since 2.4.24
@@ -512,7 +530,7 @@ if ( class_exists( 'GFForms' ) ) {
 		 *
 		 * @return bool
 		 */
-		private function user_can_access_api( $user ) {
+		public static function user_can_access_api( $user ) {
 
 			/**
 			 * Filters the available capabilities used to check if a user can be added to a REST API key.
@@ -640,8 +658,7 @@ if ( class_exists( 'GFForms' ) ) {
 						array(
 							'name'    => 'impersonate_account',
 							'label'   => esc_html__( 'Impersonate account', 'gravityforms' ),
-							'type'    => 'select',
-							'choices' => $this->get_users(),
+							'type'    => 'webapi_user_select',
 						),
 					)
 				),
@@ -738,6 +755,32 @@ if ( class_exists( 'GFForms' ) ) {
 		}
 
 		/**
+		 * Output the user select field for impersonating an account when using the API key.
+		 *
+		 * @since 2.10.4
+		 *
+		 * @return void
+		 */
+		public function settings_webapi_user_select() {
+			$current_id    = $this->get_setting( 'impersonate_account' );
+			$current_label = '';
+			if ( $current_id ) {
+				$user          = get_user_by( 'id', absint( $current_id ) );
+				$current_label = $user ? $user->user_login : '';
+			}
+			//dropdown is populated dynamically in js/src/admin/settings/gfwebapi.js
+			?>
+			<div id="gform-webapi-impersonate-account-select" class="gform-webapi-v1-user-select"></div>
+			<input type="hidden"
+				id="gform-webapi-impersonate-account-value"
+				name="_gform_setting_impersonate_account"
+				value="<?php echo esc_attr( $current_id ); ?>"
+				data-label="<?php echo esc_attr( $current_label ); ?>"
+			/>
+			<?php
+		}
+
+		/**
 		 * Removes the REST API from the logging page.
 		 *
 		 * @since 2.4.11
@@ -787,6 +830,7 @@ if ( class_exists( 'GFForms' ) ) {
 			if ( false == $route ) {
 				return;
 			}
+			$this->authenticated_submission_request = false;
 
 			send_origin_headers();
 
@@ -845,8 +889,12 @@ if ( class_exists( 'GFForms' ) ) {
 			 */
 			$authentication_required = apply_filters( 'gform_webapi_authentication_required_' . $endpoint, $authentication_required );
 
-			if ( $authentication_required ) {
-				$this->authenticate();
+			// Verify credentials supplied to the public submissions endpoint before treating it as an authenticated API request.
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- authenticate() validates any provided credentials.
+			$submission_credentials_supplied = $endpoint === 'post_forms_submissions' && ( isset( $_GET['api_key'] ) || ( is_user_logged_in() && isset( $_REQUEST['_gf_json_nonce'] ) ) );
+			if ( $authentication_required || $submission_credentials_supplied ) {
+				$this->authenticate( $endpoint === 'post_forms_submissions' ? $id : 0 );
+				$this->authenticated_submission_request = $endpoint === 'post_forms_submissions';
 			} else {
 				$this->log_debug( __METHOD__ . '(): Authentication not required.' );
 			}
@@ -1118,6 +1166,7 @@ if ( class_exists( 'GFForms' ) ) {
 							'key_id'       => rgobj( $key, 'key_id' ),
 							'description'  => rgobj( $key, 'description' ),
 							'user_id'      => rgobj( $key, 'user_id' ),
+							'user_label'   => $this->get_user_label( rgobj( $key, 'user_id' ) ),
 							'permissions'  => rgobj( $key, 'permissions' ),
 							'consumer_key' => substr( rgobj( $key, 'consumer_key' ), -7 ),
 							'last_access'  => rgobj( $key, 'last_access' ) ? GFCommon::format_date( $key->last_access ) : __( 'Never Accessed', 'gravityforms' ),
@@ -1416,13 +1465,27 @@ if ( class_exists( 'GFForms' ) ) {
 				$this->die_bad_request();
 			}
 
+			$form = GFAPI::get_form( $form_id );
+			if ( is_array( $form ) && GFCommon::form_requires_login( $form ) && ! is_user_logged_in() ) {
+				status_header( 401 );
+				$this->die_permission_denied();
+			}
+
 			$field_values = isset( $data['field_values'] ) ? $data['field_values'] : array();
 			$target_page  = isset( $data['target_page'] ) ? $data['target_page'] : 0;
 			$source_page  = isset( $data['source_page'] ) ? $data['source_page'] : 1;
 
-			add_filter( 'gform_require_login', '__return_false' );
+			if ( $this->authenticated_submission_request ) {
+				add_filter( 'gform_skip_form_login_nonce_' . $form_id, '__return_true' );
+			}
 
-			$result = GFAPI::submit_form( $form_id, $data['input_values'], $field_values, $target_page, $source_page );
+			try {
+				$result = GFAPI::submit_form( $form_id, $data['input_values'], $field_values, $target_page, $source_page );
+			} finally {
+				if ( $this->authenticated_submission_request ) {
+					remove_filter( 'gform_skip_form_login_nonce_' . $form_id, '__return_true' );
+				}
+			}
 
 			if ( is_wp_error( $result ) ) {
 				$response = $this->get_error_response( $result );
@@ -1890,7 +1953,7 @@ if ( class_exists( 'GFForms' ) ) {
 				foreach ( $form['fields'] as $field ) {
 					/* @var GF_Field $field */
 					if ( $field->get_input_type() == 'list' ) {
-						$new_value = maybe_unserialize( $entry[ $field->id ] );
+						$new_value = GFCommon::maybe_unserialize( $entry[ $field->id ] );
 
 						if ( ! $this->is_json( $new_value ) ) {
 							$new_value = json_encode( $new_value );
@@ -2302,7 +2365,15 @@ if ( class_exists( 'GFForms' ) ) {
 		// ----- end RESULTS
 
 
-		private function authenticate() {
+		/**
+		 * Authenticates a v1 request and rejects credentials that do not verify.
+		 *
+		 * @since unknown
+		 * @since 3.2.1
+		 *
+		 * @param int $submission_form_id Form ID for a submissions request, or zero for other endpoints.
+		 */
+		private function authenticate( $submission_form_id = 0 ) {
 			$this->log_debug( __METHOD__ . '(): Running.' );
 
 			if ( isset( $_REQUEST['_gf_json_nonce'] ) && is_user_logged_in() ) {
@@ -2339,6 +2410,12 @@ if ( class_exists( 'GFForms' ) ) {
 
 			if ( ! $authenticated ) {
 				$this->log_debug( __METHOD__ . '(): Could not authenticate, permission denied.' );
+				if ( $submission_form_id && ! is_user_logged_in() ) {
+					$form = GFAPI::get_form( absint( $submission_form_id ) );
+					if ( is_array( $form ) && GFCommon::form_requires_login( $form ) ) {
+						status_header( 401 );
+					}
+				}
 				$this->die_permission_denied();
 			}
 		}

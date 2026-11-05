@@ -10,6 +10,15 @@ class GF_Field_CreditCard extends GF_Field {
 	public $type = 'creditcard';
 
 	/**
+	 * Whether there can be more than one of this field type per form.
+	 *
+	 * @since 3.0
+	 *
+	 * @var bool
+	 */
+	public $duplicatable = false;
+
+	/**
 	 * Indicates the field is used to capture payments.
 	 *
 	 * @since 2.9.23
@@ -97,15 +106,27 @@ class GF_Field_CreditCard extends GF_Field {
 
 		$describedby_attributes = array();
 		$warning_container_id   = ! GFCommon::is_ssl() && ! ( $this->is_form_editor() || $this->is_entry_detail() ) ? "field_{$this->formId}_{$this->id}_creditcard_warning_message" : '';
+		$description_id         = ! empty( $this->description ) ? "gfield_description_{$this->formId}_{$this->id}" : '';
 
 		foreach ( $this->inputs as $input ) {
 			$input_id    = str_replace( $this->id . '.', '', $input['id'] );
 			$input_value = GFForms::get( $input['id'], $values );
-			if ( ! empty( $_POST[ 'is_submit_' . $this->formId ] ) && $this->isRequired && in_array( $input_id, $required_inputs_ids ) &&  empty( $input_value ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
-				$describedby_attributes[ $input_id ] = "aria-describedby='validation_message_{$this->formId}_{$this->id} {$warning_container_id}'";
-			} else {
-				$describedby_attributes[ $input_id ] = empty( $warning_container_id ) ? '' : "aria-describedby='{$warning_container_id}'";
+			$ids         = array();
+
+			if ( ! empty( $_POST[ 'is_submit_' . $this->formId ] ) && $this->isRequired && in_array( $input_id, $required_inputs_ids ) && empty( $input_value ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
+				$ids[] = "validation_message_{$this->formId}_{$this->id}";
 			}
+
+			// Field description is associated with the first input (card number).
+			if ( $input_id === '1' && $description_id ) {
+				$ids[] = $description_id;
+			}
+
+			if ( $warning_container_id ) {
+				$ids[] = $warning_container_id;
+			}
+
+			$describedby_attributes[ $input_id ] = empty( $ids ) ? '' : "aria-describedby='" . implode( ' ', $ids ) . "'";
 		}
 
 		return $describedby_attributes;
@@ -224,11 +245,9 @@ class GF_Field_CreditCard extends GF_Field {
 		$disabled_text = $is_form_editor ? "disabled='disabled'" : '';
 		$class_suffix  = $is_entry_detail ? '_admin' : '';
 
+		$is_sub_label_above        = $this->is_sub_label_above( $form );
 
-		$form_sub_label_placement = rgar( $form, 'subLabelPlacement' );
-		$field_sub_label_placement = $this->subLabelPlacement;
-		$is_sub_label_above       = $field_sub_label_placement == 'above' || ( empty( $field_sub_label_placement ) && $form_sub_label_placement == 'above' );
-		$sub_label_class          = $field_sub_label_placement == 'hidden_label' ? "hidden_sub_label screen-reader-text" : '';
+		$sub_label_class = $this->subLabelPlacement  == 'hidden_label' ? "hidden_sub_label screen-reader-text" : '';
 
 		$card_number      = '';
 		$card_name        = '';
@@ -301,6 +320,7 @@ class GF_Field_CreditCard extends GF_Field {
 
 		// Aria attributes.
 		$number_aria_attributes = $this->get_aria_attributes( $value, '1' );
+		$card_number_labelledby = $this->get_aria_labelledby( "{$field_id}_1_label" );
 		$expiration_month_aria_attributes = $this->get_aria_attributes( $value, '2_month' );
 		$expiration_year_aria_attributes = $this->get_aria_attributes( $value, '2_year' );
 		$security_aria_attributes = $this->get_aria_attributes( $value, '3' );
@@ -318,12 +338,12 @@ class GF_Field_CreditCard extends GF_Field {
 			$card_field = "<span class='ginput_full{$class_suffix} gform-grid-col' id='{$field_id}_1_container' >
                                     {$card_icons}
                                     <label for='{$field_id}_1' id='{$field_id}_1_label' class='gform-field-label gform-field-label--type-sub {$sub_label_class}'>{$card_number_label}</label>
-                                    <input type='text' name='input_{$id}.1' id='{$field_id}_1' value='{$card_number}' {$tabindex} {$disabled_text} {$onchange} {$onkeyup} {$autocomplete} {$validation_helper} {$card_number_placeholder} {$number_aria_attributes}/>
+                                    <input type='text' name='input_{$id}.1' id='{$field_id}_1' value='{$card_number}' {$tabindex} {$disabled_text} {$onchange} {$onkeyup} {$autocomplete} {$validation_helper} {$card_number_placeholder} {$number_aria_attributes} {$card_number_labelledby}/>
                                  </span>";
 		} else {
 			$card_field = "<span class='ginput_full{$class_suffix} gform-grid-col' id='{$field_id}_1_container' >
                                     {$card_icons}
-                                    <input type='text' name='input_{$id}.1' id='{$field_id}_1' value='{$card_number}' {$tabindex} {$disabled_text} {$onchange} {$onkeyup} {$autocomplete} {$validation_helper} {$card_number_placeholder} {$number_aria_attributes}/>
+                                    <input type='text' name='input_{$id}.1' id='{$field_id}_1' value='{$card_number}' {$tabindex} {$disabled_text} {$onchange} {$onkeyup} {$autocomplete} {$validation_helper} {$card_number_placeholder} {$number_aria_attributes} {$card_number_labelledby}/>
                                     <label for='{$field_id}_1' id='{$field_id}_1_label' class='gform-field-label gform-field-label--type-sub {$sub_label_class}'>{$card_number_label}</label>
                                  </span>";
 		}
@@ -579,7 +599,21 @@ class GF_Field_CreditCard extends GF_Field {
 		return $inputs;
 	}
 
-	public function get_value_save_entry( $value, $form, $input_name, $lead_id, $lead ) {
+	/**
+	 * Sanitize and format the value before it is saved to the Entry Object.
+	 *
+	 * @since 3.0.0
+	 *
+	 * @param string $value          The value to be saved.
+	 * @param array  $form           The Form object currently being processed.
+	 * @param string $input_name     The input name used when accessing the $_POST.
+	 * @param int    $entry_id        The ID of the entry currently being processed.
+	 * @param array  $entry           The entry currently being processed.
+	 * @param string $repeater_index The repeater index if the field is inside a repeater.
+	 *
+	 * @return array|string The sanitized and formatted input value to be saved.
+	 */
+	public function get_value_save_input( $value, $form, $input_name, $entry_id, $entry, $repeater_index = '' ) {
 
 		//saving last 4 digits of credit card
 		list( $input_token, $field_id_token, $input_id ) = rgexplode( '_', $input_name, 3 );

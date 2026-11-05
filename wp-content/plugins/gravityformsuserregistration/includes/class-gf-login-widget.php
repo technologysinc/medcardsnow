@@ -93,7 +93,7 @@ if ( ! class_exists( 'GFLoginWidget' ) ) {
 			$form = gf_user_registration()->login_form_object();
 
 			if ( empty( $instance['disable_scripts'] ) && ! is_admin() ) {
-				RGForms::print_form_scripts( $form, false );
+				GFForms::print_form_scripts( $form, false );
 			}
 
 			$form_markup = gf_user_registration()->get_login_html( array(
@@ -215,12 +215,7 @@ if ( ! class_exists( 'GFLoginWidget' ) ) {
 					'logged_in_avatar'       => '1',
 					'logged_in_message'      => '',
 					'logout_redirect_url'    => '',
-					'logged_in_links'        => array(
-						array(
-							'text' => esc_html__( 'Logout', 'gravityformsuserregistration' ),
-							'url'  => '{logout_url}',
-						),
-					),
+					'logged_in_links'        => array(),
 					'logged_out_links'       => array(
 						array(
 							'text' => esc_html__( 'Register', 'gravityformsuserregistration' ),
@@ -269,7 +264,7 @@ if ( ! class_exists( 'GFLoginWidget' ) ) {
 
 					<!-- Logged Out Links -->
 					<label for=""><?php esc_html_e( 'Links', 'gravityformsuserregistration' ); ?>:</label><br />
-					<input type="hidden" name="<?php echo esc_attr( $this->get_field_name( 'logged_out_links' ) ); ?>" class="gf_login_widget_links_json" value='<?php echo json_encode( $instance['logged_out_links'] ); ?>' />
+					<input type="hidden" name="<?php echo esc_attr( $this->get_field_name( 'logged_out_links' ) ); ?>" class="gf_login_widget_links_json" value='<?php echo esc_attr( wp_json_encode( $instance['logged_out_links'] ) ); ?>' />
 					<table class="gf_login_widget_links" cellpadding="0" cellspacing="0">
 						<?php
 						if ( ! empty( $instance['logged_out_links'] ) ) {
@@ -317,7 +312,7 @@ if ( ! class_exists( 'GFLoginWidget' ) ) {
 
 					<!-- Logged In Links -->
 					<label for=""><?php esc_html_e( 'Links', 'gravityformsuserregistration' ); ?>:</label><br />
-					<input type="hidden" name="<?php echo esc_attr( $this->get_field_name( 'logged_in_links' ) ); ?>" class="gf_login_widget_links_json" value='<?php echo json_encode( $instance['logged_in_links'] ); ?>' />
+					<input type="hidden" name="<?php echo esc_attr( $this->get_field_name( 'logged_in_links' ) ); ?>" class="gf_login_widget_links_json" value='<?php echo esc_attr( wp_json_encode( $instance['logged_in_links'] ) ); ?>' />
 					<table class="gf_login_widget_links" cellpadding="0" cellspacing="0">
 						<?php
 						if ( ! empty( $instance['logged_in_links'] ) ) {

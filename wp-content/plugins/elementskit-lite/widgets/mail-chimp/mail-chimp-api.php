@@ -133,6 +133,43 @@ class Mail_Chimp_Api extends Handler_Api {
 	}
 
 	/**
+	 * Sign the widget's subscription policy, independently of sessions for page caches.
+	 */
+	public static function get_form_config($settings) {
+		$fields = [];
+		foreach (($settings['ekit_mail_chimp_fields_repeater'] ?? []) as $field) {
+			if (!empty($field['ekit_mail_chimp_field_name'])) {
+				$fields[] = $field['ekit_mail_chimp_field_name'];
+			}
+		}
+		$config = base64_encode(wp_json_encode([
+			'expires' => time() + 2 * DAY_IN_SECONDS,
+			'list' => (string) ($settings['ekit_mail_chimp_select_listed_id'] ?? ''),
+			'opt_in' => 'yes' === ($settings['ekit_mail_chimp_double_opt_in'] ?? '') ? 'yes' : 'no',
+			'fields' => $fields,
+		]));
+		$data = ElementsKit_Widget_Mail_Chimp_Handler::get_data();
+		return $config . '.' . hash_hmac('sha256', $config, wp_salt('auth') . ($data['token'] ?? ''));
+	}
+
+	private static function verify_form_config($value, $token) {
+		if (!is_string($value) || strlen($value) > 16384) {
+			return false;
+		}
+		$parts = explode('.', $value);
+		if (2 !== count($parts) || !hash_equals(hash_hmac('sha256', $parts[0], wp_salt('auth') . $token), $parts[1])) {
+			return false;
+		}
+		$config = json_decode(base64_decode($parts[0], true), true);
+		if (!is_array($config) || !isset($config['list'], $config['opt_in'], $config['fields'], $config['expires'])
+			|| !is_int($config['expires']) || $config['expires'] < time()
+			|| !is_string($config['list']) || !in_array($config['opt_in'], ['yes', 'no'], true) || !is_array($config['fields'])) {
+			return false;
+		}
+		return $config;
+	}
+
+	/**
 	 * Handle a Mailchimp subscribe request from the frontend form.
 	 *
 	 * Validates the request (nonce, API key, list, email) before ever building
@@ -156,8 +193,13 @@ class Mail_Chimp_Api extends Handler_Api {
 		$dataApi = ElementsKit_Widget_Mail_Chimp_Handler::get_data();
 
 		$token  = isset($dataApi['token']) ? $dataApi['token'] : '';
-		$listed = isset($params['listed']) ? sanitize_text_field($params['listed']) : '';
-		$email  = isset($params['email']) ? sanitize_email($params['email']) : '';
+		$config = self::verify_form_config($params['form_config'] ?? null, $token);
+		if (false === $config) {
+			$return['error'] = esc_html__( 'Invalid form configuration. Please refresh the page and try again.', 'elementskit-lite' );
+			return $return;
+		}
+		$listed = $config['list'];
+		$email = isset($params['email']) && is_string($params['email']) ? sanitize_email($params['email']) : '';
 
 		$server_prefix = self::get_server_prefix($token);
 		if ('' === $server_prefix) {
@@ -175,12 +217,12 @@ class Mail_Chimp_Api extends Handler_Api {
 			return $return;
 		}
 
-		// Build merge fields dynamically from remaining parameters.
-		static $reserved_fields = ['listed', 'double_opt_in', 'email', 'action'];
+		// Only fields authorized by the rendered widget may become merge tags.
+		static $reserved_fields = ['listed', 'double_opt_in', 'email', 'action', 'form_config', '_wpnonce'];
 		$merge_fields = [];
 
 		foreach ( array_diff_key( $params, array_flip( $reserved_fields ) ) as $key => $value ) {
-			if ( $value !== '' ) {
+			if ( is_string($value) && $value !== '' && in_array($key, $config['fields'], true) ) {
 				// Convert field name to uppercase Mailchimp merge tag.
 				$merge_fields[ strtoupper( $key ) ] = sanitize_text_field( $value );
 			}
@@ -194,7 +236,7 @@ class Mail_Chimp_Api extends Handler_Api {
 			$data['merge_fields'] = $merge_fields;
 		}
 
-		$data['status'] = ( ! empty( $params['double_opt_in'] ) && 'yes' === $params['double_opt_in'] )
+		$data['status'] = ( 'yes' === $config['opt_in'] )
 			? 'pending'
 			: 'subscribed';
 

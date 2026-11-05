@@ -66,6 +66,8 @@ class GF_Field_Signature extends GF_Field {
 			'border_width_setting',
 			'border_style_setting',
 			'box_width_setting',
+			'disable_font_options_setting',
+			'default_font_setting',
 			'pen_color_setting',
 			'border_color_setting',
 			'background_color_setting',
@@ -77,7 +79,7 @@ class GF_Field_Signature extends GF_Field {
 			'rules_setting',
 			'visibility_setting',
 			'description_setting',
-			'css_class_setting'
+			'css_class_setting',
 		);
 	}
 
@@ -115,13 +117,19 @@ class GF_Field_Signature extends GF_Field {
 		           "var borderWidth = field.borderWidth == undefined ? '' : field.borderWidth;" .
 		           "jQuery('#field_signature_border_width').val(borderWidth);" .
 
-		           "var penSize = field.penSize == undefined ? '' : field.penSize;" .
-		           "jQuery('#field_signature_pen_size').val(penSize);" .
+					"var penSize = field.penSize == undefined ? '' : field.penSize;" .
+					"jQuery('#field_signature_pen_size').val(penSize);" .
 
-		           "});" . PHP_EOL;
+					'var showFontOptions = field.showFontOptions == undefined ? true : field.showFontOptions;' .
+					"jQuery('#field_signature_font_options').prop('checked', showFontOptions);" .
+
+					"var defaultFont = field.defaultFont == undefined || field.defaultFont.trim().length == 0 ? 'script' : field.defaultFont;" .
+					"jQuery('#field_signature_default_font').val(defaultFont);" .
+
+					"});" . PHP_EOL;
 
 		// initialize the input mask for the width setting
-		$script .= "jQuery(document).ready(function () {jQuery('#field_signature_box_width').mask('?9999', {placeholder: ' '});});" . PHP_EOL;
+		$script .= 'jQuery(document).ready(function () {' . "jQuery('#field_signature_box_width').attr({maxlength: 4, pattern: '[0-9]*', inputmode: 'numeric'}).on('input', function () {this.value = this.value.replace(/[^0-9]/g, '');});" . "});" . PHP_EOL;
 
 		// saving the backgroundColor property and updating the UI to match
 		$script .= "function SetSignatureBackColor(color) {SetFieldProperty('backgroundColor', color);jQuery('.field_selected .gf_signature_container').css('background-color', color);}" . PHP_EOL;
@@ -135,6 +143,8 @@ class GF_Field_Signature extends GF_Field {
 		// saving the boxWidth property
 		$script .= "function SetSignatureBoxWidth(size) {SetFieldProperty('boxWidth', size);}" . PHP_EOL;
 
+		$script .= "function ToggleFontOptions(showFontOptions) {SetFieldProperty('showFontOptions', showFontOptions);}" . PHP_EOL;
+
 		// saving the borderStyle property and updating the UI to match
 		$script .= "function SetSignatureBorderStyle(style) {SetFieldProperty('borderStyle', style);jQuery('.field_selected .gf_signature_container').css('border-style', style);}" . PHP_EOL;
 
@@ -144,7 +154,26 @@ class GF_Field_Signature extends GF_Field {
 		// saving the penSize property
 		$script .= "function SetSignaturePenSize(size) {SetFieldProperty('penSize', size);}";
 
+		$script .= "function SetSignatureDefaultFont(font) {SetFieldProperty('defaultFont', font);}" . PHP_EOL;
+
 		return $script;
+	}
+
+	/**
+	 * Returns the HTML tag for the field container.
+	 *
+	 * @since 4.10
+	 *
+	 * @param array $form The current form.
+	 *
+	 * @return string
+	 */
+	public function get_field_container_tag( $form ) {
+		if ( GFCommon::is_legacy_markup_enabled( $form ) ) {
+			return parent::get_field_container_tag( $form );
+		}
+
+		return 'fieldset';
 	}
 
 	/**
@@ -164,20 +193,23 @@ class GF_Field_Signature extends GF_Field {
 		$is_entry_detail = $this->is_entry_detail();
 		$is_form_editor  = $this->is_form_editor();
 		$is_block_editor = $this->is_block_editor();
-		$is_admin        = $is_entry_detail || $is_form_editor;
+		$entry           = empty( $entry ) && $is_entry_detail ? GFEntryDetail::get_current_entry() : $entry;
 
-		$form_id = absint( $form['id'] );
-		$id      = $this->id;
-		$field_id = $form_id == 0 ? "input_$id" : 'input_' . $form_id . "_$id";
+		$form_id  = absint( $form['id'] );
+		$id       = $this->id;
+		$field_id = $form_id === 0 ? "input_$id" : 'input_' . $form_id . "_$id";
 
 		$init_options = $this->get_signaturepad_init_options( $form );
 
-		$bgcolor     = rgar( $init_options, 'backgroundColor', '#FFFFFF' );
-		$bordercolor = empty( $this->borderColor ) ? '#DDDDDD' : $this->borderColor;
-		$boxheight   = '180';
-		$boxwidth    = rgblank( $this->boxWidth ) ? '300' : $this->boxWidth;
-		$borderstyle = empty( $this->borderStyle ) ? 'Dashed' : $this->borderStyle;
-		$borderwidth = rgblank( $this->borderWidth ) ? '2px' : $this->borderWidth . 'px';
+		$bgcolor           = rgar( $init_options, 'backgroundColor', '#FFFFFF' );
+		$bordercolor       = empty( $this->borderColor ) ? '#757575' : $this->borderColor;
+		$boxheight         = '90';
+		$boxwidth          = rgblank( $this->boxWidth ) ? '300' : $this->boxWidth;
+		$borderstyle       = empty( $this->borderStyle ) ? 'Dashed' : $this->borderStyle;
+		$borderwidth       = rgblank( $this->borderWidth ) ? '2px' : $this->borderWidth . 'px';
+		$fontcolor         = empty( $this->penColor ) ? '#000000' : $this->penColor;
+		$show_font_options = ! isset( $this->showFontOptions ) || $this->showFontOptions;
+		$defaultfont       = empty( $this->defaultFont ) ? '' : $this->defaultFont;
 
 		if ( $is_form_editor || $is_block_editor ) {
 			if ( gf_signature()->is_gravityforms_supported( '2.5-beta' ) ) {
@@ -192,7 +224,7 @@ class GF_Field_Signature extends GF_Field {
 			}
 		} else {
 
-			$input = '';
+			$input = '<div class="ginput_container ginput_container_signature">';
 
 			$signature_filename = $value;
 			$container_style = rgar( $form, 'labelPlacement', 'top_label' ) == 'top_label' ? '' : "style='display:-moz-inline-stack; display: inline-block; zoom: 1; *display: inline;'";
@@ -201,7 +233,7 @@ class GF_Field_Signature extends GF_Field {
 
 				$signature_url = $this->get_value_url( $signature_filename );
 
-				$input .= sprintf( "<div id='%s_signature_image' {$container_style}><div class='gfield_signature_image gform-theme__no-reset--el gform-theme__no-reset--children' style='width: %spx;'><img src='%s' width='%spx' style='border-style: %s; border-width: %s; border-color: %s;' alt='%s' /><div>", $field_id, $boxwidth, $signature_url, $boxwidth, $borderstyle, $borderwidth, $bordercolor, esc_attr__( 'Signature Image', 'gravityformssignature' ) );
+				$input .= sprintf( "<div id='%s_signature_image' class='gfield_signature_image_container' {$container_style}><div class='gfield_signature_image gform-theme__no-reset--el gform-theme__no-reset--children' style='width: %spx;'><img src='%s' width='%spx' style='border-style: %s; border-width: %s; border-color: %s;' alt='%s' /></div>", $field_id, $boxwidth, $signature_url, $boxwidth, $borderstyle, $borderwidth, $bordercolor, esc_attr__( 'Signature Image', 'gravityformssignature' ) );
 
 				if ( $is_entry_detail && $value ) {
 
@@ -227,34 +259,154 @@ class GF_Field_Signature extends GF_Field {
 
 				}
 
-				$input .= "</div></div></div>";
-
-				$input .= "<style type='text/css'>#{$field_id}_resetbutton {display:none}</style>";
+				$input .= '</div>';
 
 			}
 
-			$input .= sprintf( "<input type='hidden' value='%s' name='input_%s' id='%s_signature_filename'/>", esc_attr( $signature_filename ), $id, $field_id );
+			$input .= sprintf( "<input type='hidden' value='%s' name='input_%s' id='%s_signature_filename' class='gfield_signature_filename'/>", esc_attr( $signature_filename ), $id, $field_id );
 
 			$display = ! empty( $signature_filename ) ? 'display:none;' : '';
 
-			$input .= "<div class='gfield_signature_ui_container gform-theme__no-reset--children' {$container_style}><div id='{$field_id}_Container' class='gfield_signature_container ginput_container' style='height:{$boxheight}px; width:{$boxwidth}px; {$display}' >";
+			$input .= "<div class='gfield_signature_ui_container gform-theme__no-reset--children' {$container_style}><div id='{$field_id}_Container' class='gfield_signature_container' style='height:{$boxheight}px; width:{$boxwidth}px; {$display}' >";
 
-			$icon_url = gf_signature()->get_base_url() . '/assets/img/pen.cur';
-			$input .= "<canvas id='" . esc_attr( $field_id ) . "' width='" . esc_attr( $boxwidth ) . "' height='" . esc_attr( $boxheight ) . "' style='border-style: " . esc_attr( $borderstyle ) . "; border-width: " . esc_attr( $borderwidth ) . "; border-color: " . esc_attr( $bordercolor ) . "; background-color:" . esc_attr( $bgcolor ) . "; cursor: url(" . esc_url( $icon_url ) . "), pointer;'></canvas>";
+			$input .= sprintf(
+				"<input type='hidden' id='%s_data' name='input_%s_%s_data' class='gfield_signature_data' />",
+				esc_attr( $field_id ),
+				$form['id'],
+				$id
+			);
 
-			$refresh_image = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAtRJREFUeNrsld9rklEYx32nc7i2GulGtZg6XJbJyBeJzbGZJJVuAyFD7D8QumiG7nLXQuw6dtHN7oYwFtIgDG+2CGQtGf1grBpWIkPHaDpJZvZ95F2cqfPHRTfRgY/H85znfb7nPc85z8sVi0XR32zcf4GmBTiOk8GWY8YSdEpwHpwG7eAA/ABJsA3/w5MEJOUGi8VyCUFFeCiGvlcsFvOFQqGtzK1d4Bzmr8DvDfy/NyTgcDj6I5GIGA91YdiN4CW7RqNp83g8fZ2dna17e3v5ubm5r1tbWz8F8WH4v4PIh7oCTOumH4VCIQkGg6axsTElgkRhyoJTXq/33srKStzpdL5KpVK0RVcxvw+Rb40KlNr09LTSbDZH8HcJ/DqyY2sksE9Go1GHVqsN5fP5Yk9Pz3WIJNmctNQT8Pl8n/DQZza40CjIokqlerywsMCTYWdnpwVjTb0kF1dXVy2sLR6Pn4HIJnu6mLZht9s3KUeUE7VarYPt459ZOqZlKMFEFRRVfI+QzMzMeBHOOTAw4GbnKt4AK6Vte0/nHA6pBu/T4ejoqAgnS4dTlT82U74aJOourYTn+ds1VlyNm+AReMjaK5LsdrvpxoqSyWSX8DbVSwDHtYJ+hi9gETxl/SoCWK1WGfWJRKLQ0dGhO0kAq5MGAoFB/OVZXC6XtqYAzvamwWCgMiDK5XKXsSL5CRpZv98vnp+fH2SNJpPpYk0BlIIXSJaB/lOZkEqlNyCi4ahAHd8iajGUj41a2a+2xzmj0fgsFAoN0QA3lAJfAxMISDeVpx7jSbJnMplSOZ6amuptVIBaZHx8/G0sFruj1+tlgo2KWh/oF3opGWl+bW3t1uzsrHJ5eXm42Q+OGW/wADc7gYe3w+Fwen19/YByhMMgt9lsqpGRkQvYxifwfQnup9PprFwuX2rmi0ZvYAdDwurPgl1A9ek1eE7byqYR7P873+TfAgwATQiKdubVli0AAAAASUVORK5CYII=';
-			$input .= "</div>";
-			$input .= "<div id='" . esc_attr( $field_id ) . "_toolbar' style='margin:5px 0;position:relative;height:20px;width:" . esc_attr( $boxwidth ) . "px;max-width:100%;'>";
+			$input .= sprintf(
+				'<canvas id="%1$s" width="%2$s" height="%3$s" style="border-style: %4$s; border-width: %5$s; border-color: %6$s; background-color:%7$s; cursor: url(%8$s), pointer;" tabindex="0" aria-label="%9$s" %10$s></canvas>',
+				esc_attr( $field_id ),
+				esc_attr( $boxwidth ),
+				esc_attr( $boxheight ),
+				esc_attr( $borderstyle ),
+				esc_attr( $borderwidth ),
+				esc_attr( $bordercolor ),
+				esc_attr( $bgcolor ),
+				esc_url( gf_signature()->get_base_url() . '/assets/img/pen.cur' ),
+				esc_attr__( 'Signature pad', 'gravityformsignature' ),
+				$this->get_aria_describedby()
+			);
+
+			$text_input_label = esc_attr__( 'Type your signature', 'gravityformssignature' );
+
+			if ( wp_is_mobile() ) {
+				$font_options = array(
+					'cursive' => array(
+						'label'       => esc_html__( 'Your Name', 'gravityformssignature' ),
+						'font-family' => 'cursive',
+					),
+				);
+			} else {
+				$font_options = array(
+					'script'      => array(
+						'label'       => esc_html__( 'Your Name', 'gravityformssignature' ),
+						'font-family' => '"Snell Roundhand", "Segoe Script", cursive',
+					),
+					'handwritten' => array(
+						'label'       => esc_html__( 'Your Name', 'gravityformssignature' ),
+						'font-family' => '"Bradley Hand", "Comic Sans MS", cursive',
+					),
+					'print'       => array(
+						'label'       => esc_html__( 'Your Name', 'gravityformssignature' ),
+						'font-family' => '"Noteworthy", "Segoe Print", cursive',
+					),
+				);
+			}
+
+			if ( ! empty( $defaultfont ) && isset( $font_options[ $defaultfont ] ) ) {
+				$default_font_key = $defaultfont;
+			} else {
+				$default_font_key = array_key_first( $font_options );
+			}
+
+			$default_font_style  = $font_options[ $default_font_key ]['font-family'];
+			$font_dropdown_label = esc_attr__( 'Font Options', 'gravityformssignature' );
+
+			$text_input_label = esc_attr__( 'Type your signature', 'gravityformssignature' );
+
+			$input .= sprintf(
+				"<input type='text' id='%1\$s_textinput' name='%1\$s_textinput' class='gfield_signature_text_input' style='text-indent:10px;display:none;width:%2\$spx;height:%3\$spx;border-style:%4\$s;border-width:%5\$s;border-color:%6\$s;background-color:%7\$s;font-family:%9\$s;font-size:2em;padding:0 12px;box-sizing:border-box;color:%8\$s;' placeholder='%10\$s' autocomplete='off' aria-label='%10\$s' />",
+				esc_attr( $field_id ),
+				esc_attr( $boxwidth ),
+				esc_attr( $boxheight ),
+				esc_attr( $borderstyle ),
+				esc_attr( $borderwidth ),
+				esc_attr( $bordercolor ),
+				esc_attr( $bgcolor ),
+				esc_attr( $fontcolor ),
+				esc_attr( $default_font_style ),
+				$text_input_label
+			);
+
+			$input .= "<style type='text/css'>
+                #{$field_id}_textinput::placeholder {
+                    font-size: 1.5rem;
+                    font-family: Arial;
+                    opacity: 0.8;
+                }
+            </style>";
+
+			$input .= '</div>';
+			$input .= "<div id='" . esc_attr( $field_id ) . "_toolbar' class='gfield_signature_toolbar' dir='ltr' style='margin:5px 0;position:relative;height:35px;width:" . esc_attr( $boxwidth ) . "px;max-width:100%;display:flex;align-items:center;'>";
+
+			// Visually hidden live region used to announce status updates.
+			$input .= "<div id='" . esc_attr( $field_id ) . "_status' class='gfield_signature_status gform-visually-hidden' role='status' aria-live='polite' aria-atomic='true' style='position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;'></div>";
+
 			if ( ! empty( $signature_filename ) && ( ! $is_entry_detail || ! $value ) ) {
-				$input .= '<button type="button" id="' . esc_attr( $field_id ) . '_lockedReset" class="gform_signature_locked_reset gform-theme-no-framework" style="color: var(--gform-theme-control-description-color);height:24px;cursor:pointer;padding: 0 0 0 1.8em;opacity:0.75;font-size:0.813em;border:0;background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIiBjbGFzcz0idW5kZWZpbmVkIj48cGF0aCBkPSJNNDAwIDIyNGgtMjR2LTcyQzM3NiA2OC4yIDMwNy44IDAgMjI0IDBTNzIgNjguMiA3MiAxNTJ2NzJINDhjLTI2LjUgMC00OCAyMS41LTQ4IDQ4djE5MmMwIDI2LjUgMjEuNSA0OCA0OCA0OGgzNTJjMjYuNSAwIDQ4LTIxLjUgNDgtNDhWMjcyYzAtMjYuNS0yMS41LTQ4LTQ4LTQ4em0tMTA0IDBIMTUydi03MmMwLTM5LjcgMzIuMy03MiA3Mi03MnM3MiAzMi4zIDcyIDcydjcyeiIgY2xhc3M9InVuZGVmaW5lZCIvPjwvc3ZnPg==) no-repeat left center;background-size:16px;direction:ltr;">' . esc_html__('Reset to sign again', 'gravityformssignature') . '</button>';
+				$input .= '<button type="button" id="' . esc_attr( $field_id ) . '_lockedReset" class="gform_signature_locked_reset gform-theme-no-framework" style="color: var(--gform-theme-control-description-color);height:24px;cursor:pointer;padding: 0.4em 0 0 2em;opacity:0.75;font-size:0.7em;border:0;background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIiBjbGFzcz0idW5kZWZpbmVkIj48cGF0aCBkPSJNNDAwIDIyNGgtMjR2LTcyQzM3NiA2OC4yIDMwNy44IDAgMjI0IDBTNzIgNjguMiA3MiAxNTJ2NzJINDhjLTI2LjUgMC00OCAyMS41LTQ4IDQ4djE5MmMwIDI2LjUgMjEuNSA0OCA0OCA0OGgzNTJjMjYuNSAwIDQ4LTIxLjUgNDgtNDhWMjcyYzAtMjYuNS0yMS41LTQ4LTQ4LTQ4em0tMTA0IDBIMTUydi03MmMwLTM5LjcgMzIuMy03MiA3Mi03MnM3MiAzMi4zIDcyIDcydjcyeiIgY2xhc3M9InVuZGVmaW5lZCIvPjwvc3ZnPg==) no-repeat left center;background-size:16px;direction:ltr;">' . esc_html__( 'Reset to sign again', 'gravityformssignature' ) . '</button>';
 
 			}
-			$input .= "<img id = '" . esc_attr( $field_id ) . "_resetbutton' src='" . esc_attr( $refresh_image ) . "' style='cursor:pointer;float:right;height:24px;width:24px;border:0px solid transparent' alt='Clear Signature' / >";
-			$input .= "</div>";
-			$input .= "<input type='hidden' id='{$field_id}_data' name='{$field_id}_data' value=''>";
+
+			$toggle_display = ! empty( $signature_filename ) ? 'display:none;' : '';
+
+			$font_dropdown_class = 'gfield_signature_font_dropdown';
+			// Hide the dropdown if on mobile since there is only one font option available but maintain the draw/text buttons on the right side.
+			if ( wp_is_mobile() || ! $show_font_options ) {
+				$font_dropdown_class .= ' gfield_signature_font_dropdown--hidden';
+			}
+
+			// Custom font dropdown.
+			$input .= "<input type='hidden' id='" . esc_attr( $field_id ) . "_font_select' class='gfield_signature_font_select' value='" . esc_attr( $default_font_key ) . "' />";
+			$input .= "<div id='" . esc_attr( $field_id ) . "_font_dropdown' class='" . esc_attr( $font_dropdown_class ) . "'>";
+			$input .= "<span class='gform-common-icon gform-common-icon--chevron-down gfield_signature_font_dropdown_icon'></span>";
+			$input .= "<button type='button' id='" . esc_attr( $field_id ) . "_font_select_button' class='gfield_signature_font_select_button gform-theme__disable' tabindex='0' aria-haspopup='listbox' aria-expanded='false' aria-label='" . $font_dropdown_label . "' style='width:100%;box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:{$default_font_style};color:{$fontcolor}'>" . esc_html( $font_options[ $default_font_key ]['label'] ) . '</button>';
+			$input .= "<ul id='" . esc_attr( $field_id ) . "_font_select_list' class='gfield_signature_font_select_list' role='listbox' tabindex='-1' style='display:none;position:absolute;top:100%;left:0;right:0;margin:0;padding:0;list-style:none;background:#fff;border:1px solid #ccc;z-index:10;max-height:200px;overflow-y:auto;box-sizing:border-box;'>";
+
+			foreach ( $font_options as $font_value => $font_data ) {
+				$input .= sprintf(
+					"<li class='gfield_signature_font_option' role='option' data-value='%s' tabindex='0' style='font-family:%s; color:%s' aria-label='%s'>%s</li>",
+					esc_attr( $font_value ),
+					esc_attr( $font_data['font-family'] ),
+					esc_attr( $fontcolor ),
+					esc_attr(
+						sprintf(
+							/* translators: 1: The visible label, 2: The font style name */
+							__( '%1$s, %2$s style', 'gravityformssignature' ),
+							$font_data['label'],
+							ucfirst( $font_value )
+						)
+					),
+					esc_html( $font_data['label'] )
+				);
+			}
+
+			$clear_label = esc_attr__( 'Clear Signature', 'gravityformssignature' );
+			$text_label  = esc_attr__( 'Text Signature', 'gravityformssignature' );
+			$draw_label  = esc_attr__( 'Draw Signature', 'gravityformssignature' );
+
+			$input .= '</ul>';
+			$input .= '</div>';
+			$input .= "<div class='gfield_signature_toolbar_icons' style='margin-left:auto;display:flex;align-items:center;'>";
+			$input .= "<button type='button' id='" . esc_attr( $field_id ) . "_textbutton' class='gform-common-icon gform-common-icon--text-field gfield_signature_text_button gform-theme-no-framework' tabindex='0' style='{$toggle_display}background:none;border:0;padding:0;margin:0;appearance:none;-webkit-appearance:none;cursor:pointer;' alt='" . $text_label . "' aria-label='" . $text_label . "'></button>";
+			$input .= "<button type='button' id='" . esc_attr( $field_id ) . "_drawbutton' class='gform-common-icon gform-common-icon--pencil gfield_signature_draw_button gform-theme-no-framework' tabindex='0' style='display:none;background:none;border:0;padding:0;margin:0;appearance:none;-webkit-appearance:none;cursor:pointer;' alt='" . $draw_label . "' aria-label='" . $draw_label . "'></button>";
+			$input .= "<button type='button' id='" . esc_attr( $field_id ) . "_resetbutton' class='gform-common-icon gform-common-icon--arrow-path gfield_signature_reset_button gform-theme-no-framework' tabindex='0' style='{$toggle_display}background:none;border:0;padding:0;margin:0;appearance:none;-webkit-appearance:none;cursor:pointer;' alt='" . $clear_label . "' aria-label='" . $clear_label . "'></button>";
+			$input .= '</div>';
 			$input .= '</div>';
 
-			if ( $this->is_entry_detail_edit() || ! gf_signature()->is_gravityforms_supported( '2.9' ) ) {
+			if ( $this->is_entry_detail_edit_screen() || ! gf_signature()->is_gravityforms_supported( '2.9' ) ) {
 				// Theme config is not available in the entry detail edit view or in order versions of Gravity Forms, so we need to inline the configuration.
 				$unique_id    = "input_{$form['id']}_{$this->id}";
 				$init_options = $this->get_signaturepad_init_options( $form );
@@ -263,9 +415,31 @@ class GF_Field_Signature extends GF_Field {
 
 				$input .= "<script type='text/javascript'>" . $script . '</script>';
 			}
+
+			$input .= '</div>';
+			$input .= '</div>';
 		}
 
 		return $input;
+	}
+
+	/**
+	 * Reliable replacement for GF_Field::is_entry_detail_edit(), which only checks
+	 * rgpost('screen_mode') and misses the initial GET page load of the
+	 * Edit Entry screen.
+	 *
+	 * @since 4.10.0
+	 *
+	 * @return bool
+	 */
+	public function is_entry_detail_edit_screen() {
+		if ( ! $this->is_entry_detail() ) {
+			return false;
+		}
+
+		$screen_mode = rgpost( 'screen_mode' ) ? rgpost( 'screen_mode' ) : rgget( 'screen_mode' );
+
+		return $screen_mode === 'edit';
 	}
 
 	/**
@@ -295,8 +469,19 @@ class GF_Field_Signature extends GF_Field {
 	 */
 	public function is_value_submission_empty( $form_id ) {
 		$input_prefix     = "input_{$this->id}";
-		$data_input_value = rgpost( $input_prefix . '_data' );
-		$is_invalid       = rgempty( $input_prefix ) && ( empty( $data_input_value ) || ! is_string( $data_input_value ) || ! str_starts_with( $data_input_value, 'data:image/png;base64,' ) );
+		$input_data_name  = "input_{$form_id}_{$this->id}_data";
+		$data_input_value = rgpost( $input_data_name );
+
+		// Check if there's already a saved filename
+		$filename = rgpost( $input_prefix );
+
+		// If we have a saved filename, the field is not empty
+		if ( ! empty( $filename ) ) {
+			return false;
+		}
+
+		// Check if signature data is present and valid
+		$is_invalid = empty( $data_input_value ) || ! is_string( $data_input_value ) || ! str_starts_with( $data_input_value, 'data:image/png;base64,' );
 
 		if ( $is_invalid && empty( $this->errorMessage ) ) {
 			$this->errorMessage = __( 'Please enter your signature.', 'gravityformssignature' );
@@ -338,6 +523,11 @@ class GF_Field_Signature extends GF_Field {
 	 * @return string
 	 */
 	public function get_value_submission( $field_values, $get_from_post_global_var = true ) {
+		// If we are editing an entry with APC, we need to retrieve the value but not save it.
+		if ( rgget( 'apc_edit_nonce' ) && empty( $_POST ) ) {
+			return GFFormsModel::get_parameter_value( $this->inputName, $field_values, $this );
+		}
+
 		if ( empty( $_POST[ 'is_submit_' . $this->formId ] ) ) {
 			return '';
 		}
@@ -364,6 +554,7 @@ class GF_Field_Signature extends GF_Field {
 		if ( ! empty( $value ) ) {
 			return $value;
 		}
+
 		return $this->maybe_save_signature();
 	}
 
@@ -417,20 +608,23 @@ class GF_Field_Signature extends GF_Field {
 	/**
 	 * Format the entry value for display on the entry detail page and for the {all_fields} merge tag.
 	 *
-	 * @param string|array $value The field value.
-	 * @param string $currency The entry currency code.
-	 * @param bool|false $use_text When processing choice based fields should the choice text be returned instead of the value.
-	 * @param string $format The format requested for the location the merge is being used. Possible values: html, text or url.
-	 * @param string $media The location where the value will be displayed. Possible values: screen or email.
+	 * @since 3.0
+	 * @since 4.9.2 Changed the second parameter $currency (string) to $entry (array).
+	 *
+	 * @param string|array $value    The field value.
+	 * @param array        $entry    The entry.
+	 * @param bool|false   $use_text When processing choice based fields should the choice text be returned instead of the value.
+	 * @param string       $format   The format requested for the location the merge is being used. Possible values: html, text or url.
+	 * @param string       $media    The location where the value will be displayed. Possible values: screen or email.
 	 *
 	 * @return string
 	 */
-	public function get_value_entry_detail( $value, $currency = '', $use_text = false, $format = 'html', $media = 'screen' ) {
+	public function get_value_entry_detail( $value, $entry = array(), $use_text = false, $format = 'html', $media = 'screen' ) {
 		if ( ! empty( $value ) ) {
 			$signature_url = $this->get_value_url( $value );
 
 			if ( $format == 'html' ) {
-				$value = sprintf( "<a href='%s' target='_blank' title='%s'><img src='%s' width='100' alt='%s' /></a>", $signature_url, esc_attr__( 'Click to view', 'gravityformssignature' ), $signature_url, esc_attr__( 'Signature Image', 'gravityformssignature' ) );
+				$value = sprintf( "<a href='%s' target='_blank' title='%s'><img src='%s' width='300' alt='%s' /></a>", $signature_url, esc_attr__( 'Click to view', 'gravityformssignature' ), $signature_url, esc_attr__( 'Signature Image', 'gravityformssignature' ) );
 			} else {
 				$value = $signature_url;
 			}

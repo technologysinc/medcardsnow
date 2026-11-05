@@ -9,6 +9,15 @@ class GF_Field_Option extends GF_Field {
 
 	public $type = 'option';
 
+	/**
+	 * Whether the field can be used in a repeater.
+	 *
+	 * @since 3.2.0
+	 *
+	 * @var bool
+	 */
+	public $repeatable = true;
+
 	function get_form_editor_field_settings() {
 		return array(
 			'product_field_setting',
@@ -51,6 +60,26 @@ class GF_Field_Option extends GF_Field {
 	 */
 	public function get_form_editor_field_icon() {
 		return 'gform-icon--misc';
+	}
+
+	/**
+	 * Sanitize and format the value before it is saved to the Entry Object.
+	 *
+	 * @since 3.0.0
+	 *
+	 * @param string $value          The value to be saved.
+	 * @param array  $form           The Form object currently being processed.
+	 * @param string $input_name     The input name used when accessing the $_POST.
+	 * @param int    $entry_id       The ID of the entry currently being processed.
+	 * @param array  $entry          The entry currently being processed.
+	 * @param string $repeater_index The repeater index if the field is inside a repeater.
+	 *
+	 * @return array|string The sanitized and formatted input value to be saved.
+	 */
+	public function get_value_save_input( $value, $form, $input_name, $entry_id, $entry, $repeater_index = '' ) {
+		$value = parent::get_value_save_input( $value, $form, $input_name, $entry_id, $entry, $repeater_index );
+
+		return $this->clear_blank_price_value( $value );
 	}
 
 }

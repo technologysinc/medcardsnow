@@ -50,7 +50,7 @@ class GF_Page_Choice_Walker extends Walker_Page {
 			$output = array();
 		}
 		$output[] = array(
-			'label' => $indent . $page->post_title,
+			'label' => $indent . esc_html( $page->post_title ),
 			'value' => $page->ID
 		);
 

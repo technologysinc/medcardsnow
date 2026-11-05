@@ -375,6 +375,17 @@ class UniteCreatorSettingsOutput extends UniteSettingsOutputUC{
 	}
 
 	/**
+	 * draw connect with tiktok button
+	 */
+	private function drawConnectWithTikTokButton($setting){
+
+		$objServices = new UniteServicesUC();
+		$objServices->includeTikTokAPI();
+
+		UELM_HelperTikTok::putConnectButton();
+	}
+
+	/**
 	 * draw connect with google button
 	 */
 	private function drawConnectWithGoogleButton($setting){
@@ -523,6 +534,9 @@ class UniteCreatorSettingsOutput extends UniteSettingsOutputUC{
 			break;
 			case "instagram_connect":
 				$this->drawConnectWithInstagramButton($setting);
+			break;
+			case "tiktok_connect":
+				$this->drawConnectWithTikTokButton($setting);
 			break;
 			case "google_connect":
 				$this->drawConnectWithGoogleButton($setting);

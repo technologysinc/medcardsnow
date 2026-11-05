@@ -115,9 +115,15 @@ class Utils {
 			),
 			'li'                            => array(
 				'class' => array(),
+				'style' => array(),
+				'value' => array(),
 			),
 			'ol'                            => array(
 				'class' => array(),
+				'style' => array(),
+				'start' => array(),
+				'reversed' => array(),
+				'type' => array(),
 			),
 			'p'                             => array(
 				'class' => array(),
@@ -176,6 +182,7 @@ class Utils {
 			'data-stellar-background-ratio' => array(),
 			'ul'                            => array(
 				'class' => array(),
+				'style' => array(),
 			),
 			'svg'                           => array(
 				'class'           => true,

@@ -59,6 +59,23 @@ class GF_Field_RememberMe extends GF_Field_Checkbox {
 	}
 
 	/**
+	 * Returns the field markup; including field label, description, validation, and the form editor admin buttons.
+	 *
+	 * The {FIELD} placeholder will be replaced in GFFormDisplay::get_field_content with the markup returned by GF_Field::get_field_input().
+	 *
+	 * @since 5.5.0
+	 *
+	 * @param string|array $value                The field value. From default/dynamic population, $_POST, or a resumed incomplete submission.
+	 * @param bool         $force_frontend_label Should the frontend label be displayed in the admin even if an admin label is configured.
+	 * @param array        $form                 The Form Object currently being processed.
+	 *
+	 * @return string
+	 */
+	public function get_field_content( $value, $force_frontend_label, $form ) {
+		return '{FIELD}';
+	}
+
+	/**
 	 * Get checkbox choice inputs for field.
 	 *
 	 * @since 4.9

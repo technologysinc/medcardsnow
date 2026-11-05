@@ -10,6 +10,15 @@ class GF_Field_HiddenProduct extends GF_Field {
 	public $type = 'hiddenproduct';
 
 	/**
+	 * Whether the field can be used in a repeater.
+	 *
+	 * @since 3.2.0
+	 *
+	 * @var bool
+	 */
+	public $repeatable = true;
+
+	/**
 	 * Indicates if this field supports state validation.
 	 *
 	 * @since 2.5.11
@@ -145,6 +154,57 @@ class GF_Field_HiddenProduct extends GF_Field {
 
 		$price_number    = GFCommon::to_number( $this->basePrice );
 		$this->basePrice = GFCommon::to_money( $price_number );
+	}
+
+	/**
+	 * Prepares the value that will be hashed on form display as part of the state.
+	 *
+	 * @since 3.0
+	 *
+	 * @param string|array $value The default value.
+	 *
+	 * @return null|array
+	 */
+	public function get_values_for_state_hash( $value ) {
+		$id         = $this->id;
+		$input_1_id = "{$id}.1";
+		$input_2_id = "{$id}.2";
+		$price      = rgar( $value, $input_2_id, $this->basePrice );
+		if ( empty( $price ) ) {
+			$price = 0;
+		}
+
+		return array(
+			$input_1_id => rgar( $value, $input_1_id, $this->label ),
+			$input_2_id => GFCommon::to_number( $price ),
+		);
+	}
+
+	/**
+	 * Returns the value to use when the state is validated.
+	 *
+	 * @since 3.0
+	 *
+	 * @param string|array $value The submitted value.
+	 *
+	 * @return array
+	 */
+	public function get_value_for_state_validation( $value ) {
+		$key           = $this->id . '.2';
+		$value[ $key ] = GFCommon::to_number( $value[ $key ] );
+
+		return $value;
+	}
+
+	/**
+	 * Returns the validation message to be applied when the field has failed state validation.
+	 *
+	 * @since 3.0
+	 *
+	 * @return string
+	 */
+	public function get_state_validation_message() {
+		return esc_html__( 'The value of this hidden field has been reset to default because the submitted value does not match the expected value.', 'gravityforms' );
 	}
 
 }

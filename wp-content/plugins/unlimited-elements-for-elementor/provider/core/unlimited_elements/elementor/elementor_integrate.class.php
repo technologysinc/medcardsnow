@@ -1934,8 +1934,6 @@ class UniteCreatorElementorIntegrate{
     	if(is_admin() == false)
     		return(false);
 
-    	add_filter("elementor/template_library/sources/local/import/elements", array("UELM_CreatorElementorWidget", "restoreImportAssetUrls"));
-
     	if($this->enableExportTemplate == true){
 
     		add_filter( 'post_row_actions', array($this, 'postRowActions' ), 20, 2 );

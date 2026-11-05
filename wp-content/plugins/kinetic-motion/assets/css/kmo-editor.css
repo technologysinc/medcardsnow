@@ -1,0 +1,19 @@
+/* Elementor panel: make the Kinetic sections easy to spot. */
+.elementor-control-kmo_section_in .elementor-panel-heading-title,
+.elementor-control-kmo_section_sc .elementor-panel-heading-title,
+.elementor-control-kmo_section_tx .elementor-panel-heading-title,
+.elementor-control-kmo_section_mouse .elementor-panel-heading-title,
+.elementor-control-kmo_section_gl .elementor-panel-heading-title {
+	color: #e2498a;
+}
+.elementor-control-kmo_section_in .elementor-panel-heading-title::before,
+.elementor-control-kmo_section_sc .elementor-panel-heading-title::before,
+.elementor-control-kmo_section_tx .elementor-panel-heading-title::before,
+.elementor-control-kmo_section_mouse .elementor-panel-heading-title::before,
+.elementor-control-kmo_section_gl .elementor-panel-heading-title::before {
+	content: "✦ ";
+}
+.kmo-note {
+	font-style: normal;
+	line-height: 1.5;
+}

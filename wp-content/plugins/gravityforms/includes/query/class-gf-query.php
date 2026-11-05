@@ -400,6 +400,36 @@ class GF_Query {
 
 				$literal = $field && $field->storageType == 'json' ? new GF_Query_JSON_Literal( (string) $value ) : new GF_Query_Literal( (string) $value );
 
+				// KSES-processed choice values may be stored with encoded ampersands. Match both
+				// forms so searches find entries saved before and after that encoding.
+				if (
+					$field && in_array( $field->get_input_type(), array( 'radio', 'checkbox' ), true ) && is_string( $value ) && strpos( $value, '&' ) !== false &&
+					in_array( $operator, array( GF_Query_Condition::EQ, GF_Query_Condition::NEQ, GF_Query_Condition::LIKE ), true )
+				) {
+					$search_values = $this->get_entity_compatible_search_values( $value );
+					if ( count( $search_values ) > 1 ) {
+						$column = new GF_Query_Column( $key, $form_id );
+						if ( $operator == GF_Query_Condition::LIKE ) {
+							$search_conditions = array();
+							foreach ( $search_values as $search_value ) {
+								$search_conditions[] = new GF_Query_Condition(
+									$column,
+									$operator,
+									new GF_Query_Literal( $search_value )
+								);
+							}
+							$filters[] = call_user_func_array( array( 'GF_Query_Condition', '_or' ), $search_conditions );
+						} else {
+							$operator = $operator == GF_Query_Condition::EQ ? GF_Query_Condition::IN : GF_Query_Condition::NIN;
+							$value    = new GF_Query_Series( array_map( function ( $search_value ) {
+								return new GF_Query_Literal( $search_value );
+							}, $search_values ) );
+							$filters[] = new GF_Query_Condition( $column, $operator, $value );
+						}
+						continue;
+					}
+				}
+
 				$column = count( $from ) > 1 ? new GF_Query_Column( $key ) : new GF_Query_Column( $key, $form_id );
 				$filters[] = new GF_Query_Condition(
 					$column,
@@ -478,7 +508,8 @@ class GF_Query {
 				$operator = empty( $original_operator ) ? GF_Query_Condition::EQ : $original_operator;
 		}
 
-		$val = $filter['value'];
+		$val           = $filter['value'];
+		$search_values = is_string( $val ) ? $this->get_entity_compatible_search_values( $val ) : array( $val );
 
 		$choice_filters = array();
 
@@ -488,7 +519,9 @@ class GF_Query {
 					/* @var GF_Field $field */
 					if ( is_array( $field->choices ) ) {
 						foreach ( $field->choices as $choice ) {
-							if ( ( $operator == '=' && strtolower( $choice['text'] ) == strtolower( $val ) ) || ( $operator == 'LIKE' && ! empty( $val ) && strpos( strtolower( $choice['text'] ), strtolower( $val ) ) !== false ) ) {
+							$choice_text  = wp_specialchars_decode( $choice['text'], ENT_QUOTES );
+							$search_value = is_string( $val ) ? wp_specialchars_decode( $val, ENT_QUOTES ) : $val;
+							if ( ( $operator == '=' && strtolower( $choice_text ) == strtolower( $search_value ) ) || ( $operator == 'LIKE' && ! empty( $search_value ) && strpos( strtolower( $choice_text ), strtolower( $search_value ) ) !== false ) ) {
 								if ( $field->gsurveyLikertEnableMultipleRows ) {
 									$choice_value           = $choice['value'];
 									$choice_search_operator = 'like';
@@ -497,11 +530,28 @@ class GF_Query {
 									$choice_value           = $choice['value'];
 									$choice_search_operator = '=';
 								}
-								$choice_filters[] = new GF_Query_Condition(
-									new GF_Query_Column( $field->id, $form['id'] ),
-									$choice_search_operator,
-									new GF_Query_Literal( $choice_value )
-								);
+								$choice_value_variants = $choice_search_operator == '=' && is_string( $choice_value ) ? $this->get_entity_compatible_search_values( $choice_value ) : array( $choice_value );
+								if ( $choice_search_operator == '=' && $field->get_input_type() == 'checkbox' ) {
+									$choice_filters[] = new GF_Query_Condition(
+										new GF_Query_Column( $field->id, $form['id'] ),
+										GF_Query_Condition::IN,
+										new GF_Query_Series( array_map( function ( $choice_value_variant ) {
+											return new GF_Query_Literal( $choice_value_variant );
+										}, $choice_value_variants ) )
+									);
+									continue;
+								}
+								$choice_value_conditions = array();
+								foreach ( $choice_value_variants as $choice_value_variant ) {
+									$choice_value_conditions[] = new GF_Query_Condition(
+										new GF_Query_Column( $field->id, $form['id'] ),
+										$choice_search_operator,
+										new GF_Query_Literal( $choice_value_variant )
+									);
+								}
+								$choice_filters[] = count( $choice_value_conditions ) > 1
+									? call_user_func_array( array( 'GF_Query_Condition', '_or' ), $choice_value_conditions )
+									: $choice_value_conditions[0];
 							}
 						}
 					}
@@ -521,14 +571,29 @@ class GF_Query {
 				$val
 			);
 		} else {
-			if ( $original_operator == 'CONTAINS' ) {
-				$val = '%' . $val . '%';
+			if ( in_array( $operator, array( GF_Query_Condition::EQ, GF_Query_Condition::LIKE ), true ) && is_string( $val ) ) {
+				if ( $original_operator == 'CONTAINS' ) {
+					$search_values = array_map( function ( $search_value ) {
+						return '%' . $search_value . '%';
+					}, $search_values );
+				}
+				foreach ( $search_values as $search_value ) {
+					$choice_filters[] = new GF_Query_Condition(
+						new GF_Query_Column( GF_Query_Column::META, $form_ids ),
+						$operator,
+						new GF_Query_Literal( $search_value )
+					);
+				}
+			} else {
+				if ( $original_operator == 'CONTAINS' ) {
+					$val = '%' . $val . '%';
+				}
+				$choice_filters[] = new GF_Query_Condition(
+					new GF_Query_Column( GF_Query_Column::META, $form_ids ),
+					$operator,
+					new GF_Query_Literal( $val )
+				);
 			}
-			$choice_filters[] = new GF_Query_Condition(
-				new GF_Query_Column( GF_Query_Column::META, $form_ids ),
-				$operator,
-				new GF_Query_Literal( $val )
-			);
 		}
 
 		if ( count( $choice_filters ) > 1 ) {
@@ -541,6 +606,25 @@ class GF_Query {
 		}
 
 		return $condition;
+	}
+
+	/**
+	 * Return the submitted value and its plain-text and KSES-encoded ampersand forms.
+	 *
+	 * @since 3.2.0
+	 *
+	 * @param mixed $value The search value.
+	 *
+	 * @return array
+	 */
+	private function get_entity_compatible_search_values( $value ) {
+		if ( ! is_string( $value ) || strpos( $value, '&' ) === false ) {
+			return array( $value );
+		}
+
+		$decoded_value = wp_specialchars_decode( $value, ENT_QUOTES );
+
+		return array_values( array_unique( array( $value, $decoded_value, str_replace( '&', '&amp;', $decoded_value ) ) ) );
 	}
 
 	/**
@@ -685,9 +769,7 @@ class GF_Query {
 
 		$entries = array();
 
-		$results = $this->query();
-
-		$this->total_found = (int) $wpdb->get_var( 'SELECT FOUND_ROWS()' ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+		$results = $this->query( true );
 
 		return $this->get_entries( $results );
 	}
@@ -700,9 +782,7 @@ class GF_Query {
 	public function get_ids() {
 		global $wpdb;
 
-		$results = $this->query();
-
-		$this->total_found = (int) $wpdb->get_var( 'SELECT FOUND_ROWS()' ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+		$results = $this->query( true );
 
 		$ids = array();
 
@@ -716,9 +796,13 @@ class GF_Query {
 	/**
 	 * Build the query and return the raw rows.
 	 *
+	 * @since 3.0.0 Added the $calculate_total_found parameter.
+	 * 
+	 * @param boolean $calculate_total_found Determines if the total_found property of the query object should be calculated by running an additional count() query. Defaults to false.
+	 * 
 	 * @return array The rows.
 	 */
-	private function query() {
+	private function query( $calculate_total_found = false ) {
 		if ( count( $this->queries ) ) {
 			GFCommon::log_debug( 'Reusing GF_Query is undefined behavior. Create a new instance instead.' );
 		}
@@ -758,7 +842,7 @@ class GF_Query {
 		/**
 		 * SELECT.
 		 */
-		$select = sprintf( 'SELECT SQL_CALC_FOUND_ROWS DISTINCT %s', implode( ', ', $this->_select_infer( $this->joins ) ) );
+		$select = sprintf( 'SELECT DISTINCT %s', implode( ', ', $this->_select_infer( $this->joins ) ) );
 
 		$form_ids = array();
 		foreach ( $this->from as $f ) {
@@ -811,16 +895,32 @@ class GF_Query {
 		 * @param array $sql An array with all the SQL fragments: select, from, join, where, order, paginate.
 		 */
 		$sql = apply_filters( 'gform_gf_query_sql', compact( 'select', 'from', 'join', 'where', 'order', 'paginate' ) );
-		$sql = implode( ' ', array_filter( $sql, 'strlen' ) );
+		$sql_main = implode( ' ', array_filter( $sql, 'strlen' ) );
 
-		GFCommon::log_debug( __METHOD__ . '(): sql => ' . $sql );
+		//echo $sql_main;
+		GFCommon::log_debug( __METHOD__ . '(): sql => ' . $sql_main );
 
 		$this->timer_start();
-		$results = $wpdb->get_results( $sql, ARRAY_N ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
-		$this->queries []= array( $this->timer_stop(), $sql );
+		$results = $wpdb->get_results( $sql_main, ARRAY_N ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+		$this->queries []= array( $this->timer_stop(), $sql_main );
 
 		if ( is_null( $results ) ) {
 			return array();
+		}
+
+		if ( $calculate_total_found ) {
+			
+			// Updating select to count all rows
+			$sql['select'] = sprintf( 'SELECT COUNT( DISTINCT %s )', implode( ', ', $this->_select_infer( $this->joins, false ) ) );
+			
+			// Removing pagination and order by clauses from count query
+			$sql['paginate'] = ''; 
+			$sql['order']    = '';
+			
+			// Generating sql string
+			$sql_count = implode( ' ', array_filter( $sql, 'strlen' ) );
+
+			$this->total_found = (int) $wpdb->get_var( $sql_count ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 		}
 
 		return $results;
@@ -914,9 +1014,9 @@ class GF_Query {
 	 *
 	 * @return string[] The individual SELECT columns.
 	 */
-	public function _select_infer( $joins ) {
+	public function _select_infer( $joins, $add_alias = true ) {
 
-		$select[] = sprintf( '`%s`.`id`', $this->_alias( null, reset( $this->from ) ) );
+		$selects[] = sprintf( '`%s`.`id`', $this->_alias( null, reset( $this->from ) ) );
 
 		foreach ( $joins as $join ) {
 			list( $on, $column ) = $join;
@@ -929,10 +1029,12 @@ class GF_Query {
 			}
 
 			$alias = $this->_alias( $on->is_entry_column() ? null : $on->field_id, $on->source );
-			$select[] = sprintf( '`%s`.`%s` AS `%s_id`', $alias, $on->is_entry_column() ? 'id' : 'entry_id', $alias );
+			$select = sprintf( '`%s`.`%s`', $alias, $on->is_entry_column() ? 'id' : 'entry_id' );
+
+			$selects[] = $add_alias ? sprintf( "{$select} AS `%s_id`", $alias ) : $select;
 		}
 
-		return $select;
+		return $selects;
 	}
 
 	/**
@@ -1202,7 +1304,21 @@ class GF_Query {
 						list( $form_id, $field_id ) = explode( '_', $key );
 						if ( isset( $explicit_join_aliases[ $form_id ] ) && strpos( $explicit_join_aliases[ $form_id ], 't' ) !== 0 ) {
 							list( $table, $on ) = explode( ' ON ', $join );
-							$join = implode( ' ON ', array( $table, sprintf( '`%s`.`entry_id` = `%s`.`entry_id`', $matches[1], $explicit_join_aliases[ $form_id ] ) ) );
+							
+							$on_clause = sprintf( '`%s`.`entry_id` = `%s`.`entry_id`', $matches[1], $explicit_join_aliases[ $form_id ] );
+
+							/**
+							 * Re-keying the ON clause onto the join alias must not discard the meta_key
+							 * constraint the inferred join carried. Without it the join matches every meta
+							 * row of the joined entry, so an ORDER BY on that column sorts on an arbitrary
+							 * one of them. A WHERE-side join survives losing it, because its meta_key
+							 * predicate is also emitted into the WHERE clause; an ORDER BY has no second copy.
+							 */
+							if ( preg_match( sprintf( '#AND (`%s`\.`meta_key` (?:=|LIKE) .+?)\)?$#', preg_quote( $matches[1], '#' ) ), $on, $meta_key_condition ) ) {
+								$on_clause = sprintf( '(%s AND %s)', $on_clause, $meta_key_condition[1] );
+							}
+
+							$join = implode( ' ON ', array( $table, $on_clause ) );
 						}
 					}
 					$remaining_inference_joins[] = $join;
@@ -1534,23 +1650,32 @@ AND ( meta_key REGEXP '^[0-9|.]+$'
 				$inputs = $field->get_entry_inputs();
 				if ( is_array( $inputs ) ) {
 					foreach ( $inputs as $input ) {
-						$entries[ $entry['id'] ][ (string) $input['id'] ] = gf_apply_filters( array(
+						$value = rgar( $entries[ $entry['id'] ], (string) $input['id'] );
+						if ( $field->get_input_type() == 'checkbox' && is_string( $value ) ) {
+							$value = wp_specialchars_decode( $value, ENT_QUOTES );
+						}
+						$value = gf_apply_filters( array(
 							'gform_get_input_value',
 							$form['id'],
 							$field->id,
 							$input['id']
-						), rgar( $entries[ $entry['id'] ], (string) $input['id'] ), $entry, $field, $input['id'] );
+						), $value, $entry, $field, $input['id'] );
+						$entries[ $entry['id'] ][ (string) $input['id'] ] = $value;
 					}
 				} else {
 					$value = rgar( $entries[ $entry['id'] ], (string) $field->id );
 					if ( in_array( (string) $field->id, $openssl_encrypted_fields ) ) {
 						$value = GFCommon::openssl_decrypt( $value );
 					}
-					$entries[ $entry['id'] ][ $field->id ] = gf_apply_filters( array(
+					if ( $field->get_input_type() == 'radio' && is_string( $value ) ) {
+						$value = wp_specialchars_decode( $value, ENT_QUOTES );
+					}
+					$value = gf_apply_filters( array(
 						'gform_get_input_value',
 						$form['id'],
 						$field->id
 					), $value, $entry, $field, '' );
+					$entries[ $entry['id'] ][ $field->id ] = $value;
 				}
 			}
 

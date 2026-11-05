@@ -3031,7 +3031,7 @@ class UniteFunctionsUC{
 		$decodedUrl = self::urlDecode($url);
 		$normalized = str_replace('\\', '/', $decodedUrl);
 
-		if(strpos($normalized, '../') !== false)
+		if(self::pathHasParentSegment($normalized))
 			return(true);
 
 		$patterns = array(
@@ -3779,17 +3779,65 @@ class UniteFunctionsUC{
 
 	/**
 	 * check if path under base path
+	 * backslashes are normalized first, a ".." segment fails, and the base must match on a directory boundary
+	 * so a folder named like the base plus extra characters does not count as inside it
 	 */
 	public static function isPathUnderBase($path, $basePath){
-				
+
+		if(is_string($path) == false || is_string($basePath) == false)
+			return(false);
+
+		if($path === "" || $basePath === "")
+			return(false);
+
+		if(strpos($path, "\0") !== false || strpos($basePath, "\0") !== false)
+			return(false);
+
 		$path = self::pathToUnix($path);
 		$basePath = self::pathToUnix($basePath);
-		
-		//check path traversal
-		if(strpos($path, '../') !== false)
+
+		if(self::pathHasParentSegment($path) || self::pathHasParentSegment($basePath))
 			return(false);
-		
-		if(strpos($path, $basePath) === 0)
+
+		$basePath = rtrim($basePath, "/");
+		$pathTrimmed = rtrim($path, "/");
+
+		if($basePath === "")
+			return(false);
+
+		$basePrefix = $basePath."/";
+		$isWindows = (DIRECTORY_SEPARATOR === "\\");
+
+		if($isWindows == true){
+			if(strcasecmp($pathTrimmed, $basePath) === 0)
+				return(true);
+
+			if(strncasecmp($pathTrimmed, $basePrefix, strlen($basePrefix)) === 0)
+				return(true);
+
+			return(false);
+		}
+
+		if($pathTrimmed === $basePath)
+			return(true);
+
+		if(strpos($pathTrimmed, $basePrefix) === 0)
+			return(true);
+
+		return(false);
+	}
+
+	/**
+	 * true when a normalized path still contains a ".." segment
+	 */
+	public static function pathHasParentSegment($path){
+
+		if(is_string($path) == false || $path === "")
+			return(false);
+
+		$path = self::pathToUnix($path);
+
+		if(preg_match('#(^|/)\.\.(/|$)#', $path))
 			return(true);
 
 		return(false);

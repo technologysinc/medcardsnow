@@ -18,12 +18,12 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/deprecated.php');
 class GF_User_Registration extends GFFeedAddOn {
 
 	protected $_version                  = GF_USER_REGISTRATION_VERSION;
-	protected $_min_gravityforms_version = '2.2.6';
+	protected $_min_gravityforms_version = '3.2.0';
 	protected $_slug                     = 'gravityformsuserregistration';
 	protected $_path                     = 'gravityformsuserregistration/userregistration.php';
 	protected $_full_path                = __FILE__;
-	protected $_url                      = 'http://www.gravityforms.com';
-	protected $_title                    = 'User Registration Add-On';
+	protected $_url                      = 'https://www.gravityforms.com';
+	protected $_title                    = 'Gravity Forms User Registration Add-On';
 	protected $_short_title              = 'User Registration';
 	protected $_single_feed_submission   = true;
 	protected $_enable_rg_autoupgrade    = true;
@@ -117,10 +117,10 @@ class GF_User_Registration extends GFFeedAddOn {
 		add_action( 'wp',        array( $this, 'maybe_activate_user' ) );
 		add_action( 'wp_loaded', array( $this, 'custom_registration_page' ) );
 
-		add_action( 'gform_pre_render',                   array( __class__, 'maybe_prepopulate_form' ) );
-		add_filter( 'gform_validation',                   array( $this, 'validate' ) );
-		add_action( 'gform_pre_submission',               array( $this, 'handle_existing_images_submission' ) );
-		add_filter( 'gform_field_input',                  array( $this, 'maybe_update_field_input' ), 10, 5 );
+		add_action( 'gform_pre_render',     array( __class__, 'maybe_prepopulate_form' ) );
+		add_filter( 'gform_validation',     array( $this, 'validate' ) );
+		add_action( 'gform_pre_submission', array( $this, 'handle_existing_images_submission' ) );
+		add_filter( 'gform_field_input',    array( $this, 'maybe_update_field_input' ), 10, 5 );
 
 		add_action( 'gform_user_registration_validation', array( $this, 'validate_multisite_submission' ), 10, 3 );
 
@@ -159,6 +159,8 @@ class GF_User_Registration extends GFFeedAddOn {
 		// Add login form shortcode and sign on hooks
 		add_filter( 'gform_shortcode_login', array( $this, 'parse_login_shortcode' ), 10, 3 );
 		add_action( 'wp', array( $this, 'handle_login_submission' ) );
+
+		add_filter( 'gform_addon_pages_using_components', array( $this, 'addon_pages_using_components' ) );
 
 		$this->load_pending_activations();
 
@@ -216,6 +218,15 @@ class GF_User_Registration extends GFFeedAddOn {
 					'set_password_url'    => esc_html__( 'Set Password URL', 'gravityformsuserregistration' ),
 				),
 			),
+			array(
+				'handle'  => 'gform_user_registration_pending_activations',
+				'src'     => $this->get_base_url() . '/js/pending_activations.js',
+				'version' => $this->_version,
+				'enqueue' => array(
+					array( 'admin_page' => array( 'form_settings' ) ),
+					array( 'query' => 'page=gf-pending-activations' ),
+				),
+			),
 		);
 
 		return array_merge( parent::scripts(), $scripts );
@@ -236,6 +247,18 @@ class GF_User_Registration extends GFFeedAddOn {
 		$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG || isset( $_GET['gform_debug'] ) ? '' : '.min';
 
 		$styles = array(
+			array(
+				'handle'  => 'gform_user_registration_pending_activations',
+				'src'     => false,
+				'version' => $this->_version,
+				'deps'    => array(
+					'gform_admin_components',
+					'gform_admin_icons',
+				),
+				'enqueue' => array(
+					array( 'query' => 'page=gf-pending-activations' ),
+				),
+			),
 			array(
 				'handle'  => 'gform_user_registration_widget_editor',
 				'src'     => $this->get_base_url() . "/css/widget_editor{$min}.css",
@@ -306,6 +329,20 @@ class GF_User_Registration extends GFFeedAddOn {
 	}
 
 	/**
+	 * Add the pending activations page to the list of pages using components
+	 *
+	 * @since 5.5.2
+	 *
+	 * @param array $pages The list of pages using components
+	 *
+	 * @return array The updated list of pages using components
+	 */
+	public function addon_pages_using_components( $pages ) {
+		$pages[] = 'gf-pending-activations';
+		return $pages;
+	}
+
+	/**
 	 * Downgrades the role of a user
 	 *
 	 * Used when a subscription is canceled
@@ -325,7 +362,12 @@ class GF_User_Registration extends GFFeedAddOn {
 			return;
 		}
 
-		$user->set_role( rgars( $feed, 'meta/cancellationActionUserValue' ) );
+		$role = rgars( $feed, 'meta/cancellationActionUserValue' );
+		if ( ! self::is_valid_role( $role ) ) {
+			$this->log( sprintf( 'Invalid role "%s" for downgrade. Skipping.', $role ) );
+			return;
+		}
+		$user->set_role( $role );
 
 	}
 
@@ -392,7 +434,7 @@ class GF_User_Registration extends GFFeedAddOn {
 	 * @see $this->get_plugin_settings()
 	 */
 	public function custom_registration_page() {
-		if ( is_user_logged_in() ) {
+		if (  wp_doing_cron() || is_user_logged_in() ) {
 			return;
 		}
 
@@ -436,9 +478,9 @@ class GF_User_Registration extends GFFeedAddOn {
 		}
 
 		if ( 'gf_custom' === $reg_page_id ) {
-			wp_redirect( $reg_page_url );
+			wp_safe_redirect( $reg_page_url );
 		} else {
-			wp_redirect( get_permalink( $reg_page_id ) );
+			wp_safe_redirect( get_permalink( $reg_page_id ) );
 		}
 
 		exit;
@@ -533,27 +575,24 @@ class GF_User_Registration extends GFFeedAddOn {
 					unset( $errors['user_name'] );
 				}
 
-				// Check if the email already belongs to a user.
-				if ( isset( $errors['user_email'] ) ) {
+				// Check if the email already belongs to the user being updated.
+				if ( isset( $errors['user_email'] ) && $this->is_users_email( $user_email, $user_id ) ) {
 
-					for ( $i = count( $errors['user_email'] ) - 1; $i >= 0; $i -- ) {
+					// Re-check only the conditions that should block updates.
+					// If the email passes these validations, the remaining errors
+					// are "already registered" type - which is fine for the user's own email.
+					$email_valid     = is_email( $user_email );
+					$email_safe      = ! is_email_address_unsafe( $user_email );
+					$email_domain_ok = true;
 
-						$error_message = $errors['user_email'][ $i ];
-
-						// If the user is submitting their own email address, allow it by removing the error entry.
-						if ( $error_message == __( 'Sorry, that email address is already used!' ) && $this->is_users_email( $user_email, $user_id ) ) {
-							unset( $errors['user_email'][ $i ] );
-						} // Same as the above, but for a different message.
-						elseif ( $error_message == __( 'That email address has already been used. Please check your inbox for an activation email. It will become available in a couple of days if you do nothing.' ) && $this->is_users_email( $user_email, $user_id ) ) {
-							unset( $errors['user_email'][ $i ] );
-						} // Same as the above, but for a different message.
-						elseif ( $error_message == sprintf( __( '<strong>Error:</strong> This email address is already registered. %sLog in%s with this address or choose another one.' ), '<a href="' . wp_login_url() . '">', '</a>' ) && $this->is_users_email( $user_email, $user_id ) ) {
-							unset( $errors['user_email'][ $i ] );
-						}
+					$limited_email_domains = get_site_option( 'limited_email_domains' );
+					if ( is_array( $limited_email_domains ) && ! empty( $limited_email_domains ) ) {
+						$limited_email_domains = array_map( 'strtolower', $limited_email_domains );
+						$email_domain          = strtolower( substr( $user_email, 1 + strpos( $user_email, '@' ) ) );
+						$email_domain_ok       = in_array( $email_domain, $limited_email_domains, true );
 					}
 
-					// If there aren't any errors left, remove the key completely
-					if ( count( $errors['user_email'] ) <= 0 ) {
+					if ( $email_valid && $email_safe && $email_domain_ok ) {
 						unset( $errors['user_email'] );
 					}
 
@@ -601,7 +640,7 @@ class GF_User_Registration extends GFFeedAddOn {
 				// Throws an error if the email is valid, but is already pending activation
 				if ( $email_valid && $this->pending_activation_exists( 'user_email', $user_email ) ) {
 					$email_valid = false;
-					$form        = $this->add_validation_error( $feed['meta']['email'], $form, __( 'That email address has already been used. Please check your inbox for an activation email. It will become available in a couple of days if you do nothing.' ) );
+					$form        = $this->add_validation_error( $feed['meta']['email'], $form, __( 'That email address has already been used. Please check your inbox for an activation email. It will become available in a couple of days if you do nothing.', 'gravityformsuserregistration' ) );
 				}
 
 				// Throws an error if the email is already registered
@@ -643,7 +682,7 @@ class GF_User_Registration extends GFFeedAddOn {
 
 				// Throws an error if the user is pending activation
 				if ( $username_valid && $this->pending_activation_exists( 'user_login', $username ) ) {
-					$form = $this->add_validation_error( $feed['meta']['username'], $form, __( 'That username is currently reserved but may be available in a couple of days' ) );
+					$form = $this->add_validation_error( $feed['meta']['username'], $form, __( 'That username is currently reserved but may be available in a couple of days', 'gravityformsuserregistration' ) );
 				}
 			}
 
@@ -659,6 +698,9 @@ class GF_User_Registration extends GFFeedAddOn {
 		$form                          = apply_filters( 'gform_user_registration_validation', $form, $feed, $submitted_page );
 		$validation_result['is_valid'] = $this->is_form_valid( $form );
 		$validation_result['form']     = $form;
+
+		// Clear the cached feed so delayed feeds are not processed.
+		$this->_single_submission_feed = false;
 
 		return $validation_result;
 	}
@@ -832,7 +874,16 @@ class GF_User_Registration extends GFFeedAddOn {
 		$user_id  = wp_create_user( $user_data['user_login'], $password, $user_data['user_email'] );
 
 		if ( is_wp_error( $user_id ) ) {
-			$this->add_feed_error( sprintf( esc_html__( 'Unable to create user. Error from wp_create_user(): %s', 'gravityformsuserregistration' ), $user_id->get_error_message() ), $feed, $entry, $form );
+			$this->add_feed_error(
+				sprintf(
+					/* translators: %s is the error message from wp_create_user() */
+					esc_html__( 'Unable to create user. Error from wp_create_user(): %s', 'gravityformsuserregistration' ),
+					esc_html( $user_id->get_error_message() )
+				),
+				$feed,
+				$entry,
+				$form
+			);
 
 			return $user_id;
 		}
@@ -853,7 +904,7 @@ class GF_User_Registration extends GFFeedAddOn {
 		);
 
 		$role = rgar( $meta, 'role' );
-		if ( $role ) {
+		if ( self::is_valid_role( $role ) ) {
 			$this->log( sprintf( 'Setting role: %s', $role ) );
 			$update_args['role'] = $role;
 		}
@@ -959,6 +1010,15 @@ class GF_User_Registration extends GFFeedAddOn {
 			return;
 		}
 
+		// Use the current site prefix so role/capability meta keys are blocked correctly on multisite.
+		global $wpdb;
+		$blocked_meta_keys = array(
+			$wpdb->prefix . 'capabilities',
+			$wpdb->prefix . 'user_level',
+			'wp_capabilities',
+			'wp_user_level',
+		);
+
 		foreach ( $custom_meta as $item ) {
 			$meta_key = rgar( $item, 'meta_key' );
 			$this->log( sprintf( 'Adding meta item: %s', $meta_key ) );
@@ -966,6 +1026,12 @@ class GF_User_Registration extends GFFeedAddOn {
 			// skip empty meta items
 			if ( ! $meta_key || empty( $item['value_key'] ) ) {
 				$this->log( 'Meta item is empty. Skipping it.' );
+				continue;
+			}
+
+			// Block sensitive meta keys that could escalate privileges.
+			if ( in_array( $meta_key, $blocked_meta_keys, true ) ) {
+				$this->log( sprintf( 'Meta key "%s" is restricted. Skipping it.', $meta_key ) );
 				continue;
 			}
 
@@ -998,7 +1064,8 @@ class GF_User_Registration extends GFFeedAddOn {
 	 * @param string $key      The activation key
 	 */
 	public function add_meta_to_bp_user( $user_id, $key ) {
-		$this->log( 'User activated via BuddyPress.  Adding user meta from form submission.' );
+		$this->log( "User id {$user_id} activated via BuddyPress. Adding user meta from form submission." );
+		require_once( gf_user_registration()->get_base_path() . '/includes/signups.php' );
 
 		global $wpdb;
 		$signup_table = $wpdb->base_prefix . 'signups';
@@ -1014,10 +1081,15 @@ class GF_User_Registration extends GFFeedAddOn {
 			return;
 		}
 
-		$meta = maybe_unserialize( $signup->meta );
+		$meta = GFUserSignups::maybe_unserialize_signup_meta( $signup->meta );
 
 		if ( ! is_array( $meta ) || ! $meta ) {
 			$this->log( 'No user meta found.' );
+			return;
+		}
+
+		if ( ! GFUserSignups::signup_belongs_to_current_site( $key, $meta ) ) {
+			$this->log( 'Pending signup does not belong to the current site.' );
 			return;
 		}
 
@@ -1039,7 +1111,11 @@ class GF_User_Registration extends GFFeedAddOn {
 			return;
 		}
 
+		// Add WordPress user meta.
 		$this->add_user_meta( $user_id, $feed, $form, $entry, '' );
+
+		// Add BuddyPress Extended Profile meta.
+		$this->update_buddypress_data( $user_id, $feed, $entry );
 
 		if ( rgar( $meta, 'password_hash' ) ) {
 			$this->set_hashed_password( $user_id, $meta['password_hash'] );
@@ -1151,9 +1227,22 @@ class GF_User_Registration extends GFFeedAddOn {
 
 	// # USER UPDATE ---------------------------------------------------------------------------------------------------
 
-	public static function maybe_prepopulate_form( $form ) {
+	/**
+	 * Triggers population of the form using the mappings from an update type feed, or display of a login required message.
+	 *
+	 * @since unknown
+	 * @since 5.5.0 Added the additional params, so we can return early for the form_config context.
+	 *
+	 * @param array      $form         The form being prepared for display.
+	 * @param bool|null  $ajax         Whether the form is being displayed via AJAX. Only used when $context is 'form_display'.
+	 * @param array|null $field_values The field values to be used to populate the form. Only used when $context is 'form_display'.
+	 * @param string     $context      The context that the method is being called in. Possible values are 'form_display' and 'form_config'.
+	 *
+	 * @return array
+	 */
+	public static function maybe_prepopulate_form( $form, $ajax = null, $field_values = null, $context = null ) {
 
-		if ( empty( $form['id'] ) ) {
+		if ( empty( $form['id'] ) || $context === 'form_config' ) {
 			return $form;
 		}
 
@@ -1305,7 +1394,7 @@ class GF_User_Registration extends GFFeedAddOn {
 					if ( gf_user_registration()->is_json( $value ) ) {
 						$value = json_decode( $value, true );
 					} elseif ( is_serialized( $value ) ) {
-						$value       = unserialize( $value );
+						$value       = self::safe_unserialize( $value );
 						$list_values = array();
 
 						if ( is_array( $value ) ) {
@@ -1457,7 +1546,17 @@ class GF_User_Registration extends GFFeedAddOn {
 
 		$result = wp_update_user( $user );
 		if ( is_wp_error( $result ) ) {
-			$this->add_feed_error( sprintf( esc_html__( 'Unable to complete updating user (ID: %d). Error from wp_update_user(): %s', 'gravityformsuserregistration' ), $user_id, $result->get_error_message() ), $feed, $entry, $form );
+			$this->add_feed_error(
+				sprintf(
+					/* translators: %d is the user ID, %s is the error message from wp_update_user() */
+					esc_html__( 'Unable to complete updating user (ID: %1$d). Error from wp_update_user(): %2$s', 'gravityformsuserregistration' ),
+					$user_id,
+					esc_html( $result->get_error_message() )
+				),
+				$feed,
+				$entry,
+				$form
+			);
 
 			return $result;
 		}
@@ -1470,8 +1569,7 @@ class GF_User_Registration extends GFFeedAddOn {
 			clean_user_cache( $user_id );
 		}
 
-		// if a role is provided and it is not the 'preserve' option, update the role
-		if ( $role && $role != 'gfur_preserve_role' ) {
+		if ( self::is_valid_role( $role ) ) {
 			$this->log( sprintf( 'Setting role: %s', $role ) );
 			$user_obj->set_role( $role );
 		}
@@ -1551,7 +1649,7 @@ class GF_User_Registration extends GFFeedAddOn {
 	}
 
 	public function is_new_file_upload( $form_id, $input_name ) {
-		$file_info          = GFFormsModel::get_temp_filename( $form_id, $input_name );
+		$file_info          = $this->get_temp_filename( $form_id, $input_name );
 		$is_new_file_upload = false;
 
 		if ( isset( $file_info['uploaded_filename'] ) && is_array( $file_info['uploaded_filename'] ) ) {
@@ -1587,6 +1685,36 @@ class GF_User_Registration extends GFFeedAddOn {
 			'gform_user_registration_is_new_file_upload',
 			$form_id
 		), $is_new_file_upload, $form_id, $input_name );
+	}
+
+	/* Get the temporary filenames for uploaded files.
+	 *
+	 * @since 5.5.0
+	 *
+	 * @param int    $form_id    The current form ID.
+	 * @param string $input_name The current input name.
+	 *
+	 * @return false|array An array of uploaded filename and temporary filename, or false if no file is uploaded.
+	 */
+	public function get_temp_filename( $form_id, $input_name ) {
+
+		$uploaded_filename = ! empty( $_FILES[ $input_name ]['name'] ) && $_FILES[ $input_name ]['error'] === 0 ? $_FILES[ $input_name ]['name'] : ''; // phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+
+		if ( empty( $uploaded_filename ) && isset( GFFormsModel::$uploaded_files[ $form_id ] ) ) {
+			$uploaded_filename = rgget( $input_name, GFFormsModel::$uploaded_files[ $form_id ] );
+		}
+
+		if ( empty( $uploaded_filename ) ) {
+			return false;
+		}
+
+		$ext_check      = is_array( $uploaded_filename ) ? $uploaded_filename[0]['uploaded_filename'] : $uploaded_filename;
+		$form_unique_id = GFFormsModel::get_form_unique_id( $form_id );
+		$extension      = pathinfo( $ext_check, PATHINFO_EXTENSION );
+		$temp_filename  = "{$form_unique_id}_{$input_name}.{$extension}";
+
+		return array( 'uploaded_filename' => $uploaded_filename, 'temp_filename' => $temp_filename );
+
 	}
 
 	public function is_prepopulated_file_upload( $form_id, $input_name ) {
@@ -1735,7 +1863,7 @@ class GF_User_Registration extends GFFeedAddOn {
 		}
 
 		$site_role = rgar( $meta, 'siteRole' );
-		if ( $site_role ) {
+		if ( self::is_valid_role( $site_role ) ) {
 			$this->log( sprintf( 'Setting site role: %s', $site_role ) );
 			$user = new WP_User( $user_id, null, $blog_id );
 			$user->set_role( $site_role );
@@ -1748,7 +1876,7 @@ class GF_User_Registration extends GFFeedAddOn {
 		} // preserve role, aka do nothing
 		elseif ( $root_role == 'gfur_preserve_role' ) {
 		} // otherwise, update their role on current site
-		else {
+		elseif ( self::is_valid_role( $root_role ) ) {
 			$this->log( sprintf( 'Setting root role: %s', $root_role ) );
 			$user = new WP_User( $user_id );
 			$user->set_role( $root_role );
@@ -1820,6 +1948,12 @@ class GF_User_Registration extends GFFeedAddOn {
 		 */
 		$meta       = gf_apply_filters( 'gform_user_registration_signup_meta', $form['id'], $meta, $form, $entry, $feed );
 		$ms_options = rgars( $feed, 'meta/multisite_options' );
+
+		// Set after the filter so another callback cannot drop the originating site.
+		// Activation rejects a signup whose blog_id does not match the current site.
+		if ( is_multisite() && is_array( $meta ) ) {
+			$meta['blog_id'] = get_current_blog_id();
+		}
 
 		// save current user details in wp_signups for future activation
 		if ( is_multisite() && rgar( $ms_options, 'create_site' ) && $site_data = $this->get_site_data( $entry, $form, $feed ) ) {
@@ -2037,12 +2171,14 @@ class GF_User_Registration extends GFFeedAddOn {
 		}
 
 		foreach ( $bp_data as $item ) {
-			$this->log( 'Setting value for BP field: ' . $item['field_id'] );
-			$success = xprofile_set_field_data( $item['field_id'], $item['user_id'], $item['value'] );
-			$this->log( 'Result: ' . var_export( (bool) $success, true ) );
-			$this->log( 'Setting visibility for BP field: ' . $item['field_id'] );
-			$success = xprofile_set_field_visibility_level( $item['field_id'], $item['user_id'], $item['field']->default_visibility );
-			$this->log( 'Result: ' . var_export( (bool) $success, true ) );
+			if ( is_object( $item['field'] ) ) {
+				$this->log( "Setting value for BP field id {$item['field_id']}; Name: {$item['field']->name}" );
+				$success = xprofile_set_field_data( $item['field_id'], $item['user_id'], $item['value'] );
+				$this->log( 'Result: ' . var_export( (bool) $success, true ) );
+				$this->log( "Setting visibility for BP field id {$item['field_id']}; Name: {$item['field']->name}" );
+				$success = xprofile_set_field_visibility_level( $item['field_id'], $item['user_id'], $item['field']->default_visibility );
+				$this->log( 'Result: ' . var_export( (bool) $success, true ) );
+			}
 		}
 
 	}
@@ -2193,13 +2329,14 @@ class GF_User_Registration extends GFFeedAddOn {
 				'description'               => false,
 				'logged_in_avatar'          => true,
 				'logged_in_message'         => '',
-				'login_redirect'            => rgget( 'redirect_to' ) ? rgget( 'redirect_to' ) : $_SERVER['REQUEST_URI'],
-				'logout_redirect'           => rgget( 'redirect_to' ) ? rgget( 'redirect_to' ) : $_SERVER['REQUEST_URI'],
+				'login_redirect'            => rgget( 'redirect_to' ) ? wp_validate_redirect( rgget( 'redirect_to' ), $_SERVER['REQUEST_URI'] ) : $_SERVER['REQUEST_URI'],
+				'logout_redirect'           => rgget( 'redirect_to' ) ? wp_validate_redirect( rgget( 'redirect_to' ), $_SERVER['REQUEST_URI'] ) : $_SERVER['REQUEST_URI'],
 				'registration_link_display' => 'true',
 				'registration_link_text'    => esc_html__( 'Register', 'gravityformsuserregistration' ),
 				'forgot_password_display'   => 'true',
 				'forgot_password_text'      => esc_html__( 'Forgot Password', 'gravityformsuserregistration' ),
 				'tabindex'                  => null,
+				'theme'                     => GFForms::get_default_theme(),
 			), $attributes, 'gravityforms'
 		);
 
@@ -2259,6 +2396,7 @@ class GF_User_Registration extends GFFeedAddOn {
 				'login_redirect'        => ( isset( $_SERVER['HTTPS'] ) ? 'https' : 'http' ) . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'],
 				'logout_redirect'       => ( isset( $_SERVER['HTTPS'] ) ? 'https' : 'http' ) . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'],
 				'tabindex'              => null,
+				'theme'                 => GFForms::get_default_theme(),
 			)
 		);
 
@@ -2373,11 +2511,28 @@ class GF_User_Registration extends GFFeedAddOn {
 		/* Set the tab index. */
 		GFCommon::$tab_index = gf_apply_filters( array( 'gform_tabindex', $form['id'] ), $tabindex, $form );
 
+		$theme             = $this->get_theme_slug( $form, $theme );
+		$force_login_theme = function ( $slug, $filter_form ) use ( $form, $theme ) {
+			if ( $form['id'] === $filter_form['id'] && ! empty( $theme ) ) {
+				return $theme;
+			}
+			return $slug;
+		};
+
+		add_filter( 'gform_form_theme_slug', $force_login_theme, 10, 2 );
+
 		/* Enqueue needed scripts. */
 		GFFormDisplay::enqueue_form_scripts( $form, false );
 
 		/* Prepare the form wrapper class. */
 		$wrapper_css_class = GFCommon::get_browser_class() . ' gform_wrapper';
+
+		// Prepare the theme slug passed from the shortcode.
+		if ( $theme === 'orbital' ) {
+			$theme_classes = 'gform-theme gform-theme--foundation gform-theme--framework gform-theme--orbital';
+		} elseif ( $theme === 'gravity-theme' ) {
+			$theme_classes = 'gravity-theme';
+		}
 
 		/* Ensure login redirect URL isn't empty. */
 		if ( rgblank( $login_redirect ) ) {
@@ -2385,7 +2540,7 @@ class GF_User_Registration extends GFFeedAddOn {
 		}
 
 		/* Open Gravity Form wrapper and form tag. */
-		$html  = "<div class='{$wrapper_css_class} gf_login_form gravity-theme' id='gform_wrapper_{$form['id']}'>";
+		$html  = "<div class='{$wrapper_css_class} gf_login_form {$theme_classes}' id='gform_wrapper_{$form['id']}'>";
 		$html .= "<form method='post' id='gform_{$form['id']}'>";
 		$html .= "<input type='hidden' name='login_redirect' value='" . esc_attr( sanitize_text_field( $login_redirect ) ) . "' />";
 
@@ -2401,19 +2556,21 @@ class GF_User_Registration extends GFFeedAddOn {
 			$html .= "</div>";
 		}
 
-		/* Insert form body. */
-		$form_fields_container_tag = $this->is_gravityforms_supported( '2.5' ) ? 'div' : 'ul';
-
 		$html .= "<div class='gform_body'>";
-		$html .= "<{$form_fields_container_tag} id='gform_fields_login' class='gform_fields top_label'>";
+		$html .= "<div id='gform_fields_login' class='gform_fields top_label'>";
+		//Force modern markup by pre-populating the cache value.
+		GFCache::set( 'GFCommon::is_legacy_markup_enabled_og' . $form['id'], false );
 		foreach ( $form['fields'] as $field ) {
 			$field_value = GFFormsModel::get_field_value( $field );
 			$field_html  = GFFormDisplay::get_field( $field, $field_value, false, $form );
 			$field_html  = str_replace( "<span class='gfield_required'>*</span>", '', $field_html );
 			$html       .= $field_html;
 		}
-		$html .= "</{$form_fields_container_tag}></div>";
+		$html .= '</div></div>';
 		$html .= GFFormDisplay::gform_footer( $form, 'gform_footer top_label', false, array(), '', false, false, 0 );
+		remove_filter( 'gform_form_theme_slug', $force_login_theme, 10 );
+		// Delete cache value to prevent affecting other forms on the page.
+		GFCache::delete( 'GFCommon::is_legacy_markup_enabled_og' . $form['id'] );
 		/* Close Gravity Form wrapper and form tag. */
 		$html .= '</form>';
 		$html .= '</div>';
@@ -2447,6 +2604,31 @@ class GF_User_Registration extends GFFeedAddOn {
 	}
 
 	/**
+	 * Get the theme slug to be used for the login form.
+	 *
+	 * @since 5.5.0
+	 *
+	 * @param array $form The form object.
+	 * @param string $theme The theme name passed from the shortcode.
+	 *
+	 * @return string The theme slug to be used for the login form.
+	 */
+	private function get_theme_slug( $form, $theme ) {
+		$theme = strtolower( trim( (string) $theme ) );
+
+		// allow using the short version in shortcodes.
+		if ( $theme === 'gravity' ) {
+			$theme = 'gravity-theme';
+		}
+
+		if ( in_array( $theme, array( 'gravity-theme', 'orbital' ), true ) ) {
+			$form['theme'] = $theme;
+		}
+
+		return isset( $form['theme'] ) ? $form['theme'] : '';
+	}
+
+	/**
 	 * Get login form object.
 	 *
 	 * @access public
@@ -2475,7 +2657,7 @@ class GF_User_Registration extends GFFeedAddOn {
 				'type' => 'text',
 				'text' => esc_html__( 'Login', 'gravityformsuserregistration' )
 			),
-			'markupVersion' => $this->is_gravityforms_supported( '2.5' ) ? 2 : 1,
+			'markupVersion' => 2,
 		);
 
 		/* Create username field. */
@@ -2550,6 +2732,10 @@ class GF_User_Registration extends GFFeedAddOn {
 		// Load the form display class.
 		if ( ! class_exists( 'GFFormDisplay' ) ) {
 			require_once( GFCommon::get_base_path() . '/form_display.php' );
+		}
+
+		if ( function_exists( 'gf_recaptcha' ) ) {
+			remove_filter( 'gform_validation', array( gf_recaptcha(), 'validate_submission' ), 19 );
 		}
 
 		// Get the form field values and validate the form.
@@ -2627,7 +2813,7 @@ class GF_User_Registration extends GFFeedAddOn {
 
 		GFUserSignups::prep_signups_functionality();
 
-		$key           = rgpost( 'key' );
+		$key           = sanitize_text_field( rgpost( 'key' ) );
 		$userdata      = GFUserSignups::activate_signup( $key );
 		$error_message = '';
 
@@ -3021,7 +3207,7 @@ class GF_User_Registration extends GFFeedAddOn {
 				'fields'      => array(
 					array(
 						'name'      => 'createSite',
-						'label'     => esc_html__( 'Create Site', 'gravityformsuserregistraiton' ),
+						'label'     => esc_html__( 'Create Site', 'gravityformsuserregistration' ),
 						'type'      => 'checkbox',
 						'choices'   => array(
 							array(
@@ -3195,9 +3381,9 @@ class GF_User_Registration extends GFFeedAddOn {
 			)
 		);
 
-		$form = $this->get_current_form();
+		$form = $this->get_current_form() ?? [];
 
-		if ( GFCommon::has_post_field( $form['fields'] ) || ! empty( $this->get_feeds_by_slug( 'gravityformsadvancedpostcreation', $form['id'] ) ) ) {
+		if ( ! empty( $form ) && ( GFCommon::has_post_field( $form['fields'] ) || ! empty( $this->get_feeds_by_slug( 'gravityformsadvancedpostcreation', $form['id'] ) ) ) ) {
 			$set_post_author_field = array(
 				'name'      => 'setPostAuthor',
 				'label'     => esc_html__( 'Set Post Author', 'gravityformsuserregistration' ),
@@ -3445,6 +3631,10 @@ class GF_User_Registration extends GFFeedAddOn {
 	public function get_username_field_for_feed_settings() {
 
 		$form = GFAPI::get_form( rgget( 'id' ) );
+
+		if ( ! $form || empty( $form['fields'] ) ) {
+			return null;
+		}
 
 		foreach ( $form['fields'] as $field ) {
 
@@ -3699,12 +3889,12 @@ class GF_User_Registration extends GFFeedAddOn {
 			'create' => array(
 				'label' => esc_html__( 'Create User', 'gravityformsuserregistration' ),
 				'value' => 'create',
-				'icon'  => 'fa-user-plus',
+				'icon'  => 'gform-icon--user-add',
 			),
 			'update' => array(
 				'label' => esc_html__( 'Update User', 'gravityformsuserregistration' ),
 				'value' => 'update',
-				'icon'  => 'fa-refresh',
+				'icon'  => 'gform-icon--renew',
 			)
 		);
 	}
@@ -3754,6 +3944,10 @@ class GF_User_Registration extends GFFeedAddOn {
 	}
 
 	public function has_feed_type( $feed_type, $form, $current_feed_id = false ) {
+
+		if ( ! is_array( $form ) || empty( $form['id'] ) ) {
+			return false;
+		}
 
 		$feeds = $this->get_feeds( $form['id'] );
 
@@ -3995,7 +4189,8 @@ class GF_User_Registration extends GFFeedAddOn {
 			'label'      => esc_html__( 'Update User on Cancel', 'gravityformsuserregistration' ),
 			'type'       => 'checkbox_and_select',
 			'checkbox'   => array(
-				'label' => esc_html__( 'Update user when subscription is cancelled.', 'gravityformsuserregistration' ),
+				'label'         => esc_html__( 'Update user when subscription is cancelled.', 'gravityformsuserregistration' ),
+				'default_value' => '0',
 			),
 			'select'     => array(
 				'choices' => $this->get_update_user_actions_choices(),
@@ -4510,6 +4705,40 @@ class GF_User_Registration extends GFFeedAddOn {
 		return rgars( $feed, 'meta/userActivationEnable' ) == true;
 	}
 
+	/**
+	 * Safely unserializes a value without instantiating PHP objects.
+	 *
+	 * @since 5.5.0
+	 *
+	 * @param mixed $value The value to maybe unserialize.
+	 *
+	 * @return mixed
+	 */
+	public static function safe_unserialize( $value ) {
+		if ( is_serialized( $value ) ) {
+			return @unserialize( trim( $value ), array( 'allowed_classes' => false ) );
+		}
+
+		return $value;
+	}
+
+	/**
+	 * Validates that a role is a registered WordPress role.
+	 *
+	 * @since 5.5.0
+	 *
+	 * @param string $role The role to validate.
+	 *
+	 * @return bool Whether the role is valid.
+	 */
+	public static function is_valid_role( $role ) {
+		if ( empty( $role ) || $role === 'gfur_preserve_role' ) {
+			return false;
+		}
+
+		return wp_roles()->is_role( $role );
+	}
+
 	public static function get_user_by_entry_id( $entry_id, $id_only = false ) {
 		global $wpdb;
 		if ( is_multisite() ) {
@@ -4704,8 +4933,17 @@ class GF_User_Registration extends GFFeedAddOn {
 	 * @return array
 	 */
 	public function get_filtered_single_submission_feed( $entry, $form ) {
-		$feed  = $this->get_single_submission_feed( $entry, $form );
-		$feeds = $this->pre_process_feeds( array( $feed ), $entry, $form );
+		if ( is_callable( array( $this, 'has_payment_status_condition' ) ) ) {
+			$check_for_payment_status_rule = in_array( current_filter(), array(
+				'gform_validation',
+				'gform_entry_post_save',
+			) );
+			$feed                          = $this->get_single_submission_feed( $entry, $form, $check_for_payment_status_rule );
+		} else {
+			$feed = $this->get_single_submission_feed( $entry, $form );
+		}
+
+		$feeds = $this->pre_process_feeds( is_array( $feed ) ? array( $feed ) : array(), $entry, $form );
 
 		return rgar( $feeds, 0, array() );
 	}
@@ -5002,7 +5240,7 @@ class GF_User_Registration extends GFFeedAddOn {
 
 		$count = sizeof( $results );
 		for ( $i = 0; $i < $count; $i ++ ) {
-			$results[ $i ]['meta'] = maybe_unserialize( $results[ $i ]['meta'] );
+			$results[ $i ]['meta'] = self::safe_unserialize( $results[ $i ]['meta'] );
 		}
 
 		return $results;

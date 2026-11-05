@@ -19,6 +19,24 @@ class GF_Field_MultiSelect extends GF_Field {
 	public $type = 'multiselect';
 
 	/**
+	 * Whether the field can be used in a repeater.
+	 *
+	 * @since 3.2.0
+	 *
+	 * @var bool
+	 */
+	public $repeatable = true;
+
+	/**
+	 * Indicates if this field supports state validation.
+	 *
+	 * @since 3.0
+	 *
+	 * @var bool
+	 */
+	protected $_supports_state_validation = true;
+
+	/**
 	 * Returns the field title.
 	 *
 	 * @since  Unknown
@@ -241,29 +259,31 @@ class GF_Field_MultiSelect extends GF_Field {
 	}
 
 	/**
-	 * Format the value before it is saved to the Entry Object.
+	 * Sanitize and format the value before it is saved to the Entry Object.
 	 *
-	 * @since  Unknown
-	 * @access public
+	 * @since 3.0.0
+	 * @since 3.0.3 Updated to use $this->prepare_post_category_value_save_input().
 	 *
-	 * @uses GF_Field_MultiSelect::sanitize_entry_value()
+	 * @param string $value          The value to be saved.
+	 * @param array  $form           The Form object currently being processed.
+	 * @param string $input_name     The input name used when accessing the $_POST.
+	 * @param int    $entry_id        The ID of the entry currently being processed.
+	 * @param array  $entry           The entry currently being processed.
+	 * @param string $repeater_index The repeater index if the field is inside a repeater.
 	 *
-	 * @param array|string $value      The value to be saved.
-	 * @param array        $form       The Form Object currently being processed.
-	 * @param string       $input_name The input name used when accessing the $_POST.
-	 * @param int          $lead_id    The ID of the Entry currently being processed.
-	 * @param array        $lead       The Entry Object currently being processed.
-	 *
-	 * @return string $value The field value. Comma separated if an array.
+	 * @return array|string The sanitized and formatted input value to be saved.
 	 */
-	public function get_value_save_entry( $value, $form, $input_name, $lead_id, $lead ) {
-
-		if ( is_array( $value ) ) {
-			foreach ( $value as &$v ) {
-				$v = $this->sanitize_entry_value( $v, $form['id'] );
-			}
+	public function get_value_save_input( $value, $form, $input_name, $entry_id, $entry, $repeater_index = '' ) {
+		if ( $this->type === 'post_category' ) {
+			$value = $this->prepare_post_category_value_save_input( $this->to_array( $value ) );
 		} else {
-			$value = $this->sanitize_entry_value( $value, $form['id'] );
+			if ( is_array( $value ) ) {
+				foreach ( $value as &$v ) {
+					$v = $this->sanitize_entry_value( $v, $form['id'] );
+				}
+			} else {
+				$value = $this->sanitize_entry_value( $value, $form['id'] );
+			}
 		}
 
 		return empty( $value ) ? '' : $this->to_string( $value );
@@ -315,7 +335,9 @@ class GF_Field_MultiSelect extends GF_Field {
 			}
 		}
 
-		$return = GFCommon::implode_non_blank( ', ', $items );
+		$separator = $url_encode ? urlencode( ', ' ) : ', ';
+
+		$return = GFCommon::implode_non_blank( $separator, $items );
 
 		if ( $format == 'html' || $esc_html ) {
 			$return = esc_html( $return );
@@ -325,28 +347,19 @@ class GF_Field_MultiSelect extends GF_Field {
 	}
 
 	/**
-	 * Format the entry value before it is used in entry exports and by framework add-ons using GFAddOn::get_field_value().
+	 * Format a single Multi Select field value for export.
 	 *
-	 * @since  Unknown
-	 * @access public
+	 * @since 3.2.0
 	 *
-	 * @uses GFCommon::selection_display()
-	 * @uses GFCommon::implode_non_blank()
-	 *
+	 * @param mixed      $value    The raw value for $input_id (string, or array of selected values).
 	 * @param array      $entry    The entry currently being processed.
-	 * @param string     $input_id The field or input ID.
-	 * @param bool|false $use_text When processing choice based fields should the choice text be returned instead of the value.
-	 * @param bool|false $is_csv   Is the value going to be used in the .csv entries export?
+	 * @param string|int $input_id The field or input ID.
+	 * @param bool       $use_text When processing choice based fields should the choice text be returned instead of the value.
+	 * @param bool       $is_csv   Is the value going to be used in the .csv entries export?
 	 *
-	 * @return string $value The value of a field from an export file.
+	 * @return string
 	 */
-	public function get_value_export( $entry, $input_id = '', $use_text = false, $is_csv = false ) {
-		if ( empty( $input_id ) ) {
-			$input_id = $this->id;
-		}
-
-		$value = rgar( $entry, $input_id );
-
+	protected function format_value_export( $value, $entry, $input_id = '', $use_text = false, $is_csv = false ) {
 		if ( ! empty( $value ) && ! $is_csv ) {
 			$items = $this->to_array( $value );
 
@@ -357,7 +370,7 @@ class GF_Field_MultiSelect extends GF_Field {
 
 		} elseif ( $this->storageType === 'json' ) {
 
-			$items = json_decode( $value );
+			$items = is_array( $value ) ? $value : json_decode( $value );
 			$value = GFCommon::implode_non_blank( ', ', $items );
 		}
 
@@ -447,6 +460,45 @@ class GF_Field_MultiSelect extends GF_Field {
 	 */
 	public function get_filter_operators() {
 		return array( 'contains' );
+	}
+
+	/**
+	 * Indicates if state validation should be skipped if the submitted value is blank.
+	 *
+	 * @since 3.0
+	 *
+	 * @param string|int $key The field or input ID.
+	 *
+	 * @return bool
+	 */
+	public function skip_state_validation_if_blank( $key ) {
+		return true;
+	}
+
+	/**
+	 * Prepares the value that will be hashed on form display as part of the state.
+	 *
+	 * @since 3.0
+	 *
+	 * @param string|array $value The default value.
+	 *
+	 * @return null|array
+	 */
+	public function get_values_for_state_hash( $value ) {
+		return array( $this->id => $this->get_choices_for_state_hash() );
+	}
+
+	/**
+	 * Returns the value to use when the state is validated.
+	 *
+	 * @since 3.0
+	 *
+	 * @param string|array $value The submitted value.
+	 *
+	 * @return array
+	 */
+	public function get_value_for_state_validation( $value ) {
+		return array( $this->id => $value );
 	}
 
 }

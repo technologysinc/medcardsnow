@@ -748,6 +748,17 @@ class UniteCreatorTemplateEngineWork{
 
 
 	/**
+	 * videos from the connected TikTok account
+	 */
+	public function getTikTokFeed($maxVideos = 8){
+
+		$services = new UniteServicesUC();
+		$services->includeTikTokAPI();
+
+		return(UELM_TikTokFeed::getTemplateData($maxVideos));
+	}
+
+	/**
 	 * print the shared Ably connect function into a widget script.
 	 * call from the widget js template: {{ putAblyConnectFunction() }}
 	 * no twig arguments. the widget passes mode when it calls ueAblyConnect().
@@ -1853,6 +1864,7 @@ class UniteCreatorTemplateEngineWork{
 		$putAttributesJson = new Twig\TwigFunction('put_attributes_json', array($this,"putAttributesJson"));
 
 		$getItems = new Twig\TwigFunction('get_items', array($this,"getItems"));
+		$getTikTokFeed = new Twig\TwigFunction('getTikTokFeed', array($this,"getTikTokFeed"));
 		$putGetDataFunction = new Twig\TwigFunction('get_data', array($this,"getData"));
 
 		$putCssItemsFunction = new Twig\TwigFunction('put_css_items', array($this,"putCssItems"));
@@ -1912,6 +1924,7 @@ class UniteCreatorTemplateEngineWork{
 		$filterWcPrice = new Twig\TwigFilter("wc_price", array($this, "filterWcPrice"));
 		$filterJsonDecode = new Twig\TwigFilter("json_decode", array($this, "filterJsonDecode"));
 		$filterTimeAgo = new Twig\TwigFilter("time_ago", array($this, "filterPostTimeAgo"));
+		$filterEscUrl = new Twig\TwigFilter("ucesc_url", array($this, "filterEscUrl"), array("is_safe" => array("html")));
 		
 		$putTestHtml = new Twig\TwigFunction('putTestHTML', array($this,"putTestHTML"));
 
@@ -1968,6 +1981,7 @@ class UniteCreatorTemplateEngineWork{
 		$this->twig->addFunction($putAttributesJson);
 
 		$this->twig->addFunction($getItems);
+		$this->twig->addFunction($getTikTokFeed);
 		$this->twig->addFunction($putPostImageAttributes);
 
 		//test functions
@@ -1981,6 +1995,7 @@ class UniteCreatorTemplateEngineWork{
 		$this->twig->addFilter($filterWcPrice);
 		$this->twig->addFilter($filterJsonDecode);
 		$this->twig->addFilter($filterTimeAgo);
+		$this->twig->addFilter($filterEscUrl);
 
 		//pro functions
 		$this->twig->addFunction($doAction);
@@ -2098,10 +2113,10 @@ class UniteCreatorTemplateEngineWork{
 		if(stripos($template, "raw") === false)
 			return($template);
 
-		$parts = preg_split('/(<script\b[^>]*>.*?<\/script>)/is', $template, -1, PREG_SPLIT_DELIM_CAPTURE);
+		$parts = preg_split('/(<(?:script|style)\b[^>]*>.*?<\/(?:script|style)>)/is', $template, -1, PREG_SPLIT_DELIM_CAPTURE);
 
 		if(is_array($parts) == false)
-			return($this->escapeRawFiltersInQuotedPrints($template, "html_attr"));
+			return($this->escapeRawFiltersInHtmlAttributes($template));
 
 		$output = "";
 
@@ -2112,7 +2127,12 @@ class UniteCreatorTemplateEngineWork{
 				continue;
 			}
 
-			$output .= $this->escapeRawFiltersInQuotedPrints($part, "html_attr");
+			if(preg_match('/^<style\b/i', $part) == 1){
+				$output .= $this->escapeRawFiltersInStyleTag($part);
+				continue;
+			}
+
+			$output .= $this->escapeRawFiltersInHtmlAttributes($part);
 		}
 
 		return($output);
@@ -2137,10 +2157,157 @@ class UniteCreatorTemplateEngineWork{
 		$inner = substr($tag, $openEnd + 1, $closeStart - ($openEnd + 1));
 		$close = substr($tag, $closeStart);
 
-		$open = $this->escapeRawFiltersInQuotedPrints($open, "html_attr");
+		$open = $this->escapeRawFiltersInHtmlAttributes($open);
 		$inner = $this->escapeRawFiltersInJsTemplate($inner);
 
 		return($open.$inner.$close);
+	}
+
+	/**
+	 * Escape the opening tag as HTML. Inside the style body, any quoted print
+	 * stays attribute-escaped so a value cannot close the style element.
+	 */
+	private function escapeRawFiltersInStyleTag($tag){
+
+		$openEnd = strpos($tag, ">");
+
+		if($openEnd === false)
+			return($this->escapeRawFiltersInHtmlAttributes($tag));
+
+		$closeStart = stripos($tag, "</style>", $openEnd);
+
+		if($closeStart === false)
+			return($this->escapeRawFiltersInHtmlAttributes($tag));
+
+		$open = substr($tag, 0, $openEnd + 1);
+		$inner = substr($tag, $openEnd + 1, $closeStart - ($openEnd + 1));
+		$close = substr($tag, $closeStart);
+
+		$open = $this->escapeRawFiltersInHtmlAttributes($open);
+		$inner = $this->escapeRawFiltersInQuotedPrints($inner, "html_attr");
+
+		return($open.$inner.$close);
+	}
+
+	/**
+	 * Replace a trailing |raw on Twig prints that sit inside a real attribute value.
+	 * A bare apostrophe in text ("it's") is not an attribute and must not swallow the rest of the template.
+	 */
+	private function escapeRawFiltersInHtmlAttributes($template){
+
+		if(is_string($template) == false || $template === "")
+			return($template);
+
+		if(strpos($template, "raw") === false)
+			return($template);
+
+		$length = strlen($template);
+		$output = "";
+		$index = 0;
+		$state = "text";
+		$quote = "";
+		$attribute = "";
+
+		while($index < $length){
+
+			$char = $template[$index];
+
+			if($state === "text"){
+
+				if($char === "<"){
+
+					if(substr($template, $index, 9) === "<![CDATA["){
+
+						$end = strpos($template, "]]>", $index + 9);
+
+						if($end === false){
+							$output .= substr($template, $index);
+							break;
+						}
+
+						$output .= substr($template, $index, ($end + 3) - $index);
+						$index = $end + 3;
+						continue;
+					}
+
+					if(substr($template, $index, 4) === "<!--"){
+
+						$end = strpos($template, "-->", $index + 4);
+
+						if($end === false){
+							$output .= substr($template, $index);
+							break;
+						}
+
+						$output .= substr($template, $index, ($end + 3) - $index);
+						$index = $end + 3;
+						continue;
+					}
+
+					$state = "tag";
+				}
+
+				$output .= $char;
+				$index++;
+				continue;
+			}
+
+			if($state === "tag"){
+
+				if($char === ">"){
+					$state = "text";
+					$output .= $char;
+					$index++;
+					continue;
+				}
+
+				if($char === "'" || $char === '"'){
+
+					$attribute = $this->getAttributeNameBeforeQuote($template, $index);
+
+					if($attribute !== null){
+						$state = "attr";
+						$quote = $char;
+					}
+				}
+
+				$output .= $char;
+				$index++;
+				continue;
+			}
+
+			if($char === $quote){
+				$state = "tag";
+				$quote = "";
+				$attribute = "";
+				$output .= $char;
+				$index++;
+				continue;
+			}
+
+			if($char === "{" && ($index + 1) < $length && $template[$index + 1] === "{"){
+
+				$end = strpos($template, "}}", $index + 2);
+
+				if($end === false){
+					$output .= $char;
+					$index++;
+					continue;
+				}
+
+				$print = substr($template, $index, ($end + 2) - $index);
+				$print = $this->replaceRawFilterWithContextEscape($print, "html_attr", $attribute);
+
+				$output .= $print;
+				$index = $end + 2;
+				continue;
+			}
+
+			$output .= $char;
+			$index++;
+		}
+
+		return($output);
 	}
 
 	/**
@@ -2212,17 +2379,87 @@ class UniteCreatorTemplateEngineWork{
 	}
 
 	/**
-	 * Replace a trailing |raw on one Twig print.
-	 * |raw after html_attr stops a later auto-escape from encoding the & in &#x27; and &quot;.
+	 * Get the attribute name that owns the quote at the given index.
+	 * Returns null when the quote is not an attribute value. An empty string means
+	 * it is an attribute, but the name is not a plain token, so it must not be treated as a URL.
 	 */
-	private function replaceRawFilterWithContextEscape($print, $strategy){
+	private function getAttributeNameBeforeQuote($template, $quoteIndex){
+
+		$index = $quoteIndex - 1;
+
+		while($index >= 0 && $this->isTemplateSpace($template[$index]) === true)
+			$index--;
+
+		if($index < 0 || $template[$index] !== "=")
+			return(null);
+
+		$index--;
+
+		while($index >= 0 && $this->isTemplateSpace($template[$index]) === true)
+			$index--;
+
+		$nameEnd = $index;
+
+		while($index >= 0 && preg_match('/[A-Za-z0-9_:.\-]/', $template[$index]) === 1)
+			$index--;
+
+		if($index === $nameEnd)
+			return("");
+
+		$name = substr($template, $index + 1, $nameEnd - $index);
+
+		return(strtolower($name));
+	}
+
+	/**
+	 * Space characters that can sit between an attribute name, "=", and its quote.
+	 */
+	private function isTemplateSpace($char){
+
+		return($char === " " || $char === "\t" || $char === "\n" || $char === "\r" || $char === "\f");
+	}
+
+	/**
+	 * URL attributes must stay readable. ":" and "/" cannot be entity-encoded.
+	 * The list is narrow on purpose: a data attribute that holds JSON must not go through it.
+	 */
+	private function isUrlAttribute($attribute){
+
+		if($attribute === null || $attribute === "")
+			return(false);
+
+		$arrUrlAttributes = array(
+			"href", "src", "action", "formaction", "poster", "cite",
+			"background", "longdesc", "manifest", "xlink:href",
+			"data-src", "data-href", "data-url",
+		);
+
+		if(in_array($attribute, $arrUrlAttributes, true) === true)
+			return(true);
+
+		return(false);
+	}
+
+	/**
+	 * Replace a trailing |raw on one Twig print.
+	 * |raw after the escape stops a later auto-escape from encoding the & in &#x27; and &quot;.
+	 */
+	private function replaceRawFilterWithContextEscape($print, $strategy, $attribute = ""){
 
 		if(strpos($print, "|e(") !== false)
 			return($print);
 
-		if($strategy === "html_attr")
-			$filter = "|e('html_attr')|raw";
-		else
+		if($strategy === "html_attr"){
+
+			if(strpos($print, "|ucesc_url") !== false)
+				return($print);
+
+			if($this->isUrlAttribute($attribute) === true)
+				$filter = "|ucesc_url|raw";
+			else
+				$filter = "|e('html_attr')|raw";
+
+		}else
 			$filter = "|e('js')";
 
 		$replaced = preg_replace('/\|\s*raw(\s*)\}\}$/', $filter.'$1}}', $print, 1);
@@ -2231,6 +2468,73 @@ class UniteCreatorTemplateEngineWork{
 			return($print);
 
 		return($replaced);
+	}
+
+	/**
+	 * Escape a URL for an HTML attribute.
+	 * A value that is not a single URL falls back to a plain attribute escape,
+	 * so JSON is not wiped by esc_url(). A dangerous protocol is removed on every path.
+	 */
+	public function filterEscUrl($url){
+
+		if(is_string($url) === false)
+			return($url);
+
+		if($url === "")
+			return($url);
+
+		if($this->urlHasDangerousProtocol($url) === true)
+			return("");
+
+		$isSingleUrl = (preg_match('/[{}<>"\r\n]/', $url) === 0 && strlen($url) <= 2048);
+
+		if($isSingleUrl === false || function_exists("esc_url") === false)
+			return($this->escapeUrlForAttribute($url));
+
+		// esc_url() prepends http:// to a relative path such as "news/article".
+		if(strpos($url, ":") === false && isset($url[0]) === true && $url[0] !== "/" && $url[0] !== "#" && $url[0] !== "?")
+			return($this->escapeUrlForAttribute($url));
+
+		return(esc_url($url));
+	}
+	
+	/**
+	 * True when a browser would treat the start of the value as javascript:, data:, or vbscript:.
+	 */
+	private function urlHasDangerousProtocol($url){
+
+		$decoded = preg_replace('/^\xEF\xBB\xBF/', "", $url);
+
+		for($i = 0; $i < 4; $i++){
+
+			$next = preg_replace('/(&#0*58(?![;0-9])|&#x0*3a(?![;a-f0-9]))/i', '$1;', $decoded);
+			$next = html_entity_decode($next, ENT_QUOTES | ENT_HTML5, "UTF-8");
+
+			if($next === $decoded)
+				break;
+
+			$decoded = $next;
+		}
+
+		$decoded = preg_replace('/[\x00-\x20\x7F]+/', "", $decoded);
+
+		if(preg_match('/^(javascript|data|vbscript):/i', $decoded) === 1)
+			return(true);
+
+		return(false);
+	}
+
+	/**
+	 * Attribute-escape a URL without encoding ":" or "/".
+	 */
+	private function escapeUrlForAttribute($url){
+
+		$url = preg_replace('/[\x00-\x1F\x7F]/', "", $url);
+
+		if(function_exists("esc_attr") === true)
+			return(esc_attr($url));
+
+		return(htmlspecialchars($url, ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8"));
 	}
 
 

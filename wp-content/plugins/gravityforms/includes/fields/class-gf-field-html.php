@@ -8,6 +8,15 @@ class GF_Field_HTML extends GF_Field {
 
 	public $type = 'html';
 
+	/**
+	 * Whether the field can be used in a repeater.
+	 *
+	 * @since 3.2.0
+	 *
+	 * @var bool
+	 */
+	public $repeatable = true;
+
 	public function get_form_editor_field_title() {
 		return esc_attr__( 'HTML', 'gravityforms' );
 	}
@@ -52,7 +61,7 @@ class GF_Field_HTML extends GF_Field {
 		$is_entry_detail = $this->is_entry_detail();
 		$is_form_editor  = $this->is_form_editor();
 
-		$content = $is_entry_detail || $is_form_editor ? "<div class='gf-html-container'><span class='gf_blockheader'>
+		$content = $is_entry_detail || $is_form_editor ? "<div class='gf-html-container ginput_container'><span class='gf_blockheader'>
 															<i class='fa fa-code fa-lg'></i> " . esc_html__( 'HTML Content', 'gravityforms' ) .
 															'</span><span>' . esc_html__( 'This is a content placeholder. HTML content is not displayed in the form admin. Preview this form to view the content.', 'gravityforms' ) . '</span></div>'
 														: $this->content;

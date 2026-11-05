@@ -1,0 +1,32 @@
+# Med Cards Now - robots.txt
+# https://medcardsnow.com/robots.txt
+#
+# Note: a crawler obeys ONLY the most specific group that names it.
+# The AI crawlers are therefore listed in the same group as "*" so the
+# private-area rules below apply to them too.
+
+# AI search & assistant crawlers (welcome) + all other crawlers
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: *
+Allow: /
+Allow: /wp-admin/admin-ajax.php
+Disallow: /wp-admin/
+Disallow: /demo/
+Disallow: /login/
+Disallow: /medical-card-profile/
+Disallow: /secure-payment-gateway/
+Disallow: /thank-you/
+Disallow: /?s=
+Disallow: /search/
+
+# XML Sitemap (generated automatically by Rank Math)
+Sitemap: https://medcardsnow.com/sitemap_index.xml

@@ -1,10 +1,13 @@
 
 #sendEmailValueSpan select {
 	width: auto;
+	margin-bottom: 1rem;
+	margin-top: 0.5rem;	
 }
 
 #userActivationValueSpan select {
 	width: auto;
+	margin-top: 1rem;
 }
 
 #gaddon-setting-checkbox-choice-sendemailenable,

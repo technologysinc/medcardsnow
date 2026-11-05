@@ -1,0 +1,102 @@
+/* WebP Image Optimizer – admin styles */
+.wio-wrap { max-width: 1100px; }
+.wio-lead { font-size: 14px; color: #50575e; max-width: 760px; }
+
+.wio-card {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 6px;
+	padding: 18px 22px;
+	margin: 16px 0;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .03);
+}
+.wio-card h2 { margin: 0 0 6px; font-size: 16px; }
+.wio-h3 { margin: 24px 0 0; font-size: 14px; }
+
+.wio-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 12px;
+	margin-top: 16px;
+}
+.wio-grid .wio-card { margin: 0; }
+.wio-stat { display: flex; flex-direction: column; gap: 2px; }
+.wio-stat-label { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: #646970; }
+.wio-stat-value { font-size: 26px; font-weight: 600; line-height: 1.25; color: #1d2327; font-variant-numeric: tabular-nums; }
+.wio-stat-sub { font-size: 12px; color: #646970; }
+
+.wio-ok { color: #008a20; }
+.wio-bad { color: #d63638; }
+.wio-danger { color: #b32d2e !important; }
+
+.wio-modes { margin: 12px 0; display: grid; gap: 6px; }
+.wio-count { color: #646970; font-variant-numeric: tabular-nums; }
+.wio-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.wio-state { color: #50575e; }
+
+.wio-progress { margin-top: 14px; }
+.wio-bar { height: 10px; background: #f0f0f1; border-radius: 5px; overflow: hidden; }
+.wio-bar span { display: block; height: 100%; width: 0; background: #2271b1; transition: width .25s ease; }
+.wio-progress-text { margin-top: 6px; font-size: 12px; color: #50575e; font-variant-numeric: tabular-nums; }
+
+.wio-log {
+	margin: 12px 0 0;
+	padding: 8px 12px 8px 32px;
+	max-height: 260px;
+	overflow: auto;
+	background: #f6f7f7;
+	border-radius: 4px;
+	font-size: 12px;
+	line-height: 1.6;
+}
+.wio-log-failed, .wio-log-crashed { color: #b32d2e; }
+.wio-log-partial { color: #996800; }
+.wio-log-skipped, .wio-log-unsupported, .wio-log-busy { color: #646970; }
+
+.wio-inline { margin-right: 18px; display: inline-block; }
+.wio-block { display: block; margin: 0 0 8px; }
+.wio-sub { margin-top: 10px; padding-top: 10px; border-top: 1px solid #f0f0f1; }
+
+.wio-advanced summary { cursor: pointer; font-weight: 600; margin: 12px 0 4px; }
+.wio-engines { margin: 10px 0 0; }
+.wio-engines li { margin: 0 0 4px; }
+.wio-engines .dashicons { font-size: 18px; vertical-align: text-bottom; }
+
+.wio-code {
+	background: #1d2327;
+	color: #f0f0f1;
+	padding: 12px 14px;
+	border-radius: 4px;
+	overflow: auto;
+	font-size: 12px;
+	white-space: pre;
+}
+
+.wio-test-result ul { margin: 0 0 8px; }
+.wio-test-result li { padding-left: 22px; position: relative; }
+.wio-test-result li::before { position: absolute; left: 0; font-weight: 700; }
+.wio-check-ok::before { content: "\2713"; color: #008a20; }
+.wio-check-warn::before { content: "!"; color: #996800; left: 4px !important; }
+.wio-check-bad::before { content: "\2715"; color: #d63638; }
+
+/* Media Library column */
+.column-wio { width: 190px; }
+.wio-status { display: flex; flex-direction: column; gap: 3px; font-size: 12px; }
+.wio-status.wio-busy { opacity: .6; }
+.wio-badge {
+	align-self: flex-start;
+	background: #f0f0f1;
+	color: #50575e;
+	border-radius: 3px;
+	padding: 1px 7px;
+	font-weight: 600;
+}
+.wio-badge-ok { background: #edfaef; color: #00691a; }
+.wio-badge-bad { background: #fcf0f1; color: #b32d2e; }
+.wio-muted { color: #646970; }
+.wio-warn { color: #996800; }
+.wio-row-actions { display: flex; gap: 10px; }
+.wio-row-actions .button-link { font-size: 12px; }
+
+/* WP's .button sets display:inline-block, which would override [hidden]. */
+.wio-wrap [hidden] { display: none !important; }

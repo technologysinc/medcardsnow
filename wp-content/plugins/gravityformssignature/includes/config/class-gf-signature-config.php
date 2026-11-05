@@ -15,17 +15,16 @@ class GF_Signature_Config extends GF_Config {
 	 * @return array[]
 	 */
 	public function data() {
-
-
-		if ( ! isset( $this->args ) || ! rgar( $this->args, 'form_ids' ) ) {
+		$form_ids = $this->get_form_ids_arg();
+		if ( empty( $form_ids ) ) {
 			return array();
 		}
 
 		$addon = \GFSignature::get_instance();
 
 		$data = array();
-		foreach ( $this->args['form_ids'] as $form_id ) {
-			$form = \GFAPI::get_form($form_id);
+		foreach ( $form_ids as $form_id ) {
+			$form = \GFAPI::get_form( $form_id );
 
 			if ( ! $addon::has_signature_field( $form ) ) {
 				continue;

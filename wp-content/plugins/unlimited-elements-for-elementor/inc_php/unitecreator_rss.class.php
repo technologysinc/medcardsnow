@@ -220,11 +220,61 @@ class UniteCreatorRSS{
             if($dataItemsLimit > 0 && !empty($arrData))
                 $arrData = array_slice($arrData, 0, $dataItemsLimit, true);
 
+            $arrData = $this->sanitizeRssTitles($arrData);
+
             $data[$name] = $arrData;
         }
 		
         
 		return $data;
+	}
+
+	/**
+	 * strip tags and scripts from item titles before they reach the template
+	 */
+	private function sanitizeRssTitles($arrRss){
+
+		if(is_array($arrRss) == false)
+			return($arrRss);
+
+		foreach($arrRss as $key => $value){
+
+			if(is_array($value)){
+				$arrRss[$key] = $this->sanitizeRssTitles($value);
+				continue;
+			}
+
+			if(is_string($key) == false || is_string($value) == false)
+				continue;
+
+			$keyName = strtolower($key);
+
+			if($keyName !== "title" && substr($keyName, -6) !== "_title")
+				continue;
+
+			$arrRss[$key] = $this->sanitizeRssTitle($value);
+		}
+
+		return($arrRss);
+	}
+
+	/**
+	 * plain-text title: drop script and style blocks, then any remaining tags
+	 */
+	private function sanitizeRssTitle($title){
+
+		$title = preg_replace('/<(script|style)\b[^>]*>.*?(<\/\1>|$)/is', '', $title);
+
+		if(is_string($title) == false)
+			$title = "";
+
+		$title = wp_strip_all_tags($title);
+		$title = preg_replace('/\s+/', ' ', $title);
+
+		if(is_string($title) == false)
+			$title = "";
+
+		return(trim($title));
 	}
 	
 	/**

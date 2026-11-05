@@ -1,0 +1,2 @@
+2026-09-29T15:39:17+00:00 INFO Email "admin_payment_gateway_enabled" sent CONTEXT: {"email_type":"admin_payment_gateway_enabled","status":"sent","recipient":"guest","WC_Gateway_Authnet":null}
+2026-09-29T15:41:54+00:00 INFO Email "admin_payment_gateway_enabled" sent CONTEXT: {"email_type":"admin_payment_gateway_enabled","status":"sent","recipient":"guest","WC_Gateway_Authnet":null}

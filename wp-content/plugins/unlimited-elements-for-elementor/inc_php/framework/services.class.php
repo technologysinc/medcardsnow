@@ -48,6 +48,15 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		}
 
 		/**
+		 * include tiktok api
+		 */
+		public function includeTikTokAPI(){
+
+			$pathAPI = GlobalsUC::$pathPlugin."inc_php/framework/tiktok/includes.php";
+			require_once($pathAPI);
+		}
+
+		/**
 		 * get instagram data array
 		 */
 		public function getInstagramSavedDataArray(){

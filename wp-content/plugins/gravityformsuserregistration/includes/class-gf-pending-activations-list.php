@@ -2,7 +2,8 @@
 
 defined( 'ABSPATH' ) || die();
 
-require_once( ABSPATH . '/wp-admin/includes/class-wp-list-table.php' );
+require_once ABSPATH . '/wp-admin/includes/class-wp-list-table.php';
+require_once gf_user_registration()->get_base_path() . '/includes/signups.php';
 
 class GF_Pending_Activations_List extends WP_List_Table {
 
@@ -45,17 +46,20 @@ class GF_Pending_Activations_List extends WP_List_Table {
 
 		foreach ( $pending_activations as $pending_activation ) {
 
-			$signup_meta = unserialize( $pending_activation->meta );
+			$signup_meta = GFUserSignups::maybe_unserialize_signup_meta( $pending_activation->meta );
 
-			$lead = RGFormsModel::get_lead( rgar( $signup_meta, 'lead_id' ) );
+			// On multisite, make sure this signup belongs to the current site.
+			if ( ! GFUserSignups::signup_belongs_to_current_site( $pending_activation->activation_key, $signup_meta ) ) {
+				continue;
+			}
 
-			// An empty lead here means the lead_id is not valid for this site.
-			if ( empty( $lead ) ) {
+			$lead = GFAPI::get_entry( rgar( $signup_meta, 'lead_id' ) );
+			if ( is_wp_error( $lead ) ) {
 				continue;
 			}
 
 			$form_id           = $lead['form_id'];
-			$form              = rgar( $forms, $form_id ) ? rgar( $forms, $form_id ) : RGFormsModel::get_form_meta( $form_id );
+			$form              = rgar( $forms, $form_id ) ? rgar( $forms, $form_id ) : GFFormsModel::get_form_meta( $form_id );
 			$forms[ $form_id ] = $form;
 
 			$item               = array();
@@ -94,17 +98,30 @@ class GF_Pending_Activations_List extends WP_List_Table {
 
 		$value = rgar( $item, $column_name );
 
-		if ( $column_name == 'user_login' ) {
-			$value .= '
+		if ( $column_name === 'user_login' ) {
+			$activation_key = esc_attr( $item['activation_key'] );
+			$value         .= '
 			<div class="row-actions">
 				<span class="inline hide-if-no-js">
-					<a title="' . esc_attr__( 'Activate this sign up', 'gravityformsuserregistration' ) . '" href="javascript: if(confirm(\'' . esc_attr__( 'Activate this sign up? ', 'gravityformsuserregistration' ) . esc_attr__( "\'Cancel\' to stop, \'OK\' to activate.", 'gravityformsuserregistration' ) . '\')) { singleItemAction(\'activate\',\'' . esc_attr( $item['activation_key'] ) . '\'); }">' . esc_html__( 'Activate', 'gravityformsuserregistration' ) . '</a> |
+					<a href="#"
+						data-dialog-title="' . esc_attr__( 'Activate User', 'gravityformsuserregistration' ) . '"
+						data-dialog-confirm="' . esc_attr__( 'Are you sure you want to activate this user? \'Cancel\' to stop, \'OK\' to activate.', 'gravityformsuserregistration' ) . '"
+						data-dialog-callback="gfPendingActivationAction"
+						data-activation-action="activate"
+						data-activation-key="' . $activation_key . '"
+					>' . esc_html__( 'Activate User', 'gravityformsuserregistration' ) . '</a> |
 				</span>
 				<span class="inline hide-if-no-js">
 					<a title="' . esc_attr__( 'View the entry associated with this sign up', 'gravityformsuserregistration' ) . '" href="' . admin_url( "admin.php?page=gf_entries&view=entry&id={$item['form_id']}&lid={$item['lead_id']}" ) . '">' . esc_html__( 'View Entry', 'gravityformsuserregistration' ) . '</a> |
 				</span>
 				<span class="inline hide-if-no-js">
-					<a title="' . esc_attr__( 'Delete this sign up?', 'gravityformsuserregistration' ) . '" href="javascript: if(confirm(\'' . esc_attr__( 'Delete this sign up? ', 'gravityformsuserregistration' ) . esc_attr__( "\'Cancel\' to stop, \'OK\' to delete.", 'gravityformsuserregistration' ) . '\')) { singleItemAction(\'delete\',\'' . esc_attr( $item['activation_key'] ) . '\'); }">' . esc_html__( 'Delete', 'gravityformsuserregistration' ) . '</a>
+					<a href="#"
+						data-dialog-title="' . esc_attr__( 'Delete Registration', 'gravityformsuserregistration' ) . '"
+						data-dialog-confirm="' . esc_attr__( 'Are you sure you want to delete this registration? \'Cancel\' to stop, \'OK\' to delete.', 'gravityformsuserregistration' ) . '"
+						data-dialog-callback="gfPendingActivationAction"
+						data-activation-action="delete"
+						data-activation-key="' . $activation_key . '"
+					>' . esc_html__( 'Delete', 'gravityformsuserregistration' ) . '</a>
 				</span>
 			</div>';
 		}

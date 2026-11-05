@@ -72,7 +72,7 @@ get_header(); ?>
 
 		<?php } else {
 
-			$key    = ! empty( $_GET[ $var ] ) ? $_GET[ $var ] : $_POST['key'];
+			$key    = ! empty( $_GET[ $var ] ) ? sanitize_text_field( $_GET[ $var ] ) : sanitize_text_field( rgpost( 'key' ) );
 			$result = GFUserSignups::activate_signup( $key );
 			if ( is_wp_error( $result ) ) {
 				if ( 'already_active' == $result->get_error_code() || 'blog_taken' == $result->get_error_code() ) {
@@ -87,8 +87,8 @@ get_header(); ?>
 							esc_html__( 'Your account has been activated. You may now %1$slog in%2$s to the site using your chosen username of &#8220;%3$s&#8221;. Please check your email inbox at %4$s for your login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can %5$sreset your password%2$s.', 'gravityformsuserregistration' ),
 							sprintf( '<a href="%s">', network_site_url( 'wp-login.php', 'login' ) ),
 							'</a>',
-							$signup->user_login,
-							$signup->user_email,
+							esc_html( $signup->user_login ),
+							esc_html( $signup->user_email ),
 							sprintf( '<a href="%s">', wp_lostpassword_url() ),
 							'</a>'
 						);
@@ -97,8 +97,8 @@ get_header(); ?>
 							/* translators: 1: Site link, 2: Username, 3: User email address, 4: Opening a tag with lost password URL, 5: Closing a tag. */
 							esc_html__( 'Your site at %1$s is active. You may now log in to your site using your chosen username of &#8220;%2$s&#8221;. Please check your email inbox at %3$s for your login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can %4$sreset your password%5$s.', 'gravityformsuserregistration' ),
 							sprintf( '<a href="http://%1$s">%2$s</a>', $signup->domain, $signup->domain ),
-							$signup->user_login,
-							$signup->user_email,
+							esc_html( $signup->user_login ),
+							esc_html( $signup->user_email ),
 							sprintf( '<a href="%s">', wp_lostpassword_url() ),
 							'</a>'
 						);

@@ -1,0 +1,13 @@
+2026-09-29T15:34:30+00:00 INFO Automatic database update triggered.
+2026-09-29T15:34:30+00:00 INFO Scheduling database updates (from 10.7.0)...
+2026-09-29T15:34:30+00:00 INFO   [10.8.0] Scheduled 'wc_update_1080_migrate_analytics_import_option'.
+2026-09-29T15:34:30+00:00 INFO   [10.8.0] Scheduled 'wc_update_1080_backfill_email_template_sync_meta'.
+2026-09-29T15:34:30+00:00 INFO   [10.8.0-2] Scheduled 'wc_update_10802_restore_orders_meta_key_value_index'.
+2026-09-29T15:34:30+00:00 INFO   [10.9.0] Scheduled 'wc_update_1090_remove_task_list_reminder_bar_hidden_option'.
+2026-09-29T15:34:30+00:00 INFO   [10.9.2] Scheduled 'wc_update_10902_remove_deprecated_push_notifications_option'.
+2026-09-29T15:34:30+00:00 INFO   [11.0.0] Scheduled 'wc_update_1100_enable_point_of_sale_feature'.
+2026-09-29T15:34:30+00:00 INFO   [11.1.0] Scheduled 'wc_update_1110_delete_dashboard_outofstock_count_transient'.
+2026-09-29T15:34:30+00:00 INFO   [11.1.0] Scheduled 'wc_update_1110_cleanup_block_email_posts'.
+2026-09-29T15:34:30+00:00 INFO   [11.1.0] Scheduled 'wc_update_1110_flush_product_count_cache'.
+2026-09-29T15:34:30+00:00 INFO   [11.1.0-1] Scheduled 'wc_update_11101_remove_deprecated_variation_gallery_option'.
+2026-09-29T15:34:30+00:00 INFO Database updates scheduled.

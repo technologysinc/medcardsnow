@@ -338,12 +338,18 @@ class GF_Signature_Image {
 		     ! imagesavealpha( $return_image, true ) ||
 		     ! imagecopyresampled( $return_image, $image, 0, 0, 0, 0, $width, $height, $width, $height )
 		) {
-			imagedestroy( $return_image );
+			// Destroy GD image only on PHP versions where it still has an effect (< 8.0).
+			if ( version_compare( PHP_VERSION, '8.0', '<' ) ) {
+				imagedestroy( $return_image );
+			}
 
 			return $image;
 		}
 
-		imagedestroy( $image );
+		// Destroy GD image only on PHP versions where it still has an effect (< 8.0).
+		if ( version_compare( PHP_VERSION, '8.0', '<' ) ) {
+			imagedestroy( $image );
+		}
 
 		return $return_image;
 	}
@@ -371,7 +377,11 @@ class GF_Signature_Image {
 		header( 'Content-Disposition: ' . $content_disposition . '; filename="' . $this->filename . '.png"' );
 		header( 'Content-Transfer-Encoding: binary' );
 		imagepng( $image );
-		imagedestroy( $image );
+
+		// Destroy GD image only on PHP versions where it still has an effect (< 8.0).
+		if ( version_compare( PHP_VERSION, '8.0', '<' ) ) {
+			imagedestroy( $image );
+		}
 	}
 
 	/**

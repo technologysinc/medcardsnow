@@ -210,6 +210,14 @@ class UCOperations extends UniteElementsBaseUC{
 			$isRenewed = UELM_HelperInsta::checkRenewAccessToken_onceInAWhile();
 		}catch(Exception $e){
 		}
+
+		try{
+			$objServices = new UniteServicesUC();
+			$objServices->includeTikTokAPI();
+
+			UELM_HelperTikTok::checkRenewAccessToken();
+		}catch(Exception $e){
+		}
 	}
 
 	/**

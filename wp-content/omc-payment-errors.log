@@ -1,0 +1,59 @@
+[2025-12-01 17:39:19] Payment attempt started
+Array
+(
+    [amount] => 329.97
+    [has_opaque] => 1
+    [has_descriptor] => 1
+    [user_id] => 0
+)
+
+
+[2025-12-01 17:39:19] Sending request to Authorize.Net
+Array
+(
+    [createTransactionRequest] => Array
+        (
+            [merchantAuthentication] => Array
+                (
+                    [name] => [HIDDEN]
+                    [transactionKey] => [HIDDEN]
+                )
+
+            [transactionRequest] => Array
+                (
+                    [transactionType] => authCaptureTransaction
+                    [amount] => 329.97
+                    [payment] => Array
+                        (
+                            [opaqueData] => Array
+                                (
+                                    [dataDescriptor] => COMMON.ACCEPT.INAPP.PAYMENT
+                                    [dataValue] => eyJjb2RlIjoiNTBfMl8wNjAwMDUzRTk3NzFDOTY5Rjk4MEM0QUJCNTM1NjZFMTc3MEZDMUJDQ0E2ODI5QjE1RTRGRjI3RjU5M0E2MTJBQzk1N0VBQjNBOUE4MjhDOTA3MTNFRDlGNzY1Nzg5RTkyRTlEQTA4IiwidG9rZW4iOiI5NzY0NjEwNzU2NTQ2ODUwMjAzNjA0IiwidiI6IjEuMSJ9
+                                )
+
+                        )
+
+                    [currencyCode] => USD
+                )
+
+        )
+
+)
+
+
+[2025-12-01 17:39:20] Authorize.Net Response
+Array
+(
+    [http_code] => 200
+    [raw_body] => ﻿{"messages":{"resultCode":"Error","message":[{"code":"E00003","text":"The element 'transactionRequest' in namespace 'AnetApi/xml/v1/schema/AnetApiSchema.xsd' has invalid child element 'currencyCode' in namespace 'AnetApi/xml/v1/schema/AnetApiSchema.xsd'. List of possible elements expected: 'profile, solution, callId, terminalNumber, authCode, refTransId, splitTenderId, order, lineItems, tax, duty, shipping, taxExempt, poNumber, customer, billTo, shipTo, customerIP, cardholderAuthentication, retail, employeeId, transactionSettings, userFields, surcharge, merchantDescriptor, subMerchant, tip, processingOptions, subsequentAuthInformation, otherTax, shipFrom, authorizationIndicatorType, tapToPhone' in namespace 'AnetApi/xml/v1/schema/AnetApiSchema.xsd'."}]}}
+)
+
+
+[2025-12-01 17:39:20] Invalid response from Authorize.Net
+Array
+(
+    [http_code] => 200
+    [raw_body] => ﻿{"messages":{"resultCode":"Error","message":[{"code":"E00003","text":"The element 'transactionRequest' in namespace 'AnetApi/xml/v1/schema/AnetApiSchema.xsd' has invalid child element 'currencyCode' in namespace 'AnetApi/xml/v1/schema/AnetApiSchema.xsd'. List of possible elements expected: 'profile, solution, callId, terminalNumber, authCode, refTransId, splitTenderId, order, lineItems, tax, duty, shipping, taxExempt, poNumber, customer, billTo, shipTo, customerIP, cardholderAuthentication, retail, employeeId, transactionSettings, userFields, surcharge, merchantDescriptor, subMerchant, tip, processingOptions, subsequentAuthInformation, otherTax, shipFrom, authorizationIndicatorType, tapToPhone' in namespace 'AnetApi/xml/v1/schema/AnetApiSchema.xsd'."}]}}
+)
+
+

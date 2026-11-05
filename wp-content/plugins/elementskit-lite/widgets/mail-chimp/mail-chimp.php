@@ -2002,7 +2002,7 @@ class ElementsKit_Widget_Mail_Chimp extends Widget_Base {
 			echo $this->get_render_attribute_string('form'); 
 			?>
 		>
-			<input type="hidden" name="double_opt_in" value="<?php echo esc_attr($ekit_mail_chimp_double_opt_in)?>">
+			<input type="hidden" name="form_config" value="<?php echo esc_attr( \ElementsKit_Lite\Widgets\Mail_Chimp\Mail_Chimp_Api::get_form_config($settings) ); ?>">
 
 				<div <?php echo $this->get_render_attribute_string('content_wrapper'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already escaped by elementor ?>>
 				<?php

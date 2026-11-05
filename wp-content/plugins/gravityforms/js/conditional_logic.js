@@ -6,7 +6,7 @@ gform.addAction( 'gform_input_change', function( elem, formId, fieldId ) {
 		return;
 	}
 	var dependentFieldIds = rgars( gf_form_conditional_logic, [ formId, 'fields', gformExtractFieldId( fieldId ) ].join( '/' ) );
-	if( dependentFieldIds ) {
+	if( dependentFieldIds.length ) {
 		gf_apply_rules( formId, dependentFieldIds );
 	}
 }, 10 );
@@ -41,9 +41,6 @@ function gf_apply_rules(formId, fields, isInit){
 					native: false,
 					data: { formId: formId, fields: fields, dependentFields: dependentFields, isInit: isInit },
 				} );
-				if( window.gformCalculateTotalPrice ) {
-					window.gformCalculateTotalPrice( formId );
-				}
 			}
 		});
 	}
@@ -179,7 +176,7 @@ function gf_is_match_checkable( $inputs, rule, formId, fieldId ) {
 	$inputs.each( function() {
 
 		var $input           = jQuery( this ),
-			fieldValue       = gf_get_value( $input.val() ),
+			fieldValue       = gf_get_value( $input.val(), $input ),
 			isRangeOperator  = jQuery.inArray( rule.operator, [ '<', '>' ] ) !== -1,
 			isStringOperator = jQuery.inArray( rule.operator, [ 'contains', 'starts_with', 'ends_with' ] ) !== -1;
 
@@ -229,16 +226,29 @@ function gf_is_checkable_empty( $inputs ) {
 
 function gf_is_match_default( $input, rule, formId, fieldId ) {
 
-	var val           = $input.val(),
-		values        = ( val instanceof Array ) ? val : [ val ], // transform regular value into array to support multi-select (which returns an array of selected items)
+	var val = $input.val();
+	if ( val === undefined ) {
+		val = [];
+	}
+
+	var values        = ( val instanceof Array ) ? val : [ val ], // transform regular value into array to support multi-select (which returns an array of selected items)
 		matchCount    = 0,
 		valuesLength  = Math.max( values.length, 1 ); // jQuery 3.0: Make sure our length is at least 1 so that the following loop fires.
 
+	// Back-compat for rules based on the address field country input that are still using the country name instead of the code; gets the code from the default countries list in gf_global.
+	if ( rule.fieldId === `${ fieldId }.6` && rule.value.length > 2 && $input.closest( '.ginput_container_address' ).length === 1 && val.length === 2 ) {
+		const ruleValueLowerCase = rule.value.toLowerCase();
+
+		rule.value = Object.entries( window.gf_global?.countries || {} ).find(
+			( [ code, name ] ) => name.toLowerCase() === ruleValueLowerCase
+		)?.[ 0 ] || rule.value;
+	}
+
 	for( var i = 0; i < valuesLength; i++ ) {
 
-		// fields with pipes in the value will use the label for conditional logic comparison
-		var hasLabel   = values[i] ? values[i].indexOf( '|' ) >= 0 : true,
-			fieldValue = gf_get_value( values[i] );
+		var isPriceField = $input.closest( '.gfield_price' ).length > 0,
+			hasLabel       = ! values[i] || ( isPriceField && values[i].indexOf( '|' ) >= 0 ),
+			fieldValue     = gf_get_value( values[i], $input );
 
 		var fieldNumberFormat = gf_get_field_number_format( rule.fieldId, formId, 'value' );
 		if( fieldNumberFormat && ! hasLabel ) {
@@ -357,12 +367,18 @@ function gf_matches_operation(val1, val2, operation){
 	return false;
 }
 
-function gf_get_value(val){
-	if(!val)
-		return "";
+function gf_get_value( val, $input ) {
+	if ( ! val ) {
+		return '';
+	}
 
-	val = val.split("|");
-	return val[0];
+	// Selection pricing fields are formatted as value|price. Split on the | to get the field label or value that is in the first position. 
+	// For all other pricing fields, splitting on the | won't have any effect.
+	if ( $input && $input.closest( '.gfield_price' ).length ) {
+		val = gformParseChoiceValue( val )['name'];
+	}
+
+	return val;
 }
 
 function gf_do_field_action(formId, action, fieldId, isInit, callback){
@@ -398,6 +414,11 @@ function gf_do_field_action(formId, action, fieldId, isInit, callback){
 		}
 
 		gform.doAction('gform_post_conditional_logic_field_action', formId, action, targetId, defaultValues, isInit);
+		gform.utils.trigger( {
+			event: 'gform/conditional_logic/field_action/end',
+			native: false,
+			data: { formId: formId, action: action, targetId: targetId, defaultValues: defaultValues, isInit: isInit },
+		} );
 	}
 }
 
@@ -442,7 +463,11 @@ function gf_do_action(action, targetId, useAnimation, defaultValues, isInit, cal
 		return;
 	}
 
+	// Fields that shouldn't be displayed by logic rules.
+	const isHiddenType = ! $target.hasClass( 'gfield_error' ) && $target.is( '.gfield--input-type-hidden, .gfield--input-type-hiddenproduct, .gfield_visibility_hidden' );
+
 	if(action == "show"){
+
 		// reset tabindex for selects
 		$target.find( 'select' ).each( function() {
 			var $select = jQuery( this );
@@ -451,12 +476,17 @@ function gf_do_action(action, targetId, useAnimation, defaultValues, isInit, cal
 
 		if(useAnimation && !isInit){
 			if($target.length > 0){
-				$target.find(':input:hidden:not(.gf-default-disabled)').prop( 'disabled', false );
+				$target.find( isHiddenType ? ':input' : ':input:hidden' ).not( '.gf-default-disabled' ).prop( 'disabled', false );
 				if ( $target.is( 'input[type="submit"]' ) || $target.hasClass( 'gform_next_button' ) ) {
 					gf_show_button( $target );
 				}
-				$target.slideDown(callback);
+
+				if ( ! isHiddenType ) {
+					$target.slideDown(callback);
+				}
+
 				$target.attr( 'data-conditional-logic', 'visible' );
+
 			} else if(callback){
 				callback();
 			}
@@ -468,13 +498,16 @@ function gf_do_action(action, targetId, useAnimation, defaultValues, isInit, cal
 			if ( display == '' || display == 'none' ){
 				display = '1' === gf_legacy.is_legacy ? 'list-item' : 'block';
 			}
-			$target.find(':input:hidden:not(.gf-default-disabled)').prop( 'disabled', false ).attr( 'data-conditional-logic', 'visible' );
+			$target.find( isHiddenType ? ':input' : ':input:hidden' ).not( '.gf-default-disabled' ).prop( 'disabled', false );
 
 			// Handle conditional submit and next buttons.
 			if ( $target.is( 'input[type="submit"]' ) || $target.hasClass( 'gform_next_button' ) ) {
 				gf_show_button( $target );
 			} else {
-				$target.css( 'display', display );
+				if ( ! isHiddenType ) {
+					$target.css( 'display', display );
+				}
+
 				if( display == 'none' ) {
 					$target.attr( 'data-conditional-logic', 'hidden' );
 				} else {
@@ -514,7 +547,9 @@ function gf_do_action(action, targetId, useAnimation, defaultValues, isInit, cal
 			if( $target.is( 'input[type="submit"]' ) || $target.hasClass( 'gform_next_button' ) ) {
 				gf_hide_button( $target );
 			} else if ( $target.length > 0 && $target.is( ":visible" ) ) {
-				$target.slideUp( callback );
+				if ( ! isHiddenType ) {
+					$target.slideUp( callback );
+				}
 				$target.attr( 'data-conditional-logic', 'hidden' );
 			} else if ( callback ) {
 				callback();
@@ -525,7 +560,9 @@ function gf_do_action(action, targetId, useAnimation, defaultValues, isInit, cal
 			if ( $target.is( 'input[type="submit"]' ) || $target.hasClass( 'gform_next_button' ) ) {
 				gf_hide_button( $target );
 			} else {
-				$target.css( 'display', 'none' );
+				if ( ! isHiddenType ) {
+					$target.css( 'display', 'none' );
+				}
 				$target.attr( 'data-conditional-logic', 'hidden' );
 			}
 			$target.find(':input:hidden:not(.gf-default-disabled)').attr( 'disabled', 'disabled' );
@@ -572,6 +609,12 @@ function gf_hide_button( $target ) {
 function gf_reset_to_default(targetId, defaultValue){
 
 	var $target = jQuery( targetId );
+
+	// Hiding a repeater should leave the fields inside it as they are.
+	if ( $target.hasClass( 'gfield--type-repeater' ) ) {
+		return;
+	}
+
     if( $target.hasClass('gfield_shipping') || $target.hasClass('gfield_total') ||
         $target.hasClass('gfield--type-shipping') || $target.hasClass('gfield--type-total') ) {
         return;
@@ -709,6 +752,8 @@ function gf_reset_to_default(targetId, defaultValue){
 			}
 			else{
 				jQuery(this).prop('checked', doCheck).change();
+				// Triggering native change event so that non-jQuery code can listen to it.
+				this.dispatchEvent( new Event( 'change', { bubbles: true } ) );
 			}
 
 		}

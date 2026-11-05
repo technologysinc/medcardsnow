@@ -910,7 +910,7 @@ class UniteProviderAdminUC extends UniteCreatorAdmin{
 
 		$clientAction = UniteFunctionsUC::getPostGetVariable("client_action", "", UniteFunctionsUC::SANITIZE_KEY);
 
-		if($clientAction != "save_instagram_connect_data")
+		if($clientAction != "save_instagram_connect_data" && $clientAction != "save_tiktok_connect_data")
 			return (false);
 
 		if(!isset($_REQUEST["access_token"])) // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Only checks that the token is present, so Rank Math's OAuth handler can be removed. The value is not read.

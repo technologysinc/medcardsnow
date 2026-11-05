@@ -10,7 +10,7 @@ GFForms::include_addon_framework();
 class GFSignature extends GFAddOn {
 
 	protected $_version = GF_SIGNATURE_VERSION;
-	protected $_min_gravityforms_version = '2.9';
+	protected $_min_gravityforms_version = '3.0.3';
 	protected $_slug = 'gravityformssignature';
 	protected $_path = 'gravityformssignature/signature.php';
 	protected $_full_path = __FILE__;
@@ -77,7 +77,7 @@ class GFSignature extends GFAddOn {
 		parent::init();
 
 		add_filter( 'gform_merge_tag_filter', array( $this, 'merge_tag_filter' ), 10, 5 );
-		add_action( 'gform_delete_lead', array( $this, 'delete_entry' ) );
+		add_action( 'gform_delete_entry', array( $this, 'delete_entry' ) );
 		add_action( 'gform_delete_entries', array( $this, 'delete_entries' ), 10, 2 );
 		add_action( 'gravityforms_cron', array( $this, 'add_index_file' ) );
 
@@ -146,6 +146,14 @@ class GFSignature extends GFAddOn {
 					array( $this, 'should_enqueue_frontend_script' ),
 				),
 			),
+			array(
+				'handle'  => 'gravity_forms_common_icons',
+				'src'     => GFCommon::get_base_url() . "/assets/css/dist/gravity-forms-common-icons{$this->_asset_min}.css",
+				'version' => $version,
+				'enqueue' => array(
+					array( $this, 'should_enqueue_frontend_script' ),
+				),
+			),
 		);
 
 		return array_merge( parent::styles(), $styles );
@@ -163,12 +171,6 @@ class GFSignature extends GFAddOn {
 		$form     = $this->get_current_form();
 
 		$scripts = array(
-			array(
-				'handle'  => 'gform_masked_input',
-				'enqueue' => array(
-					array( 'admin_page' => array( 'form_editor' ) ),
-				)
-			),
 			array(
 				'handle'    => 'gform_signature_frontend_vendor',
 				'src'       => $base_url . "/assets/js/dist/vendor-theme{$this->_asset_min}.js",
@@ -188,8 +190,14 @@ class GFSignature extends GFAddOn {
 					array( $this, 'should_enqueue_frontend_script' ),
 				),
 				'strings'   => array(
-					'confirm_delete' => esc_html__( "Would you like to delete this file? 'Cancel' to stop. 'OK' to delete", 'gravityformssignature' ),
-					'delete_nonce'   => wp_create_nonce( 'gf_delete_signature' ),
+					'confirm_delete'       => esc_html__( "Are you sure you want to permanently delete this signature? 'Cancel' to stop. 'OK' to delete.", 'gravityformssignature' ),
+					'confirm_delete_title' => esc_html__( 'Delete Signature', 'gravityformssignature' ),
+					'delete_nonce'         => wp_create_nonce( 'gf_delete_signature' ),
+					'signature_cleared'    => esc_html__( 'Signature cleared. You can sign again.', 'gravityformssignature' ),
+					'signature_deleted'    => esc_html__( 'Signature deleted.', 'gravityformssignature' ),
+					'signature_drawn'      => esc_html__( 'Signature drawn.', 'gravityformssignature' ),
+					'signature_pad_empty'  => esc_html__( 'Signature pad, empty. Draw your signature here.', 'gravityformssignature' ),
+					'signature_pad_signed' => esc_html__( 'Signature pad, signature added.', 'gravityformssignature' ),
 				),
 			),
 		);
@@ -233,7 +241,26 @@ class GFSignature extends GFAddOn {
 		$is_frontend         = GFForms::get_page() === false;
 		$has_signature_field = self::has_signature_field( $form );
 
-		return ( $is_frontend || $this->is_entry_edit() ) && $has_signature_field;
+		return ( $is_frontend || $this->is_entry_edit_page() ) && $has_signature_field;
+	}
+
+	/**
+	 * Reliable replacement for GFAddOn::is_entry_edit(), which only checks
+	 * rgpost('screen_mode') and misses the initial GET page load of the Edit Entry screen.
+	 *
+	 * @since 4.10.0
+	 *
+	 * @return bool
+	 */
+	public function is_entry_edit_page() {
+
+		if ( GFForms::get_page_query_arg() !== 'gf_entries' || rgget( 'view' ) !== 'entry' ) {
+			return false;
+		}
+
+		$screen_mode = rgpost( 'screen_mode' ) ? rgpost( 'screen_mode' ) : rgget( 'screen_mode' );
+
+		return $screen_mode === 'edit';
 	}
 
 	/**
@@ -270,7 +297,9 @@ class GFSignature extends GFAddOn {
 			'signature_border_style'     => '<h6>' . esc_html__( 'Border Style', 'gravityformssignature' ) . '</h6>' . esc_html__( 'Select the border style to be used around the signature area.', 'gravityformssignature' ),
 			'signature_pen_size'         => '<h6>' . esc_html__( 'Pen Size', 'gravityformssignature' ) . '</h6>' . esc_html__( 'Select the width of the pen to be used for the signature.', 'gravityformssignature' ),
 			'signature_border_width'     => '<h6>' . esc_html__( 'Border Width', 'gravityformssignature' ) . '</h6>' . esc_html__( 'Select the border width to be used around the signature area.', 'gravityformssignature' ),
-			'signature_message'          => '<h6>' . esc_html__( 'Message', 'gravityformssignature' ) . '</h6>' . esc_html__( "Write the message you would like to be sent. You can insert fields submitted by the user by selecting them from the 'Insert Variable' drop down.", 'gravityformssignature' )
+			'signature_message'          => '<h6>' . esc_html__( 'Message', 'gravityformssignature' ) . '</h6>' . esc_html__( "Write the message you would like to be sent. You can insert fields submitted by the user by selecting them from the 'Insert Variable' drop down.", 'gravityformssignature' ),
+			'signature_font_options'     => '<h6>' . esc_html__( 'Font Options', 'gravityformssignature' ) . '</h6>' . esc_html__( 'This setting controls whether the dropdown with font options is displayed, allowing users to change the font for their typed signature. On mobile devices, this dropdown is not visible regardless of this setting.', 'gravityformssignature' ),
+			'signature_default_font'     => '<h6>' . esc_html__( 'Default Font', 'gravityformssignature' ) . '</h6>' . esc_html__( 'Select the font that will be used by default for typed signatures. Not available in mobile devices, a default cursive font will be used instead.', 'gravityformssignature' ),
 		);
 
 		return array_merge( $tooltips, $signature_tooltips );
@@ -350,14 +379,32 @@ class GFSignature extends GFAddOn {
 			<li class="box_width_setting field_setting">
 				<label for="field_signature_box_width" class="section_label">
 					<?php esc_html_e( 'Field Width', 'gravityformssignature' ); ?>
-					<?php gform_tooltip( 'signature_box_width' ) ?>
+					<?php gform_tooltip( 'signature_box_width' ); ?>
 				</label>
 				<input id="field_signature_box_width" type="text" class="small"
-				       onkeyup="SetSignatureBoxWidth(jQuery(this).val());"
-				       onchange="SetSignatureBoxWidth(jQuery(this).val());"/> px
+					onkeyup="SetSignatureBoxWidth(jQuery(this).val());"
+					onchange="SetSignatureBoxWidth(jQuery(this).val());"/> px
 			</li>
-
-		<?php
+			<li class="disable_font_options_setting field_setting">
+				<input id="field_signature_font_options" type="checkbox" class="small" checked
+					onchange="ToggleFontOptions(jQuery(this).is(':checked'));"/>
+				<label for="field_signature_font_options" class="section_label">
+					<?php esc_html_e( 'Font Options', 'gravityformssignature' ); ?>
+					<?php gform_tooltip( 'signature_font_options' ); ?>
+				</label>
+			</li>
+			<li class="default_font_setting field_setting">
+				<label for="field_signature_default_font" class="section_label">
+					<?php esc_html_e( 'Default Font', 'gravityformssignature' ); ?>
+					<?php gform_tooltip( 'signature_default_font' ); ?>
+				</label>
+				<select id="field_signature_default_font" onchange="SetSignatureDefaultFont(jQuery(this).val());">
+					<option value="script"><?php esc_html_e( 'Script', 'gravityformssignature' ); ?></option>
+					<option value="handwritten"><?php esc_html_e( 'Handwritten', 'gravityformssignature' ); ?></option>
+					<option value="print"><?php esc_html_e( 'Print', 'gravityformssignature' ); ?></option>
+				</select>
+			</li>
+			<?php
 		}
 	}
 
@@ -655,7 +702,11 @@ class GFSignature extends GFAddOn {
 		$filename = $name_prefix . uniqid( '', true ) . '.png';
 		$path     = $folder . $filename;
 		$result   = imagepng( $gd_signature, $path, 4 );
-		imagedestroy( $gd_signature );
+
+		// Destroy GD image only on PHP versions where it still has an effect (< 8.0).
+		if ( version_compare( PHP_VERSION, '8.0', '<' ) ) {
+			imagedestroy( $gd_signature );
+		}
 
 		if ( ! $result ) {
 			$this->log_error( __METHOD__ . '(): Aborting; unable to save file.' );
@@ -718,7 +769,7 @@ class GFSignature extends GFAddOn {
 	 *
 	 * @since 4.6.2
 	 */
-	public function remove_soft_edges( $img, $threshold = 63 ) {
+	public function remove_soft_edges( $img, $threshold = 120 ) {
 		// Make sure alpha blending is off and alpha is saved for proper handling.
 		imagealphablending( $img, false );
 		imagesavealpha( $img, true );
@@ -734,14 +785,7 @@ class GFSignature extends GFAddOn {
 
 				// Decide on the new alpha.
 				$oldAlpha = $colors['alpha'];
-
-				if ( $oldAlpha > $threshold ) {
-					// Make pixel fully transparent.
-					$newAlpha = 127;
-				} else {
-					// Make pixel fully opaque.
-					$newAlpha = 0;
-				}
+				$newAlpha = $oldAlpha > $threshold ? 127 : $oldAlpha;
 
 				// Re-allocate the color in the image with the forced alpha.
 				$newColor = imagecolorallocatealpha(
@@ -764,14 +808,19 @@ class GFSignature extends GFAddOn {
 	/**
 	 * Used by the gform_delete_entry hook to delete any signatures for the entry currently being deleted.
 	 *
-	 * @param integer $lead_id The ID of the current entry.
+	 * @since 4.10.0 Hooked to gform_delete_entry instead of gform_delete_lead.
+	 *
+	 * @param integer $entry_id The ID of the current entry.
 	 */
-	public function delete_entry( $lead_id ) {
+	public function delete_entry( $entry_id ) {
 
-		$lead = RGFormsModel::get_lead( $lead_id );
-		$form = RGFormsModel::get_form_meta( $lead['form_id'] );
+		$entry = GFAPI::get_entry( $entry_id );
+		if ( is_wp_error( $entry ) ) {
+			return;
+		}
 
-		if ( ! is_array( $form['fields'] ) ) {
+		$form = GFAPI::get_form( rgar( $entry, 'form_id' ) );
+		if ( ! $form || ! GFCommon::form_has_fields( $form ) ) {
 			return;
 		}
 
@@ -784,12 +833,12 @@ class GFSignature extends GFAddOn {
 				 *
 				 * @param bool    $delete_file Defaults to true.
 				 * @param array   $form        The Form object.
-				 * @param integer $lead_id     The ID of the current entry.
+				 * @param integer $entry_id    The ID of the current entry.
 				 * @param integer $field_id    The ID of the current field.
 				 */
-				$delete_signature = apply_filters( 'gform_signature_delete_file_pre_delete_entry', true, $form, $lead_id, $field->id );
+				$delete_signature = apply_filters( 'gform_signature_delete_file_pre_delete_entry', true, $form, $entry_id, $field->id );
 				if ( $delete_signature ) {
-					$this->delete_signature( $lead, $field->id );
+					$this->delete_signature( $entry, $field->id );
 				}
 			}
 		}

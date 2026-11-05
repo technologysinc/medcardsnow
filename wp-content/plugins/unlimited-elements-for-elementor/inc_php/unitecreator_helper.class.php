@@ -685,23 +685,104 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 		/**
 		 * convert url to path, if wrong path, return null
+		 * a normal media, css, include, or preview file inside the site still returns its path
 		 */
 		public static function urlToPath($url){
 
+			if(is_string($url) == false || $url === "")
+				return(null);
+
 			$urlRelative = self::URLtoRelative($url);
 
-			//check path traversal
-			if(strpos($urlRelative, '../') !== false)
-				return(null);
-			
-			$path = GlobalsUC::$path_base.$urlRelative;
-			
-			$path = UniteFunctionsUC::cleanPath($path);
-			
-			if(file_exists($path) == false)
+			if(is_string($urlRelative) == false || $urlRelative === "")
 				return(null);
 
-			return($path);
+			// strip ? and # before decode, then again: %3F becomes a query mark only after decode
+			$urlRelative = self::stripUrlQueryAndFragment($urlRelative);
+
+			if($urlRelative === "" || strpos($urlRelative, "\0") !== false)
+				return(null);
+
+			// one decode, so %2e%2e and &#x2e; become a real ".." that the check below can reject
+			// rawurldecode keeps a "+" in a filename; urldecode would turn it into a space
+			$urlRelative = rawurldecode($urlRelative);
+			$urlRelative = preg_replace_callback('/&#x([a-fA-F0-9]+);/i', array("UniteFunctionsUC", "hexEntityDecode"), $urlRelative);
+			$urlRelative = trim($urlRelative);
+			$urlRelative = self::stripUrlQueryAndFragment($urlRelative);
+
+			if($urlRelative === "" || strpos($urlRelative, "\0") !== false)
+				return(null);
+
+			$urlRelative = UniteFunctionsUC::pathToUnix($urlRelative);
+
+			$basePath = GlobalsUC::$path_base;
+			$path = UniteFunctionsUC::pathToUnix($basePath.$urlRelative);
+
+			// reject ".." before the path is canonical. collapsing it first would hide the escape
+			if(UniteFunctionsUC::isPathUnderBase($path, $basePath) == false)
+				return(null);
+
+			$realPath = UniteFunctionsUC::realpath($path, false);
+
+			// callers read a file (image, css, include). a directory is not a match
+			if(empty($realPath) || is_file($realPath) == false)
+				return(null);
+
+			// realpath() follows symlinks, so a file link that leaves the site is rejected
+			// uploads and wp-content are allowed on their own because some hosts symlink those folders to another disk
+			if(self::isRealPathInsideSite($realPath) == false)
+				return(null);
+
+			return($realPath);
+		}
+
+		/**
+		 * true when the canonical file is inside the site, wp-content, the uploads folder, or this plugin
+		 */
+		private static function isRealPathInsideSite($realPath){
+
+			$bases = array(GlobalsUC::$path_base);
+
+			if(defined("WP_CONTENT_DIR"))
+				$bases[] = WP_CONTENT_DIR;
+
+			if(empty(GlobalsUC::$path_images) == false)
+				$bases[] = GlobalsUC::$path_images;
+
+			if(empty(GlobalsUC::$pathPlugin) == false)
+				$bases[] = GlobalsUC::$pathPlugin;
+
+			foreach($bases as $basePath){
+
+				if(is_string($basePath) == false || $basePath === "")
+					continue;
+
+				$realBase = UniteFunctionsUC::realpath($basePath);
+
+				if(empty($realBase))
+					continue;
+
+				if(UniteFunctionsUC::isPathUnderBase($realPath, $realBase) == true)
+					return(true);
+			}
+
+			return(false);
+		}
+
+		/**
+		 * drop a query string or fragment so it cannot change which file is read
+		 */
+		private static function stripUrlQueryAndFragment($url){
+
+			if(is_string($url) == false || $url === "")
+				return("");
+
+			$cut = strcspn($url, "?#");
+
+			if($cut >= strlen($url))
+				return($url);
+
+			return(substr($url, 0, $cut));
 		}
 
 
@@ -1010,29 +1091,194 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 	/**
 	 * get url content
+	 * the extension is taken from the canonical file, after the query string is removed
 	 */
 	public static function getFileContentByUrl($url, $filterExtention = null){
-		
+
+		$pathFile = self::urlToPath($url);
+
+		if(empty($pathFile))
+			return (null);
+
+		if(is_file($pathFile) == false)
+			return (null);
+
 		if(!empty($filterExtention)){
-			$info = pathinfo($url);
+			$info = pathinfo($pathFile);
 			$ext = UniteFunctionsUC::getVal($info, "extension");
 			$ext = strtolower($ext);
+			$filterExtention = strtolower($filterExtention);
 
 			if($ext != $filterExtention)
 				return (null);
 		}
-		
-		$pathFile = self::urlToPath($url);
-		
-		if(empty($pathFile))
-			return (null);
 
-		if(file_exists($pathFile) == false)
-			return (null);
-		
 		$content = UniteFunctionsUC::fileGetContents($pathFile);
 
+		if($filterExtention === "svg"){
+			$content = self::sanitizeInlineSvg($content);
+
+			if(empty($content))
+				return (null);
+		}
+
 		return ($content);
+	}
+
+	/**
+	 * keep an inline svg icon, and drop scripts, external references, and non-svg files
+	 */
+	private static function sanitizeInlineSvg($content){
+
+		if(is_string($content) == false)
+			return(null);
+
+		$content = preg_replace('/^\xEF\xBB\xBF/', '', $content);
+		$content = trim($content);
+
+		if($content === "" || stripos($content, "<svg") === false)
+			return(null);
+
+		if(preg_match('/<!DOCTYPE|<!ENTITY/i', $content))
+			return(null);
+
+		if(class_exists("DOMDocument") == false)
+			return(null);
+
+		$previous = libxml_use_internal_errors(true);
+
+		$dom = new DOMDocument();
+		$loaded = $dom->loadXML($content, LIBXML_NONET);
+
+		libxml_clear_errors();
+		libxml_use_internal_errors($previous);
+
+		if($loaded == false)
+			return(null);
+
+		$root = $dom->documentElement;
+
+		if(empty($root) || strtolower($root->localName) !== "svg")
+			return(null);
+
+		self::sanitizeSvgElement($root);
+
+		$output = $dom->saveXML($root);
+
+		if(empty($output) || stripos($output, "<svg") === false)
+			return(null);
+
+		return($output);
+	}
+
+	/**
+	 * remove elements and attributes that must not be printed with an icon
+	 */
+	private static function sanitizeSvgElement($node){
+
+		if($node->nodeType !== XML_ELEMENT_NODE)
+			return;
+
+		$allowed = array(
+			"svg" => true,
+			"g" => true,
+			"path" => true,
+			"circle" => true,
+			"ellipse" => true,
+			"rect" => true,
+			"line" => true,
+			"polyline" => true,
+			"polygon" => true,
+			"defs" => true,
+			"symbol" => true,
+			"use" => true,
+			"title" => true,
+			"desc" => true,
+			"lineargradient" => true,
+			"radialgradient" => true,
+			"stop" => true,
+			"clippath" => true,
+			"mask" => true,
+			"text" => true,
+			"tspan" => true,
+		);
+
+		$tagName = strtolower($node->localName);
+
+		if(isset($allowed[$tagName]) == false){
+			if(!empty($node->parentNode))
+				$node->parentNode->removeChild($node);
+
+			return;
+		}
+
+		if($node->hasAttributes()){
+			$removeAttrs = array();
+
+			foreach($node->attributes as $attr){
+				if(self::svgAttributeIsUnsafe($tagName, $attr->nodeName, $attr->nodeValue))
+					$removeAttrs[] = $attr->nodeName;
+			}
+
+			foreach($removeAttrs as $attrName)
+				$node->removeAttribute($attrName);
+		}
+
+		$children = array();
+
+		foreach($node->childNodes as $child)
+			$children[] = $child;
+
+		foreach($children as $child){
+
+			if($child->nodeType === XML_ELEMENT_NODE){
+				self::sanitizeSvgElement($child);
+				continue;
+			}
+
+			if($child->nodeType === XML_COMMENT_NODE || $child->nodeType === XML_CDATA_SECTION_NODE || $child->nodeType === XML_ENTITY_REF_NODE || $child->nodeType === XML_PI_NODE){
+				if(!empty($child->parentNode))
+					$child->parentNode->removeChild($child);
+			}
+		}
+	}
+
+	/**
+	 * event handlers, style, and external hrefs are unsafe on an inlined icon
+	 */
+	private static function svgAttributeIsUnsafe($tagName, $attrName, $value){
+
+		$attrName = strtolower($attrName);
+
+		if(strpos($attrName, "on") === 0)
+			return(true);
+
+		if($attrName === "style")
+			return(true);
+
+		if(is_string($value) == false)
+			return(true);
+
+		if(preg_match('/javascript\s*:|vbscript\s*:|data\s*:|expression\s*\(/i', $value))
+			return(true);
+
+		if(preg_match('/url\s*\(\s*(?!#)/i', $value))
+			return(true);
+
+		$isHref = ($attrName === "href" || substr($attrName, -5) === ":href");
+
+		if($isHref == false)
+			return(false);
+
+		$allowsHref = ($tagName === "use" || $tagName === "lineargradient" || $tagName === "radialgradient");
+
+		if($allowsHref == false)
+			return(true);
+
+		if(preg_match('/^#[A-Za-z_][A-Za-z0-9_.:-]*$/', $value) != 1)
+			return(true);
+
+		return(false);
 	}
 
  	public static function a________VIEW_TEMPLATE_____(){}

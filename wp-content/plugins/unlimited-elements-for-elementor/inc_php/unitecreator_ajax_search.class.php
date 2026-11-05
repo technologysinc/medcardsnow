@@ -496,6 +496,13 @@ class UniteCreatorAjaxSeach{
 	 * get suggestion data for ajax search
 	 */
 	public function getSearchSuggestionData($search, $args){
+
+		if(is_string($search) == false)
+			return(null);
+
+		// The lookup uses only the first word. The value returned to the browser
+		// has to be the cleaned full string, or markup after that word is reflected.
+		$search = sanitize_text_field($search);
 		
 		$searchToken = $this->getSuggestionToken($search);
 		
@@ -509,7 +516,7 @@ class UniteCreatorAjaxSeach{
 		
 		$output = array();
 		$output["original"] = $search;
-		$output["suggestion"] = $suggestion;
+		$output["suggestion"] = sanitize_text_field($suggestion);
 		
 		return($output);
 	}

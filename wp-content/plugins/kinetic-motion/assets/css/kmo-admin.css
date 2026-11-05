@@ -1,0 +1,11 @@
+.kmo-admin .kmo-intro { max-width: 760px; font-size: 14px; }
+.kmo-admin .kmo-card {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	padding: 4px 20px 10px;
+	margin: 16px 0;
+	max-width: 900px;
+}
+.kmo-admin .kmo-card h2 { margin: 16px 0 0; font-size: 15px; }
+.kmo-admin .form-table th { width: 200px; }

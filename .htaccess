@@ -1,0 +1,363 @@
+# BEGIN LSCACHE
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteRule litespeed/debug/.*\.log$ - [F,L]
+RewriteRule (^|/)\.litespeed_conf\. - [F,L]
+</IfModule>
+<IfModule LiteSpeed>
+CacheLookup on
+RewriteRule .* - [E=Cache-Control:no-autoflush]
+
+### marker ASYNC start ###
+RewriteCond %{REQUEST_URI} /wp-admin/admin-ajax\.php
+RewriteCond %{QUERY_STRING} action=async_litespeed
+RewriteRule .* - [E=noabort:1]
+### marker ASYNC end ###
+
+### marker REST AUTH start ###
+RewriteCond %{HTTP:Authorization} !^$
+RewriteCond %{REQUEST_URI} /wp\-json(?:/|$) [OR]
+RewriteCond %{QUERY_STRING} (^|&)rest_route=
+RewriteRule .* - [E=Cache-Control:no-cache]
+### marker REST AUTH end ###
+
+### marker POSTPASS start ###
+RewriteCond %{HTTP_COOKIE} (^|;\s*)wp-postpass_ad39001f838486799f36f4db72d08dd1=
+RewriteRule .* - [E=Cache-Control:no-cache]
+### marker POSTPASS end ###
+
+### marker MOBILE start ###
+RewriteCond %{HTTP_USER_AGENT} Mobile|Android|Silk/|Kindle|BlackBerry|Opera\ Mini|Opera\ Mobi [NC]
+RewriteRule .* - [E=Cache-Control:vary=%{ENV:LSCACHE_VARY_VALUE}+ismobile]
+### marker MOBILE end ###
+
+### marker WEBP start ###
+RewriteCond %{HTTP_ACCEPT} image/webp [OR]
+RewriteCond %{HTTP_USER_AGENT} (chrome-lighthouse|googlebot|page\ speed) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} iPhone\ OS\ (1[4-9]|[2-9][0-9]|[1-9][0-9]{2,})_ [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} Macintosh.*Version/((1[7-9]|[2-9][0-9]|[1-9][0-9]{2,})|16\.([4-9]|[1-9][0-9])) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} Firefox/(6[5-9]|[7-9][0-9]|[1-9][0-9]{2,}) [NC]
+RewriteRule .* - [E=Cache-Control:vary=%{ENV:LSCACHE_VARY_VALUE}+webp]
+### marker WEBP end ###
+
+### marker DROPQS start ###
+CacheKeyModify -qs:fbclid
+CacheKeyModify -qs:gclid
+CacheKeyModify -qs:utm*
+CacheKeyModify -qs:_ga
+### marker DROPQS end ###
+
+</IfModule>
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+# END LSCACHE
+# BEGIN NON_LSCACHE
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+### marker BROWSER CACHE start ###
+<IfModule mod_expires.c>
+ExpiresActive on
+ExpiresByType application/pdf A31557600
+ExpiresByType image/x-icon A31557600
+ExpiresByType image/vnd.microsoft.icon A31557600
+ExpiresByType image/svg+xml A31557600
+
+ExpiresByType image/jpg A31557600
+ExpiresByType image/jpeg A31557600
+ExpiresByType image/png A31557600
+ExpiresByType image/gif A31557600
+ExpiresByType image/webp A31557600
+ExpiresByType image/avif A31557600
+
+ExpiresByType video/ogg A31557600
+ExpiresByType audio/ogg A31557600
+ExpiresByType video/mp4 A31557600
+ExpiresByType video/webm A31557600
+
+ExpiresByType text/css A31557600
+ExpiresByType text/javascript A31557600
+ExpiresByType application/javascript A31557600
+ExpiresByType application/x-javascript A31557600
+
+ExpiresByType application/x-font-ttf A31557600
+ExpiresByType application/x-font-woff A31557600
+ExpiresByType application/font-woff A31557600
+ExpiresByType application/font-woff2 A31557600
+ExpiresByType application/vnd.ms-fontobject A31557600
+ExpiresByType font/ttf A31557600
+ExpiresByType font/otf A31557600
+ExpiresByType font/woff A31557600
+ExpiresByType font/woff2 A31557600
+
+</IfModule>
+### marker BROWSER CACHE end ###
+
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+# END NON_LSCACHE
+# ==========================================================
+# MEDCARDSNOW.COM
+# SECURITY + PERFORMANCE + WORDPRESS
+# Apache / LiteSpeed compatible baseline
+# ==========================================================
+
+
+# ==========================================================
+# 1. BASIC SERVER SECURITY
+# ==========================================================
+
+# Disable directory listing
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+
+
+# ==========================================================
+# 2. PROTECT SENSITIVE FILES
+# ==========================================================
+
+<IfModule mod_authz_core.c>
+
+    <FilesMatch "(^\.htaccess$|^\.htpasswd$|^\.user\.ini$|^php\.ini$|^wp-config\.php$|^error_log$|^debug\.log$)">
+        Require all denied
+    </FilesMatch>
+
+</IfModule>
+
+
+# Apache 2.2 fallback
+<IfModule !mod_authz_core.c>
+
+    <FilesMatch "(^\.htaccess$|^\.htpasswd$|^\.user\.ini$|^php\.ini$|^wp-config\.php$|^error_log$|^debug\.log$)">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+
+</IfModule>
+
+
+# ==========================================================
+# 3. SECURITY HEADERS
+# ==========================================================
+
+<IfModule mod_headers.c>
+
+    # Prevent MIME sniffing
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Referrer privacy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Prevent unwanted framing by other origins
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Disable browser features not required by this site
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+</IfModule>
+
+
+# ==========================================================
+# 4. DISABLE PHP EXECUTION IN UPLOADS
+# ==========================================================
+
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+
+    RewriteRule ^wp-content/uploads/.*\.(?:php[0-9]?|phtml|pht|phar)$ - [F,L,NC]
+
+</IfModule>
+
+
+# ==========================================================
+# 5. WORDPRESS CONFIGURATION
+# ==========================================================
+
+AddDefaultCharset UTF-8
+
+<IfModule mod_mime.c>
+
+    AddCharset UTF-8 .atom .css .js .json .rss .vtt .xml
+
+    AddType image/avif avif
+    AddType image/avif-sequence avifs
+
+</IfModule>
+
+
+# ==========================================================
+# 6. ETAG CONFIGURATION
+# ==========================================================
+
+<IfModule mod_headers.c>
+
+    Header unset ETag
+
+</IfModule>
+
+FileETag None
+
+
+# ==========================================================
+# 7. BROWSER CACHING / EXPIRES HEADERS
+# ==========================================================
+
+<IfModule mod_expires.c>
+
+    ExpiresActive On
+
+    # Default
+    ExpiresDefault "access plus 1 month"
+
+    # HTML / Dynamic documents
+    ExpiresByType text/html "access plus 0 seconds"
+
+    # XML / JSON
+    ExpiresByType application/json "access plus 0 seconds"
+    ExpiresByType application/xml "access plus 0 seconds"
+    ExpiresByType text/xml "access plus 0 seconds"
+
+    # Feeds
+    ExpiresByType application/rss+xml "access plus 1 hour"
+    ExpiresByType application/atom+xml "access plus 1 hour"
+
+    # Favicon
+    ExpiresByType image/x-icon "access plus 1 week"
+
+    # Images
+    ExpiresByType image/gif "access plus 4 months"
+    ExpiresByType image/png "access plus 4 months"
+    ExpiresByType image/jpeg "access plus 4 months"
+    ExpiresByType image/webp "access plus 4 months"
+    ExpiresByType image/avif "access plus 4 months"
+    ExpiresByType image/avif-sequence "access plus 4 months"
+    ExpiresByType image/svg+xml "access plus 4 months"
+
+    # Video / Audio
+    ExpiresByType video/ogg "access plus 4 months"
+    ExpiresByType video/mp4 "access plus 4 months"
+    ExpiresByType video/webm "access plus 4 months"
+    ExpiresByType audio/ogg "access plus 4 months"
+    ExpiresByType audio/mpeg "access plus 4 months"
+
+    # Fonts
+    ExpiresByType font/ttf "access plus 4 months"
+    ExpiresByType font/otf "access plus 4 months"
+    ExpiresByType font/woff "access plus 4 months"
+    ExpiresByType font/woff2 "access plus 4 months"
+    ExpiresByType application/vnd.ms-fontobject "access plus 4 months"
+
+    # CSS / JavaScript
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+
+</IfModule>
+
+
+# ==========================================================
+# 8. CACHE-CONTROL HEADERS
+# ==========================================================
+
+<IfModule mod_headers.c>
+
+    <FilesMatch "\.(?:css|js|jpg|jpeg|png|gif|webp|avif|svg|ico|woff|woff2|ttf|otf)$">
+
+        Header set Cache-Control "public, max-age=31536000"
+
+    </FilesMatch>
+
+    <FilesMatch "\.(?:html|htm)$">
+
+        Header set Cache-Control "no-cache"
+
+    </FilesMatch>
+
+</IfModule>
+
+
+# ==========================================================
+# 9. GZIP COMPRESSION
+# ==========================================================
+
+<IfModule mod_deflate.c>
+
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+
+    <IfModule mod_headers.c>
+
+        Header append Vary Accept-Encoding
+
+    </IfModule>
+
+</IfModule>
+
+
+# ==========================================================
+# 10. BLOCK SENSITIVE FILE EXTENSIONS
+# ==========================================================
+
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+
+    RewriteRule (^|/)\.(?:git|svn|hg)(?:/|$) - [F,L,NC]
+
+    RewriteRule \.(?:bak|backup|old|orig|save|swp|sql|log)$ - [F,L,NC]
+
+</IfModule>
+
+
+# ==========================================================
+# 11. WORDPRESS REWRITE RULES
+# ==========================================================
+
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+
+# ==========================================================
+# 12. LITESPEED SERVER SETTINGS
+# ==========================================================
+
+<IfModule LiteSpeed>
+
+    SetEnv noabort 1
+
+</IfModule>
+
+
+# ==========================================================
+# END MEDCARDSNOW SECURITY CONFIGURATION
+# ==========================================================
+
+# Wordfence WAF
+<IfModule LiteSpeed>
+php_value auto_prepend_file '/home/u440320247/domains/medcardsnow.com/public_html/wordfence-waf.php'
+</IfModule>
+<IfModule lsapi_module>
+php_value auto_prepend_file '/home/u440320247/domains/medcardsnow.com/public_html/wordfence-waf.php'
+</IfModule>
+
+# END Wordfence WAF

@@ -10,6 +10,15 @@ class GF_Field_Image_Choice extends GF_Field_Multiple_Choice {
 
 	public $type = 'image_choice';
 
+	/**
+	 * Whether the field can be used in a repeater.
+	 *
+	 * @since 3.2.0
+	 *
+	 * @var bool
+	 */
+	public $repeatable = true;
+
 	public $checkbox_choice;
 
 	public function __construct( $data = array() ) {
@@ -206,7 +215,11 @@ class GF_Field_Image_Choice extends GF_Field_Multiple_Choice {
 				return;
 			}
 
-		    document.getElementById("image_choice_ui_show_label").value = field.imageChoiceLabelVisibility;
+		    const imageChoiceUiShowLabel = document.getElementById("image_choice_ui_show_label");
+		    
+		    if ( imageChoiceUiShowLabel ) {
+		        imageChoiceUiShowLabel.value = field.imageChoiceLabelVisibility;
+		    }
 		    
 	        if ( field.type === "image_choice" && field.imageChoiceLabelVisibility === "hide" ) {
 				SetFieldAccessibilityWarning( "image_choice_ui_show_label_setting", "above" );

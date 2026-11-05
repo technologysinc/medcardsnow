@@ -705,6 +705,36 @@ class UniteCreatorActions{
 					UELM_HelperInsta::renewAccessToken();
 					UELM_HelperInsta::redirectToGeneralSettings();
 				break;
+				case "save_tiktok_connect_data":
+
+					HelperProviderUC::verifyAdminPermission();
+
+					$objServices = new UniteServicesUC();
+					$objServices->includeTikTokAPI();
+
+					try{
+						UELM_HelperTikTok::saveConnectData($data);
+					}catch(Exception $exception){
+						UELM_HelperTikTok::redirectToGeneralSettings(array(
+							"tiktok_connect_error" => $exception->getMessage(),
+						));
+					}
+				break;
+				case "clear_tiktok_connect_data":
+
+					HelperProviderUC::verifyAdminPermission();
+
+					$objServices = new UniteServicesUC();
+					$objServices->includeTikTokAPI();
+
+					try{
+						UELM_HelperTikTok::clearConnectData();
+					}catch(Exception $exception){
+						UELM_HelperTikTok::redirectToGeneralSettings(array(
+							"tiktok_connect_error" => $exception->getMessage(),
+						));
+					}
+				break;
 				case "save_google_connect_data":
 					
 					HelperProviderUC::verifyAdminPermission();

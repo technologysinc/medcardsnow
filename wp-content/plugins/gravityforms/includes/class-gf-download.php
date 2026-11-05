@@ -26,7 +26,20 @@ class GF_Download {
 			$hash     = rgget( 'hash' );
 			$entry_id = rgget( 'entry-id' );
 
+			$user_agent = isset( $_SERVER['HTTP_USER_AGENT'] ) ? sanitize_text_field( wp_unslash( $_SERVER['HTTP_USER_AGENT'] ) ) : '';
+			$referer = isset( $_SERVER['HTTP_REFERER'] ) ? esc_url_raw( wp_unslash( $_SERVER['HTTP_REFERER'] ) ) : '';
+			// IP address with the last octet removed for privacy reasons.
+			$ip = isset( $_SERVER['REMOTE_ADDR'] ) ? preg_replace('/([0-9a-fA-F]+|\d+)$/', '*', sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) ) : '';
+
+			GFCommon::log_debug( __METHOD__ . "(): File requested from IP '{$ip}', User Agent '{$user_agent}', Referer '{$referer}'" );
+
 			GFCommon::log_debug( __METHOD__ . "(): Starting file download process. file: {$file}, hash: {$hash}." );
+
+			$file_validation = self::validate_file_path( $file );
+			if ( is_wp_error( $file_validation ) ) {
+				GFCommon::log_debug( __METHOD__ . sprintf( '(): Not downloading file (%s): %s', $file_validation->get_error_code(), $file ) );
+				self::die_401();
+			}
 
 			$permission_granted = self::validate_download( $form_id, $field_id, $file, $hash, $entry_id );
 
@@ -232,6 +245,36 @@ class GF_Download {
 			require_once( $template_path );
 		}
 		die();
+	}
+
+	/**
+	 * Validates a file path from a download request for security concerns.
+	 *
+	 * Checks for null bytes and directory traversal characters (including encoded variants).
+	 *
+	 * @since 2.10.2
+	 *
+	 * @param string $file The file path to validate.
+	 *
+	 * @return true|WP_Error True if the file path is safe, WP_Error otherwise.
+	 */
+	public static function validate_file_path( $file ) {
+		if ( empty( $file ) ) {
+			return new WP_Error( 'empty_file', __( 'The file path is empty.', 'gravityforms' ) );
+		}
+
+		// Null byte injection check.
+		if ( str_contains( $file, '%00' ) || str_contains( $file, "\0" ) ) {
+			return new WP_Error( 'null_byte', __( 'The file path contains a null byte.', 'gravityforms' ) );
+		}
+
+		// Directory traversal check on decoded path to catch encoded variants.
+		$decoded_file = rawurldecode( rawurldecode( rawurldecode( $file ) ) );
+		if ( str_contains( $decoded_file, '..' ) ) {
+			return new WP_Error( 'directory_traversal', __( 'The file path contains directory traversal characters.', 'gravityforms' ) );
+		}
+
+		return true;
 	}
 
 	/**

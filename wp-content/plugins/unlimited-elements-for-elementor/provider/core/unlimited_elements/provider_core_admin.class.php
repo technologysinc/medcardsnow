@@ -35,6 +35,7 @@ class UniteProviderCoreAdminUC_Elementor extends UniteProviderAdminUC{
 			"troubleshooting-memory-usage",
 			"troubleshooting-connectivity",
 			"instagram-test",
+			"tiktok-test",
 			"testaddon",
 			"testaddonnew",
 			"addon",

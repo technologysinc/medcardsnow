@@ -80,6 +80,12 @@ class GFUserSignups {
 
 		}
 
+		// Write the activation key to the entry before the notification runs.
+		// Manual activation calls GFSignup::get() from that notification, and get()
+		// requires the key to already be stored on this site's entry.
+		add_action( 'after_signup_user', array( 'GFUserSignups', 'persist_user_activation_key' ), 1, 4 );
+		add_action( 'after_signup_site', array( 'GFUserSignups', 'persist_site_activation_key' ), 1, 7 );
+
 		// signup: update the signup URL to GF's custom activation page
 		add_filter( 'wpmu_signup_user_notification_email', array( 'GFUserSignups', 'modify_signup_user_notification_message' ), 10, 4 );
 		add_filter( 'wpmu_signup_blog_notification_email', array( 'GFUserSignups', 'modify_signup_blog_notification_message' ), 10, 7 );
@@ -179,6 +185,138 @@ class GFUserSignups {
 	}
 
 	/**
+	 * Store the activation key on the entry for a user signup.
+	 *
+	 * Runs before the signup notification so GFSignup::get() can confirm the key
+	 * belongs to this site while manual activation is being detected.
+	 *
+	 * @since 5.5.3
+	 *
+	 * @param string $user       Requested user login.
+	 * @param string $user_email Requested email address.
+	 * @param string $key        Activation key.
+	 * @param array  $meta       Signup meta.
+	 */
+	public static function persist_user_activation_key( $user, $user_email, $key, $meta ) {
+		self::persist_activation_key( $meta, $key );
+	}
+
+	/**
+	 * Store the activation key on the entry for a site signup.
+	 *
+	 * @since 5.5.3
+	 *
+	 * @param string $domain     Requested domain.
+	 * @param string $path       Requested path.
+	 * @param string $title      Requested site title.
+	 * @param string $user       Requested user login.
+	 * @param string $user_email Requested email address.
+	 * @param string $key        Activation key.
+	 * @param array  $meta       Signup meta.
+	 */
+	public static function persist_site_activation_key( $domain, $path, $title, $user, $user_email, $key, $meta ) {
+		self::persist_activation_key( $meta, $key );
+	}
+
+	/**
+	 * Whether a signup may be activated or deleted on the current site.
+	 *
+	 * The signups table is shared by the whole network. A key is accepted only
+	 * when this site's entry meta stores that same key. Signups created on
+	 * multisite also record the originating blog ID, which must match.
+	 *
+	 * @since 5.5.3
+	 *
+	 * @param string $key         Activation key.
+	 * @param array  $signup_meta Signup meta.
+	 *
+	 * @return bool
+	 */
+	public static function signup_belongs_to_current_site( $key, $signup_meta ) {
+		if ( ! is_array( $signup_meta ) ) {
+			return false;
+		}
+
+		if ( is_multisite() ) {
+			$signup_blog_id = absint( rgar( $signup_meta, 'blog_id' ) );
+
+			// Older signups have no blog ID. The activation key check below still applies.
+			if ( $signup_blog_id && $signup_blog_id !== get_current_blog_id() ) {
+				return false;
+			}
+		}
+
+		$lead_id = rgar( $signup_meta, 'lead_id' );
+		if ( ! $lead_id ) {
+			$lead_id = rgar( $signup_meta, 'entry_id' );
+		}
+
+		return self::activation_key_matches_lead( $lead_id, $key );
+	}
+
+	/**
+	 * Whether the current site's entry stores this activation key.
+	 *
+	 * @since 5.5.3
+	 *
+	 * @param int    $lead_id Entry ID from the signup meta.
+	 * @param string $key     Activation key.
+	 *
+	 * @return bool
+	 */
+	public static function activation_key_matches_lead( $lead_id, $key ) {
+		if ( empty( $lead_id ) || ! is_string( $key ) || '' === $key ) {
+			return false;
+		}
+
+		$stored_key = self::get_lead_activation_key( $lead_id );
+
+		if ( ! is_string( $stored_key ) || '' === $stored_key ) {
+			return false;
+		}
+
+		return hash_equals( $stored_key, $key );
+	}
+
+	/**
+	 * Write the activation key to the entry that created the signup.
+	 *
+	 * @since 5.5.3
+	 *
+	 * @param mixed  $meta Signup meta.
+	 * @param string $key  Activation key.
+	 */
+	private static function persist_activation_key( $meta, $key ) {
+		if ( ! is_array( $meta ) ) {
+			return;
+		}
+
+		$lead_id = rgar( $meta, 'lead_id' );
+		if ( ! $lead_id ) {
+			$lead_id = rgar( $meta, 'entry_id' );
+		}
+
+		if ( $lead_id && is_string( $key ) && '' !== $key ) {
+			self::add_signup_meta( $lead_id, $key );
+		}
+	}
+
+	/**
+	 * Safely unserializes signup meta without instantiating PHP objects.
+	 *
+	 * @since 5.5.0
+	 *
+	 * @param mixed $meta The signup meta value.
+	 *
+	 * @return array
+	 */
+	public static function maybe_unserialize_signup_meta( $meta ) {
+		$meta = GF_User_Registration::safe_unserialize( $meta );
+
+		return is_array( $meta ) ? $meta : array();
+	}
+
+	/**
 	 * Activate a signup.
 	 *
 	 */
@@ -220,7 +358,7 @@ class GFUserSignups {
 		}
 
 		$signup->set_as_activated();
-		
+
 		// Send notifications
 		GFAPI::send_notifications( $signup->form, $signup->lead, 'gfur_user_activated' );
 
@@ -275,9 +413,9 @@ class GFSignup {
 			$this->$key = $value;
 		}
 
-		$this->meta   = unserialize( $signup->meta );
-		$this->lead   = GFFormsModel::get_lead( $this->meta['lead_id'] );
-		$this->form   = GFFormsModel::get_form_meta( $this->lead['form_id'] );
+		$this->meta   = GFUserSignups::maybe_unserialize_signup_meta( $signup->meta );
+		$this->lead   = GFFormsModel::get_lead( rgar( $this->meta, 'lead_id' ) );
+		$this->form   = GFFormsModel::get_form_meta( rgar( $this->lead, 'form_id' ) );
 		$this->config = gf_user_registration()->get_filtered_single_submission_feed( $this->lead, $this->form );
 
 	}
@@ -285,9 +423,26 @@ class GFSignup {
 	public static function get( $key ) {
 		global $wpdb;
 
+		if ( ! is_string( $key ) || '' === $key ) {
+			return new WP_Error( 'invalid_key', __( 'Invalid activation key.' ) );
+		}
+
 		$signup = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->signups WHERE activation_key = %s", $key ) );
 
 		if ( empty( $signup ) ) {
+			return new WP_Error( 'invalid_key', __( 'Invalid activation key.' ) );
+		}
+
+		$signup_meta = GFUserSignups::maybe_unserialize_signup_meta( $signup->meta );
+		$lead_id     = rgar( $signup_meta, 'lead_id' );
+
+		if ( empty( $lead_id ) ) {
+			return new WP_Error( 'invalid_lead', __( 'Activation key is not valid.' ), $signup );
+		}
+
+		// Entry IDs collide across subsites. Do not load or act on this signup
+		// unless the key belongs to an entry on the site we are currently on.
+		if ( ! GFUserSignups::signup_belongs_to_current_site( $key, $signup_meta ) ) {
 			return new WP_Error( 'invalid_key', __( 'Invalid activation key.' ) );
 		}
 
@@ -295,8 +450,7 @@ class GFSignup {
 			return new WP_Error( 'already_active', __( 'The user is already active.' ), $signup );
 		}
 
-		$signup_meta = unserialize( $signup->meta );
-		$lead        = GFFormsModel::get_lead( $signup_meta['lead_id'] );
+		$lead = GFFormsModel::get_lead( $lead_id );
 
 		if ( $lead === false ) {
 			return new WP_Error( 'invalid_lead', __( 'Activation key is not valid.' ), $signup );

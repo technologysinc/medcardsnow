@@ -1,3 +1,22 @@
+### 4.10.0 | 2026-09-10
+- Added security enhancements.
+- Added 'Type Your Signature' feature to improve accessibility.
+- Added support for accessing Signature field instances via gform.instances.signature.
+- Added accessibility improvements to the Signature field.
+- Updated to use the gform_delete_entry hook to delete the signature file when an entry is deleted instead of the deprecated gform_delete_lead hook.
+- Updated input mask to be compatible with the new input mask library in Gravity Forms 3.0.
+- Updated the Delete Signature browser alert to use the new Dialog UI.
+- Updated minimum required version of Gravity Forms to 3.0.3.
+- Updated the Signature field so it can be edited with Advanced Post Creation.
+- Updated `GF_Field_Signature::get_value_entry_detail()` for compatibility with the change to `GF_Field::get_value_entry_detail()` in Gravity Forms 2.9.29.
+- Updated signature image quality.
+- Fixed a deprecation notice that occurred during submission on PHP 8.5+.
+- Fixed an issue where the Signature field is bypassed when tabbing through the form.
+- Fixed issues that prevent the Signature field from working correctly inside the Repeater field in Gravity Forms 3.0.
+- Fixed an issue where validation fails the first time for the Signature field in the User Input step in Gravity Flow.
+- Fixed an issue where the Signature field label is not read by screen readers.
+- Fixed an issue where the field validation message is not read by screen readers.
+
 ### 4.9.0 | 2025-09-05
 - Added support for Signature fields inside repeater fields.
 - Updated minimum required version of Gravity Forms to 2.9.

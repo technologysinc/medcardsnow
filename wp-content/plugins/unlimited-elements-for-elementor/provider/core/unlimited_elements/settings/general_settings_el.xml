@@ -37,6 +37,13 @@
       label="		Show &quot;Edit HTML&quot; Button in Widget Settings"
       description="Show &quot;Edit HTML&quot; button in elementor panel widget settings">
     </field>
+
+    <field name="import_placeholder_assets"
+      type="boolean"
+      default="false"
+      label="Include Widget Placeholder Images"
+      description="Copy demo images and sounds that ship with widgets into the media library when a template is imported. Leave this off to keep those files out of the export and out of the media library, so large pages import without timing out.">
+    </field>
   	
     <field name="force_disable_font_awesome"
       type="list"
@@ -319,6 +326,70 @@
       hidden="true"
       gotoview="wpml-fields"
       label="Check widgets fields that are ready for wpml automatic translation.">
+    </field>
+
+    <field name="tiktok_heading"
+      type="statictext"
+      label="&lt;b&gt;TikTok&lt;/b&gt;">
+    </field>
+
+    <field name="tiktok_desc"
+      type="statictext"
+      label="Used in the TikTok feed widget. Connect the account whose public videos should show.">
+    </field>
+
+    <field name="tiktok_integration"
+      type="custom"
+      custom_type="tiktok_connect"
+      label="unite_setting_notext">
+    </field>
+
+    <field name="tiktok_access_token"
+      type="hidden"
+      label="TikTok Access Token"
+      default="">
+    </field>
+
+    <field name="tiktok_refresh_token"
+      type="hidden"
+      label="TikTok Refresh Token"
+      default="">
+    </field>
+
+    <field name="tiktok_open_id"
+      type="hidden"
+      label="TikTok Open ID"
+      default="">
+    </field>
+
+    <field name="tiktok_display_name"
+      type="hidden"
+      label="TikTok Display Name"
+      default="">
+    </field>
+
+    <field name="tiktok_avatar_url"
+      type="hidden"
+      label="TikTok Avatar"
+      default="">
+    </field>
+
+    <field name="tiktok_expires"
+      type="hidden"
+      label="TikTok Expires"
+      default="">
+    </field>
+
+    <field name="tiktok_refresh_expires"
+      type="hidden"
+      label="TikTok Refresh Expires"
+      default="">
+    </field>
+
+    <field name="tiktok_scope"
+      type="hidden"
+      label="TikTok Scope"
+      default="">
     </field>
 
   </fieldset>

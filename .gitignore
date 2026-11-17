@@ -1,0 +1,44 @@
+# ---- Secrets: never commit ----
+wp-config.php
+wp-content/plugins/.modernlisim-core/wp-config.php
+.env
+.user.ini
+*.sql
+*.sql.gz
+
+# ---- Uploads: patient IDs, signatures, media ----
+wp-content/uploads/
+
+# ---- Logs ----
+*.log
+error_log
+wp-content/wflogs/
+
+# ---- Cache / generated / server-specific ----
+wp-content/cache/
+wp-content/litespeed/
+wp-content/upgrade/
+wp-content/upgrade-temp-backup/
+wp-content/ai1wm-backups/
+wp-content/updraft/
+wp-content/smush-webp/
+wp-content/logs/
+wp-content/litespeed-preset-backups/
+wp-content/backups*/
+wordfence-waf.php
+.tmb/
+
+# ---- Backups / archives ----
+*.zip
+*.tar.gz
+*.bak
+*.bk
+.htaccess.bk
+# keep the custom payment plugin archive if you still want it in the repo:
+!wp-content/plugins/custom-authorize-payment.zip
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
